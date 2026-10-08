@@ -19,7 +19,7 @@ The plot that carries the claim is B’s accuracy **without** its own copy of th
 
 ## Main Results
 
-All main numbers are from one Kaggle Tesla T4. Cache sizes are mebibytes (bytes / 1024²), matching `mean_relay_mb` in the result JSON. Text payloads are UTF-8 bytes of the message sent to B, not the whole receiver prompt. Do not mix sizes across stages: a shorter A prompt (inventory without the question) produces a smaller full cache.
+All main numbers are from one Kaggle Tesla T4. Cache sizes are mebibytes (bytes / 1024²), matching `mean_relay_mb` in the result JSON. Text payloads are UTF-8 bytes of the message sent to B, not the whole receiver prompt. Do not mix sizes across stages: a shorter A prompt (inventory without the question) produces a smaller full cache. Budgets 32 and 64 refer to selected prompt-cache positions per KV head and layer, in addition to four initial positions and 40 retained latent reasoning positions.
 
 ### One-record lookup, 80 held-out examples
 
@@ -35,7 +35,7 @@ Each example contains a 20-line inventory and a question about one package. Line
 | Headwise, budget 64 | 67/80 | 15.19 MiB |
 | OBF, budget 64 | 66/80 | 15.19 MiB |
 
-The eviction penalty versus full relay is 38.8 points at budget 32 (95% CI 27.5–50.0) and 11.2 points at budget 64 (95% CI 1.3–21.3). OBF’s paired recovery at budget 32 is +2 examples; the CI includes 0. This is not a ranking of OBF.
+On the 80 held-out sender-only examples, full relay achieved 95% accuracy, compared with 56.25% for headwise compression at budget 32. The eviction penalty versus full relay is 38.8 points at budget 32 (95% CI 27.5–50.0) and 11.2 points at budget 64 (95% CI 1.3–21.3). OBF’s paired recovery at budget 32 is +2 examples; the CI includes 0. This is not a ranking of OBF.
 
 **Shared inventory (B can read the document).** Full, headwise-32, and OBF-32 are all 78/80. Compression that looks acceptable here is the setting that hid the sender-only loss.
 
@@ -56,7 +56,7 @@ On the 40 held-out two-hop examples, retrieved and generated text each achieved 
 | Probed KV, budget 64 | 34/40 | 15.19 MiB | 3.50 s |
 | Probed KV, budget 32 | 32/40 | 10.69 MiB | 3.50 s |
 
-The retriever found both gold records on all 40 examples and sent the same two sentences as the oracle. KV process time includes A’s ~2.7 s inventory encode and 40 latent steps; text methods do not pay that rollout. Iterative text fixed the two full-relay misses and lost none. Probe-32 lost 8 paired examples versus iterative text. n=40 is still small: a few extra correct answers are not a ranking by themselves. On this structured two-hop task, targeted text was smaller, faster, and at least as accurate as the latent channel.
+Reported timings cover local message preparation and receiver processing, including compression or generation where applicable. They exclude network transfer between separate machines. The retriever found both gold records on all 40 examples and sent the same two sentences as the oracle. KV process time includes A’s ~2.7 s inventory encode and 40 latent steps; text methods do not pay that rollout. Iterative text fixed the two full-relay misses and lost none. Probe-32 lost 8 paired examples versus iterative text. n=40 is still small: a few extra correct answers are not a ranking by themselves. On this structured two-hop task, targeted text was smaller, faster, and at least as accurate as the latent channel.
 
 ## Diagnostic Experiments
 
