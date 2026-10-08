@@ -1,0 +1,190 @@
+{
+  "accuracy": {
+    "full_sender_only_filler": {
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1.0,
+      "truncated": 0.0,
+      "mean_relay_mb": 49.12734375,
+      "mean_probe_time_s": 0.0,
+      "peak_gpu_gb_max": 10.786475658416748
+    },
+    "recency_sender_only_filler": {
+      "n": 20,
+      "correct": 7,
+      "accuracy": 0.35,
+      "truncated": 0.0,
+      "mean_relay_mb": 10.6875,
+      "mean_probe_time_s": 0.0,
+      "peak_gpu_gb_max": 10.786475658416748
+    },
+    "receiver_probe_sender_only_filler": {
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1.0,
+      "truncated": 0.0,
+      "mean_relay_mb": 10.6875,
+      "mean_probe_time_s": 0.10476831197738648,
+      "peak_gpu_gb_max": 10.786475658416748
+    },
+    "generic_probe_sender_only_filler": {
+      "n": 20,
+      "correct": 7,
+      "accuracy": 0.35,
+      "truncated": 0.0,
+      "mean_relay_mb": 10.6875,
+      "mean_probe_time_s": 0.09953172206878662,
+      "peak_gpu_gb_max": 10.786475658416748
+    },
+    "question_match_sender_only_filler": {
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1.0,
+      "truncated": 0.0,
+      "mean_relay_mb": 10.6875,
+      "mean_probe_time_s": 0.0,
+      "peak_gpu_gb_max": 10.786475658416748
+    }
+  },
+  "accuracy_legacy": {
+    "full_sender_only_filler": {
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1.0
+    },
+    "recency_sender_only_filler": {
+      "n": 20,
+      "correct": 7,
+      "accuracy": 0.35
+    },
+    "receiver_probe_sender_only_filler": {
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1.0
+    },
+    "generic_probe_sender_only_filler": {
+      "n": 20,
+      "correct": 7,
+      "accuracy": 0.35
+    },
+    "question_match_sender_only_filler": {
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1.0
+    }
+  },
+  "paired": {
+    "probe_vs_recency": {
+      "n": 20,
+      "acc_a": 0.35,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.65,
+      "b_fixes": 13,
+      "b_hurts": 0,
+      "both_ok": 7,
+      "both_bad": 0
+    },
+    "probe_vs_generic": {
+      "n": 20,
+      "acc_a": 0.35,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.65,
+      "b_fixes": 13,
+      "b_hurts": 0,
+      "both_ok": 7,
+      "both_bad": 0
+    },
+    "probe_vs_full": {
+      "n": 20,
+      "acc_a": 1.0,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.0,
+      "b_fixes": 0,
+      "b_hurts": 0,
+      "both_ok": 20,
+      "both_bad": 0
+    },
+    "recency_vs_full": {
+      "n": 20,
+      "acc_a": 1.0,
+      "acc_b": 0.35,
+      "delta_b_minus_a": -0.65,
+      "b_fixes": 0,
+      "b_hurts": 13,
+      "both_ok": 7,
+      "both_bad": 0
+    },
+    "generic_vs_full": {
+      "n": 20,
+      "acc_a": 1.0,
+      "acc_b": 0.35,
+      "delta_b_minus_a": -0.65,
+      "b_fixes": 0,
+      "b_hurts": 13,
+      "both_ok": 7,
+      "both_bad": 0
+    },
+    "generic_vs_recency": {
+      "n": 20,
+      "acc_a": 0.35,
+      "acc_b": 0.35,
+      "delta_b_minus_a": 0.0,
+      "b_fixes": 4,
+      "b_hurts": 4,
+      "both_ok": 3,
+      "both_bad": 9
+    },
+    "probe_vs_match": {
+      "n": 20,
+      "acc_a": 1.0,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.0,
+      "b_fixes": 0,
+      "b_hurts": 0,
+      "both_ok": 20,
+      "both_bad": 0
+    },
+    "match_vs_full": {
+      "n": 20,
+      "acc_a": 1.0,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.0,
+      "b_fixes": 0,
+      "b_hurts": 0,
+      "both_ok": 20,
+      "both_bad": 0
+    },
+    "match_vs_recency": {
+      "n": 20,
+      "acc_a": 0.35,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.65,
+      "b_fixes": 13,
+      "b_hurts": 0,
+      "both_ok": 7,
+      "both_bad": 0
+    }
+  },
+  "retention": {
+    "recency_sender_only_filler": {
+      "frac_kept_both": 0.05,
+      "frac_kept_line": 0.05
+    },
+    "receiver_probe_sender_only_filler": {
+      "frac_kept_both": 0.0390625,
+      "frac_kept_line": 0.0001736111111111111
+    },
+    "generic_probe_sender_only_filler": {
+      "frac_kept_both": 0.0006944444444444444,
+      "frac_kept_line": 0.0001736111111111111
+    },
+    "question_match_sender_only_filler": {
+      "frac_kept_both": 1.0,
+      "frac_kept_line": 1.0
+    }
+  },
+  "lead": "A never saw the question. Record matching parses the package from B's question and keeps that inventory line. If match equals the probe, the probe is not offering more than this cheap baseline on this format. Primary scores use the shared extractor; accuracy_legacy is the original first-match rule.",
+  "question": "In the withheld-question setting, does simple record matching recover accuracy as cheaply as the correct-question probe?",
+  "n_rows": 100,
+  "n_examples_seen": 20
+}

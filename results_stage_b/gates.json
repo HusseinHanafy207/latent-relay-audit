@@ -1,0 +1,73 @@
+{
+  "n_examples_seen": 20,
+  "n_dev": 20,
+  "complete_run": true,
+  "short_answers_complete": true,
+  "all_passed": true,
+  "do_not_open_test": true,
+  "next_finding": "whether full relay transfers private evidence, not whether OBF already beats eviction",
+  "gates": {
+    "direct_text": {
+      "name": "direct_text",
+      "question": "Can B answer the inventory question from text?",
+      "accuracy": 1.0,
+      "truncated": 0.0,
+      "passed": true,
+      "need": "accuracy >= 0.7 and truncated <= 0.15 on 20 examples"
+    },
+    "full_relay_sender_only": {
+      "name": "full_relay_sender_only",
+      "question": "Can B obtain the answer through A's uncompressed cache?",
+      "accuracy": 0.95,
+      "truncated": 0.05,
+      "chance": 0.25,
+      "passed": true,
+      "need": "sender-only full-relay accuracy >= 0.45 (above chance 0.25) and truncated <= 0.15",
+      "note": "This is the finding that matters before comparing compressors."
+    },
+    "matched_mismatch": {
+      "name": "matched_mismatch",
+      "question": "Does changing the transmitted inventory move B toward the alternative assignment?",
+      "true_cache_accuracy": 0.95,
+      "true_cache_follow_donor": 0.0,
+      "alt_cache_accuracy": 0.0,
+      "alt_cache_follow_donor": 0.85,
+      "passed": true,
+      "need": "with full relay working: alt-cache follow_donor > true-cache follow_donor and alt-cache accuracy < true-cache accuracy",
+      "blocked_by_full_relay": false
+    },
+    "filler_sensitivity": {
+      "name": "filler_sensitivity",
+      "question": "Does adding filler change performance or the compression penalty?",
+      "acc_full_filler": 0.95,
+      "acc_full_no_filler": 1.0,
+      "delta_full": -0.050000000000000044,
+      "compression_penalty_filler": 0.44999999999999996,
+      "compression_penalty_no_filler": 0.35,
+      "passed": true,
+      "need": "all four full/headwise \u00d7 filler/no-filler cells finished; report deltas, do not treat a small delta as a compressor ranking"
+    },
+    "compression_health": {
+      "name": "compression_health",
+      "question": "Are OBF outputs finite, its sensitive math FP32, and peak memory acceptable?",
+      "hobf_fp32_source": {
+        "ok": true,
+        "path": "/kaggle/working/latent-relay-audit/third_party/When-Less-Latent-Leads-to-Better-Relay/compression_methods/HOBFFast.py",
+        "markers_found": {
+          "X = v[b, h].index_select(dim=0, index=kept_abs).to(torch.float32)": true,
+          "Y = v[b, h].index_select(dim=0, index=disc_abs).to(torch.float32)": true,
+          "torch.linalg.qr": true,
+          "patch.to(dtype=new_v.dtype)": true
+        }
+      },
+      "any_nonfinite": false,
+      "peak_gpu_gb_max": 10.819823265075684,
+      "mean_hobf_compression_time_s": 0.5991777300834655,
+      "mean_hobf_compression_core_s": 0.5989164352416992,
+      "mean_hobf_receiver_latency_s": 0.775197434425354,
+      "timing_note": "compression_time_s is the compress() wall; compression_core_s is the operator; receiver_latency_s is B's decode. Do not call the decode gap 'OBF time'.",
+      "passed": true,
+      "need": "finite caches, HOBFFast QR/SVD/injection in FP32, peak GPU < 15.0 GB"
+    }
+  }
+}

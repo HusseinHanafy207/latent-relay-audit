@@ -1,0 +1,141 @@
+{
+  "accuracy": {
+    "full_sender_only_filler": {
+      "n": 20,
+      "correct": 19,
+      "accuracy": 0.95,
+      "truncated": 0.05,
+      "mean_relay_mb": 56.01796875,
+      "mean_probe_time_s": 0.0,
+      "mean_compression_time_s": 3.3521652221679686e-05,
+      "peak_gpu_gb_max": 10.819823265075684
+    },
+    "headwise_sender_only_filler": {
+      "n": 20,
+      "correct": 10,
+      "accuracy": 0.5,
+      "truncated": 0.0,
+      "mean_relay_mb": 10.6875,
+      "mean_probe_time_s": 0.0,
+      "mean_compression_time_s": 0.1301441788673401,
+      "peak_gpu_gb_max": 10.819823265075684
+    },
+    "question_match_sender_only_filler": {
+      "n": 20,
+      "correct": 19,
+      "accuracy": 0.95,
+      "truncated": 0.0,
+      "mean_relay_mb": 10.6875,
+      "mean_probe_time_s": 0.0,
+      "mean_compression_time_s": 0.15544809103012086,
+      "peak_gpu_gb_max": 10.819823265075684
+    },
+    "receiver_probe_sender_only_filler": {
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1.0,
+      "truncated": 0.0,
+      "mean_relay_mb": 10.6875,
+      "mean_probe_time_s": 0.10030975341796874,
+      "mean_compression_time_s": 0.06854528188705444,
+      "peak_gpu_gb_max": 10.819823265075684
+    },
+    "oracle_evidence_sender_only_filler": {
+      "n": 20,
+      "correct": 19,
+      "accuracy": 0.95,
+      "truncated": 0.0,
+      "mean_relay_mb": 10.6875,
+      "mean_probe_time_s": 0.0,
+      "mean_compression_time_s": 0.15379176139831544,
+      "peak_gpu_gb_max": 10.819823265075684
+    }
+  },
+  "paired": {
+    "question_match_vs_headwise": {
+      "n": 20,
+      "acc_a": 0.5,
+      "acc_b": 0.95,
+      "delta_b_minus_a": 0.44999999999999996,
+      "b_fixes": 10,
+      "b_hurts": 1,
+      "both_ok": 9,
+      "both_bad": 0
+    },
+    "probe_vs_headwise": {
+      "n": 20,
+      "acc_a": 0.5,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.5,
+      "b_fixes": 10,
+      "b_hurts": 0,
+      "both_ok": 10,
+      "both_bad": 0
+    },
+    "question_match_vs_oracle": {
+      "n": 20,
+      "acc_a": 0.95,
+      "acc_b": 0.95,
+      "delta_b_minus_a": 0.0,
+      "b_fixes": 0,
+      "b_hurts": 0,
+      "both_ok": 19,
+      "both_bad": 1
+    },
+    "probe_vs_oracle": {
+      "n": 20,
+      "acc_a": 0.95,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.050000000000000044,
+      "b_fixes": 1,
+      "b_hurts": 0,
+      "both_ok": 19,
+      "both_bad": 0
+    },
+    "probe_vs_question_match": {
+      "n": 20,
+      "acc_a": 0.95,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.050000000000000044,
+      "b_fixes": 1,
+      "b_hurts": 0,
+      "both_ok": 19,
+      "both_bad": 0
+    },
+    "oracle_vs_full": {
+      "n": 20,
+      "acc_a": 0.95,
+      "acc_b": 0.95,
+      "delta_b_minus_a": 0.0,
+      "b_fixes": 0,
+      "b_hurts": 0,
+      "both_ok": 19,
+      "both_bad": 1
+    }
+  },
+  "retention": {
+    "headwise_sender_only_filler": {
+      "frac_kept_both": 0.0001736111111111111,
+      "frac_kept_line": 0.0
+    },
+    "question_match_sender_only_filler": {
+      "frac_kept_both": 1.0,
+      "frac_kept_line": 1.0
+    },
+    "receiver_probe_sender_only_filler": {
+      "frac_kept_both": 0.0012152777777777776,
+      "frac_kept_line": 0.0
+    },
+    "oracle_evidence_sender_only_filler": {
+      "frac_kept_both": 1.0,
+      "frac_kept_line": 1.0
+    }
+  },
+  "question_match": {
+    "matched_equals_gold_rate": 1.0,
+    "note": "Exact-name matching is unusually easy on this inventory format. If it recovers oracle accuracy, a learned probe has to beat this baseline, not just headwise."
+  },
+  "lead": "Can question-name matching or a receiver-question probe obtain the evidence-line recovery at budget 32? Probe time is extra compute, not extra communication, because the probe is simulated at the sender on the full cache. Sending that cache to B first would cancel the communication saving.",
+  "n_rows": 100,
+  "n_examples_seen": 20
+}

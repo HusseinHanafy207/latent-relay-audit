@@ -1,0 +1,52 @@
+{
+  "recorded_at_utc": "2026-10-03T12:35:43.501396+00:00",
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+  "executable": "/usr/bin/python3",
+  "platform": "linux",
+  "cwd": "/kaggle/working/latent-relay-audit",
+  "repo_commit": "512626f44ca84f7a442617e89893c3fc0ee09ba7",
+  "upstream_commit_expected": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "upstream_commit_actual": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "torch": "2.11.0+cu128",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "transformers": "4.57.3",
+  "precision": {
+    "inference_dtype": "float16",
+    "alignment_dtype": "float32",
+    "compression_dtype": "float32",
+    "enable_thinking": false,
+    "device_name": "Tesla T4",
+    "device_capability": "7.5",
+    "source": "env:fp16"
+  },
+  "env": {
+    "LATENT_RELAY_INFER_DTYPE": "fp16",
+    "HF_HOME": null,
+    "TRANSFORMERS_CACHE": null
+  },
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "model_name": "Qwen/Qwen3-4B",
+  "extra": {
+    "stage": "withhold-question",
+    "split": "validate",
+    "n_examples": 20,
+    "kv_budget": 32,
+    "same_sender_cache": true,
+    "sender_sees_question": false,
+    "n_receiver_evals": 80,
+    "conditions": [
+      "full_sender_only_filler",
+      "recency_sender_only_filler",
+      "receiver_probe_sender_only_filler",
+      "generic_probe_sender_only_filler"
+    ],
+    "receiver_question": "revealed to selector and B; never shown to A",
+    "scoring": "shared extractor is primary; kind_legacy/correct_legacy keep the original first-match rule",
+    "obf": "unused",
+    "held_out_stage_c": "data/test.jsonl is not loaded",
+    "resume_completed": 0,
+    "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "model_revision_source": "pinned.json"
+  }
+}

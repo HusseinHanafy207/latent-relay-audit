@@ -1,0 +1,259 @@
+{
+  "accuracy": {
+    "full_kv": {
+      "n": 40,
+      "correct": 38,
+      "accuracy": 0.95,
+      "parse_ok": 1.0,
+      "truncated": 0.0,
+      "sender_truncated": 0.0,
+      "mean_message_bytes": 55200153.6,
+      "mean_message_mb": 52.64296875,
+      "mean_prep_time_s": 2.744329994916916,
+      "mean_selection_time_s": 0.0,
+      "mean_compression_time_s": 3.286600112915039e-05,
+      "mean_sender_generation_time_s": 0.0,
+      "mean_receiver_latency_s": 0.594465845823288,
+      "mean_process_time_s": 3.338828706741333,
+      "found_both": null
+    },
+    "probe_kv_32": {
+      "n": 40,
+      "correct": 32,
+      "accuracy": 0.8,
+      "parse_ok": 0.975,
+      "truncated": 0.0,
+      "sender_truncated": 0.0,
+      "mean_message_bytes": 11206656.0,
+      "mean_message_mb": 10.6875,
+      "mean_prep_time_s": 2.744329994916916,
+      "mean_selection_time_s": 0.10232841372489929,
+      "mean_compression_time_s": 0.07072576284408569,
+      "mean_sender_generation_time_s": 0.0,
+      "mean_receiver_latency_s": 0.5794390738010406,
+      "mean_process_time_s": 3.4968232452869414,
+      "found_both": null
+    },
+    "probe_kv_64": {
+      "n": 40,
+      "correct": 34,
+      "accuracy": 0.85,
+      "parse_ok": 1.0,
+      "truncated": 0.0,
+      "sender_truncated": 0.0,
+      "mean_message_bytes": 15925248.0,
+      "mean_message_mb": 15.1875,
+      "mean_prep_time_s": 2.744329994916916,
+      "mean_selection_time_s": 0.10232841372489929,
+      "mean_compression_time_s": 0.0717323899269104,
+      "mean_sender_generation_time_s": 0.0,
+      "mean_receiver_latency_s": 0.5842515408992768,
+      "mean_process_time_s": 3.5026423394680024,
+      "found_both": null
+    },
+    "iterative_text": {
+      "n": 40,
+      "correct": 40,
+      "accuracy": 1.0,
+      "parse_ok": 1.0,
+      "truncated": 0.0,
+      "sender_truncated": 0.0,
+      "mean_message_bytes": 84.475,
+      "mean_message_mb": 8.056163787841796e-05,
+      "mean_prep_time_s": 0.0,
+      "mean_selection_time_s": 0.0007222257999984549,
+      "mean_compression_time_s": 0.0,
+      "mean_sender_generation_time_s": 0.0,
+      "mean_receiver_latency_s": 0.5813570320606232,
+      "mean_process_time_s": 0.5820792578606216,
+      "found_both": 1.0
+    },
+    "sender_text": {
+      "n": 40,
+      "correct": 40,
+      "accuracy": 1.0,
+      "parse_ok": 1.0,
+      "truncated": 0.0,
+      "sender_truncated": 0.0,
+      "mean_message_bytes": 241.65,
+      "mean_message_mb": 0.00023045539855957032,
+      "mean_prep_time_s": 0.0,
+      "mean_selection_time_s": 0.0,
+      "mean_compression_time_s": 0.0,
+      "mean_sender_generation_time_s": 4.505898880958557,
+      "mean_receiver_latency_s": 0.6223102509975433,
+      "mean_process_time_s": 5.1282091319561,
+      "found_both": null
+    },
+    "oracle_text": {
+      "n": 40,
+      "correct": 40,
+      "accuracy": 1.0,
+      "parse_ok": 1.0,
+      "truncated": 0.0,
+      "sender_truncated": 0.0,
+      "mean_message_bytes": 84.475,
+      "mean_message_mb": 8.056163787841796e-05,
+      "mean_prep_time_s": 0.0,
+      "mean_selection_time_s": 0.0,
+      "mean_compression_time_s": 0.0,
+      "mean_sender_generation_time_s": 0.0,
+      "mean_receiver_latency_s": 0.5896798133850097,
+      "mean_process_time_s": 0.5896798133850097,
+      "found_both": null
+    }
+  },
+  "paired": {
+    "probe32_vs_full": {
+      "n": 40,
+      "acc_a": 0.95,
+      "acc_b": 0.8,
+      "delta_b_minus_a": -0.1499999999999999,
+      "b_fixes": 0,
+      "b_hurts": 6,
+      "both_ok": 32,
+      "both_bad": 2
+    },
+    "probe64_vs_full": {
+      "n": 40,
+      "acc_a": 0.95,
+      "acc_b": 0.85,
+      "delta_b_minus_a": -0.09999999999999998,
+      "b_fixes": 0,
+      "b_hurts": 4,
+      "both_ok": 34,
+      "both_bad": 2
+    },
+    "iterative_vs_full": {
+      "n": 40,
+      "acc_a": 0.95,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.050000000000000044,
+      "b_fixes": 2,
+      "b_hurts": 0,
+      "both_ok": 38,
+      "both_bad": 0
+    },
+    "sender_text_vs_full": {
+      "n": 40,
+      "acc_a": 0.95,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.050000000000000044,
+      "b_fixes": 2,
+      "b_hurts": 0,
+      "both_ok": 38,
+      "both_bad": 0
+    },
+    "oracle_vs_full": {
+      "n": 40,
+      "acc_a": 0.95,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.050000000000000044,
+      "b_fixes": 2,
+      "b_hurts": 0,
+      "both_ok": 38,
+      "both_bad": 0
+    },
+    "iterative_vs_oracle": {
+      "n": 40,
+      "acc_a": 1.0,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.0,
+      "b_fixes": 0,
+      "b_hurts": 0,
+      "both_ok": 40,
+      "both_bad": 0
+    },
+    "probe32_vs_iterative": {
+      "n": 40,
+      "acc_a": 1.0,
+      "acc_b": 0.8,
+      "delta_b_minus_a": -0.19999999999999996,
+      "b_fixes": 0,
+      "b_hurts": 8,
+      "both_ok": 32,
+      "both_bad": 0
+    },
+    "probe64_vs_iterative": {
+      "n": 40,
+      "acc_a": 1.0,
+      "acc_b": 0.85,
+      "delta_b_minus_a": -0.15000000000000002,
+      "b_fixes": 0,
+      "b_hurts": 6,
+      "both_ok": 34,
+      "both_bad": 0
+    },
+    "probe32_vs_sender_text": {
+      "n": 40,
+      "acc_a": 1.0,
+      "acc_b": 0.8,
+      "delta_b_minus_a": -0.19999999999999996,
+      "b_fixes": 0,
+      "b_hurts": 8,
+      "both_ok": 32,
+      "both_bad": 0
+    }
+  },
+  "differing_examples": {
+    "probe32_vs_full": {
+      "a_correct_b_wrong": [
+        "hop_test-000",
+        "hop_test-003",
+        "hop_test-004",
+        "hop_test-006",
+        "hop_test-012",
+        "hop_test-037"
+      ],
+      "b_correct_a_wrong": []
+    },
+    "iterative_vs_full": {
+      "a_correct_b_wrong": [],
+      "b_correct_a_wrong": [
+        "hop_test-026",
+        "hop_test-036"
+      ]
+    },
+    "iterative_vs_oracle": {
+      "a_correct_b_wrong": [],
+      "b_correct_a_wrong": []
+    },
+    "probe32_vs_iterative": {
+      "a_correct_b_wrong": [
+        "hop_test-000",
+        "hop_test-003",
+        "hop_test-004",
+        "hop_test-006",
+        "hop_test-012",
+        "hop_test-026",
+        "hop_test-036",
+        "hop_test-037"
+      ],
+      "b_correct_a_wrong": []
+    },
+    "sender_text_vs_full": {
+      "a_correct_b_wrong": [],
+      "b_correct_a_wrong": [
+        "hop_test-026",
+        "hop_test-036"
+      ]
+    }
+  },
+  "checklist": {
+    "oracle_text_accuracy": 1.0,
+    "full_relay_accuracy": 0.95,
+    "iterative_found_both": 1.0,
+    "no_message_accuracy": null,
+    "b_can_solve_from_two_sentences": 1.0,
+    "without_a_message_b_is_not_reliable": true,
+    "notes": [],
+    "split": "hop_test",
+    "not_held_out": false,
+    "filler": false
+  },
+  "peak_gpu_gb_max_over_run": 10.806450366973877,
+  "peak_gpu_note": "Peak GPU memory is reset once per example, before that example's conditions. Do not compare per-row peaks across methods.",
+  "lead": "Frozen hop_test evaluation, 40 examples, no filler, no no-message control. Report paired differences; do not declare a winner from one or two extra correct answers.",
+  "n_rows": 240,
+  "n_examples_seen": 40
+}

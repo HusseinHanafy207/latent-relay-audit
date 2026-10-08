@@ -1,0 +1,141 @@
+{
+  "accuracy": {
+    "matched_sentence_text": {
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1.0,
+      "truncated": 0.0,
+      "mean_message_bytes": 32.0,
+      "mean_message_mb": 3.0517578125e-05,
+      "mean_process_time_s": 0.5968596628971283,
+      "peak_gpu_gb_max": 7.603090286254883,
+      "accuracy_legacy": 1.0,
+      "mean_match_time_s": 3.384864999702586e-05,
+      "mean_receiver_latency_s": 0.5968258142471313,
+      "source": "this_run"
+    }
+  },
+  "paired": {
+    "text_vs_full": {
+      "n": 20,
+      "acc_a": 0.95,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.050000000000000044,
+      "b_fixes": 1,
+      "b_hurts": 0,
+      "both_ok": 19,
+      "both_bad": 0
+    },
+    "text_vs_match_kv": {
+      "n": 20,
+      "acc_a": 0.95,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.050000000000000044,
+      "b_fixes": 1,
+      "b_hurts": 0,
+      "both_ok": 19,
+      "both_bad": 0
+    },
+    "text_vs_probe_kv": {
+      "n": 20,
+      "acc_a": 1.0,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.0,
+      "b_fixes": 0,
+      "b_hurts": 0,
+      "both_ok": 20,
+      "both_bad": 0
+    }
+  },
+  "paired_shared": {
+    "text_vs_full": {
+      "n": 20,
+      "acc_a": 0.95,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.050000000000000044,
+      "b_fixes": 1,
+      "b_hurts": 0,
+      "both_ok": 19,
+      "both_bad": 0
+    },
+    "text_vs_match_kv": {
+      "n": 20,
+      "acc_a": 0.95,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.050000000000000044,
+      "b_fixes": 1,
+      "b_hurts": 0,
+      "both_ok": 19,
+      "both_bad": 0
+    },
+    "text_vs_probe_kv": {
+      "n": 20,
+      "acc_a": 1.0,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.0,
+      "b_fixes": 0,
+      "b_hurts": 0,
+      "both_ok": 20,
+      "both_bad": 0
+    }
+  },
+  "comparison": {
+    "full_sender_only_filler": {
+      "n": 20,
+      "correct": 19,
+      "accuracy": 0.95,
+      "truncated": 0.05,
+      "mean_message_bytes": 58739097.6,
+      "mean_message_mb": 56.01796875,
+      "mean_process_time_s": 3.6506658792495728,
+      "peak_gpu_gb_max": 10.819823265075684,
+      "accuracy_original": 0.95,
+      "correct_original": 19,
+      "source": "results_stage_practical"
+    },
+    "question_match_sender_only_filler": {
+      "n": 20,
+      "correct": 19,
+      "accuracy": 0.95,
+      "truncated": 0.0,
+      "mean_message_bytes": 11206656.0,
+      "mean_message_mb": 10.6875,
+      "mean_process_time_s": 3.6155649065971374,
+      "peak_gpu_gb_max": 10.819823265075684,
+      "accuracy_original": 0.95,
+      "correct_original": 19,
+      "source": "results_stage_practical"
+    },
+    "receiver_probe_sender_only_filler": {
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1.0,
+      "truncated": 0.0,
+      "mean_message_bytes": 11206656.0,
+      "mean_message_mb": 10.6875,
+      "mean_process_time_s": 3.642810332775116,
+      "peak_gpu_gb_max": 10.819823265075684,
+      "accuracy_original": 1.0,
+      "correct_original": 20,
+      "source": "results_stage_practical"
+    },
+    "matched_sentence_text": {
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1.0,
+      "truncated": 0.0,
+      "mean_message_bytes": 32.0,
+      "mean_message_mb": 3.0517578125e-05,
+      "mean_process_time_s": 0.5968596628971283,
+      "peak_gpu_gb_max": 7.603090286254883,
+      "accuracy_legacy": 1.0,
+      "mean_match_time_s": 3.384864999702586e-05,
+      "mean_receiver_latency_s": 0.5968258142471313,
+      "source": "this_run"
+    }
+  },
+  "lead": "Development check, not held-out evidence. If the retrieved sentence matches KV accuracy, B does not need latent states for this one-record task. Message bytes are UTF-8 of the sentence vs relay_bytes of the cache. KV timings are from the existing practical run (same T4 class, not the same session).",
+  "question": "For this simple inventory lookup, is the matched sentence as text enough for B, or does B need the latent KV message?",
+  "n_rows": 20,
+  "n_examples_seen": 20
+}

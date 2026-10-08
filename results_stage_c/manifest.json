@@ -1,0 +1,48 @@
+{
+  "recorded_at_utc": "2026-10-02T21:22:10.185079+00:00",
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+  "executable": "/usr/bin/python3",
+  "platform": "linux",
+  "cwd": "/kaggle/working/latent-relay-audit",
+  "repo_commit": "512626f44ca84f7a442617e89893c3fc0ee09ba7",
+  "upstream_commit_expected": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "upstream_commit_actual": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "torch": "2.11.0+cu128",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "transformers": "4.57.3",
+  "precision": {
+    "inference_dtype": "float16",
+    "alignment_dtype": "float32",
+    "compression_dtype": "float32",
+    "enable_thinking": false,
+    "device_name": "Tesla T4",
+    "device_capability": "7.5",
+    "source": "env:fp16"
+  },
+  "env": {
+    "LATENT_RELAY_INFER_DTYPE": "fp16",
+    "HF_HOME": null,
+    "TRANSFORMERS_CACHE": null
+  },
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "model_name": "Qwen/Qwen3-4B",
+  "extra": {
+    "stage": "C",
+    "split": "test",
+    "n_examples": 80,
+    "main": "5 relays \u00d7 2 access = 800 receiver evals; inferential unit is the example",
+    "sensitivity": "predeclared sender-only no-filler for full, headwise-32, hobf-32 = 240 evals",
+    "n_main_plus_sensitivity": 1040,
+    "extra_controls": [
+      "direct_text",
+      "mismatch_full_sender_only"
+    ],
+    "filler": "main sender-only uses filler; no-filler at budget 32 is a predeclared sensitivity, not a fishing expedition",
+    "h3": "not included; no reservation rule was frozen on development",
+    "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "resume_completed": 0,
+    "max_new_tokens": 48,
+    "model_revision_source": "pinned.json"
+  }
+}

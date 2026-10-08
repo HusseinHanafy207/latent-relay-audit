@@ -1,0 +1,55 @@
+{
+  "recorded_at_utc": "2026-10-02T21:06:18.768608+00:00",
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+  "executable": "/usr/bin/python3",
+  "platform": "linux",
+  "cwd": "/kaggle/working/latent-relay-audit",
+  "repo_commit": "512626f44ca84f7a442617e89893c3fc0ee09ba7",
+  "upstream_commit_expected": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "upstream_commit_actual": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "torch": "2.11.0+cu128",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "transformers": "4.57.3",
+  "precision": {
+    "inference_dtype": "float16",
+    "alignment_dtype": "float32",
+    "compression_dtype": "float32",
+    "enable_thinking": false,
+    "device_name": "Tesla T4",
+    "device_capability": "7.5",
+    "source": "env:fp16"
+  },
+  "env": {
+    "LATENT_RELAY_INFER_DTYPE": "fp16",
+    "HF_HOME": null,
+    "TRANSFORMERS_CACHE": null
+  },
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "model_name": "Qwen/Qwen3-4B",
+  "extra": {
+    "stage": "B-extra",
+    "split": "dev",
+    "n_examples": 20,
+    "held_out_untouched": true,
+    "max_new_tokens": 48,
+    "latent_steps": 40,
+    "kv_budget": 32,
+    "sink_size": 4,
+    "pca_rank": 2,
+    "only": [
+      "hobf_sender_only_no_filler",
+      "no_relay_filler"
+    ],
+    "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "model_revision_source": "model.config._commit_hash",
+    "gold_letter_counts": {
+      "C": 8,
+      "B": 6,
+      "D": 4,
+      "A": 2
+    },
+    "majority_class_rate": 0.4,
+    "timing": "compression_time_s is compress() wall; compression_core_s is the operator; receiver_latency_s is B decode"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "error": null,
+  "peak_gpu_gb_after_load": 7.543909549713135,
+  "peak_gpu_gb_after_align": 10.598786354064941,
+  "model_param_dtype": "torch.float16",
+  "align_matrix_dtype": "torch.float32",
+  "target_norm_dtype": "torch.float32"
+}

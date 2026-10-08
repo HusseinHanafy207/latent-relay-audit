@@ -1,0 +1,167 @@
+{
+  "direct_text": {
+    "n": 20,
+    "accuracy": 1.0,
+    "follow_donor": 0.0,
+    "parse_fail": 0.0,
+    "truncated": 0.0,
+    "mean_n_new_tokens": 8.95,
+    "mean_n_output_lines": 1.0,
+    "kinds": {
+      "true": 20
+    },
+    "mean_relay_mb": 0.0,
+    "mean_compression_time_s": 0.0,
+    "mean_compression_core_s": 0.0,
+    "mean_receiver_latency_s": 0.746799623966217,
+    "any_nonfinite_cache": false,
+    "any_nonfinite_obf": false,
+    "any_leak": false,
+    "peak_gpu_gb_max": 10.819823265075684
+  },
+  "full_sender_only_filler": {
+    "n": 20,
+    "accuracy": 0.95,
+    "follow_donor": 0.0,
+    "parse_fail": 0.05,
+    "truncated": 0.05,
+    "mean_n_new_tokens": 12.05,
+    "mean_n_output_lines": 1.05,
+    "kinds": {
+      "true": 19,
+      "unparsed": 1
+    },
+    "mean_relay_mb": 56.01796875,
+    "mean_compression_time_s": 3.731250762939453e-05,
+    "mean_compression_core_s": 2.980232238769531e-07,
+    "mean_receiver_latency_s": 0.9973606705665589,
+    "any_nonfinite_cache": false,
+    "any_nonfinite_obf": false,
+    "any_leak": false,
+    "peak_gpu_gb_max": 10.819823265075684
+  },
+  "full_sender_only_no_filler": {
+    "n": 20,
+    "accuracy": 1.0,
+    "follow_donor": 0.0,
+    "parse_fail": 0.0,
+    "truncated": 0.0,
+    "mean_n_new_tokens": 8.9,
+    "mean_n_output_lines": 1.0,
+    "kinds": {
+      "true": 20
+    },
+    "mean_relay_mb": 56.01796875,
+    "mean_compression_time_s": 3.7336349487304686e-05,
+    "mean_compression_core_s": 3.5762786865234375e-07,
+    "mean_receiver_latency_s": 0.6042603611946106,
+    "any_nonfinite_cache": false,
+    "any_nonfinite_obf": false,
+    "any_leak": false,
+    "peak_gpu_gb_max": 10.819823265075684
+  },
+  "mismatch_full_sender_only": {
+    "n": 20,
+    "accuracy": 0.0,
+    "follow_donor": 0.85,
+    "parse_fail": 0.1,
+    "truncated": 0.05,
+    "mean_n_new_tokens": 12.5,
+    "mean_n_output_lines": 1.15,
+    "kinds": {
+      "donor": 17,
+      "unparsed": 2,
+      "other": 1
+    },
+    "mean_relay_mb": 56.01796875,
+    "mean_compression_time_s": 3.4928321838378906e-05,
+    "mean_compression_core_s": 3.0994415283203126e-07,
+    "mean_receiver_latency_s": 1.0003928899765016,
+    "any_nonfinite_cache": false,
+    "any_nonfinite_obf": false,
+    "any_leak": false,
+    "peak_gpu_gb_max": 10.819823265075684
+  },
+  "headwise_sender_only_filler": {
+    "n": 20,
+    "accuracy": 0.5,
+    "follow_donor": 0.15,
+    "parse_fail": 0.0,
+    "truncated": 0.0,
+    "mean_n_new_tokens": 9.45,
+    "mean_n_output_lines": 1.1,
+    "kinds": {
+      "other": 7,
+      "true": 10,
+      "donor": 3
+    },
+    "mean_relay_mb": 10.6875,
+    "mean_compression_time_s": 0.10915133953094483,
+    "mean_compression_core_s": 0.10896999835968017,
+    "mean_receiver_latency_s": 0.7862495422363281,
+    "any_nonfinite_cache": false,
+    "any_nonfinite_obf": false,
+    "any_leak": false,
+    "peak_gpu_gb_max": 10.819823265075684
+  },
+  "headwise_sender_only_no_filler": {
+    "n": 20,
+    "accuracy": 0.65,
+    "follow_donor": 0.1,
+    "parse_fail": 0.0,
+    "truncated": 0.0,
+    "mean_n_new_tokens": 8.95,
+    "mean_n_output_lines": 1.0,
+    "kinds": {
+      "donor": 2,
+      "true": 13,
+      "other": 4,
+      "true_partial": 1
+    },
+    "mean_relay_mb": 10.6875,
+    "mean_compression_time_s": 0.10153993368148803,
+    "mean_compression_core_s": 0.10136414766311645,
+    "mean_receiver_latency_s": 0.5969059944152832,
+    "any_nonfinite_cache": false,
+    "any_nonfinite_obf": false,
+    "any_leak": false,
+    "peak_gpu_gb_max": 10.819823265075684
+  },
+  "hobf_sender_only_filler": {
+    "n": 20,
+    "accuracy": 0.6,
+    "follow_donor": 0.1,
+    "parse_fail": 0.0,
+    "truncated": 0.0,
+    "mean_n_new_tokens": 9.35,
+    "mean_n_output_lines": 1.05,
+    "kinds": {
+      "other": 6,
+      "true": 12,
+      "donor": 2
+    },
+    "mean_relay_mb": 10.6875,
+    "mean_compression_time_s": 0.5991777300834655,
+    "mean_compression_core_s": 0.5989164352416992,
+    "mean_receiver_latency_s": 0.775197434425354,
+    "any_nonfinite_cache": false,
+    "any_nonfinite_obf": false,
+    "any_leak": false,
+    "peak_gpu_gb_max": 10.819823265075684
+  },
+  "filler_sensitivity_full": {
+    "acc_with_filler": 0.95,
+    "acc_without_filler": 1.0,
+    "delta": -0.050000000000000044
+  },
+  "compression_penalty_sender_only_filler": {
+    "full": 0.95,
+    "headwise": 0.5,
+    "penalty": 0.44999999999999996
+  },
+  "compression_penalty_sender_only_no_filler": {
+    "full": 1.0,
+    "headwise": 0.65,
+    "penalty": 0.35
+  }
+}

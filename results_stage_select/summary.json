@@ -1,0 +1,123 @@
+{
+  "accuracy": {
+    "full_sender_only_filler": {
+      "n": 20,
+      "correct": 19,
+      "accuracy": 0.95,
+      "truncated": 0.05,
+      "mean_relay_mb": 56.01796875,
+      "any_leak": false,
+      "peak_gpu_gb_max": 10.819823265075684
+    },
+    "headwise_sender_only_filler": {
+      "n": 20,
+      "correct": 10,
+      "accuracy": 0.5,
+      "truncated": 0.0,
+      "mean_relay_mb": 10.6875,
+      "any_leak": false,
+      "peak_gpu_gb_max": 10.819823265075684
+    },
+    "random_sender_only_filler": {
+      "n": 20,
+      "correct": 10,
+      "accuracy": 0.5,
+      "truncated": 0.0,
+      "mean_relay_mb": 10.6875,
+      "any_leak": false,
+      "peak_gpu_gb_max": 10.819823265075684
+    },
+    "evidence_line_sender_only_filler": {
+      "n": 20,
+      "correct": 19,
+      "accuracy": 0.95,
+      "truncated": 0.0,
+      "mean_relay_mb": 10.6875,
+      "any_leak": false,
+      "peak_gpu_gb_max": 10.819823265075684
+    },
+    "unrelated_line_sender_only_filler": {
+      "n": 20,
+      "correct": 3,
+      "accuracy": 0.15,
+      "truncated": 0.05,
+      "mean_relay_mb": 10.6875,
+      "any_leak": false,
+      "peak_gpu_gb_max": 10.819823265075684
+    }
+  },
+  "paired": {
+    "evidence_vs_headwise": {
+      "n": 20,
+      "acc_a": 0.5,
+      "acc_b": 0.95,
+      "delta_b_minus_a": 0.44999999999999996,
+      "b_fixes": 10,
+      "b_hurts": 1,
+      "both_ok": 9,
+      "both_bad": 0
+    },
+    "unrelated_vs_headwise": {
+      "n": 20,
+      "acc_a": 0.5,
+      "acc_b": 0.15,
+      "delta_b_minus_a": -0.35,
+      "b_fixes": 0,
+      "b_hurts": 7,
+      "both_ok": 3,
+      "both_bad": 10
+    },
+    "evidence_vs_unrelated": {
+      "n": 20,
+      "acc_a": 0.15,
+      "acc_b": 0.95,
+      "delta_b_minus_a": 0.7999999999999999,
+      "b_fixes": 16,
+      "b_hurts": 0,
+      "both_ok": 3,
+      "both_bad": 1
+    },
+    "random_vs_headwise": {
+      "n": 20,
+      "acc_a": 0.5,
+      "acc_b": 0.5,
+      "delta_b_minus_a": 0.0,
+      "b_fixes": 6,
+      "b_hurts": 6,
+      "both_ok": 4,
+      "both_bad": 4
+    },
+    "headwise_vs_full": {
+      "n": 20,
+      "acc_a": 0.95,
+      "acc_b": 0.5,
+      "delta_b_minus_a": -0.44999999999999996,
+      "b_fixes": 1,
+      "b_hurts": 10,
+      "both_ok": 9,
+      "both_bad": 0
+    }
+  },
+  "budget_slots": {
+    "mean_evidence_line_tokens": 13.8,
+    "mean_evidence_budget_tokens": 13.8,
+    "mean_unrelated_forced": 13.3,
+    "mean_k_eff": 32.0
+  },
+  "ordinary_headwise_retention": {
+    "frac_kept_package": 0.00486111111111111,
+    "frac_kept_locker": 0.011979166666666666,
+    "frac_kept_both": 0.0001736111111111111,
+    "frac_kept_line": 0.0,
+    "note": "Fraction of (layer, head) cells that kept every token of the span. Finding the tokens on some other head does not count."
+  },
+  "lead": "Diagnostic on development examples. If evidence-line retention helps and unrelated-line retention does not, there is recoverable headroom in selection. Do not say the whole problem is selection even if evidence-line hits 95%.",
+  "interpretation": {
+    "evidence_helps_unrelated_does_not": "recoverable headroom in which record is kept",
+    "both_help": "coherent spans or allocation may matter more than the specific evidence line",
+    "neither_helps": "keeping the original line is not enough; inspect how B uses the cache before another selector",
+    "random_matches_or_beats_headwise": "sender-attention ranking may be poorly suited to this task"
+  },
+  "n_rows": 100,
+  "n_examples_seen": 20
+}

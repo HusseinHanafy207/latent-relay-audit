@@ -1,0 +1,169 @@
+{
+  "accuracy": {
+    "full_sender_only_filler": {
+      "n": 20,
+      "correct": 19,
+      "accuracy": 0.95,
+      "truncated": 0.05,
+      "mean_relay_mb": 55.96875,
+      "mean_probe_time_s": 0.0,
+      "peak_gpu_gb_max": 10.820888996124268
+    },
+    "headwise_sender_only_filler": {
+      "n": 20,
+      "correct": 15,
+      "accuracy": 0.75,
+      "truncated": 0.0,
+      "mean_relay_mb": 10.6875,
+      "mean_probe_time_s": 0.0,
+      "peak_gpu_gb_max": 10.820888996124268
+    },
+    "question_match_sender_only_filler": {
+      "n": 20,
+      "correct": 19,
+      "accuracy": 0.95,
+      "truncated": 0.05,
+      "mean_relay_mb": 10.6875,
+      "mean_probe_time_s": 0.0,
+      "peak_gpu_gb_max": 10.820888996124268
+    },
+    "receiver_probe_sender_only_filler": {
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1.0,
+      "truncated": 0.0,
+      "mean_relay_mb": 10.6875,
+      "mean_probe_time_s": 0.09930415153503418,
+      "peak_gpu_gb_max": 10.820888996124268
+    },
+    "mismatch_probe_sender_only_filler": {
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1.0,
+      "truncated": 0.0,
+      "mean_relay_mb": 10.6875,
+      "mean_probe_time_s": 0.09728630781173705,
+      "peak_gpu_gb_max": 10.820888996124268
+    },
+    "generic_probe_sender_only_filler": {
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1.0,
+      "truncated": 0.0,
+      "mean_relay_mb": 10.6875,
+      "mean_probe_time_s": 0.09717292785644531,
+      "peak_gpu_gb_max": 10.820888996124268
+    },
+    "recency_sender_only_filler": {
+      "n": 20,
+      "correct": 19,
+      "accuracy": 0.95,
+      "truncated": 0.0,
+      "mean_relay_mb": 10.6875,
+      "mean_probe_time_s": 0.0,
+      "peak_gpu_gb_max": 10.820888996124268
+    }
+  },
+  "paired": {
+    "probe_vs_headwise": {
+      "n": 20,
+      "acc_a": 0.75,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.25,
+      "b_fixes": 5,
+      "b_hurts": 0,
+      "both_ok": 15,
+      "both_bad": 0
+    },
+    "question_match_vs_headwise": {
+      "n": 20,
+      "acc_a": 0.75,
+      "acc_b": 0.95,
+      "delta_b_minus_a": 0.19999999999999996,
+      "b_fixes": 4,
+      "b_hurts": 0,
+      "both_ok": 15,
+      "both_bad": 1
+    },
+    "probe_vs_mismatch": {
+      "n": 20,
+      "acc_a": 1.0,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.0,
+      "b_fixes": 0,
+      "b_hurts": 0,
+      "both_ok": 20,
+      "both_bad": 0
+    },
+    "probe_vs_generic": {
+      "n": 20,
+      "acc_a": 1.0,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.0,
+      "b_fixes": 0,
+      "b_hurts": 0,
+      "both_ok": 20,
+      "both_bad": 0
+    },
+    "probe_vs_recency": {
+      "n": 20,
+      "acc_a": 0.95,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.050000000000000044,
+      "b_fixes": 1,
+      "b_hurts": 0,
+      "both_ok": 19,
+      "both_bad": 0
+    },
+    "probe_vs_full": {
+      "n": 20,
+      "acc_a": 0.95,
+      "acc_b": 1.0,
+      "delta_b_minus_a": 0.050000000000000044,
+      "b_fixes": 1,
+      "b_hurts": 0,
+      "both_ok": 19,
+      "both_bad": 0
+    },
+    "question_match_vs_full": {
+      "n": 20,
+      "acc_a": 0.95,
+      "acc_b": 0.95,
+      "delta_b_minus_a": 0.0,
+      "b_fixes": 0,
+      "b_hurts": 0,
+      "both_ok": 19,
+      "both_bad": 1
+    }
+  },
+  "retention": {
+    "headwise_sender_only_filler": {
+      "frac_kept_both": 0.0003472222222222222,
+      "frac_kept_line": 0.0
+    },
+    "question_match_sender_only_filler": {
+      "frac_kept_both": 1.0,
+      "frac_kept_line": 1.0
+    },
+    "receiver_probe_sender_only_filler": {
+      "frac_kept_both": 0.0008680555555555556,
+      "frac_kept_line": 0.0
+    },
+    "mismatch_probe_sender_only_filler": {
+      "frac_kept_both": 0.0,
+      "frac_kept_line": 0.0
+    },
+    "generic_probe_sender_only_filler": {
+      "frac_kept_both": 0.0,
+      "frac_kept_line": 0.0
+    },
+    "recency_sender_only_filler": {
+      "frac_kept_both": 0.0,
+      "frac_kept_line": 0.0
+    }
+  },
+  "lead": "Fresh examples. If the correct-question probe holds and the mismatch probe drops, the gain depends on the asked package. If generic or recency matches the correct probe, the gain is a more general selection effect.",
+  "claim": "On 20 development examples, question-informed selectors recovered full-relay-level accuracy at roughly one-fifth of the relay size, without using answer labels. This run tests whether that recovery generalizes to fresh examples and whether it depends on the correct question.",
+  "n_rows": 140,
+  "n_examples_seen": 20
+}

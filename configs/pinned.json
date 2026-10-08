@@ -1,0 +1,240 @@
+{
+  "study": "latent-relay-audit",
+  "hardware_lock": "single Kaggle T4 for all main numbers; do not mix GPU types",
+  "upstream": {
+    "repo": "https://github.com/markli404/When-Less-Latent-Leads-to-Better-Relay",
+    "commit": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+    "note": "Post-submission release for v3. Mixed GPU types moved accuracy at the scale of their measured effects (README update notes)."
+  },
+  "model": {
+    "name": "Qwen/Qwen3-4B",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "revision_policy": "frozen from extra development run (model.config._commit_hash on Kaggle T4); use this sha for Stage C"
+  },
+  "precision": {
+    "inference": "float16 on T4 (sm < 8.0); bfloat16 only if a later replication uses Ampere+",
+    "alignment": "float32 (released ModelWrapper already builds the realignment matrix and applies it in float32)",
+    "compression": "float32 for OBF QR/SVD/Gram and residual injection (released HOBF/HOBFFast already cast values to float32, then write back in the cache dtype)",
+    "do_not": "cast the whole process, including alignment and OBF, to float16"
+  },
+  "decoding": {
+    "smoke": "greedy, temperature 0.0, top_p 1.0, generate_bs 1",
+    "inventory": "greedy one-line answers, max_new_tokens 48; document difference from the paper's T=0.6, top_p=0.95 sampling",
+    "think": false,
+    "enable_thinking": false,
+    "latent_space_realign_default": false
+  },
+  "stage_a": {
+    "task": "gsm8k",
+    "max_samples": 2,
+    "generate_bs": 1,
+    "latent_steps": 40,
+    "kv_budget": 32,
+    "sink_size": 4,
+    "pca_rank_hobf": 2,
+    "compressors": ["full", "headwise", "hobf_fast"],
+    "max_new_tokens": 256,
+    "purpose": "confirm the pipeline executes, including alignment-matrix construction and OBF; not a reproduction of paper accuracy"
+  },
+  "development_calibration": {
+    "split": "dev",
+    "n": 20,
+    "held_out_untouched": "data/test.jsonl (80 examples)",
+    "latent_steps": 40,
+    "kv_budget": 32,
+    "sink_size": 4,
+    "pca_rank_hobf": 2,
+    "max_new_tokens": 48,
+    "conditions": [
+      "direct_text",
+      "full_sender_only_filler",
+      "full_sender_only_no_filler",
+      "mismatch_full_sender_only",
+      "headwise_sender_only_filler",
+      "headwise_sender_only_no_filler",
+      "hobf_sender_only_filler",
+      "no_relay_filler",
+      "hobf_sender_only_no_filler"
+    ]
+  },
+  "main_comparison": {
+    "split": "test",
+    "n": 80,
+    "inferential_unit": "example (paired bootstrap over 80, not 800 evals)",
+    "relays": ["full", "headwise_32", "hobf_32", "headwise_64", "hobf_64"],
+    "access": ["sender_only_filler", "shared"],
+    "n_main_receiver_evals": 800,
+    "n_sensitivity_receiver_evals": 240,
+    "n_main_plus_sensitivity": 1040,
+    "sensitivity": {
+      "predeclared": true,
+      "access": "sender_only_no_filler",
+      "relays": ["full", "headwise_32", "hobf_32"],
+      "note": "held-out no-filler check because development filler changed the eviction penalty and the OBF gap"
+    },
+    "extra_controls": ["direct_text", "mismatch_full_sender_only"],
+    "latent_steps": 40,
+    "sink_size": 4,
+    "pca_rank_hobf": 2,
+    "max_new_tokens": 48,
+    "h3": "skipped; no reservation rule was frozen on development",
+    "lead": "sender-only accuracy vs actual relay size for eviction and OBF; shared panel is interpretive"
+  },
+  "evidence_selection_diagnostic": {
+    "split": "dev",
+    "n": 20,
+    "kv_budget": 32,
+    "sink_size": 4,
+    "latent_steps": 40,
+    "max_new_tokens": 48,
+    "access": "sender_only_filler",
+    "same_sender_cache": true,
+    "forced_uses_existing_budget": true,
+    "conditions": [
+      "full_sender_only_filler",
+      "headwise_sender_only_filler",
+      "random_sender_only_filler",
+      "evidence_line_sender_only_filler",
+      "unrelated_line_sender_only_filler"
+    ],
+    "n_receiver_evals": 100,
+    "note": "Diagnostic intervention on development examples. Force the complete relevant inventory line inside the existing 32-slot budget, then fill remaining slots with the original attention rule. Unrelated-line control reserves the same number of slots. Not a proposed compressor. Leave OBF unchanged. Do not generate a new held-out set until this is interpreted."
+  },
+  "practical_selection": {
+    "split": "dev",
+    "n": 20,
+    "kv_budget": 32,
+    "sink_size": 4,
+    "latent_steps": 40,
+    "max_new_tokens": 48,
+    "access": "sender_only_filler",
+    "same_sender_cache": true,
+    "n_receiver_evals": 100,
+    "conditions": [
+      "full_sender_only_filler",
+      "headwise_sender_only_filler",
+      "question_match_sender_only_filler",
+      "receiver_probe_sender_only_filler",
+      "oracle_evidence_sender_only_filler"
+    ],
+    "question": "Can we automatically obtain the accuracy recovery demonstrated by evidence-preserving selection, at the same relay budget and with little additional computation?",
+    "probe": "one forward pass of B's question and choices on A's full cache; discard new KV; rank original prompt positions. Simulated at the sender. Extra time is compute, not communication.",
+    "question_match": "parse the package name from the question and keep that complete inventory line. Does not use the gold locker or record index. This format makes exact-name matching unusually easy.",
+    "oracle": "known relevant line on the same cache; ceiling, not a method",
+    "obf": "unused"
+  },
+  "fresh_validation": {
+    "split": "validate",
+    "n": 20,
+    "seed": 2028,
+    "file": "data/validate.jsonl",
+    "kv_budget": 32,
+    "sink_size": 4,
+    "access": "sender_only_filler",
+    "same_sender_cache": true,
+    "n_receiver_evals": 140,
+    "do_not_load": "data/test.jsonl",
+    "receiver_question": "unchanged in every condition",
+    "frozen_selectors": ["question_match", "receiver_probe"],
+    "controls": ["mismatch_probe", "generic_probe", "recency"],
+    "conditions": [
+      "full_sender_only_filler",
+      "headwise_sender_only_filler",
+      "question_match_sender_only_filler",
+      "receiver_probe_sender_only_filler",
+      "mismatch_probe_sender_only_filler",
+      "generic_probe_sender_only_filler",
+      "recency_sender_only_filler"
+    ],
+    "question": "Does the development recovery generalize to fresh examples, and does it depend on probing the correct package rather than a generic or recency effect?",
+    "claim": "On 20 development examples, question-informed selectors recovered full-relay-level accuracy at roughly one-fifth of the relay size, without using answer labels. We will investigate when this recovery generalizes and which cached representations make it possible.",
+    "obf": "unused"
+  },
+  "question_withheld": {
+    "split": "validate",
+    "n": 20,
+    "file": "data/validate.jsonl",
+    "kv_budget": 32,
+    "sink_size": 4,
+    "access": "sender_only_filler",
+    "same_sender_cache": true,
+    "sender_sees_question": false,
+    "n_receiver_evals": 100,
+    "do_not_load": "data/test.jsonl",
+    "conditions": [
+      "full_sender_only_filler",
+      "recency_sender_only_filler",
+      "receiver_probe_sender_only_filler",
+      "generic_probe_sender_only_filler",
+      "question_match_sender_only_filler"
+    ],
+    "question_match": "parse the package from B's question and keep that complete inventory line; no gold locker or record index",
+    "scoring": "shared extractor is primary for every method; correct_legacy keeps the original first-match rule",
+    "question": "In the withheld-question setting, does simple record matching recover accuracy as cheaply as the correct-question probe?",
+    "obf": "unused"
+  },
+  "text_baseline": {
+    "split": "dev",
+    "n": 20,
+    "file": "data/dev.jsonl",
+    "n_receiver_evals": 20,
+    "do_not_load": "data/test.jsonl",
+    "sender_kv": false,
+    "latent_states": false,
+    "condition": "matched_sentence_text",
+    "message": "UTF-8 bytes of the matched fact sentence, e.g. Package Luma is in locker 7.",
+    "compare_to": [
+      "full_sender_only_filler",
+      "question_match_sender_only_filler",
+      "receiver_probe_sender_only_filler"
+    ],
+    "compare_from": "existing results_stage_practical on the same 20 development examples",
+    "note": "Development check, not new held-out evidence. Tests whether B needs the latent KV message for this one-record lookup.",
+    "obf": "unused"
+  },
+  "hop_two_record": {
+    "dev_split": "hop_dev",
+    "dev_n": 10,
+    "dev_file": "data/hop_dev.jsonl",
+    "dev_seed": 2030,
+    "fresh_split": "hop_test",
+    "fresh_n": 40,
+    "fresh_file": "data/hop_test.jsonl",
+    "fresh_seed": 2031,
+    "frozen": false,
+    "filler": false,
+    "n_lines": 20,
+    "n_packages": 10,
+    "sender_sees_question": false,
+    "probe_budgets": [32, 64],
+    "sender_text_max_new": 128,
+    "text_methods_use_latent_rollout": false,
+    "dev_conditions": [
+      "full_kv",
+      "probe_kv_32",
+      "probe_kv_64",
+      "iterative_text",
+      "sender_text",
+      "oracle_text",
+      "no_message"
+    ],
+    "fresh_conditions": [
+      "full_kv",
+      "probe_kv_32",
+      "probe_kv_64",
+      "iterative_text",
+      "sender_text",
+      "oracle_text"
+    ],
+    "fresh_n_receiver_evals": 240,
+    "dev_rerun_dest": "results_stage_hop_nofiller",
+    "do_not_resume": "results_stage_hop",
+    "do_not_load": "data/test.jsonl",
+    "question": "On a two-record lookup, does question-probed KV beat practical text (iterative retrieval or sender-generated summary)?",
+    "obf": "unused"
+  },
+  "dependencies_critical": {
+    "transformers": "4.57.3",
+    "reason": "upstream KV relay uses DynamicCache key_cache/value_cache; transformers 4.58+ breaks it"
+  }
+}
