@@ -1,0 +1,38 @@
+{
+  "n_unique_a_sheets": 12,
+  "all_four_direct": 4,
+  "all_four_written_ordinary": 12,
+  "all_four_written_cached": 11,
+  "all_four_latent40": 2,
+  "all_four_latent40_optional_q": 3,
+  "n_unique_missing_q_equals_latent40": 2,
+  "has_results_block_unique": 12,
+  "produced_working_unique": 12,
+  "note": "Primary sender scores still require q=. all_four_latent40_optional_q is a parsing diagnostic only. plan_extraction_missing is not disagreement. plan_truncated is separate from answer truncated.",
+  "by_difficulty_unique": {
+    "L1": {
+      "n": 4,
+      "direct": 4,
+      "written_ordinary": 4,
+      "written_cached": 3,
+      "latent40": 2,
+      "latent40_optional_q": 3
+    },
+    "L2": {
+      "n": 4,
+      "direct": 0,
+      "written_ordinary": 4,
+      "written_cached": 4,
+      "latent40": 0,
+      "latent40_optional_q": 0
+    },
+    "L3": {
+      "n": 4,
+      "direct": 0,
+      "written_ordinary": 4,
+      "written_cached": 4,
+      "latent40": 0,
+      "latent40_optional_q": 0
+    }
+  }
+}

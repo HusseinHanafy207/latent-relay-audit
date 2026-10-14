@@ -1,0 +1,817 @@
+{
+  "n_rows": 45,
+  "n_examples": 9,
+  "n_families": 3,
+  "families": [
+    "plan4_dev-fam-006",
+    "plan4_dev-fam-001",
+    "plan4_dev-fam-000"
+  ],
+  "unit_note": "Three predetermined families, one per difficulty, with three variants each. Not 45 independent scenarios. Checks whether result KV adds information beyond the first four cache positions that restore generation.",
+  "sender_unique_sheets": {
+    "n": 6,
+    "all_four_correct": 1.0,
+    "all_status_correct": 1.0,
+    "produced_working": 1.0,
+    "truncated": 0.0,
+    "mean_n_new_tokens": 452.8333333333333,
+    "mean_sender_generation_time_s": 27.564908146858215
+  },
+  "receiver": {
+    "kv": {
+      "n": 9,
+      "parse_ok": 9,
+      "think_collapse": 0,
+      "truncated": 0,
+      "plan_all_status_correct": 9,
+      "correct": 7,
+      "mean_n_kept": 1142.7777777777778,
+      "mean_n_result_kept": 0.0,
+      "mean_n_sink_kept": 0.0,
+      "mean_message_bytes": 168509440.0,
+      "mean_relay_mb": 160.703125,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "loop_eq_retokenize": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "loop_len_eq_n_kv": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "eos_counted_not_cached": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "result_spans_from_loop_ids": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      }
+    },
+    "kv_result": {
+      "n": 9,
+      "parse_ok": 0,
+      "think_collapse": 9,
+      "truncated": 9,
+      "plan_all_status_correct": 0,
+      "correct": 0,
+      "mean_n_kept": 77.44444444444444,
+      "mean_n_result_kept": 77.44444444444444,
+      "mean_n_sink_kept": 0.0,
+      "mean_message_bytes": 11419648.0,
+      "mean_relay_mb": 10.890625,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "loop_eq_retokenize": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "loop_len_eq_n_kv": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "eos_counted_not_cached": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "result_spans_from_loop_ids": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      }
+    },
+    "kv_result_sink": {
+      "n": 9,
+      "parse_ok": 9,
+      "think_collapse": 0,
+      "truncated": 0,
+      "plan_all_status_correct": 3,
+      "correct": 5,
+      "mean_n_kept": 81.44444444444444,
+      "mean_n_result_kept": 77.44444444444444,
+      "mean_n_sink_kept": 4.0,
+      "mean_message_bytes": 12009472.0,
+      "mean_relay_mb": 11.453125,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "loop_eq_retokenize": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "loop_len_eq_n_kv": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "eos_counted_not_cached": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "result_spans_from_loop_ids": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      }
+    },
+    "kv_sink": {
+      "n": 9,
+      "parse_ok": 9,
+      "think_collapse": 0,
+      "truncated": 0,
+      "plan_all_status_correct": 1,
+      "correct": 1,
+      "mean_n_kept": 4.0,
+      "mean_n_result_kept": 0.0,
+      "mean_n_sink_kept": 4.0,
+      "mean_message_bytes": 589824.0,
+      "mean_relay_mb": 0.5625,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "loop_eq_retokenize": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "loop_len_eq_n_kv": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "eos_counted_not_cached": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "result_spans_from_loop_ids": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      }
+    },
+    "text_result": {
+      "n": 9,
+      "parse_ok": 9,
+      "think_collapse": 0,
+      "truncated": 0,
+      "plan_all_status_correct": 9,
+      "correct": 8,
+      "mean_n_kept": 77.44444444444444,
+      "mean_n_result_kept": 77.44444444444444,
+      "mean_n_sink_kept": 0.0,
+      "mean_message_bytes": 310.22222222222223,
+      "mean_relay_mb": 0.00029585096571180556,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "loop_eq_retokenize": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "loop_len_eq_n_kv": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "eos_counted_not_cached": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "result_spans_from_loop_ids": {
+        "n_true": 9,
+        "n_false": 0,
+        "n_not_checked": 0
+      }
+    }
+  },
+  "by_difficulty": {
+    "L1": {
+      "receiver": {
+        "kv": {
+          "n": 3,
+          "parse_ok": 3,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 3,
+          "correct": 3,
+          "mean_n_kept": 962.0,
+          "mean_n_result_kept": 0.0,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 141852672.0,
+          "mean_relay_mb": 135.28125,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "kv_result": {
+          "n": 3,
+          "parse_ok": 0,
+          "think_collapse": 3,
+          "truncated": 3,
+          "plan_all_status_correct": 0,
+          "correct": 0,
+          "mean_n_kept": 69.33333333333333,
+          "mean_n_result_kept": 69.33333333333333,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 10223616.0,
+          "mean_relay_mb": 9.75,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "kv_result_sink": {
+          "n": 3,
+          "parse_ok": 3,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 1,
+          "correct": 1,
+          "mean_n_kept": 73.33333333333333,
+          "mean_n_result_kept": 69.33333333333333,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 10813440.0,
+          "mean_relay_mb": 10.3125,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "kv_sink": {
+          "n": 3,
+          "parse_ok": 3,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 1,
+          "correct": 1,
+          "mean_n_kept": 4.0,
+          "mean_n_result_kept": 0.0,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 589824.0,
+          "mean_relay_mb": 0.5625,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "text_result": {
+          "n": 3,
+          "parse_ok": 3,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 3,
+          "correct": 3,
+          "mean_n_kept": 69.33333333333333,
+          "mean_n_result_kept": 69.33333333333333,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 255.0,
+          "mean_relay_mb": 0.00024318695068359375,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        }
+      }
+    },
+    "L2": {
+      "receiver": {
+        "kv": {
+          "n": 3,
+          "parse_ok": 3,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 3,
+          "correct": 3,
+          "mean_n_kept": 1273.6666666666667,
+          "mean_n_result_kept": 0.0,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 187809792.0,
+          "mean_relay_mb": 179.109375,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "kv_result": {
+          "n": 3,
+          "parse_ok": 0,
+          "think_collapse": 3,
+          "truncated": 3,
+          "plan_all_status_correct": 0,
+          "correct": 0,
+          "mean_n_kept": 80.66666666666667,
+          "mean_n_result_kept": 80.66666666666667,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 11894784.0,
+          "mean_relay_mb": 11.34375,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "kv_result_sink": {
+          "n": 3,
+          "parse_ok": 3,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 2,
+          "correct": 2,
+          "mean_n_kept": 84.66666666666667,
+          "mean_n_result_kept": 80.66666666666667,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 12484608.0,
+          "mean_relay_mb": 11.90625,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "kv_sink": {
+          "n": 3,
+          "parse_ok": 3,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 0,
+          "correct": 0,
+          "mean_n_kept": 4.0,
+          "mean_n_result_kept": 0.0,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 589824.0,
+          "mean_relay_mb": 0.5625,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "text_result": {
+          "n": 3,
+          "parse_ok": 3,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 3,
+          "correct": 2,
+          "mean_n_kept": 80.66666666666667,
+          "mean_n_result_kept": 80.66666666666667,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 347.0,
+          "mean_relay_mb": 0.00033092498779296875,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        }
+      }
+    },
+    "L3": {
+      "receiver": {
+        "kv": {
+          "n": 3,
+          "parse_ok": 3,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 3,
+          "correct": 1,
+          "mean_n_kept": 1192.6666666666667,
+          "mean_n_result_kept": 0.0,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 175865856.0,
+          "mean_relay_mb": 167.71875,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "kv_result": {
+          "n": 3,
+          "parse_ok": 0,
+          "think_collapse": 3,
+          "truncated": 3,
+          "plan_all_status_correct": 0,
+          "correct": 0,
+          "mean_n_kept": 82.33333333333333,
+          "mean_n_result_kept": 82.33333333333333,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 12140544.0,
+          "mean_relay_mb": 11.578125,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "kv_result_sink": {
+          "n": 3,
+          "parse_ok": 3,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 0,
+          "correct": 2,
+          "mean_n_kept": 86.33333333333333,
+          "mean_n_result_kept": 82.33333333333333,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 12730368.0,
+          "mean_relay_mb": 12.140625,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "kv_sink": {
+          "n": 3,
+          "parse_ok": 3,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 0,
+          "correct": 0,
+          "mean_n_kept": 4.0,
+          "mean_n_result_kept": 0.0,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 589824.0,
+          "mean_relay_mb": 0.5625,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "text_result": {
+          "n": 3,
+          "parse_ok": 3,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 3,
+          "correct": 3,
+          "mean_n_kept": 82.33333333333333,
+          "mean_n_result_kept": 82.33333333333333,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 328.6666666666667,
+          "mean_relay_mb": 0.0003134409586588542,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 3,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        }
+      }
+    }
+  },
+  "paired_receiver": {
+    "result_sink_vs_sink": {
+      "n": 9,
+      "acc_a": 0.1111111111111111,
+      "acc_b": 0.5555555555555556,
+      "delta_b_minus_a": 0.4444444444444445,
+      "b_fixes": 4,
+      "b_hurts": 0,
+      "both_ok": 1,
+      "both_bad": 4
+    },
+    "result_sink_vs_result": {
+      "n": 9,
+      "acc_a": 0.0,
+      "acc_b": 0.5555555555555556,
+      "delta_b_minus_a": 0.5555555555555556,
+      "b_fixes": 5,
+      "b_hurts": 0,
+      "both_ok": 0,
+      "both_bad": 4
+    },
+    "sink_vs_result": {
+      "n": 9,
+      "acc_a": 0.0,
+      "acc_b": 0.1111111111111111,
+      "delta_b_minus_a": 0.1111111111111111,
+      "b_fixes": 1,
+      "b_hurts": 0,
+      "both_ok": 0,
+      "both_bad": 8
+    },
+    "text_vs_result_sink": {
+      "n": 9,
+      "acc_a": 0.5555555555555556,
+      "acc_b": 0.8888888888888888,
+      "delta_b_minus_a": 0.33333333333333326,
+      "b_fixes": 3,
+      "b_hurts": 0,
+      "both_ok": 5,
+      "both_bad": 1
+    },
+    "result_sink_vs_kv": {
+      "n": 9,
+      "acc_a": 0.7777777777777778,
+      "acc_b": 0.5555555555555556,
+      "delta_b_minus_a": -0.2222222222222222,
+      "b_fixes": 1,
+      "b_hurts": 3,
+      "both_ok": 4,
+      "both_bad": 1
+    }
+  },
+  "lead": "Parseability, all-four eligibility, final-answer accuracy, and payload are reported separately. kv_sink asks whether the first four positions alone restore generation without the result states. loop_eq_retokenize null means not checked, not unequal.",
+  "decision_rule": [
+    "If decode-loop ids do not match cache length, fix alignment before expanding.",
+    "If result KV plus four positions does not beat four positions alone on eligibility or final answers, the result states are not yet shown to carry the useful information.",
+    "If alignment checks pass and result+four beats four-only, expand that fixed comparison to the 90 development examples, then freeze before a new held-out evaluation."
+  ],
+  "kvdiag_reference": "Full KV 7/9, identity 7/9, result KV 0/9, result+four 5/9 with eligibility 3/9, result text 8/9. Identity gather matched tensors and answers.",
+  "b_prompt": "frozen line-by-line; KV uses the same procedure over relayed memory",
+  "peak_gpu_gb_max_over_run": 7.881341934204102
+}

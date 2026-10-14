@@ -1,0 +1,317 @@
+{
+  "n_rows": 360,
+  "n_examples": 90,
+  "n_families": 30,
+  "unit_note": "30 families with three versions each, not 90 independent scenarios. Base and B-change reuse the same A states. Keep variants together later.",
+  "sender": {
+    "a_direct": {
+      "n": 90,
+      "all_four_correct": 0.17777777777777778,
+      "all_q_correct": 0.3333333333333333,
+      "all_status_correct": 0.45555555555555555,
+      "mean_n_q_correct": 2.1666666666666665,
+      "mean_n_status_correct": 3.4,
+      "malformed": 0.0,
+      "truncated": 0.0,
+      "mean_n_new_tokens": 55.86666666666667,
+      "mean_message_bytes": 208.48888888888888,
+      "mean_encode_c0_s": 0.21085432105594212,
+      "mean_rollout_c40_s": 0.0,
+      "mean_sender_generation_time_s": 3.586823831664191,
+      "mean_process_time_s": 3.7976781527201333
+    },
+    "a_written": {
+      "n": 90,
+      "all_four_correct": 0.15555555555555556,
+      "all_q_correct": 0.3,
+      "all_status_correct": 0.5,
+      "mean_n_q_correct": 2.2666666666666666,
+      "mean_n_status_correct": 3.433333333333333,
+      "malformed": 0.0,
+      "truncated": 0.0,
+      "mean_n_new_tokens": 59.71111111111111,
+      "mean_message_bytes": 226.87777777777777,
+      "mean_encode_c0_s": 0.21085432105594212,
+      "mean_rollout_c40_s": 0.0,
+      "mean_sender_generation_time_s": 3.8293291489283243,
+      "mean_process_time_s": 4.0401834699842665
+    },
+    "a_latent40": {
+      "n": 90,
+      "all_four_correct": 0.16666666666666666,
+      "all_q_correct": 0.3,
+      "all_status_correct": 0.45555555555555555,
+      "mean_n_q_correct": 2.0555555555555554,
+      "mean_n_status_correct": 3.1555555555555554,
+      "malformed": 0.07777777777777778,
+      "truncated": 0.0,
+      "mean_n_new_tokens": 58.1,
+      "mean_message_bytes": 223.13333333333333,
+      "mean_encode_c0_s": 0.21085432105594212,
+      "mean_rollout_c40_s": 2.197031169467502,
+      "mean_sender_generation_time_s": 3.7249391767713758,
+      "mean_process_time_s": 6.132824667294821
+    }
+  },
+  "receiver_oracle": {
+    "n": 90,
+    "correct": 76,
+    "accuracy": 0.8444444444444444,
+    "follows_trap": 0.044444444444444446,
+    "parse_ok": 1.0,
+    "truncated": 0.0,
+    "feasible_affordable": 0.9555555555555556,
+    "mean_plan_time_s": 4.114201079474555,
+    "mean_n_plan_tokens": 63.91111111111111,
+    "mean_receiver_latency_s": 0.5468741469913059,
+    "mean_process_time_s": 4.661075226465861
+  },
+  "by_difficulty": {
+    "L1": {
+      "sender": {
+        "a_direct": {
+          "n": 30,
+          "all_four_correct": 0.5333333333333333,
+          "all_q_correct": 0.9666666666666667,
+          "all_status_correct": 0.5333333333333333,
+          "mean_n_q_correct": 3.966666666666667,
+          "mean_n_status_correct": 3.5,
+          "malformed": 0.0,
+          "truncated": 0.0,
+          "mean_n_new_tokens": 55.266666666666666,
+          "mean_message_bytes": 205.5,
+          "mean_encode_c0_s": 0.15112425486246744,
+          "mean_rollout_c40_s": 0.0,
+          "mean_sender_generation_time_s": 3.548735729853312,
+          "mean_process_time_s": 3.6998599847157796
+        },
+        "a_written": {
+          "n": 30,
+          "all_four_correct": 0.4666666666666667,
+          "all_q_correct": 0.8666666666666667,
+          "all_status_correct": 0.5666666666666667,
+          "mean_n_q_correct": 3.8666666666666667,
+          "mean_n_status_correct": 3.5,
+          "malformed": 0.0,
+          "truncated": 0.0,
+          "mean_n_new_tokens": 58.1,
+          "mean_message_bytes": 221.23333333333332,
+          "mean_encode_c0_s": 0.15112425486246744,
+          "mean_rollout_c40_s": 0.0,
+          "mean_sender_generation_time_s": 3.7389352798461912,
+          "mean_process_time_s": 3.890059534708659
+        },
+        "a_latent40": {
+          "n": 30,
+          "all_four_correct": 0.43333333333333335,
+          "all_q_correct": 0.8333333333333334,
+          "all_status_correct": 0.43333333333333335,
+          "mean_n_q_correct": 3.3333333333333335,
+          "mean_n_status_correct": 2.9,
+          "malformed": 0.16666666666666666,
+          "truncated": 0.0,
+          "mean_n_new_tokens": 57.1,
+          "mean_message_bytes": 218.53333333333333,
+          "mean_encode_c0_s": 0.15112425486246744,
+          "mean_rollout_c40_s": 2.176110561688741,
+          "mean_sender_generation_time_s": 3.679087233543396,
+          "mean_process_time_s": 6.006322050094605
+        }
+      },
+      "receiver_oracle": {
+        "n": 30,
+        "correct": 25,
+        "accuracy": 0.8333333333333334,
+        "follows_trap": 0.06666666666666667,
+        "parse_ok": 1.0,
+        "truncated": 0.0,
+        "feasible_affordable": 0.9333333333333333,
+        "mean_plan_time_s": 4.34946756362915,
+        "mean_n_plan_tokens": 67.8,
+        "mean_receiver_latency_s": 0.548445177078247,
+        "mean_process_time_s": 4.8979127407073975
+      }
+    },
+    "L2": {
+      "sender": {
+        "a_direct": {
+          "n": 30,
+          "all_four_correct": 0.0,
+          "all_q_correct": 0.03333333333333333,
+          "all_status_correct": 0.4,
+          "mean_n_q_correct": 1.7666666666666666,
+          "mean_n_status_correct": 3.3333333333333335,
+          "malformed": 0.0,
+          "truncated": 0.0,
+          "mean_n_new_tokens": 55.43333333333333,
+          "mean_message_bytes": 206.9,
+          "mean_encode_c0_s": 0.21757493019104004,
+          "mean_rollout_c40_s": 0.0,
+          "mean_sender_generation_time_s": 3.548578063646952,
+          "mean_process_time_s": 3.7661529938379923
+        },
+        "a_written": {
+          "n": 30,
+          "all_four_correct": 0.0,
+          "all_q_correct": 0.03333333333333333,
+          "all_status_correct": 0.4666666666666667,
+          "mean_n_q_correct": 2.0,
+          "mean_n_status_correct": 3.433333333333333,
+          "malformed": 0.0,
+          "truncated": 0.0,
+          "mean_n_new_tokens": 61.63333333333333,
+          "mean_message_bytes": 232.73333333333332,
+          "mean_encode_c0_s": 0.21757493019104004,
+          "mean_rollout_c40_s": 0.0,
+          "mean_sender_generation_time_s": 3.945456099510193,
+          "mean_process_time_s": 4.163031029701233
+        },
+        "a_latent40": {
+          "n": 30,
+          "all_four_correct": 0.06666666666666667,
+          "all_q_correct": 0.06666666666666667,
+          "all_status_correct": 0.4666666666666667,
+          "mean_n_q_correct": 1.9333333333333333,
+          "mean_n_status_correct": 3.1666666666666665,
+          "malformed": 0.06666666666666667,
+          "truncated": 0.0,
+          "mean_n_new_tokens": 57.766666666666666,
+          "mean_message_bytes": 222.23333333333332,
+          "mean_encode_c0_s": 0.21757493019104004,
+          "mean_rollout_c40_s": 2.180069994926453,
+          "mean_sender_generation_time_s": 3.696217926343282,
+          "mean_process_time_s": 6.093862851460774
+        }
+      },
+      "receiver_oracle": {
+        "n": 30,
+        "correct": 27,
+        "accuracy": 0.9,
+        "follows_trap": 0.0,
+        "parse_ok": 1.0,
+        "truncated": 0.0,
+        "feasible_affordable": 1.0,
+        "mean_plan_time_s": 4.264595532417298,
+        "mean_n_plan_tokens": 66.53333333333333,
+        "mean_receiver_latency_s": 0.5458523273468018,
+        "mean_process_time_s": 4.810447859764099
+      }
+    },
+    "L3": {
+      "sender": {
+        "a_direct": {
+          "n": 30,
+          "all_four_correct": 0.0,
+          "all_q_correct": 0.0,
+          "all_status_correct": 0.43333333333333335,
+          "mean_n_q_correct": 0.7666666666666667,
+          "mean_n_status_correct": 3.3666666666666667,
+          "malformed": 0.0,
+          "truncated": 0.0,
+          "mean_n_new_tokens": 56.9,
+          "mean_message_bytes": 213.06666666666666,
+          "mean_encode_c0_s": 0.2638637781143188,
+          "mean_rollout_c40_s": 0.0,
+          "mean_sender_generation_time_s": 3.6631577014923096,
+          "mean_process_time_s": 3.9270214796066285
+        },
+        "a_written": {
+          "n": 30,
+          "all_four_correct": 0.0,
+          "all_q_correct": 0.0,
+          "all_status_correct": 0.4666666666666667,
+          "mean_n_q_correct": 0.9333333333333333,
+          "mean_n_status_correct": 3.3666666666666667,
+          "malformed": 0.0,
+          "truncated": 0.0,
+          "mean_n_new_tokens": 59.4,
+          "mean_message_bytes": 226.66666666666666,
+          "mean_encode_c0_s": 0.2638637781143188,
+          "mean_rollout_c40_s": 0.0,
+          "mean_sender_generation_time_s": 3.8035960674285887,
+          "mean_process_time_s": 4.067459845542908
+        },
+        "a_latent40": {
+          "n": 30,
+          "all_four_correct": 0.0,
+          "all_q_correct": 0.0,
+          "all_status_correct": 0.4666666666666667,
+          "mean_n_q_correct": 0.9,
+          "mean_n_status_correct": 3.4,
+          "malformed": 0.0,
+          "truncated": 0.0,
+          "mean_n_new_tokens": 59.43333333333333,
+          "mean_message_bytes": 228.63333333333333,
+          "mean_encode_c0_s": 0.2638637781143188,
+          "mean_rollout_c40_s": 2.234912951787313,
+          "mean_sender_generation_time_s": 3.7995123704274496,
+          "mean_process_time_s": 6.2982891003290815
+        }
+      },
+      "receiver_oracle": {
+        "n": 30,
+        "correct": 24,
+        "accuracy": 0.8,
+        "follows_trap": 0.06666666666666667,
+        "parse_ok": 1.0,
+        "truncated": 0.0,
+        "feasible_affordable": 0.9333333333333333,
+        "mean_plan_time_s": 3.7285401423772178,
+        "mean_n_plan_tokens": 57.4,
+        "mean_receiver_latency_s": 0.5463249365488688,
+        "mean_process_time_s": 4.274865078926086
+      }
+    }
+  },
+  "paired_sender": {
+    "written_vs_direct": {
+      "n": 90,
+      "acc_a": 0.17777777777777778,
+      "acc_b": 0.15555555555555556,
+      "delta_b_minus_a": -0.022222222222222227,
+      "b_fixes": 2,
+      "b_hurts": 4,
+      "both_ok": 12,
+      "both_bad": 72
+    },
+    "latent40_vs_direct": {
+      "n": 90,
+      "acc_a": 0.17777777777777778,
+      "acc_b": 0.16666666666666666,
+      "delta_b_minus_a": -0.011111111111111127,
+      "b_fixes": 2,
+      "b_hurts": 3,
+      "both_ok": 13,
+      "both_bad": 72
+    },
+    "written_vs_latent40": {
+      "n": 90,
+      "acc_a": 0.16666666666666666,
+      "acc_b": 0.15555555555555556,
+      "delta_b_minus_a": -0.0111111111111111,
+      "b_fixes": 3,
+      "b_hurts": 4,
+      "both_ok": 11,
+      "both_bad": 72
+    }
+  },
+  "flip_tracking": {
+    "b_oracle": {
+      "n_families": 30,
+      "a_flip_prediction_changed": 0.9333333333333333,
+      "a_flip_prediction_unchanged": 0.06666666666666667,
+      "a_flip_matches_new_gold": 0.8666666666666667,
+      "a_flip_both_base_and_changed_correct": 0.7666666666666667,
+      "b_flip_prediction_changed": 0.7,
+      "b_flip_matches_new_gold": 0.7666666666666667,
+      "b_flip_both_base_and_changed_correct": 0.6666666666666666
+    }
+  },
+  "lead": "Four-carrier sender calibration on plan4_dev. A: no extra rollout, written calculations, and 40 latent steps, then the compact q/eligibility lines. B receives solver intermediates only (diagnostic target around 90%, not a validity proof). No compressor. No six-condition communication comparison. If latent steps do not help, keep that result.",
+  "timing_note": "A process_time_s is encode_c0 + rollout_c40 (latent mode only) + message generation. Written generation is allowed 512 tokens; compact modes 256. These are not compute-matched. Network transmission is not measured.",
+  "deferred": {
+    "six_condition": "Run only after interpreting which levels require additional computation.",
+    "compression": "After full-relay behavior on this task is interpretable."
+  },
+  "peak_gpu_gb_max_over_run": 7.682473182678223
+}

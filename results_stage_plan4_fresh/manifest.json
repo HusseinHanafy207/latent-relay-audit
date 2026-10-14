@@ -1,0 +1,95 @@
+{
+  "recorded_at_utc": "2026-10-13T10:27:55.275574+00:00",
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+  "executable": "/usr/bin/python3",
+  "platform": "linux",
+  "cwd": "/kaggle/working/latent-relay-audit",
+  "repo_commit": "ab469a3eb029ab3a2abeb9392dd05d1817d0b24f",
+  "upstream_commit_expected": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "upstream_commit_actual": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "torch": "2.11.0+cu128",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "transformers": "4.57.3",
+  "precision": {
+    "inference_dtype": "float16",
+    "alignment_dtype": "float32",
+    "compression_dtype": "float32",
+    "enable_thinking": false,
+    "device_name": "Tesla T4",
+    "device_capability": "7.5",
+    "source": "env:fp16"
+  },
+  "env": {
+    "LATENT_RELAY_INFER_DTYPE": "fp16",
+    "HF_HOME": null,
+    "TRANSFORMERS_CACHE": null
+  },
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "model_name": "Qwen/Qwen3-4B",
+  "extra": {
+    "stage": "plan4-fresh",
+    "split": "plan4_fresh",
+    "n_examples": 90,
+    "n_families": 30,
+    "n_evals": 540,
+    "conditions": [
+      "text",
+      "text_full",
+      "kv",
+      "probe_256",
+      "no_message",
+      "mismatch"
+    ],
+    "core": [
+      "text",
+      "text_full",
+      "kv",
+      "probe_256"
+    ],
+    "controls": [
+      "no_message",
+      "mismatch"
+    ],
+    "compressor": "headwise",
+    "kv_budgets": [
+      256
+    ],
+    "sink_size": 4,
+    "budget_scope": "entire completed cache (prompt + written tokens); sink_size 4 initial positions plus kv_budget selected positions per head; no reserved latent tail (this run has no 40-step rollout)",
+    "obf": false,
+    "a_path": "ordinary written calculations on every branch; not latent-40",
+    "b_prompt": "frozen line-by-line; KV uses relayed-memory wording",
+    "probe": "capacity/eligibility/conditions request; no prices or budget",
+    "written_max_new": 768,
+    "plan_max_new": 128,
+    "reuse_a_for_b_change": true,
+    "held_out": "plan4_dev, plan_dev, plan_fresh, test.jsonl, hop_test, and plan_test are not loaded",
+    "do_not_resume": [
+      "results_stage_plan0",
+      "results_stage_plan0_corrected",
+      "results_stage_plan0_diag",
+      "results_stage_plan0_e2e",
+      "results_stage_study1",
+      "results_stage_plan4_cal",
+      "results_stage_plan4_diag",
+      "results_stage_plan4_cachecheck",
+      "results_stage_plan4_bprompt",
+      "results_stage_plan4_chain",
+      "results_stage_plan4_comm",
+      "results_stage_plan4_compress",
+      "results_stage_plan4_probe",
+      "results_stage_plan4_budget"
+    ],
+    "diagnostics_not_repeated": [
+      "probe_32",
+      "probe_64",
+      "obf_32",
+      "obf_64",
+      "dummy_token"
+    ],
+    "resume_completed": 0,
+    "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "model_revision_source": "pinned.json"
+  }
+}

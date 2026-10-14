@@ -1,0 +1,36 @@
+{
+  "n": 3,
+  "n_equal": 3,
+  "n_truncated": 0,
+  "rows": [
+    {
+      "prompt_id": "dummy",
+      "split_kind": "0.5",
+      "texts_equal": true,
+      "n_prompt_tokens": 21,
+      "split_at": 10,
+      "ordinary_truncated": false,
+      "cached_truncated": false
+    },
+    {
+      "prompt_id": "plan4_dev-fam-006-base",
+      "split_kind": "0.5",
+      "texts_equal": true,
+      "n_prompt_tokens": 491,
+      "split_at": 246,
+      "ordinary_truncated": false,
+      "cached_truncated": false
+    },
+    {
+      "prompt_id": "plan4_dev-fam-000-base",
+      "split_kind": "0.5",
+      "texts_equal": true,
+      "n_prompt_tokens": 621,
+      "split_at": 310,
+      "ordinary_truncated": false,
+      "cached_truncated": false
+    }
+  ],
+  "lead": "Identical token prefix vs full generate. Both paths used the same input tokens; no extra chat turn was inserted. A text mismatch would warrant investigation; numerical differences can also change generated output. Matching text does not mean the answers were correct, and does not validate the 40-step latent rollout, compression, or the full agent-to-agent handoff. Differing outputs in the earlier plan4_diag ordinary-versus-cached comparison used differently formatted prompts, so they were not evidence of cache corruption.",
+  "this_run": "All three prompts matched (dummy, L1 compact, L3 compact). None truncated. On fam-000-base both paths reported P q=40; gold is 10. Splitting the prompt did not introduce that mistake."
+}

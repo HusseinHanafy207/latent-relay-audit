@@ -22,6 +22,31 @@ def cache_to_cpu(past: Any) -> dict[str, Any]:
     return {"layers": layers}
 
 
+def clone_cache_blob(blob: dict[str, Any]) -> dict[str, Any]:
+    """Independent CPU copy. Generating from one clone must not change another."""
+    return {
+        "layers": [
+            (key.detach().contiguous().clone(), value.detach().contiguous().clone())
+            for key, value in blob.get("layers", [])
+        ]
+    }
+
+
+def n_kv_positions(blob: dict[str, Any]) -> int:
+    layers = blob.get("layers") or []
+    if not layers:
+        return 0
+    return int(layers[0][0].shape[-2])
+
+
+def kv_blob_size_bytes(blob: dict[str, Any]) -> int:
+    total = 0
+    for key, value in blob.get("layers") or []:
+        total += key.numel() * key.element_size()
+        total += value.numel() * value.element_size()
+    return total
+
+
 def cache_to_device(blob: dict[str, Any], device: torch.device):
     from transformers import DynamicCache
 

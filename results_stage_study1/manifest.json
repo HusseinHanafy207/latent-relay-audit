@@ -1,0 +1,77 @@
+{
+  "recorded_at_utc": "2026-10-11T16:52:52.495475+00:00",
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+  "executable": "/usr/bin/python3",
+  "platform": "linux",
+  "cwd": "/kaggle/working/latent-relay-audit",
+  "repo_commit": "ab469a3eb029ab3a2abeb9392dd05d1817d0b24f",
+  "upstream_commit_expected": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "upstream_commit_actual": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "torch": "2.11.0+cu128",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "transformers": "4.57.3",
+  "precision": {
+    "inference_dtype": "float16",
+    "alignment_dtype": "float32",
+    "compression_dtype": "float32",
+    "enable_thinking": false,
+    "device_name": "Tesla T4",
+    "device_capability": "7.5",
+    "source": "env:fp16"
+  },
+  "env": {
+    "LATENT_RELAY_INFER_DTYPE": "fp16",
+    "HF_HOME": null,
+    "TRANSFORMERS_CACHE": null
+  },
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "model_name": "Qwen/Qwen3-4B",
+  "extra": {
+    "stage": "study1-plan_dev",
+    "split": "plan_dev",
+    "n_examples": 36,
+    "n_families": 12,
+    "n_examples_in_file": 36,
+    "n_receiver_evals": 288,
+    "conditions": [
+      "text_c0",
+      "text_c40",
+      "kv_c0",
+      "kv_c40",
+      "source_evidence",
+      "no_message",
+      "mismatch_text_c40",
+      "mismatch_kv_c40"
+    ],
+    "core_conditions": [
+      "text_c0",
+      "text_c40",
+      "kv_c0",
+      "kv_c40"
+    ],
+    "compressor": "none",
+    "compression_time_s": 0,
+    "latent_steps_c0": 0,
+    "latent_steps_c40": 40,
+    "sender_text_max_new": 256,
+    "plan_max_new": 128,
+    "matched_text_handoff": true,
+    "source_evidence": "A-generated from C0; not hop retriever",
+    "b_procedure": "reason-then-answer, frozen after Study 0 diagnostic",
+    "held_out": "data/test.jsonl, hop_test, plan_fresh, and plan_test are not loaded",
+    "do_not_resume": [
+      "results_stage_plan0",
+      "results_stage_plan0_corrected",
+      "results_stage_plan0_diag",
+      "results_stage_plan0_e2e"
+    ],
+    "deferred": [
+      "compressed KV relay",
+      "length-control diagnostics"
+    ],
+    "resume_completed": 0,
+    "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "model_revision_source": "pinned.json"
+  }
+}

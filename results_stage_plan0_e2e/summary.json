@@ -1,0 +1,260 @@
+{
+  "n_rows": 54,
+  "n_examples": 18,
+  "n_families": 6,
+  "unit_note": "6 fresh families with three versions each, not 18 independent scenarios.",
+  "a_status": {
+    "n": 18,
+    "all_three_correct": 18,
+    "mean_n_status_correct": 3.0,
+    "copied_old_template": 0.2222222222222222,
+    "incorrect_old_template_copy": 0.0,
+    "truncated": 0.0
+  },
+  "accuracy": {
+    "collab_reason": {
+      "n": 18,
+      "correct": 16,
+      "accuracy": 0.8888888888888888,
+      "follows_trap": 0.1111111111111111,
+      "parse_ok": 1.0,
+      "truncated": 0.0,
+      "sender_truncated": 0.0,
+      "feasible_affordable": 0.8888888888888888,
+      "mean_message_bytes": 198.33333333333334,
+      "mean_sender_generation_time_s": 2.5350049866570368,
+      "mean_plan_time_s": 3.5831764141718545,
+      "mean_n_plan_tokens": 56.333333333333336,
+      "mean_receiver_latency_s": 0.5019992192586263,
+      "mean_process_time_s": 6.620180620087518
+    },
+    "mismatch_reason": {
+      "n": 18,
+      "correct": 7,
+      "accuracy": 0.3888888888888889,
+      "follows_trap": 0.6111111111111112,
+      "parse_ok": 1.0,
+      "truncated": 0.0,
+      "sender_truncated": 0.0,
+      "feasible_affordable": 0.3888888888888889,
+      "mean_message_bytes": 201.0,
+      "mean_sender_generation_time_s": 2.4621116717656455,
+      "mean_plan_time_s": 3.4575403134028115,
+      "mean_n_plan_tokens": 54.388888888888886,
+      "mean_receiver_latency_s": 0.5020201073752509,
+      "mean_process_time_s": 6.421672092543708
+    }
+  },
+  "by_variant": {
+    "base": {
+      "collab_reason": {
+        "n": 6,
+        "correct": 5,
+        "accuracy": 0.8333333333333334,
+        "follows_trap": 0.16666666666666666,
+        "parse_ok": 1.0,
+        "truncated": 0.0,
+        "sender_truncated": 0.0,
+        "feasible_affordable": 0.8333333333333334,
+        "mean_message_bytes": 201.0,
+        "mean_sender_generation_time_s": 2.4621116717656455,
+        "mean_plan_time_s": 3.6779728730519614,
+        "mean_n_plan_tokens": 58.0,
+        "mean_receiver_latency_s": 0.5014629364013672,
+        "mean_process_time_s": 6.641547481218974
+      },
+      "mismatch_reason": {
+        "n": 6,
+        "correct": 0,
+        "accuracy": 0.0,
+        "follows_trap": 1.0,
+        "parse_ok": 1.0,
+        "truncated": 0.0,
+        "sender_truncated": 0.0,
+        "feasible_affordable": 0.0,
+        "mean_message_bytes": 201.0,
+        "mean_sender_generation_time_s": 2.4621116717656455,
+        "mean_plan_time_s": 3.442704200744629,
+        "mean_n_plan_tokens": 54.166666666666664,
+        "mean_receiver_latency_s": 0.5001163085301717,
+        "mean_process_time_s": 6.404932181040446
+      }
+    },
+    "a_flip": {
+      "collab_reason": {
+        "n": 6,
+        "correct": 6,
+        "accuracy": 1.0,
+        "follows_trap": 0.0,
+        "parse_ok": 1.0,
+        "truncated": 0.0,
+        "sender_truncated": 0.0,
+        "feasible_affordable": 1.0,
+        "mean_message_bytes": 193.0,
+        "mean_sender_generation_time_s": 2.673795541127523,
+        "mean_plan_time_s": 3.1776159207026162,
+        "mean_n_plan_tokens": 50.166666666666664,
+        "mean_receiver_latency_s": 0.4942980607350667,
+        "mean_process_time_s": 6.345709522565206
+      },
+      "mismatch_reason": {
+        "n": 6,
+        "correct": 6,
+        "accuracy": 1.0,
+        "follows_trap": 0.0,
+        "parse_ok": 1.0,
+        "truncated": 0.0,
+        "sender_truncated": 0.0,
+        "feasible_affordable": 1.0,
+        "mean_message_bytes": 201.0,
+        "mean_sender_generation_time_s": 2.4621116717656455,
+        "mean_plan_time_s": 3.4267941315968833,
+        "mean_n_plan_tokens": 54.166666666666664,
+        "mean_receiver_latency_s": 0.5062826871871948,
+        "mean_process_time_s": 6.395188490549724
+      }
+    },
+    "b_flip": {
+      "collab_reason": {
+        "n": 6,
+        "correct": 5,
+        "accuracy": 0.8333333333333334,
+        "follows_trap": 0.16666666666666666,
+        "parse_ok": 1.0,
+        "truncated": 0.0,
+        "sender_truncated": 0.0,
+        "feasible_affordable": 0.8333333333333334,
+        "mean_message_bytes": 201.0,
+        "mean_sender_generation_time_s": 2.469107747077942,
+        "mean_plan_time_s": 3.8939404487609863,
+        "mean_n_plan_tokens": 60.833333333333336,
+        "mean_receiver_latency_s": 0.510236660639445,
+        "mean_process_time_s": 6.8732848564783735
+      },
+      "mismatch_reason": {
+        "n": 6,
+        "correct": 1,
+        "accuracy": 0.16666666666666666,
+        "follows_trap": 0.8333333333333334,
+        "parse_ok": 1.0,
+        "truncated": 0.0,
+        "sender_truncated": 0.0,
+        "feasible_affordable": 0.16666666666666666,
+        "mean_message_bytes": 201.0,
+        "mean_sender_generation_time_s": 2.4621116717656455,
+        "mean_plan_time_s": 3.503122607866923,
+        "mean_n_plan_tokens": 54.833333333333336,
+        "mean_receiver_latency_s": 0.49966132640838623,
+        "mean_process_time_s": 6.464895606040955
+      }
+    }
+  },
+  "by_difficulty": {
+    "easy": {
+      "collab_reason": {
+        "n": 9,
+        "correct": 9,
+        "accuracy": 1.0,
+        "follows_trap": 0.0,
+        "parse_ok": 1.0,
+        "truncated": 0.0,
+        "sender_truncated": 0.0,
+        "feasible_affordable": 1.0,
+        "mean_message_bytes": 153.55555555555554,
+        "mean_sender_generation_time_s": 2.287447929382324,
+        "mean_plan_time_s": 3.463804086049398,
+        "mean_n_plan_tokens": 54.888888888888886,
+        "mean_receiver_latency_s": 0.483270804087321,
+        "mean_process_time_s": 6.234522819519043
+      },
+      "mismatch_reason": {
+        "n": 9,
+        "correct": 3,
+        "accuracy": 0.3333333333333333,
+        "follows_trap": 0.6666666666666666,
+        "parse_ok": 1.0,
+        "truncated": 0.0,
+        "sender_truncated": 0.0,
+        "feasible_affordable": 0.3333333333333333,
+        "mean_message_bytes": 190.0,
+        "mean_sender_generation_time_s": 2.4477415879567466,
+        "mean_plan_time_s": 3.48073763317532,
+        "mean_n_plan_tokens": 55.0,
+        "mean_receiver_latency_s": 0.4944535626305474,
+        "mean_process_time_s": 6.422932783762614
+      }
+    },
+    "combine": {
+      "collab_reason": {
+        "n": 9,
+        "correct": 7,
+        "accuracy": 0.7777777777777778,
+        "follows_trap": 0.2222222222222222,
+        "parse_ok": 1.0,
+        "truncated": 0.0,
+        "sender_truncated": 0.0,
+        "feasible_affordable": 0.7777777777777778,
+        "mean_message_bytes": 243.11111111111111,
+        "mean_sender_generation_time_s": 2.7825620439317493,
+        "mean_plan_time_s": 3.7025487422943115,
+        "mean_n_plan_tokens": 57.77777777777778,
+        "mean_receiver_latency_s": 0.5207276344299316,
+        "mean_process_time_s": 7.0058384206559925
+      },
+      "mismatch_reason": {
+        "n": 9,
+        "correct": 4,
+        "accuracy": 0.4444444444444444,
+        "follows_trap": 0.5555555555555556,
+        "parse_ok": 1.0,
+        "truncated": 0.0,
+        "sender_truncated": 0.0,
+        "feasible_affordable": 0.4444444444444444,
+        "mean_message_bytes": 212.0,
+        "mean_sender_generation_time_s": 2.4764817555745444,
+        "mean_plan_time_s": 3.4343429936303034,
+        "mean_n_plan_tokens": 53.77777777777778,
+        "mean_receiver_latency_s": 0.5095866521199545,
+        "mean_process_time_s": 6.420411401324802
+      }
+    }
+  },
+  "paired": {
+    "collab_reason_vs_mismatch_reason": {
+      "n": 18,
+      "acc_a": 0.3888888888888889,
+      "acc_b": 0.8888888888888888,
+      "delta_b_minus_a": 0.49999999999999994,
+      "b_fixes": 10,
+      "b_hurts": 1,
+      "both_ok": 6,
+      "both_bad": 1
+    }
+  },
+  "flip_tracking": {
+    "collab_reason": {
+      "n_families": 6,
+      "a_flip_prediction_changed": 0.8333333333333334,
+      "a_flip_prediction_unchanged": 0.16666666666666666,
+      "a_flip_matches_new_gold": 1.0,
+      "a_flip_both_base_and_changed_correct": 0.8333333333333334,
+      "b_flip_prediction_changed": 0.8333333333333334,
+      "b_flip_matches_new_gold": 0.8333333333333334,
+      "b_flip_both_base_and_changed_correct": 0.8333333333333334
+    },
+    "mismatch_reason": {
+      "n_families": 6,
+      "a_flip_prediction_changed": 0.0,
+      "a_flip_prediction_unchanged": 1.0,
+      "a_flip_matches_new_gold": 1.0,
+      "a_flip_both_base_and_changed_correct": 0.0,
+      "b_flip_prediction_changed": 0.16666666666666666,
+      "b_flip_matches_new_gold": 0.16666666666666666,
+      "b_flip_both_base_and_changed_correct": 0.0
+    }
+  },
+  "timing_note": "B uses the frozen reason-then-answer procedure on A's generated compact message. Timings include that planning pass. This is not b_extra_compute and not an oracle message.",
+  "lead": "Study 0 end-to-end on plan_fresh. Frozen prompts. A's actual message to B with reason-then-answer, plus a mismatched-message control. Not Study 1. Not held-out confirmation. Do not drop individual failures. Do not retune prompts for a single error.",
+  "a_flip_note": "On a_flip the gold carrier becomes B's cheapest-under-budget option. Read prediction_changed, not a_flip accuracy alone.",
+  "peak_gpu_gb_max_over_run": 7.678211688995361
+}
