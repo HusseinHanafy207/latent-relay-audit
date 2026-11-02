@@ -1,0 +1,64 @@
+{
+  "recorded_at_utc": "2026-10-24T11:01:52.921647+00:00",
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+  "executable": "/usr/bin/python3",
+  "platform": "linux",
+  "cwd": "/kaggle/working/latent-relay-audit",
+  "repo_commit": "68549a7839dd6e36faae80f8ae8cc8bacee5151f",
+  "upstream_commit_expected": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "upstream_commit_actual": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "torch": "2.11.0+cu128",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "transformers": "4.57.3",
+  "precision": {
+    "inference_dtype": "float16",
+    "alignment_dtype": "float32",
+    "compression_dtype": "float32",
+    "enable_thinking": false,
+    "device_name": "Tesla T4",
+    "device_capability": "7.5",
+    "source": "env:fp16"
+  },
+  "env": {
+    "LATENT_RELAY_INFER_DTYPE": "fp16",
+    "HF_HOME": null,
+    "TRANSFORMERS_CACHE": null
+  },
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "model_name": "Qwen/Qwen3-4B",
+  "extra": {
+    "stage": "plan4-boundary",
+    "split": "plan4_dev",
+    "do_not_resume": [
+      "results_stage_plan4_recon",
+      "results_stage_plan4_iface",
+      "results_stage_plan4_support",
+      "results_stage_plan4_hold",
+      "results_stage_plan4_stable",
+      "results_stage_plan4_fresh"
+    ],
+    "do_not_load": [
+      "data/plan4_hold.jsonl",
+      "data/plan4_fresh.jsonl"
+    ],
+    "baseline": "cons_instr_sink",
+    "layouts": [
+      "current",
+      "sep",
+      "close",
+      "both"
+    ],
+    "framing_change": "Use the preceding carrier results together with the shipment information below.",
+    "sink_initial": 4,
+    "payload_note": "KV byte counts are constructed-cache size at B. If reconstruction happens at B, the sender could transmit token IDs instead. Do not treat those bytes as the required transmitted payload. Timings still combine shared sender work and replay.",
+    "phase": "transfer",
+    "conditions": [
+      "current",
+      "sep",
+      "close",
+      "both"
+    ],
+    "transfer_layout": "sep"
+  }
+}

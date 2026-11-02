@@ -6,7 +6,7 @@ import sys
 import time
 from contextlib import contextmanager
 from dataclasses import dataclass
-from typing import Any, Iterator, Optional
+from typing import Any, Iterator, Optional, Sequence
 
 import torch
 
@@ -97,6 +97,52 @@ def _align_written_ids(tokenizer, *, prompt_ids: torch.Tensor, written_text: str
     return _retokenize_written_ids(
         tokenizer, prompt_ids=prompt_ids, written_text=written_text, n_kv=n_kv
     )
+
+
+@contextmanager
+def _time_model_prefill_decode(model) -> Iterator[dict[str, float | int]]:
+    """Split the first generate_text_batch forward (prompt prefill) from later decode steps."""
+    times: dict[str, float | int] = {
+        "prefill_s": 0.0,
+        "decode_s": 0.0,
+        "n_prefill_tokens": 0,
+        "n_decode_steps": 0,
+        "n_forwards": 0,
+    }
+    orig = model.forward
+    had_instance = "forward" in getattr(model, "__dict__", {})
+
+    def hooked(*args, **kwargs):
+        ids = kwargs.get("input_ids")
+        if ids is None and args:
+            maybe = args[0]
+            if torch.is_tensor(maybe) and maybe.dtype in (torch.int32, torch.int64, torch.long):
+                ids = maybe
+        n_tok = int(ids.size(-1)) if ids is not None and torch.is_tensor(ids) else 0
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+        t0 = time.time()
+        out = orig(*args, **kwargs)
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+        dt = time.time() - t0
+        if int(times["n_forwards"]) == 0:
+            times["prefill_s"] = float(times["prefill_s"]) + dt
+            times["n_prefill_tokens"] = n_tok
+        else:
+            times["decode_s"] = float(times["decode_s"]) + dt
+            times["n_decode_steps"] = int(times["n_decode_steps"]) + 1
+        times["n_forwards"] = int(times["n_forwards"]) + 1
+        return out
+
+    model.forward = hooked
+    try:
+        yield times
+    finally:
+        if had_instance:
+            model.forward = orig
+        elif "forward" in getattr(model, "__dict__", {}):
+            del model.forward
 
 
 @contextmanager
@@ -803,6 +849,93 @@ class TwoAgentInventory:
             torch.cuda.empty_cache()
         return texts[0], n_new, truncated, latency
 
+    def generate_from_cache_split(
+        self, sender: SenderBundle, prompt: str, *, max_new_tokens: int
+    ) -> dict[str, Any]:
+        """Same generation as generate_from_cache, with prompt prefill timed separately from decode."""
+        t_enc = time.time()
+        _rendered, input_ids, attention_mask = self._encode(prompt)
+        encode_s = time.time() - t_enc
+        past = cache_to_device(clone_cache_blob(sender.cache_cpu), self.device)
+        past_mask = sender.past_mask_cpu.to(self.device)
+        pos_cursor = sender.pos_cursor_cpu.to(self.device)
+        expected = n_kv_positions(sender.cache_cpu)
+        if past_mask.size(1) != expected:
+            past_mask = torch.ones((1, expected), dtype=torch.long, device=self.device)
+        with _time_model_prefill_decode(self.wrapper.model) as timed:
+            if torch.cuda.is_available():
+                torch.cuda.synchronize()
+            t0 = time.time()
+            texts, _past_out, _pos, gen_lens = self.wrapper.generate_text_batch(
+                input_ids,
+                attention_mask,
+                pos_cursor=pos_cursor,
+                max_new_tokens=max_new_tokens,
+                temperature=0.0,
+                top_p=1.0,
+                past_key_values=past,
+                past_attention_mask=past_mask,
+            )
+            if torch.cuda.is_available():
+                torch.cuda.synchronize()
+            total_s = time.time() - t0
+        n_new = int(gen_lens[0]) if gen_lens else 0
+        truncated = n_new >= max_new_tokens
+        del past, past_mask, input_ids, attention_mask
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+        return {
+            "text": texts[0],
+            "n_new": n_new,
+            "truncated": truncated,
+            "encode_s": float(encode_s),
+            "prefill_s": float(timed["prefill_s"]),
+            "decode_s": float(timed["decode_s"]),
+            "total_s": float(total_s),
+            "n_prefill_tokens": int(timed["n_prefill_tokens"]),
+            "n_decode_steps": int(timed["n_decode_steps"]),
+        }
+
+    def generate_text_message_split(self, prompt: str, *, max_new_tokens: int) -> dict[str, Any]:
+        """Same generation as generate_text_message, with prompt prefill timed separately from decode."""
+        t_enc = time.time()
+        _rendered, input_ids, attention_mask = self._encode(prompt)
+        encode_s = time.time() - t_enc
+        pos_cursor = torch.zeros((1,), device=self.device, dtype=torch.long)
+        with _time_model_prefill_decode(self.wrapper.model) as timed:
+            if torch.cuda.is_available():
+                torch.cuda.synchronize()
+            t0 = time.time()
+            texts, _past_out, _pos, gen_lens = self.wrapper.generate_text_batch(
+                input_ids,
+                attention_mask,
+                pos_cursor=pos_cursor,
+                max_new_tokens=max_new_tokens,
+                temperature=0.0,
+                top_p=1.0,
+                past_key_values=None,
+                past_attention_mask=None,
+            )
+            if torch.cuda.is_available():
+                torch.cuda.synchronize()
+            total_s = time.time() - t0
+        n_new = int(gen_lens[0]) if gen_lens else 0
+        truncated = n_new >= max_new_tokens
+        del input_ids, attention_mask
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+        return {
+            "text": texts[0],
+            "n_new": n_new,
+            "truncated": truncated,
+            "encode_s": float(encode_s),
+            "prefill_s": float(timed["prefill_s"]),
+            "decode_s": float(timed["decode_s"]),
+            "total_s": float(total_s),
+            "n_prefill_tokens": int(timed["n_prefill_tokens"]),
+            "n_decode_steps": int(timed["n_decode_steps"]),
+        }
+
     def last_query_attentions(self, sender: SenderBundle) -> tuple[list[list[torch.Tensor]], float]:
         """One dummy-token forward on a clone of `sender`. Keep last-query attention over existing keys."""
         working = cache_to_device(clone_cache_blob(sender.cache_cpu), self.device)
@@ -968,11 +1101,22 @@ class TwoAgentInventory:
         return bundle, wall, float(core_time) if core_time is not None else wall, info
 
     def keep_shared_positions(
-        self, sender: SenderBundle, positions: list[int]
+        self,
+        sender: SenderBundle,
+        positions: list[int],
+        *,
+        layout: str = "original",
     ) -> tuple[SenderBundle, float, dict[str, Any]]:
-        """Keep one shared position set on every head. Does not mutate `sender`."""
+        """Keep one shared position set on every head. Does not mutate `sender`.
+
+        layout=original copies K/V unchanged and keeps A's original position cursor.
+        layout=consecutive packs entries at 0..n_kept-1, undoes the old rotary on
+        keys, applies the new one in FP32, and continues at n_kept. Values stay.
+        """
         from src.span_select import caches_equal, gather_cache_positions
 
+        if layout not in {"original", "consecutive"}:
+            raise ValueError(f"layout must be original or consecutive, got {layout}")
         n_full = n_kv_positions(sender.cache_cpu)
         ordered = sorted({int(p) for p in positions if 0 <= int(p) < n_full})
         if not ordered:
@@ -981,26 +1125,51 @@ class TwoAgentInventory:
             torch.cuda.synchronize()
         t0 = time.time()
         gathered = gather_cache_positions(sender.cache_cpu, ordered)
+        n_kept = len(ordered)
+        assigned = list(ordered)
+        orig_cursor = int(sender.pos_cursor_cpu.detach().cpu().view(-1)[0].item())
+        if layout == "consecutive":
+            from src.rope_rerotate import rerotate_cache_keys
+
+            assigned = list(range(n_kept))
+            gathered = rerotate_cache_keys(
+                gathered,
+                old_positions=ordered,
+                new_positions=assigned,
+                model=self.wrapper.model,
+            )
+            pos_cursor = n_kept
+            pos_cursor_cpu = torch.tensor([pos_cursor], dtype=torch.long)
+        else:
+            pos_cursor = orig_cursor
+            pos_cursor_cpu = sender.pos_cursor_cpu.detach().contiguous().clone()
         if torch.cuda.is_available():
             torch.cuda.synchronize()
         wall = time.time() - t0
-        n_kept = len(ordered)
-        pos_cursor = int(sender.pos_cursor_cpu.detach().cpu().view(-1)[0].item())
         identity = ordered == list(range(n_full))
+        selected_ids = None
+        if sender.full_ids_cpu is not None:
+            ids = sender.full_ids_cpu.detach().cpu().long().view(-1)
+            selected_ids = [int(ids[p]) for p in ordered]
         info = {
             "n_full": n_full,
             "n_kept": n_kept,
             "shared_across_heads": True,
+            "layout": layout,
             "positions": ordered,
+            "assigned_positions": assigned,
             "pos_cursor": pos_cursor,
+            "original_pos_cursor": orig_cursor,
             "past_mask_len": n_kept,
             "pos_cursor_eq_n_full": pos_cursor == n_full,
+            "pos_cursor_eq_n_kept": pos_cursor == n_kept,
             "identity_gather": identity,
-            "gathered_equals_source": caches_equal(sender.cache_cpu, gathered) if identity else None,
+            "gathered_equals_source": caches_equal(sender.cache_cpu, gathered) if identity and layout == "original" else None,
             "cache_finite": all(
                 bool(torch.isfinite(key).all().item()) and bool(torch.isfinite(value).all().item())
                 for key, value in gathered["layers"]
             ),
+            "selected_token_ids": selected_ids,
         }
         bundle = SenderBundle(
             source=sender.source,
@@ -1008,7 +1177,7 @@ class TwoAgentInventory:
             rendered=sender.rendered,
             input_ids_cpu=sender.input_ids_cpu,
             prompt_mask_cpu=sender.prompt_mask_cpu,
-            pos_cursor_cpu=sender.pos_cursor_cpu.detach().contiguous().clone(),
+            pos_cursor_cpu=pos_cursor_cpu,
             past_mask_cpu=torch.ones((1, n_kept), dtype=torch.long),
             cache_cpu=gathered,
             attentions_cpu=[],
@@ -1023,6 +1192,762 @@ class TwoAgentInventory:
             token_align=None if sender.token_align is None else dict(sender.token_align),
         )
         return bundle, wall, info
+
+    def rebuild_cache_from_ids(
+        self,
+        token_ids: Sequence[int],
+        *,
+        prompt: str,
+        n_prompt: int,
+        pos_cursor: int,
+        source: str = "rebuild",
+        token_align: Optional[dict[str, Any]] = None,
+        sender_latency_s: float = 0.0,
+    ) -> tuple[SenderBundle, float]:
+        """Prefill the exact recorded token IDs. Does not generate a new answer."""
+        ids_list = [int(t) for t in token_ids]
+        if not ids_list:
+            raise RuntimeError("Cannot rebuild an empty token sequence.")
+        ids = torch.tensor(ids_list, dtype=torch.long, device=self.device).view(1, -1)
+        mask = torch.ones((1, ids.size(1)), dtype=torch.long, device=self.device)
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+        t0 = time.time()
+        past, last_hidden, new_pos, past_mask = self._prefill_prompt(ids, mask)
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+        elapsed = time.time() - t0
+        if past is None:
+            raise RuntimeError("Prefill reconstruction returned no KV cache.")
+        if not cache_is_finite(past):
+            raise RuntimeError("Reconstructed cache is not finite.")
+        cache_cpu = cache_to_cpu(past)
+        n_kv = n_kv_positions(cache_cpu)
+        if n_kv != ids.size(1):
+            raise RuntimeError(f"Reconstructed cache length {n_kv} != recorded ids {ids.size(1)}.")
+        n_prompt = int(n_prompt)
+        if n_prompt <= 0 or n_prompt > n_kv:
+            raise RuntimeError(f"n_prompt {n_prompt} is outside reconstructed length {n_kv}.")
+        align = dict(token_align or {})
+        align["rebuild"] = True
+        align["recorded_pos_cursor"] = int(pos_cursor)
+        align["prefill_pos_cursor"] = int(new_pos.detach().cpu().view(-1)[0].item())
+        bundle = SenderBundle(
+            source=source,
+            prompt=prompt,
+            rendered=prompt,
+            input_ids_cpu=ids[:, :n_prompt].detach().cpu().contiguous().clone(),
+            prompt_mask_cpu=torch.ones((1, n_prompt), dtype=torch.long),
+            pos_cursor_cpu=torch.tensor([int(pos_cursor)], dtype=torch.long),
+            past_mask_cpu=torch.ones((1, n_kv), dtype=torch.long),
+            cache_cpu=cache_cpu,
+            attentions_cpu=[],
+            latent_steps=0,
+            sender_latency_s=float(sender_latency_s),
+            full_relay_bytes=kv_blob_size_bytes(cache_cpu),
+            last_hidden_cpu=last_hidden.detach().cpu().contiguous().clone(),
+            full_ids_cpu=ids.detach().cpu().contiguous().view(-1).clone(),
+            ids_source="rebuild_prefill",
+            token_align=align,
+        )
+        del past, last_hidden, new_pos, past_mask, ids, mask
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+        return bundle, elapsed
+
+    def prefill_token_sequence(
+        self,
+        token_ids: Sequence[int],
+        *,
+        pos_cursor: int | None = None,
+        source: str = "reconstruct",
+    ) -> tuple[SenderBundle, float]:
+        """Prefill an exact token sequence as a new cache. Does not gather A's states."""
+        ids_list = [int(t) for t in token_ids]
+        if not ids_list:
+            raise RuntimeError("Cannot prefill an empty token sequence.")
+        ids = torch.tensor(ids_list, dtype=torch.long, device=self.device).view(1, -1)
+        mask = torch.ones((1, ids.size(1)), dtype=torch.long, device=self.device)
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+        t0 = time.time()
+        past, last_hidden, new_pos, past_mask = self._prefill_prompt(ids, mask)
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+        elapsed = time.time() - t0
+        if past is None:
+            raise RuntimeError("Compact prefill returned no KV cache.")
+        if not cache_is_finite(past):
+            raise RuntimeError("Prefill cache is not finite.")
+        cache_cpu = cache_to_cpu(past)
+        n_kv = n_kv_positions(cache_cpu)
+        if n_kv != ids.size(1):
+            raise RuntimeError(f"Prefill cache length {n_kv} != token ids {ids.size(1)}.")
+        cursor = n_kv if pos_cursor is None else int(pos_cursor)
+        bundle = SenderBundle(
+            source=source,
+            prompt="",
+            rendered="",
+            input_ids_cpu=ids.detach().cpu().contiguous().clone(),
+            prompt_mask_cpu=torch.ones((1, n_kv), dtype=torch.long),
+            pos_cursor_cpu=torch.tensor([cursor], dtype=torch.long),
+            past_mask_cpu=torch.ones((1, n_kv), dtype=torch.long),
+            cache_cpu=cache_cpu,
+            attentions_cpu=[],
+            latent_steps=0,
+            sender_latency_s=0.0,
+            full_relay_bytes=kv_blob_size_bytes(cache_cpu),
+            last_hidden_cpu=last_hidden.detach().cpu().contiguous().clone(),
+            full_ids_cpu=ids.detach().cpu().contiguous().view(-1).clone(),
+            ids_source="reconstruct_prefill",
+            token_align={"n_tokens": n_kv, "prefill_pos_cursor": int(new_pos.detach().cpu().view(-1)[0].item())},
+        )
+        del past, last_hidden, new_pos, past_mask, ids, mask
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+        return bundle, elapsed
+
+    def _bundle_from_packed(
+        self,
+        cache_cpu: dict[str, Any],
+        token_ids: Sequence[int],
+        *,
+        pos_cursor: int,
+        source: str,
+        last_hidden_cpu: Optional[torch.Tensor] = None,
+        token_align: Optional[dict[str, Any]] = None,
+    ) -> SenderBundle:
+        ids_list = [int(t) for t in token_ids]
+        n_kv = n_kv_positions(cache_cpu)
+        if n_kv != len(ids_list):
+            raise RuntimeError(f"Packed cache length {n_kv} != token ids {len(ids_list)}.")
+        ids = torch.tensor(ids_list, dtype=torch.long).view(1, -1)
+        return SenderBundle(
+            source=source,
+            prompt="",
+            rendered="",
+            input_ids_cpu=ids.contiguous().clone(),
+            prompt_mask_cpu=torch.ones((1, n_kv), dtype=torch.long),
+            pos_cursor_cpu=torch.tensor([int(pos_cursor)], dtype=torch.long),
+            past_mask_cpu=torch.ones((1, n_kv), dtype=torch.long),
+            cache_cpu=cache_cpu,
+            attentions_cpu=[],
+            latent_steps=0,
+            sender_latency_s=0.0,
+            full_relay_bytes=kv_blob_size_bytes(cache_cpu),
+            last_hidden_cpu=None if last_hidden_cpu is None else last_hidden_cpu.detach().cpu().contiguous().clone(),
+            full_ids_cpu=ids.view(-1).contiguous().clone(),
+            ids_source=source,
+            token_align=token_align,
+        )
+
+    def extend_cache_with_tokens(
+        self,
+        sender: SenderBundle,
+        token_ids: Sequence[int],
+        *,
+        source: str = "extend",
+    ) -> tuple[SenderBundle, float]:
+        """Forward added tokens on an existing packed cache. Does not gather A's states."""
+        added = [int(t) for t in token_ids]
+        if not added:
+            return self.clone_sender(sender), 0.0
+        n_past = n_kv_positions(sender.cache_cpu)
+        pos_cursor = int(sender.pos_cursor_cpu.detach().cpu().view(-1)[0].item())
+        if pos_cursor != n_past:
+            raise RuntimeError(f"Cannot extend: pos_cursor {pos_cursor} != packed length {n_past}.")
+        past = cache_to_device(clone_cache_blob(sender.cache_cpu), self.device)
+        past_mask = sender.past_mask_cpu.to(self.device)
+        if past_mask.size(1) != n_past:
+            past_mask = torch.ones((1, n_past), dtype=torch.long, device=self.device)
+        ids = torch.tensor(added, dtype=torch.long, device=self.device).view(1, -1)
+        attn = torch.ones((1, ids.size(1)), dtype=torch.long, device=self.device)
+        full_mask = torch.cat([past_mask.to(dtype=torch.long), attn], dim=-1)
+        cursor = torch.tensor([pos_cursor], device=self.device, dtype=torch.long)
+        position_ids = self.wrapper._build_position_ids(cursor, attn)
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+        t0 = time.time()
+        with torch.inference_mode():
+            out = self.wrapper.model(
+                input_ids=ids,
+                attention_mask=full_mask,
+                position_ids=position_ids,
+                past_key_values=past,
+                use_cache=True,
+                output_hidden_states=True,
+                return_dict=True,
+            )
+            new_past = out.past_key_values
+            last_hidden = out.hidden_states[-1][:, -1, :].detach()
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+        elapsed = time.time() - t0
+        if new_past is None or not cache_is_finite(new_past):
+            raise RuntimeError("Added-token forward did not return a finite cache.")
+        cache_cpu = cache_to_cpu(new_past)
+        n_kv = n_kv_positions(cache_cpu)
+        if n_kv != n_past + ids.size(1):
+            raise RuntimeError(f"Extended cache length {n_kv} != {n_past} + {ids.size(1)}.")
+        old_ids = []
+        if sender.full_ids_cpu is not None:
+            old_ids = [int(t) for t in sender.full_ids_cpu.detach().cpu().long().view(-1).tolist()]
+        bundle = self._bundle_from_packed(
+            cache_cpu,
+            old_ids + added,
+            pos_cursor=n_kv,
+            source=source,
+            last_hidden_cpu=last_hidden.detach().cpu(),
+            token_align={"n_added": len(added), "n_past": n_past},
+        )
+        del past, new_past, out, last_hidden, ids, attn, full_mask, position_ids, cursor, past_mask
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+        return bundle, elapsed
+
+    def transfer_boundary_cache(
+        self,
+        sender: SenderBundle,
+        *,
+        initial_pos: Sequence[int],
+        result_pos: Sequence[int],
+        composed: dict[str, Any],
+        source: str = "transfer",
+    ) -> tuple[SenderBundle, float, dict[str, Any]]:
+        """Gather A's entries, RoPE them onto the composed layout, and forward added tokens."""
+        from src.boundary_layout import CLOSE_KIND, SEP_KIND
+        from src.cache_utils import concat_cache_blobs
+        from src.rope_rerotate import rerotate_cache_keys
+        from src.span_select import gather_cache_positions
+
+        init_pos = [int(p) for p in initial_pos]
+        res_pos = [int(p) for p in result_pos]
+        if sender.full_ids_cpu is None:
+            raise RuntimeError("Transfer layout needs recorded token IDs.")
+        full_ids = sender.full_ids_cpu.detach().cpu().long().view(-1)
+        init_ids = [int(full_ids[p]) for p in init_pos]
+        res_ids = [int(full_ids[p]) for p in res_pos]
+        sep_ids = []
+        close_ids = []
+        for piece in composed.get("pieces") or []:
+            if piece.get("kind") == SEP_KIND:
+                sep_ids = [int(t) for t in piece["ids"]]
+            elif piece.get("kind") == CLOSE_KIND:
+                close_ids = [int(t) for t in piece["ids"]]
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+        t0 = time.time()
+        if not sep_ids:
+            packed, _wall, info = self.keep_shared_positions(
+                sender, init_pos + res_pos, layout="consecutive"
+            )
+            selected = list(info.get("selected_token_ids") or (init_ids + res_ids))
+            packed = self._bundle_from_packed(
+                packed.cache_cpu,
+                selected,
+                pos_cursor=int(info["pos_cursor"]),
+                source=source,
+            )
+            extend_s = 0.0
+            if close_ids:
+                packed, extend_s = self.extend_cache_with_tokens(packed, close_ids, source=source)
+            wall = time.time() - t0
+            got = [int(t) for t in packed.full_ids_cpu.view(-1).tolist()]
+            if got != list(composed["ids"]):
+                raise RuntimeError("Transfer layout token IDs do not match the composed sequence.")
+            info = dict(info)
+            info.update(
+                {
+                    "n_kept": n_kv_positions(packed.cache_cpu),
+                    "pos_cursor": int(packed.pos_cursor_cpu.view(-1)[0].item()),
+                    "assigned_positions": list(range(n_kv_positions(packed.cache_cpu))),
+                    "selected_token_ids": got,
+                    "n_added": len(close_ids),
+                    "extend_time_s": float(extend_s),
+                    "layout_name": composed.get("layout"),
+                    "cache_finite": all(
+                        bool(torch.isfinite(key).all().item()) and bool(torch.isfinite(value).all().item())
+                        for key, value in packed.cache_cpu["layers"]
+                    ),
+                }
+            )
+            packed.full_relay_bytes = kv_blob_size_bytes(packed.cache_cpu)
+            return packed, wall, info
+
+        init_new = list(range(len(init_pos)))
+        init_blob = gather_cache_positions(sender.cache_cpu, init_pos)
+        init_blob = rerotate_cache_keys(
+            init_blob, old_positions=init_pos, new_positions=init_new, model=self.wrapper.model
+        )
+        packed = self._bundle_from_packed(init_blob, init_ids, pos_cursor=len(init_pos), source=source)
+        packed, sep_s = self.extend_cache_with_tokens(packed, sep_ids, source=source)
+        cursor = n_kv_positions(packed.cache_cpu)
+        res_new = list(range(cursor, cursor + len(res_pos)))
+        res_blob = gather_cache_positions(sender.cache_cpu, res_pos)
+        res_blob = rerotate_cache_keys(
+            res_blob, old_positions=res_pos, new_positions=res_new, model=self.wrapper.model
+        )
+        blob = concat_cache_blobs([packed.cache_cpu, res_blob])
+        packed = self._bundle_from_packed(blob, init_ids + sep_ids + res_ids, pos_cursor=n_kv_positions(blob), source=source)
+        close_s = 0.0
+        if close_ids:
+            packed, close_s = self.extend_cache_with_tokens(packed, close_ids, source=source)
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+        wall = time.time() - t0
+        got = [int(t) for t in packed.full_ids_cpu.view(-1).tolist()]
+        if got != list(composed["ids"]):
+            raise RuntimeError("Transfer layout token IDs do not match the composed sequence.")
+        n_kept = n_kv_positions(packed.cache_cpu)
+        info = {
+            "n_full": n_kv_positions(sender.cache_cpu),
+            "n_kept": n_kept,
+            "shared_across_heads": True,
+            "layout": "consecutive",
+            "layout_name": composed.get("layout"),
+            "positions": init_pos + res_pos,
+            "assigned_positions": list(range(n_kept)),
+            "pos_cursor": int(packed.pos_cursor_cpu.view(-1)[0].item()),
+            "selected_token_ids": got,
+            "n_added": len(sep_ids) + len(close_ids),
+            "extend_time_s": float(sep_s + close_s),
+            "cache_finite": all(
+                bool(torch.isfinite(key).all().item()) and bool(torch.isfinite(value).all().item())
+                for key, value in packed.cache_cpu["layers"]
+            ),
+        }
+        packed.full_relay_bytes = kv_blob_size_bytes(packed.cache_cpu)
+        return packed, wall, info
+
+    def mix_sender_kv(
+        self,
+        key_sender: SenderBundle,
+        value_sender: SenderBundle,
+        *,
+        source: str,
+    ) -> SenderBundle:
+        """Keys from `key_sender`, values from `value_sender`. IDs, masks, and cursor must match."""
+        from src.cache_utils import mix_cache_kv
+
+        if key_sender.full_ids_cpu is None or value_sender.full_ids_cpu is None:
+            raise RuntimeError("KV mix needs recorded token IDs on both caches.")
+        key_ids = [int(t) for t in key_sender.full_ids_cpu.detach().cpu().long().view(-1).tolist()]
+        value_ids = [int(t) for t in value_sender.full_ids_cpu.detach().cpu().long().view(-1).tolist()]
+        if key_ids != value_ids:
+            raise RuntimeError("Cannot mix caches whose compact token IDs differ.")
+        key_cursor = int(key_sender.pos_cursor_cpu.detach().cpu().view(-1)[0].item())
+        value_cursor = int(value_sender.pos_cursor_cpu.detach().cpu().view(-1)[0].item())
+        if key_cursor != value_cursor:
+            raise RuntimeError("Cannot mix caches whose position cursors differ.")
+        if n_kv_positions(key_sender.cache_cpu) != n_kv_positions(value_sender.cache_cpu):
+            raise RuntimeError("Cannot mix caches whose lengths differ.")
+        mixed = mix_cache_kv(key_sender.cache_cpu, value_sender.cache_cpu)
+        return self._bundle_from_packed(
+            mixed,
+            key_ids,
+            pos_cursor=key_cursor,
+            source=source,
+            token_align={
+                "keys_from": key_sender.source,
+                "values_from": value_sender.source,
+                "n_tokens": len(key_ids),
+            },
+        )
+
+    def mix_sender_kv_at(
+        self,
+        key_sender: SenderBundle,
+        value_sender: SenderBundle,
+        *,
+        base: SenderBundle,
+        positions: Sequence[int],
+        source: str,
+    ) -> SenderBundle:
+        """Keep `base` except at `positions`, mixing keys and values from the other two caches."""
+        from src.cache_utils import mix_cache_kv_at_positions
+
+        if base.full_ids_cpu is None or key_sender.full_ids_cpu is None or value_sender.full_ids_cpu is None:
+            raise RuntimeError("Result-slot mix needs recorded token IDs.")
+        base_ids = [int(t) for t in base.full_ids_cpu.detach().cpu().long().view(-1).tolist()]
+        key_ids = [int(t) for t in key_sender.full_ids_cpu.detach().cpu().long().view(-1).tolist()]
+        value_ids = [int(t) for t in value_sender.full_ids_cpu.detach().cpu().long().view(-1).tolist()]
+        if base_ids != key_ids or base_ids != value_ids:
+            raise RuntimeError("Cannot mix caches whose compact token IDs differ.")
+        cursor = int(base.pos_cursor_cpu.detach().cpu().view(-1)[0].item())
+        if cursor != int(key_sender.pos_cursor_cpu.view(-1)[0].item()):
+            raise RuntimeError("Cannot mix caches whose position cursors differ.")
+        mixed = mix_cache_kv_at_positions(
+            key_sender.cache_cpu,
+            value_sender.cache_cpu,
+            base=base.cache_cpu,
+            positions=list(positions),
+        )
+        return self._bundle_from_packed(
+            mixed,
+            base_ids,
+            pos_cursor=cursor,
+            source=source,
+            token_align={
+                "keys_from": key_sender.source,
+                "values_from": value_sender.source,
+                "base_from": base.source,
+                "n_mix": len(list(positions)),
+            },
+        )
+
+    def prefix_bundle(self, sender: SenderBundle, n_prefix: int, *, source: str = "reconstruct_prefix") -> SenderBundle:
+        """Keep the first packed positions as-is. No RoPE change."""
+        from src.span_select import gather_cache_positions
+
+        n_prefix = int(n_prefix)
+        n_kv = n_kv_positions(sender.cache_cpu)
+        if sender.full_ids_cpu is None:
+            raise RuntimeError("Prefix split needs recorded token IDs.")
+        ids = [int(t) for t in sender.full_ids_cpu.detach().cpu().long().view(-1).tolist()]
+        if not (0 < n_prefix <= n_kv) or n_prefix > len(ids):
+            raise RuntimeError(f"Prefix length {n_prefix} is outside packed length {n_kv}.")
+        blob = gather_cache_positions(sender.cache_cpu, list(range(n_prefix)))
+        return self._bundle_from_packed(
+            blob,
+            ids[:n_prefix],
+            pos_cursor=n_prefix,
+            source=source,
+            token_align={"n_prefix": n_prefix, "from": sender.source},
+        )
+
+    def assemble_compact_cache(
+        self,
+        sender: SenderBundle,
+        composed: dict[str, Any],
+        *,
+        prefix: SenderBundle | None = None,
+        source: str = "transfer_extra",
+    ) -> tuple[SenderBundle, float, dict[str, Any]]:
+        """Walk composed pieces: keep a reconstructed prefix, gather extra/result, forward separators."""
+        from src.boundary_layout import CLOSE_KIND, EXTRA_KIND, EXTRA_SEP_KIND, SEP_KIND
+        from src.cache_utils import concat_cache_blobs
+        from src.rope_rerotate import rerotate_cache_keys
+        from src.span_select import gather_cache_positions
+
+        pieces = list(composed.get("pieces") or [])
+        if not pieces:
+            raise RuntimeError("Composed layout has no pieces.")
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+        t0 = time.time()
+        packed: SenderBundle | None = None
+        ids_acc: list[int] = []
+        cursor = 0
+        if prefix is not None:
+            if prefix.full_ids_cpu is None:
+                raise RuntimeError("Reconstructed prefix needs recorded token IDs.")
+            prefix_ids = [int(t) for t in prefix.full_ids_cpu.detach().cpu().long().view(-1).tolist()]
+            composed_prefix: list[int] = []
+            n_take = 0
+            for piece in pieces:
+                composed_prefix.extend(int(t) for t in piece["ids"])
+                n_take += 1
+                if len(composed_prefix) == len(prefix_ids):
+                    break
+                if len(composed_prefix) > len(prefix_ids):
+                    raise RuntimeError("Reconstructed prefix does not align with composed pieces.")
+            if composed_prefix != prefix_ids:
+                raise RuntimeError("Reconstructed prefix token IDs do not match the composed layout.")
+            packed = self._bundle_from_packed(
+                prefix.cache_cpu,
+                prefix_ids,
+                pos_cursor=int(prefix.pos_cursor_cpu.detach().cpu().view(-1)[0].item()),
+                source=source,
+            )
+            ids_acc = prefix_ids
+            cursor = n_kv_positions(packed.cache_cpu)
+            pieces = pieces[n_take:]
+
+        for piece in pieces:
+            kind = piece.get("kind")
+            piece_ids = [int(t) for t in piece["ids"]]
+            if kind in {SEP_KIND, EXTRA_SEP_KIND, CLOSE_KIND} or piece.get("source") == "forward":
+                if packed is None:
+                    raise RuntimeError("Cannot forward-extend without a prefix cache.")
+                packed, _ = self.extend_cache_with_tokens(packed, piece_ids, source=source)
+                ids_acc.extend(piece_ids)
+                cursor = n_kv_positions(packed.cache_cpu)
+                continue
+            src_pos = [int(p) for p in piece.get("source_pos") or []]
+            if len(src_pos) != len(piece_ids):
+                raise RuntimeError(f"Piece {kind} token IDs and source positions have different lengths.")
+            new_pos = list(range(cursor, cursor + len(src_pos)))
+            blob = gather_cache_positions(sender.cache_cpu, src_pos)
+            blob = rerotate_cache_keys(
+                blob, old_positions=src_pos, new_positions=new_pos, model=self.wrapper.model
+            )
+            if packed is None:
+                packed = self._bundle_from_packed(blob, piece_ids, pos_cursor=len(piece_ids), source=source)
+            else:
+                blob = concat_cache_blobs([packed.cache_cpu, blob])
+                packed = self._bundle_from_packed(
+                    blob, ids_acc + piece_ids, pos_cursor=n_kv_positions(blob), source=source
+                )
+            ids_acc.extend(piece_ids)
+            cursor = n_kv_positions(packed.cache_cpu)
+
+        if packed is None:
+            raise RuntimeError("Assembled compact cache is empty.")
+        got = [int(t) for t in packed.full_ids_cpu.view(-1).tolist()]
+        if got != list(composed["ids"]):
+            raise RuntimeError("Assembled compact token IDs do not match the composed sequence.")
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+        wall = time.time() - t0
+        n_kept = n_kv_positions(packed.cache_cpu)
+        packed.full_relay_bytes = kv_blob_size_bytes(packed.cache_cpu)
+        info = {
+            "n_full": n_kv_positions(sender.cache_cpu),
+            "n_kept": n_kept,
+            "shared_across_heads": True,
+            "layout": "consecutive",
+            "layout_name": composed.get("layout"),
+            "assigned_positions": list(range(n_kept)),
+            "pos_cursor": int(packed.pos_cursor_cpu.view(-1)[0].item()),
+            "selected_token_ids": got,
+            "n_added": int(composed.get("n_added") or 0),
+            "n_extra": int(composed.get("n_extra") or 0),
+            "result_start": int(composed.get("result_start") or 0),
+            "cache_finite": all(
+                bool(torch.isfinite(key).all().item()) and bool(torch.isfinite(value).all().item())
+                for key, value in packed.cache_cpu["layers"]
+            ),
+        }
+        return packed, wall, info
+
+    def concat_gathered_block(
+        self,
+        head: SenderBundle,
+        src: SenderBundle,
+        *,
+        src_pos: Sequence[int],
+        token_ids: Sequence[int],
+        source: str,
+    ) -> SenderBundle:
+        """Gather `src_pos` from `src`, RoPE them onto the end of `head`, and concatenate."""
+        from src.cache_utils import concat_cache_blobs
+        from src.rope_rerotate import rerotate_cache_keys
+        from src.span_select import gather_cache_positions
+
+        if head.full_ids_cpu is None:
+            raise RuntimeError("Gathered-block concat needs recorded head token IDs.")
+        src_pos = [int(p) for p in src_pos]
+        token_ids = [int(t) for t in token_ids]
+        if len(src_pos) != len(token_ids):
+            raise RuntimeError("Gathered-block token IDs and source positions have different lengths.")
+        if not src_pos:
+            raise RuntimeError("Gathered block is empty.")
+        head_ids = [int(t) for t in head.full_ids_cpu.detach().cpu().long().view(-1).tolist()]
+        cursor = n_kv_positions(head.cache_cpu)
+        new_pos = list(range(cursor, cursor + len(src_pos)))
+        blob = gather_cache_positions(src.cache_cpu, src_pos)
+        blob = rerotate_cache_keys(
+            blob, old_positions=src_pos, new_positions=new_pos, model=self.wrapper.model
+        )
+        packed = concat_cache_blobs([head.cache_cpu, blob])
+        ids = head_ids + token_ids
+        if n_kv_positions(packed) != len(ids):
+            raise RuntimeError("Gathered-block cache length does not match token IDs.")
+        return self._bundle_from_packed(
+            packed,
+            ids,
+            pos_cursor=len(ids),
+            source=source,
+            token_align={"n_head": cursor, "n_block": len(src_pos), "from": src.source},
+        )
+
+    def append_packed_slots(
+        self,
+        head: SenderBundle,
+        tail_src: SenderBundle,
+        *,
+        tail_positions: Sequence[int],
+        source: str,
+    ) -> SenderBundle:
+        """Append packed slots from `tail_src` onto `head` without rerotating them."""
+        from src.cache_utils import concat_cache_blobs
+        from src.span_select import gather_cache_positions
+
+        if head.full_ids_cpu is None or tail_src.full_ids_cpu is None:
+            raise RuntimeError("Packed splice needs recorded token IDs.")
+        ordered = [int(p) for p in tail_positions]
+        if not ordered or ordered != list(range(ordered[0], ordered[0] + len(ordered))):
+            raise RuntimeError("Packed tail slots must be a contiguous increasing range.")
+        n_head = n_kv_positions(head.cache_cpu)
+        if ordered[0] != n_head:
+            raise RuntimeError(f"Tail starts at packed slot {ordered[0]}, but the head has length {n_head}.")
+        head_ids = [int(t) for t in head.full_ids_cpu.detach().cpu().long().view(-1).tolist()]
+        tail_ids = [int(t) for t in tail_src.full_ids_cpu.detach().cpu().long().view(-1).tolist()]
+        if ordered[-1] >= len(tail_ids):
+            raise RuntimeError("Tail slots fall outside the source token sequence.")
+        blob = concat_cache_blobs(
+            [head.cache_cpu, gather_cache_positions(tail_src.cache_cpu, ordered)]
+        )
+        ids = head_ids + [tail_ids[p] for p in ordered]
+        if n_kv_positions(blob) != len(ids):
+            raise RuntimeError("Spliced cache length does not match token IDs.")
+        return self._bundle_from_packed(
+            blob,
+            ids,
+            pos_cursor=len(ids),
+            source=source,
+            token_align={"n_head": n_head, "n_tail": len(ordered), "from": tail_src.source},
+        )
+
+    def _continuation_logits(
+        self,
+        *,
+        past: Any,
+        past_mask: torch.Tensor,
+        pos_cursor: int,
+        cont_ids: torch.Tensor,
+    ) -> torch.Tensor:
+        """Teacher-forced logits for a fixed continuation. Does not decode."""
+        if cont_ids.dim() == 1:
+            cont_ids = cont_ids.view(1, -1)
+        cont_ids = cont_ids.to(self.device, dtype=torch.long)
+        k = int(cont_ids.size(1))
+        attn = torch.ones((1, k), dtype=torch.long, device=self.device)
+        full_mask = torch.cat([past_mask.to(dtype=torch.long), attn], dim=-1)
+        cursor = torch.tensor([int(pos_cursor)], device=self.device, dtype=torch.long)
+        position_ids = self.wrapper._build_position_ids(cursor, attn)
+        with torch.inference_mode():
+            out = self.wrapper.model(
+                input_ids=cont_ids,
+                attention_mask=full_mask,
+                position_ids=position_ids,
+                past_key_values=past,
+                use_cache=False,
+                return_dict=True,
+            )
+            logits = out.logits[0].float().cpu().contiguous()
+        del out, attn, full_mask, position_ids, cursor
+        return logits
+
+    def _uncached_tail_logits(
+        self, prefix_ids: torch.Tensor, cont_ids: torch.Tensor
+    ) -> torch.Tensor:
+        """One forward of prefix+continuation; return continuation-position logits."""
+        if prefix_ids.dim() == 1:
+            prefix_ids = prefix_ids.view(1, -1)
+        if cont_ids.dim() == 1:
+            cont_ids = cont_ids.view(1, -1)
+        ids = torch.cat([prefix_ids.to(self.device, dtype=torch.long), cont_ids.to(self.device, dtype=torch.long)], dim=1)
+        n_prefix = int(prefix_ids.size(1))
+        n_full = int(ids.size(1))
+        mask = torch.ones((1, n_full), dtype=torch.long, device=self.device)
+        cursor = torch.zeros((1,), device=self.device, dtype=torch.long)
+        position_ids = self.wrapper._build_position_ids(cursor, mask)
+        with torch.inference_mode():
+            out = self.wrapper.model(
+                input_ids=ids,
+                attention_mask=mask,
+                position_ids=position_ids,
+                past_key_values=None,
+                use_cache=False,
+                return_dict=True,
+            )
+            logits = out.logits[0, n_prefix:n_full].float().cpu().contiguous()
+        del out, ids, mask, position_ids, cursor
+        return logits
+
+    def compare_prefix_logits(
+        self,
+        token_ids: torch.Tensor,
+        *,
+        prefix_len: int,
+        continuation_len: int = 8,
+        completed_cache: dict[str, Any] | None = None,
+        original_pos_cursor: int | None = None,
+    ) -> dict[str, Any]:
+        """Cached prefix reuse vs re-encoding the same prefix IDs.
+
+        Continuation tokens are supplied to both routes. Compare logits, not
+        generated answers. The completed-cache path must continue at prefix_len,
+        not at the original full-cache cursor.
+        """
+        from src.prefix_logits import logit_delta_stats, within_numerical_baseline
+        from src.span_select import gather_cache_positions
+
+        ids = token_ids.detach().cpu().long().view(-1)
+        n = int(ids.numel())
+        cut = int(prefix_len)
+        k = int(continuation_len)
+        if cut < 1 or k < 1 or cut + k > n:
+            raise ValueError(f"Need prefix_len+continuation_len <= {n}, got {cut}+{k}")
+        prefix = ids[:cut].view(1, -1)
+        cont = ids[cut : cut + k].view(1, -1)
+        prefix_mask = torch.ones((1, cut), dtype=torch.long, device=self.device)
+
+        def _prefill_then_logits() -> torch.Tensor:
+            past, _hidden, new_pos, past_mask = self._prefill_prompt(
+                prefix.to(self.device), prefix_mask
+            )
+            cursor = int(new_pos.view(-1)[0].item())
+            if cursor != cut:
+                raise RuntimeError(f"Prefill cursor {cursor} != prefix_len {cut}")
+            logits = self._continuation_logits(
+                past=past, past_mask=past_mask, pos_cursor=cursor, cont_ids=cont
+            )
+            del past, _hidden, new_pos, past_mask
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+            return logits
+
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+        t0 = time.time()
+        reencode_a = _prefill_then_logits()
+        reencode_b = _prefill_then_logits()
+        ordinary_cached = _prefill_then_logits()
+        uncached = self._uncached_tail_logits(prefix, cont)
+        gather_logits = None
+        gather_cursor_used = cut
+        if completed_cache is not None:
+            n_full = n_kv_positions(completed_cache)
+            if cut > n_full:
+                raise ValueError(f"prefix_len {cut} exceeds completed cache {n_full}")
+            blob = gather_cache_positions(completed_cache, list(range(cut)))
+            past = cache_to_device(blob, self.device)
+            past_mask = torch.ones((1, cut), dtype=torch.long, device=self.device)
+            gather_logits = self._continuation_logits(
+                past=past, past_mask=past_mask, pos_cursor=cut, cont_ids=cont
+            )
+            del past, past_mask, blob
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+        elapsed = time.time() - t0
+        repeat = logit_delta_stats(reencode_a, reencode_b)
+        ordinary = logit_delta_stats(ordinary_cached, uncached)
+        probe = None if gather_logits is None else logit_delta_stats(gather_logits, reencode_a)
+        passed = None
+        if probe is not None:
+            passed = within_numerical_baseline(probe, repeat=repeat, ordinary=ordinary)
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+        return {
+            "n_tokens": n,
+            "prefix_len": cut,
+            "continuation_len": k,
+            "continuation_starts_at": cut,
+            "used_full_cache_cursor": False,
+            "original_pos_cursor": original_pos_cursor,
+            "gather_pos_cursor": gather_cursor_used,
+            "prefix_token_ids": prefix.view(-1).tolist(),
+            "continuation_token_ids": cont.view(-1).tolist(),
+            "repeat": repeat,
+            "ordinary_cached_vs_uncached": ordinary,
+            "completed_gather_vs_reencode": probe,
+            "passed": passed,
+            "elapsed_s": elapsed,
+        }
 
     def probe_question_attentions(self, sender: SenderBundle, ex: InventoryExample) -> tuple[list[list[torch.Tensor]], float, int]:
         """Frozen selector: B's actual question and choices. Does not generate an answer."""

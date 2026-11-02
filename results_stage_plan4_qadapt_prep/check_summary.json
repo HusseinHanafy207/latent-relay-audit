@@ -1,0 +1,4572 @@
+{
+  "n": 120,
+  "all_passed": true,
+  "templates_match_timing12": {
+    "ok": true,
+    "names_equal": true,
+    "templates": {
+      "L1": {
+        "present_in_both": true,
+        "ids_equal": true,
+        "instruction_equal": true,
+        "n_new": 40
+      },
+      "L2": {
+        "present_in_both": true,
+        "ids_equal": true,
+        "instruction_equal": true,
+        "n_new": 40
+      },
+      "L3": {
+        "present_in_both": true,
+        "ids_equal": true,
+        "instruction_equal": true,
+        "n_new": 40
+      }
+    }
+  },
+  "support_within_template": {
+    "L2": {
+      "n": 40,
+      "ids_equal": 40,
+      "bytes_equal": 2,
+      "keys_max_abs": 0.0625,
+      "values_max_abs": 0.1328125
+    },
+    "L1": {
+      "n": 40,
+      "ids_equal": 40,
+      "bytes_equal": 13,
+      "keys_max_abs": 0.25,
+      "values_max_abs": 0.109375
+    },
+    "L3": {
+      "n": 40,
+      "ids_equal": 40,
+      "bytes_equal": 11,
+      "keys_max_abs": 0.0625,
+      "values_max_abs": 0.140625
+    }
+  },
+  "support_note": "Support token IDs must be identical within a template (required). Support tensors are compared with the template's first sheet and reported only: the opening positions are re-prefilled per sheet inside sequences of different lengths, so FP16 kernels may round differently. Mismatched R is built from each sheet's own support plus the partner's R, so it does not rely on byte-identical support across sheets.",
+  "a_written": {
+    "train": {
+      "n_sheets": 96,
+      "status_correct": 1148,
+      "n_status": 1152,
+      "truncated": 0
+    },
+    "dev": {
+      "n_sheets": 24,
+      "status_correct": 287,
+      "n_status": 288,
+      "truncated": 0
+    }
+  },
+  "a_flip_changed_carrier_written_correctly": {
+    "n": 12,
+    "correct": 12
+  },
+  "rows": [
+    {
+      "a_state_key": "plan4_qadapt_train-fam-000-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.986610558000052,
+      "construction": {
+        "result_start": 70,
+        "n_result": 157,
+        "generic_r_n": 227,
+        "fresh_r_n": 227,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 227,
+      "result_start": 70,
+      "n_result": 157,
+      "support_sha256": {
+        "tk_tv": "493edca8481d91af8e62b17e3424ff3c0409f5f3ad24811f2b5fa58b84f4360c",
+        "fk_fv": "493edca8481d91af8e62b17e3424ff3c0409f5f3ad24811f2b5fa58b84f4360c"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-001-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.2065122179999435,
+      "construction": {
+        "result_start": 70,
+        "n_result": 132,
+        "generic_r_n": 202,
+        "fresh_r_n": 202,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 202,
+      "result_start": 70,
+      "n_result": 132,
+      "support_sha256": {
+        "tk_tv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70",
+        "fk_fv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1328125,
+        "keys_mean_abs": 0.00010798402571607666,
+        "values_mean_abs": 0.00014870383443760856
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-002-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.396647124000083,
+      "construction": {
+        "result_start": 70,
+        "n_result": 150,
+        "generic_r_n": 220,
+        "fresh_r_n": 220,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 220,
+      "result_start": 70,
+      "n_result": 150,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-003-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.461352244999944,
+      "construction": {
+        "result_start": 70,
+        "n_result": 160,
+        "generic_r_n": 230,
+        "fresh_r_n": 230,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 230,
+      "result_start": 70,
+      "n_result": 160,
+      "support_sha256": {
+        "tk_tv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58",
+        "fk_fv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-004-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.397421925000003,
+      "construction": {
+        "result_start": 70,
+        "n_result": 153,
+        "generic_r_n": 223,
+        "fresh_r_n": 223,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 223,
+      "result_start": 70,
+      "n_result": 153,
+      "support_sha256": {
+        "tk_tv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58",
+        "fk_fv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-005-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 4.558638164000058,
+      "construction": {
+        "result_start": 70,
+        "n_result": 129,
+        "generic_r_n": 199,
+        "fresh_r_n": 199,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 199,
+      "result_start": 70,
+      "n_result": 129,
+      "support_sha256": {
+        "tk_tv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20",
+        "fk_fv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-006-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.926697191000017,
+      "construction": {
+        "result_start": 70,
+        "n_result": 152,
+        "generic_r_n": 222,
+        "fresh_r_n": 222,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 222,
+      "result_start": 70,
+      "n_result": 152,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-007-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 4.726014634999956,
+      "construction": {
+        "result_start": 70,
+        "n_result": 132,
+        "generic_r_n": 202,
+        "fresh_r_n": 202,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 202,
+      "result_start": 70,
+      "n_result": 132,
+      "support_sha256": {
+        "tk_tv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20",
+        "fk_fv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 11,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-008-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.265854827999988,
+      "construction": {
+        "result_start": 70,
+        "n_result": 134,
+        "generic_r_n": 204,
+        "fresh_r_n": 204,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 204,
+      "result_start": 70,
+      "n_result": 134,
+      "support_sha256": {
+        "tk_tv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20",
+        "fk_fv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-009-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.196719802999951,
+      "construction": {
+        "result_start": 70,
+        "n_result": 137,
+        "generic_r_n": 207,
+        "fresh_r_n": 207,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 207,
+      "result_start": 70,
+      "n_result": 137,
+      "support_sha256": {
+        "tk_tv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20",
+        "fk_fv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-010-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.049238418999948,
+      "construction": {
+        "result_start": 70,
+        "n_result": 116,
+        "generic_r_n": 186,
+        "fresh_r_n": 186,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 186,
+      "result_start": 70,
+      "n_result": 116,
+      "support_sha256": {
+        "tk_tv": "ccf4c965d028134466be84ba43e5ee1577c8bdf53466135735fb22172ccbdf48",
+        "fk_fv": "ccf4c965d028134466be84ba43e5ee1577c8bdf53466135735fb22172ccbdf48"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0390625,
+        "values_max_abs": 0.07421875,
+        "keys_mean_abs": 0.00011286297659454349,
+        "values_mean_abs": 0.0001526592261819183
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-011-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 4.729660449999983,
+      "construction": {
+        "result_start": 70,
+        "n_result": 131,
+        "generic_r_n": 201,
+        "fresh_r_n": 201,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 201,
+      "result_start": 70,
+      "n_result": 131,
+      "support_sha256": {
+        "tk_tv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20",
+        "fk_fv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-012-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.669311859000004,
+      "construction": {
+        "result_start": 70,
+        "n_result": 132,
+        "generic_r_n": 202,
+        "fresh_r_n": 202,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 202,
+      "result_start": 70,
+      "n_result": 132,
+      "support_sha256": {
+        "tk_tv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70",
+        "fk_fv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1328125,
+        "keys_mean_abs": 0.00010798402571607666,
+        "values_mean_abs": 0.00014870383443760856
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-013-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.192086661000076,
+      "construction": {
+        "result_start": 70,
+        "n_result": 152,
+        "generic_r_n": 222,
+        "fresh_r_n": 222,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 222,
+      "result_start": 70,
+      "n_result": 152,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-014-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.175066506999997,
+      "construction": {
+        "result_start": 70,
+        "n_result": 150,
+        "generic_r_n": 220,
+        "fresh_r_n": 220,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 220,
+      "result_start": 70,
+      "n_result": 150,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-015-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.590467646999969,
+      "construction": {
+        "result_start": 70,
+        "n_result": 155,
+        "generic_r_n": 225,
+        "fresh_r_n": 225,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 225,
+      "result_start": 70,
+      "n_result": 155,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-016-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.1942827799999804,
+      "construction": {
+        "result_start": 70,
+        "n_result": 142,
+        "generic_r_n": 212,
+        "fresh_r_n": 212,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 212,
+      "result_start": 70,
+      "n_result": 142,
+      "support_sha256": {
+        "tk_tv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58",
+        "fk_fv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-017-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.023413647999973,
+      "construction": {
+        "result_start": 70,
+        "n_result": 114,
+        "generic_r_n": 184,
+        "fresh_r_n": 184,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 184,
+      "result_start": 70,
+      "n_result": 114,
+      "support_sha256": {
+        "tk_tv": "ccf4c965d028134466be84ba43e5ee1577c8bdf53466135735fb22172ccbdf48",
+        "fk_fv": "ccf4c965d028134466be84ba43e5ee1577c8bdf53466135735fb22172ccbdf48"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0390625,
+        "values_max_abs": 0.07421875,
+        "keys_mean_abs": 0.00011286297659454349,
+        "values_mean_abs": 0.0001526592261819183
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-018-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 3.9593295780000517,
+      "construction": {
+        "result_start": 70,
+        "n_result": 165,
+        "generic_r_n": 235,
+        "fresh_r_n": 235,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 235,
+      "result_start": 70,
+      "n_result": 165,
+      "support_sha256": {
+        "tk_tv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58",
+        "fk_fv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-019-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.952517343000068,
+      "construction": {
+        "result_start": 70,
+        "n_result": 151,
+        "generic_r_n": 221,
+        "fresh_r_n": 221,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 221,
+      "result_start": 70,
+      "n_result": 151,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-020-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.596368155999926,
+      "construction": {
+        "result_start": 70,
+        "n_result": 153,
+        "generic_r_n": 223,
+        "fresh_r_n": 223,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 223,
+      "result_start": 70,
+      "n_result": 153,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-021-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 5.056305885999905,
+      "construction": {
+        "result_start": 70,
+        "n_result": 241,
+        "generic_r_n": 311,
+        "fresh_r_n": 311,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 311,
+      "result_start": 70,
+      "n_result": 241,
+      "support_sha256": {
+        "tk_tv": "8fd8de4b1445e0b06e82f6a078d0952ba57a9e7ec2cb4bd79ff897211210e36d",
+        "fk_fv": "8fd8de4b1445e0b06e82f6a078d0952ba57a9e7ec2cb4bd79ff897211210e36d"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.25,
+        "values_max_abs": 0.109375,
+        "keys_mean_abs": 0.0001213205317374862,
+        "values_mean_abs": 0.0001490503482462676
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-022-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 4.85332121700003,
+      "construction": {
+        "result_start": 70,
+        "n_result": 137,
+        "generic_r_n": 207,
+        "fresh_r_n": 207,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 207,
+      "result_start": 70,
+      "n_result": 137,
+      "support_sha256": {
+        "tk_tv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20",
+        "fk_fv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-023-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.548034819999998,
+      "construction": {
+        "result_start": 70,
+        "n_result": 154,
+        "generic_r_n": 224,
+        "fresh_r_n": 224,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 224,
+      "result_start": 70,
+      "n_result": 154,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-024-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.416459212000063,
+      "construction": {
+        "result_start": 70,
+        "n_result": 157,
+        "generic_r_n": 227,
+        "fresh_r_n": 227,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 227,
+      "result_start": 70,
+      "n_result": 157,
+      "support_sha256": {
+        "tk_tv": "7b3345e55931e801e2e4d519a3cb7d211901cc170c1f214ad45130f9973376bd",
+        "fk_fv": "7b3345e55931e801e2e4d519a3cb7d211901cc170c1f214ad45130f9973376bd"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.05859375,
+        "keys_mean_abs": 6.217430862104973e-05,
+        "values_mean_abs": 9.166902222684175e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-025-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.452307437999934,
+      "construction": {
+        "result_start": 70,
+        "n_result": 135,
+        "generic_r_n": 205,
+        "fresh_r_n": 205,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 205,
+      "result_start": 70,
+      "n_result": 135,
+      "support_sha256": {
+        "tk_tv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70",
+        "fk_fv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1328125,
+        "keys_mean_abs": 0.00010798402571607666,
+        "values_mean_abs": 0.00014870383443760856
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-026-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.316002930999957,
+      "construction": {
+        "result_start": 70,
+        "n_result": 131,
+        "generic_r_n": 201,
+        "fresh_r_n": 201,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 201,
+      "result_start": 70,
+      "n_result": 131,
+      "support_sha256": {
+        "tk_tv": "8be08f25441771f3b1200406f00f4ea1a0648c3c3b6d56e26243981284158cf5",
+        "fk_fv": "8be08f25441771f3b1200406f00f4ea1a0648c3c3b6d56e26243981284158cf5"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010789602583827218,
+        "values_mean_abs": 0.00014628448712667504
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-027-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.430117820999953,
+      "construction": {
+        "result_start": 70,
+        "n_result": 133,
+        "generic_r_n": 203,
+        "fresh_r_n": 203,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 203,
+      "result_start": 70,
+      "n_result": 133,
+      "support_sha256": {
+        "tk_tv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20",
+        "fk_fv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-028-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 5.677008744000091,
+      "construction": {
+        "result_start": 70,
+        "n_result": 247,
+        "generic_r_n": 317,
+        "fresh_r_n": 317,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 317,
+      "result_start": 70,
+      "n_result": 247,
+      "support_sha256": {
+        "tk_tv": "8fd8de4b1445e0b06e82f6a078d0952ba57a9e7ec2cb4bd79ff897211210e36d",
+        "fk_fv": "8fd8de4b1445e0b06e82f6a078d0952ba57a9e7ec2cb4bd79ff897211210e36d"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.25,
+        "values_max_abs": 0.109375,
+        "keys_mean_abs": 0.0001213205317374862,
+        "values_mean_abs": 0.0001490503482462676
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-029-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.092959012000051,
+      "construction": {
+        "result_start": 70,
+        "n_result": 137,
+        "generic_r_n": 207,
+        "fresh_r_n": 207,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 207,
+      "result_start": 70,
+      "n_result": 137,
+      "support_sha256": {
+        "tk_tv": "8be08f25441771f3b1200406f00f4ea1a0648c3c3b6d56e26243981284158cf5",
+        "fk_fv": "8be08f25441771f3b1200406f00f4ea1a0648c3c3b6d56e26243981284158cf5"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010789602583827218,
+        "values_mean_abs": 0.00014628448712667504
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-030-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.59211458599998,
+      "construction": {
+        "result_start": 70,
+        "n_result": 161,
+        "generic_r_n": 231,
+        "fresh_r_n": 231,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 231,
+      "result_start": 70,
+      "n_result": 161,
+      "support_sha256": {
+        "tk_tv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58",
+        "fk_fv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-031-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 5.148007233000044,
+      "construction": {
+        "result_start": 70,
+        "n_result": 256,
+        "generic_r_n": 326,
+        "fresh_r_n": 326,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 326,
+      "result_start": 70,
+      "n_result": 256,
+      "support_sha256": {
+        "tk_tv": "d20a2d26cb7eb3fe9e02a894ea1da61d47ab3554f53a7b35b32f0faf4cec7d27",
+        "fk_fv": "d20a2d26cb7eb3fe9e02a894ea1da61d47ab3554f53a7b35b32f0faf4cec7d27"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.125,
+        "values_max_abs": 0.0625,
+        "keys_mean_abs": 0.00012143403839420191,
+        "values_mean_abs": 0.00015801232562908909
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-032-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.485864329000037,
+      "construction": {
+        "result_start": 70,
+        "n_result": 151,
+        "generic_r_n": 221,
+        "fresh_r_n": 221,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 221,
+      "result_start": 70,
+      "n_result": 151,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-033-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.173070175000021,
+      "construction": {
+        "result_start": 70,
+        "n_result": 149,
+        "generic_r_n": 219,
+        "fresh_r_n": 219,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 219,
+      "result_start": 70,
+      "n_result": 149,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-034-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.0512658470000815,
+      "construction": {
+        "result_start": 70,
+        "n_result": 127,
+        "generic_r_n": 197,
+        "fresh_r_n": 197,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 197,
+      "result_start": 70,
+      "n_result": 127,
+      "support_sha256": {
+        "tk_tv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20",
+        "fk_fv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-035-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.659065714999997,
+      "construction": {
+        "result_start": 70,
+        "n_result": 134,
+        "generic_r_n": 204,
+        "fresh_r_n": 204,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 204,
+      "result_start": 70,
+      "n_result": 134,
+      "support_sha256": {
+        "tk_tv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70",
+        "fk_fv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1328125,
+        "keys_mean_abs": 0.00010798402571607666,
+        "values_mean_abs": 0.00014870383443760856
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-036-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.997527780999917,
+      "construction": {
+        "result_start": 70,
+        "n_result": 240,
+        "generic_r_n": 310,
+        "fresh_r_n": 310,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 310,
+      "result_start": 70,
+      "n_result": 240,
+      "support_sha256": {
+        "tk_tv": "8fd8de4b1445e0b06e82f6a078d0952ba57a9e7ec2cb4bd79ff897211210e36d",
+        "fk_fv": "8fd8de4b1445e0b06e82f6a078d0952ba57a9e7ec2cb4bd79ff897211210e36d"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.25,
+        "values_max_abs": 0.109375,
+        "keys_mean_abs": 0.0001213205317374862,
+        "values_mean_abs": 0.0001490503482462676
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-037-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.475950779000186,
+      "construction": {
+        "result_start": 70,
+        "n_result": 128,
+        "generic_r_n": 198,
+        "fresh_r_n": 198,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 198,
+      "result_start": 70,
+      "n_result": 128,
+      "support_sha256": {
+        "tk_tv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70",
+        "fk_fv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1328125,
+        "keys_mean_abs": 0.00010798402571607666,
+        "values_mean_abs": 0.00014870383443760856
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-038-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 5.334000332999949,
+      "construction": {
+        "result_start": 70,
+        "n_result": 246,
+        "generic_r_n": 316,
+        "fresh_r_n": 316,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 316,
+      "result_start": 70,
+      "n_result": 246,
+      "support_sha256": {
+        "tk_tv": "8fd8de4b1445e0b06e82f6a078d0952ba57a9e7ec2cb4bd79ff897211210e36d",
+        "fk_fv": "8fd8de4b1445e0b06e82f6a078d0952ba57a9e7ec2cb4bd79ff897211210e36d"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.25,
+        "values_max_abs": 0.109375,
+        "keys_mean_abs": 0.0001213205317374862,
+        "values_mean_abs": 0.0001490503482462676
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-039-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.736626097999988,
+      "construction": {
+        "result_start": 70,
+        "n_result": 147,
+        "generic_r_n": 217,
+        "fresh_r_n": 217,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 217,
+      "result_start": 70,
+      "n_result": 147,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-040-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.493578012999933,
+      "construction": {
+        "result_start": 70,
+        "n_result": 135,
+        "generic_r_n": 205,
+        "fresh_r_n": 205,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 205,
+      "result_start": 70,
+      "n_result": 135,
+      "support_sha256": {
+        "tk_tv": "8be08f25441771f3b1200406f00f4ea1a0648c3c3b6d56e26243981284158cf5",
+        "fk_fv": "8be08f25441771f3b1200406f00f4ea1a0648c3c3b6d56e26243981284158cf5"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010789602583827218,
+        "values_mean_abs": 0.00014628448712667504
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-041-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 5.159191897000028,
+      "construction": {
+        "result_start": 70,
+        "n_result": 152,
+        "generic_r_n": 222,
+        "fresh_r_n": 222,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 222,
+      "result_start": 70,
+      "n_result": 152,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-042-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.550086146000012,
+      "construction": {
+        "result_start": 70,
+        "n_result": 135,
+        "generic_r_n": 205,
+        "fresh_r_n": 205,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 205,
+      "result_start": 70,
+      "n_result": 135,
+      "support_sha256": {
+        "tk_tv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20",
+        "fk_fv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-043-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.947747117000063,
+      "construction": {
+        "result_start": 70,
+        "n_result": 218,
+        "generic_r_n": 288,
+        "fresh_r_n": 288,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 288,
+      "result_start": 70,
+      "n_result": 218,
+      "support_sha256": {
+        "tk_tv": "8fd8de4b1445e0b06e82f6a078d0952ba57a9e7ec2cb4bd79ff897211210e36d",
+        "fk_fv": "8fd8de4b1445e0b06e82f6a078d0952ba57a9e7ec2cb4bd79ff897211210e36d"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.25,
+        "values_max_abs": 0.109375,
+        "keys_mean_abs": 0.0001213205317374862,
+        "values_mean_abs": 0.0001490503482462676
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-044-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.299188902999958,
+      "construction": {
+        "result_start": 70,
+        "n_result": 155,
+        "generic_r_n": 225,
+        "fresh_r_n": 225,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 225,
+      "result_start": 70,
+      "n_result": 155,
+      "support_sha256": {
+        "tk_tv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58",
+        "fk_fv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-045-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 5.46367506699994,
+      "construction": {
+        "result_start": 70,
+        "n_result": 166,
+        "generic_r_n": 236,
+        "fresh_r_n": 236,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 236,
+      "result_start": 70,
+      "n_result": 166,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-046-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 6.711822829000084,
+      "construction": {
+        "result_start": 70,
+        "n_result": 153,
+        "generic_r_n": 223,
+        "fresh_r_n": 223,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 223,
+      "result_start": 70,
+      "n_result": 153,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-047-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 5.2843588130001535,
+      "construction": {
+        "result_start": 70,
+        "n_result": 254,
+        "generic_r_n": 324,
+        "fresh_r_n": 324,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 324,
+      "result_start": 70,
+      "n_result": 254,
+      "support_sha256": {
+        "tk_tv": "27f0f32d35fef7523765ca0eb0570b27ddc32b0ec5b5caac13cc3c6d691c2b01",
+        "fk_fv": "27f0f32d35fef7523765ca0eb0570b27ddc32b0ec5b5caac13cc3c6d691c2b01"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.125,
+        "values_max_abs": 0.0625,
+        "keys_mean_abs": 0.00011795799774619,
+        "values_mean_abs": 0.00015467183514930285
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-048-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.5716492330000165,
+      "construction": {
+        "result_start": 70,
+        "n_result": 134,
+        "generic_r_n": 204,
+        "fresh_r_n": 204,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 204,
+      "result_start": 70,
+      "n_result": 134,
+      "support_sha256": {
+        "tk_tv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70",
+        "fk_fv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1328125,
+        "keys_mean_abs": 0.00010798402571607666,
+        "values_mean_abs": 0.00014870383443760856
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-049-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.71333719900008,
+      "construction": {
+        "result_start": 70,
+        "n_result": 154,
+        "generic_r_n": 224,
+        "fresh_r_n": 224,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 224,
+      "result_start": 70,
+      "n_result": 154,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-050-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.883391662999884,
+      "construction": {
+        "result_start": 70,
+        "n_result": 154,
+        "generic_r_n": 224,
+        "fresh_r_n": 224,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 224,
+      "result_start": 70,
+      "n_result": 154,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-051-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 5.019766740000023,
+      "construction": {
+        "result_start": 70,
+        "n_result": 151,
+        "generic_r_n": 221,
+        "fresh_r_n": 221,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 221,
+      "result_start": 70,
+      "n_result": 151,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-052-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.206363795000016,
+      "construction": {
+        "result_start": 70,
+        "n_result": 150,
+        "generic_r_n": 220,
+        "fresh_r_n": 220,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 220,
+      "result_start": 70,
+      "n_result": 150,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-053-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.539025051999943,
+      "construction": {
+        "result_start": 70,
+        "n_result": 154,
+        "generic_r_n": 224,
+        "fresh_r_n": 224,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 224,
+      "result_start": 70,
+      "n_result": 154,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-054-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.0975844440001765,
+      "construction": {
+        "result_start": 70,
+        "n_result": 113,
+        "generic_r_n": 183,
+        "fresh_r_n": 183,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 183,
+      "result_start": 70,
+      "n_result": 113,
+      "support_sha256": {
+        "tk_tv": "42f737c34516aaddaee18edd89c5177fb2cd1bf77461137a0c72f20154ec3fc5",
+        "fk_fv": "42f737c34516aaddaee18edd89c5177fb2cd1bf77461137a0c72f20154ec3fc5"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.046875,
+        "values_max_abs": 0.0859375,
+        "keys_mean_abs": 0.00012983843710874984,
+        "values_mean_abs": 0.0001718696756161838
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-055-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.707466898000121,
+      "construction": {
+        "result_start": 70,
+        "n_result": 151,
+        "generic_r_n": 221,
+        "fresh_r_n": 221,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 221,
+      "result_start": 70,
+      "n_result": 151,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-056-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.530613831999972,
+      "construction": {
+        "result_start": 70,
+        "n_result": 162,
+        "generic_r_n": 232,
+        "fresh_r_n": 232,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 232,
+      "result_start": 70,
+      "n_result": 162,
+      "support_sha256": {
+        "tk_tv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58",
+        "fk_fv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-057-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.731058006000012,
+      "construction": {
+        "result_start": 70,
+        "n_result": 149,
+        "generic_r_n": 219,
+        "fresh_r_n": 219,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 219,
+      "result_start": 70,
+      "n_result": 149,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-058-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.161894821000033,
+      "construction": {
+        "result_start": 70,
+        "n_result": 185,
+        "generic_r_n": 255,
+        "fresh_r_n": 255,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 255,
+      "result_start": 70,
+      "n_result": 185,
+      "support_sha256": {
+        "tk_tv": "d59790183953d5e79d14e0e3d2d285043b223c07368cab89a80ea814dd52aa8c",
+        "fk_fv": "d59790183953d5e79d14e0e3d2d285043b223c07368cab89a80ea814dd52aa8c"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.125,
+        "values_max_abs": 0.078125,
+        "keys_mean_abs": 0.00011046375119702943,
+        "values_mean_abs": 0.00014577250229308447
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-059-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.38679831699983,
+      "construction": {
+        "result_start": 70,
+        "n_result": 131,
+        "generic_r_n": 201,
+        "fresh_r_n": 201,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 201,
+      "result_start": 70,
+      "n_result": 131,
+      "support_sha256": {
+        "tk_tv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20",
+        "fk_fv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-060-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 5.18366575999994,
+      "construction": {
+        "result_start": 70,
+        "n_result": 246,
+        "generic_r_n": 316,
+        "fresh_r_n": 316,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 316,
+      "result_start": 70,
+      "n_result": 246,
+      "support_sha256": {
+        "tk_tv": "8fd8de4b1445e0b06e82f6a078d0952ba57a9e7ec2cb4bd79ff897211210e36d",
+        "fk_fv": "8fd8de4b1445e0b06e82f6a078d0952ba57a9e7ec2cb4bd79ff897211210e36d"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.25,
+        "values_max_abs": 0.109375,
+        "keys_mean_abs": 0.0001213205317374862,
+        "values_mean_abs": 0.0001490503482462676
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-061-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.630787061000092,
+      "construction": {
+        "result_start": 70,
+        "n_result": 146,
+        "generic_r_n": 216,
+        "fresh_r_n": 216,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 216,
+      "result_start": 70,
+      "n_result": 146,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-062-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.550207168000043,
+      "construction": {
+        "result_start": 70,
+        "n_result": 134,
+        "generic_r_n": 204,
+        "fresh_r_n": 204,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 204,
+      "result_start": 70,
+      "n_result": 134,
+      "support_sha256": {
+        "tk_tv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70",
+        "fk_fv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1328125,
+        "keys_mean_abs": 0.00010798402571607666,
+        "values_mean_abs": 0.00014870383443760856
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-063-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.061934118999943,
+      "construction": {
+        "result_start": 70,
+        "n_result": 149,
+        "generic_r_n": 219,
+        "fresh_r_n": 219,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 219,
+      "result_start": 70,
+      "n_result": 149,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-064-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.610272311000017,
+      "construction": {
+        "result_start": 70,
+        "n_result": 243,
+        "generic_r_n": 313,
+        "fresh_r_n": 313,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 313,
+      "result_start": 70,
+      "n_result": 243,
+      "support_sha256": {
+        "tk_tv": "8fd8de4b1445e0b06e82f6a078d0952ba57a9e7ec2cb4bd79ff897211210e36d",
+        "fk_fv": "8fd8de4b1445e0b06e82f6a078d0952ba57a9e7ec2cb4bd79ff897211210e36d"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.25,
+        "values_max_abs": 0.109375,
+        "keys_mean_abs": 0.0001213205317374862,
+        "values_mean_abs": 0.0001490503482462676
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-065-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 5.181433235999975,
+      "construction": {
+        "result_start": 70,
+        "n_result": 154,
+        "generic_r_n": 224,
+        "fresh_r_n": 224,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 224,
+      "result_start": 70,
+      "n_result": 154,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-066-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 4.865937998000163,
+      "construction": {
+        "result_start": 70,
+        "n_result": 135,
+        "generic_r_n": 205,
+        "fresh_r_n": 205,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 205,
+      "result_start": 70,
+      "n_result": 135,
+      "support_sha256": {
+        "tk_tv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20",
+        "fk_fv": "e9faad465a8924cb69d1a38b8354ea4f857aa0943a18449503ad03e36e08dc20"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-067-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.791686244999937,
+      "construction": {
+        "result_start": 70,
+        "n_result": 160,
+        "generic_r_n": 230,
+        "fresh_r_n": 230,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 230,
+      "result_start": 70,
+      "n_result": 160,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-068-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 5.379377823000141,
+      "construction": {
+        "result_start": 70,
+        "n_result": 259,
+        "generic_r_n": 329,
+        "fresh_r_n": 329,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 329,
+      "result_start": 70,
+      "n_result": 259,
+      "support_sha256": {
+        "tk_tv": "d20a2d26cb7eb3fe9e02a894ea1da61d47ab3554f53a7b35b32f0faf4cec7d27",
+        "fk_fv": "d20a2d26cb7eb3fe9e02a894ea1da61d47ab3554f53a7b35b32f0faf4cec7d27"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.125,
+        "values_max_abs": 0.0625,
+        "keys_mean_abs": 0.00012143403839420191,
+        "values_mean_abs": 0.00015801232562908909
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-069-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.176891679999926,
+      "construction": {
+        "result_start": 70,
+        "n_result": 143,
+        "generic_r_n": 213,
+        "fresh_r_n": 213,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 213,
+      "result_start": 70,
+      "n_result": 143,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-070-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 5.308372872000064,
+      "construction": {
+        "result_start": 70,
+        "n_result": 312,
+        "generic_r_n": 382,
+        "fresh_r_n": 382,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 382,
+      "result_start": 70,
+      "n_result": 312,
+      "support_sha256": {
+        "tk_tv": "a51a128e44d37cf2a5df78e927eb28daa10e7721f7bad5ca0972f148ccd5da7a",
+        "fk_fv": "a51a128e44d37cf2a5df78e927eb28daa10e7721f7bad5ca0972f148ccd5da7a"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.125,
+        "values_max_abs": 0.0859375,
+        "keys_mean_abs": 0.0001109014093445795,
+        "values_mean_abs": 0.00014073949867565716
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-071-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.138013099000091,
+      "construction": {
+        "result_start": 70,
+        "n_result": 111,
+        "generic_r_n": 181,
+        "fresh_r_n": 181,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 181,
+      "result_start": 70,
+      "n_result": 111,
+      "support_sha256": {
+        "tk_tv": "ccf4c965d028134466be84ba43e5ee1577c8bdf53466135735fb22172ccbdf48",
+        "fk_fv": "ccf4c965d028134466be84ba43e5ee1577c8bdf53466135735fb22172ccbdf48"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0390625,
+        "values_max_abs": 0.07421875,
+        "keys_mean_abs": 0.00011286297659454349,
+        "values_mean_abs": 0.0001526592261819183
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-072-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.097227433999933,
+      "construction": {
+        "result_start": 70,
+        "n_result": 130,
+        "generic_r_n": 200,
+        "fresh_r_n": 200,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 200,
+      "result_start": 70,
+      "n_result": 130,
+      "support_sha256": {
+        "tk_tv": "8be08f25441771f3b1200406f00f4ea1a0648c3c3b6d56e26243981284158cf5",
+        "fk_fv": "8be08f25441771f3b1200406f00f4ea1a0648c3c3b6d56e26243981284158cf5"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010789602583827218,
+        "values_mean_abs": 0.00014628448712667504
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-073-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.9296812860000045,
+      "construction": {
+        "result_start": 70,
+        "n_result": 155,
+        "generic_r_n": 225,
+        "fresh_r_n": 225,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 225,
+      "result_start": 70,
+      "n_result": 155,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-074-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 4.5440935709998485,
+      "construction": {
+        "result_start": 70,
+        "n_result": 115,
+        "generic_r_n": 185,
+        "fresh_r_n": 185,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 185,
+      "result_start": 70,
+      "n_result": 115,
+      "support_sha256": {
+        "tk_tv": "ccf4c965d028134466be84ba43e5ee1577c8bdf53466135735fb22172ccbdf48",
+        "fk_fv": "ccf4c965d028134466be84ba43e5ee1577c8bdf53466135735fb22172ccbdf48"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0390625,
+        "values_max_abs": 0.07421875,
+        "keys_mean_abs": 0.00011286297659454349,
+        "values_mean_abs": 0.0001526592261819183
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-075-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.490383811000129,
+      "construction": {
+        "result_start": 70,
+        "n_result": 135,
+        "generic_r_n": 205,
+        "fresh_r_n": 205,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 205,
+      "result_start": 70,
+      "n_result": 135,
+      "support_sha256": {
+        "tk_tv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70",
+        "fk_fv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1328125,
+        "keys_mean_abs": 0.00010798402571607666,
+        "values_mean_abs": 0.00014870383443760856
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-076-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.240826458000129,
+      "construction": {
+        "result_start": 70,
+        "n_result": 115,
+        "generic_r_n": 185,
+        "fresh_r_n": 185,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 185,
+      "result_start": 70,
+      "n_result": 115,
+      "support_sha256": {
+        "tk_tv": "42f737c34516aaddaee18edd89c5177fb2cd1bf77461137a0c72f20154ec3fc5",
+        "fk_fv": "42f737c34516aaddaee18edd89c5177fb2cd1bf77461137a0c72f20154ec3fc5"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.046875,
+        "values_max_abs": 0.0859375,
+        "keys_mean_abs": 0.00012983843710874984,
+        "values_mean_abs": 0.0001718696756161838
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-077-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.91976210100006,
+      "construction": {
+        "result_start": 70,
+        "n_result": 134,
+        "generic_r_n": 204,
+        "fresh_r_n": 204,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 204,
+      "result_start": 70,
+      "n_result": 134,
+      "support_sha256": {
+        "tk_tv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70",
+        "fk_fv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1328125,
+        "keys_mean_abs": 0.00010798402571607666,
+        "values_mean_abs": 0.00014870383443760856
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-078-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.287888237000061,
+      "construction": {
+        "result_start": 70,
+        "n_result": 151,
+        "generic_r_n": 221,
+        "fresh_r_n": 221,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 221,
+      "result_start": 70,
+      "n_result": 151,
+      "support_sha256": {
+        "tk_tv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58",
+        "fk_fv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-079-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.593415063000066,
+      "construction": {
+        "result_start": 70,
+        "n_result": 135,
+        "generic_r_n": 205,
+        "fresh_r_n": 205,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 205,
+      "result_start": 70,
+      "n_result": 135,
+      "support_sha256": {
+        "tk_tv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70",
+        "fk_fv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1328125,
+        "keys_mean_abs": 0.00010798402571607666,
+        "values_mean_abs": 0.00014870383443760856
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-080-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.502392717000021,
+      "construction": {
+        "result_start": 70,
+        "n_result": 158,
+        "generic_r_n": 228,
+        "fresh_r_n": 228,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 228,
+      "result_start": 70,
+      "n_result": 158,
+      "support_sha256": {
+        "tk_tv": "2f9e54960edfe7b45b432538d64ea7ec04f97cc362ab375bc6e2d3a69a48cf6f",
+        "fk_fv": "2f9e54960edfe7b45b432538d64ea7ec04f97cc362ab375bc6e2d3a69a48cf6f"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.046875,
+        "values_max_abs": 0.052734375,
+        "keys_mean_abs": 5.068891555816258e-05,
+        "values_mean_abs": 7.361971027799698e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 10,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-081-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 5.365485182000157,
+      "construction": {
+        "result_start": 70,
+        "n_result": 150,
+        "generic_r_n": 220,
+        "fresh_r_n": 220,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 220,
+      "result_start": 70,
+      "n_result": 150,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-082-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.084503829999903,
+      "construction": {
+        "result_start": 70,
+        "n_result": 114,
+        "generic_r_n": 184,
+        "fresh_r_n": 184,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 184,
+      "result_start": 70,
+      "n_result": 114,
+      "support_sha256": {
+        "tk_tv": "ccf4c965d028134466be84ba43e5ee1577c8bdf53466135735fb22172ccbdf48",
+        "fk_fv": "ccf4c965d028134466be84ba43e5ee1577c8bdf53466135735fb22172ccbdf48"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0390625,
+        "values_max_abs": 0.07421875,
+        "keys_mean_abs": 0.00011286297659454349,
+        "values_mean_abs": 0.0001526592261819183
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-083-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.551141830000006,
+      "construction": {
+        "result_start": 70,
+        "n_result": 154,
+        "generic_r_n": 224,
+        "fresh_r_n": 224,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 224,
+      "result_start": 70,
+      "n_result": 154,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-084-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.517296192999993,
+      "construction": {
+        "result_start": 70,
+        "n_result": 153,
+        "generic_r_n": 223,
+        "fresh_r_n": 223,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 223,
+      "result_start": 70,
+      "n_result": 153,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-085-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.1182495820000895,
+      "construction": {
+        "result_start": 70,
+        "n_result": 175,
+        "generic_r_n": 245,
+        "fresh_r_n": 245,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 245,
+      "result_start": 70,
+      "n_result": 175,
+      "support_sha256": {
+        "tk_tv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58",
+        "fk_fv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-086-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.418381883999928,
+      "construction": {
+        "result_start": 70,
+        "n_result": 159,
+        "generic_r_n": 229,
+        "fresh_r_n": 229,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 229,
+      "result_start": 70,
+      "n_result": 159,
+      "support_sha256": {
+        "tk_tv": "9820362e30a81a6e9128861d1ed3046b72e69470cf2074c85b9869c028555b2e",
+        "fk_fv": "9820362e30a81a6e9128861d1ed3046b72e69470cf2074c85b9869c028555b2e"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.0546875,
+        "keys_mean_abs": 4.0204488616129514e-05,
+        "values_mean_abs": 5.1766824891114676e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-087-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.183683599999995,
+      "construction": {
+        "result_start": 70,
+        "n_result": 149,
+        "generic_r_n": 219,
+        "fresh_r_n": 219,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 219,
+      "result_start": 70,
+      "n_result": 149,
+      "support_sha256": {
+        "tk_tv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58",
+        "fk_fv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-088-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.584906906000015,
+      "construction": {
+        "result_start": 70,
+        "n_result": 135,
+        "generic_r_n": 205,
+        "fresh_r_n": 205,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 205,
+      "result_start": 70,
+      "n_result": 135,
+      "support_sha256": {
+        "tk_tv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70",
+        "fk_fv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1328125,
+        "keys_mean_abs": 0.00010798402571607666,
+        "values_mean_abs": 0.00014870383443760856
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-089-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 7.059923847999926,
+      "construction": {
+        "result_start": 70,
+        "n_result": 410,
+        "generic_r_n": 480,
+        "fresh_r_n": 480,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 480,
+      "result_start": 70,
+      "n_result": 410,
+      "support_sha256": {
+        "tk_tv": "d841fdcf97179aeb4ed14532d25f02393073d2d36d988b39dcc8116354ae9d3d",
+        "fk_fv": "d841fdcf97179aeb4ed14532d25f02393073d2d36d988b39dcc8116354ae9d3d"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.125,
+        "values_max_abs": 0.0703125,
+        "keys_mean_abs": 0.00011049785704623598,
+        "values_mean_abs": 0.00014397445968307288
+      },
+      "result_tail": true,
+      "a_written_status_correct": 11,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-090-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.468088872999942,
+      "construction": {
+        "result_start": 70,
+        "n_result": 136,
+        "generic_r_n": 206,
+        "fresh_r_n": 206,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 206,
+      "result_start": 70,
+      "n_result": 136,
+      "support_sha256": {
+        "tk_tv": "8be08f25441771f3b1200406f00f4ea1a0648c3c3b6d56e26243981284158cf5",
+        "fk_fv": "8be08f25441771f3b1200406f00f4ea1a0648c3c3b6d56e26243981284158cf5"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010789602583827218,
+        "values_mean_abs": 0.00014628448712667504
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-091-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.968147613999918,
+      "construction": {
+        "result_start": 70,
+        "n_result": 156,
+        "generic_r_n": 226,
+        "fresh_r_n": 226,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 226,
+      "result_start": 70,
+      "n_result": 156,
+      "support_sha256": {
+        "tk_tv": "a24687b7f2b77e35e7b4bf8e28ea53b11998febd4c6b4df784e44782149cb0a9",
+        "fk_fv": "a24687b7f2b77e35e7b4bf8e28ea53b11998febd4c6b4df784e44782149cb0a9"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.140625,
+        "keys_mean_abs": 0.00011367046752436888,
+        "values_mean_abs": 0.00015897766780565488
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-092-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.608535973000016,
+      "construction": {
+        "result_start": 70,
+        "n_result": 135,
+        "generic_r_n": 205,
+        "fresh_r_n": 205,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 205,
+      "result_start": 70,
+      "n_result": 135,
+      "support_sha256": {
+        "tk_tv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70",
+        "fk_fv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1328125,
+        "keys_mean_abs": 0.00010798402571607666,
+        "values_mean_abs": 0.00014870383443760856
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-093-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.926088286000095,
+      "construction": {
+        "result_start": 70,
+        "n_result": 136,
+        "generic_r_n": 206,
+        "fresh_r_n": 206,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 206,
+      "result_start": 70,
+      "n_result": 136,
+      "support_sha256": {
+        "tk_tv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70",
+        "fk_fv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1328125,
+        "keys_mean_abs": 0.00010798402571607666,
+        "values_mean_abs": 0.00014870383443760856
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-094-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.571192213999893,
+      "construction": {
+        "result_start": 70,
+        "n_result": 147,
+        "generic_r_n": 217,
+        "fresh_r_n": 217,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 217,
+      "result_start": 70,
+      "n_result": 147,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_train-fam-095-base",
+      "split": "train",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 5.202028759999848,
+      "construction": {
+        "result_start": 70,
+        "n_result": 288,
+        "generic_r_n": 358,
+        "fresh_r_n": 358,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 358,
+      "result_start": 70,
+      "n_result": 288,
+      "support_sha256": {
+        "tk_tv": "d20a2d26cb7eb3fe9e02a894ea1da61d47ab3554f53a7b35b32f0faf4cec7d27",
+        "fk_fv": "d20a2d26cb7eb3fe9e02a894ea1da61d47ab3554f53a7b35b32f0faf4cec7d27"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.125,
+        "values_max_abs": 0.0625,
+        "keys_mean_abs": 0.00012143403839420191,
+        "values_mean_abs": 0.00015801232562908909
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-000-base",
+      "split": "dev",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.611030273000097,
+      "construction": {
+        "result_start": 70,
+        "n_result": 134,
+        "generic_r_n": 204,
+        "fresh_r_n": 204,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 204,
+      "result_start": 70,
+      "n_result": 134,
+      "support_sha256": {
+        "tk_tv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70",
+        "fk_fv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1328125,
+        "keys_mean_abs": 0.00010798402571607666,
+        "values_mean_abs": 0.00014870383443760856
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-000-a_flip",
+      "split": "dev",
+      "variant": "a_flip",
+      "difficulty": "L2",
+      "build_s": 4.5749855069998375,
+      "construction": {
+        "result_start": 70,
+        "n_result": 136,
+        "generic_r_n": 206,
+        "fresh_r_n": 206,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 206,
+      "result_start": 70,
+      "n_result": 136,
+      "support_sha256": {
+        "tk_tv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70",
+        "fk_fv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1328125,
+        "keys_mean_abs": 0.00010798402571607666,
+        "values_mean_abs": 0.00014870383443760856
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "P",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-001-base",
+      "split": "dev",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.171374290999893,
+      "construction": {
+        "result_start": 70,
+        "n_result": 117,
+        "generic_r_n": 187,
+        "fresh_r_n": 187,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 187,
+      "result_start": 70,
+      "n_result": 117,
+      "support_sha256": {
+        "tk_tv": "ccf4c965d028134466be84ba43e5ee1577c8bdf53466135735fb22172ccbdf48",
+        "fk_fv": "ccf4c965d028134466be84ba43e5ee1577c8bdf53466135735fb22172ccbdf48"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0390625,
+        "values_max_abs": 0.07421875,
+        "keys_mean_abs": 0.00011286297659454349,
+        "values_mean_abs": 0.0001526592261819183
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-001-a_flip",
+      "split": "dev",
+      "variant": "a_flip",
+      "difficulty": "L3",
+      "build_s": 4.726024990999804,
+      "construction": {
+        "result_start": 70,
+        "n_result": 117,
+        "generic_r_n": 187,
+        "fresh_r_n": 187,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 187,
+      "result_start": 70,
+      "n_result": 117,
+      "support_sha256": {
+        "tk_tv": "ccf4c965d028134466be84ba43e5ee1577c8bdf53466135735fb22172ccbdf48",
+        "fk_fv": "ccf4c965d028134466be84ba43e5ee1577c8bdf53466135735fb22172ccbdf48"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0390625,
+        "values_max_abs": 0.07421875,
+        "keys_mean_abs": 0.00011286297659454349,
+        "values_mean_abs": 0.0001526592261819183
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "W",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-002-base",
+      "split": "dev",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.205532514999959,
+      "construction": {
+        "result_start": 70,
+        "n_result": 155,
+        "generic_r_n": 225,
+        "fresh_r_n": 225,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 225,
+      "result_start": 70,
+      "n_result": 155,
+      "support_sha256": {
+        "tk_tv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58",
+        "fk_fv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-002-a_flip",
+      "split": "dev",
+      "variant": "a_flip",
+      "difficulty": "L1",
+      "build_s": 4.144931071999963,
+      "construction": {
+        "result_start": 70,
+        "n_result": 154,
+        "generic_r_n": 224,
+        "fresh_r_n": 224,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 224,
+      "result_start": 70,
+      "n_result": 154,
+      "support_sha256": {
+        "tk_tv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58",
+        "fk_fv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "U",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-003-base",
+      "split": "dev",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.200859578000063,
+      "construction": {
+        "result_start": 70,
+        "n_result": 135,
+        "generic_r_n": 205,
+        "fresh_r_n": 205,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 205,
+      "result_start": 70,
+      "n_result": 135,
+      "support_sha256": {
+        "tk_tv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70",
+        "fk_fv": "dd67cabfc4894b6d817702227cc7f4af6465fad2e8cfe34b029960fe7190ab70"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1328125,
+        "keys_mean_abs": 0.00010798402571607666,
+        "values_mean_abs": 0.00014870383443760856
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-003-a_flip",
+      "split": "dev",
+      "variant": "a_flip",
+      "difficulty": "L2",
+      "build_s": 5.437386775999812,
+      "construction": {
+        "result_start": 70,
+        "n_result": 153,
+        "generic_r_n": 223,
+        "fresh_r_n": 223,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 223,
+      "result_start": 70,
+      "n_result": 153,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "T",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-004-base",
+      "split": "dev",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 4.148759588000075,
+      "construction": {
+        "result_start": 70,
+        "n_result": 158,
+        "generic_r_n": 228,
+        "fresh_r_n": 228,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 228,
+      "result_start": 70,
+      "n_result": 158,
+      "support_sha256": {
+        "tk_tv": "2f9e54960edfe7b45b432538d64ea7ec04f97cc362ab375bc6e2d3a69a48cf6f",
+        "fk_fv": "2f9e54960edfe7b45b432538d64ea7ec04f97cc362ab375bc6e2d3a69a48cf6f"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.046875,
+        "values_max_abs": 0.052734375,
+        "keys_mean_abs": 5.068891555816258e-05,
+        "values_mean_abs": 7.361971027799698e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-004-a_flip",
+      "split": "dev",
+      "variant": "a_flip",
+      "difficulty": "L1",
+      "build_s": 4.325702686999875,
+      "construction": {
+        "result_start": 70,
+        "n_result": 159,
+        "generic_r_n": 229,
+        "fresh_r_n": 229,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 229,
+      "result_start": 70,
+      "n_result": 159,
+      "support_sha256": {
+        "tk_tv": "9820362e30a81a6e9128861d1ed3046b72e69470cf2074c85b9869c028555b2e",
+        "fk_fv": "9820362e30a81a6e9128861d1ed3046b72e69470cf2074c85b9869c028555b2e"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.0546875,
+        "keys_mean_abs": 4.0204488616129514e-05,
+        "values_mean_abs": 5.1766824891114676e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 11,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "Z",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-005-base",
+      "split": "dev",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.6557554469998195,
+      "construction": {
+        "result_start": 70,
+        "n_result": 155,
+        "generic_r_n": 225,
+        "fresh_r_n": 225,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 225,
+      "result_start": 70,
+      "n_result": 155,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-005-a_flip",
+      "split": "dev",
+      "variant": "a_flip",
+      "difficulty": "L3",
+      "build_s": 5.615029977000177,
+      "construction": {
+        "result_start": 70,
+        "n_result": 155,
+        "generic_r_n": 225,
+        "fresh_r_n": 225,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 225,
+      "result_start": 70,
+      "n_result": 155,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "Q",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-006-base",
+      "split": "dev",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.494014110999842,
+      "construction": {
+        "result_start": 70,
+        "n_result": 154,
+        "generic_r_n": 224,
+        "fresh_r_n": 224,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 224,
+      "result_start": 70,
+      "n_result": 154,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-006-a_flip",
+      "split": "dev",
+      "variant": "a_flip",
+      "difficulty": "L3",
+      "build_s": 5.091780740999866,
+      "construction": {
+        "result_start": 70,
+        "n_result": 154,
+        "generic_r_n": 224,
+        "fresh_r_n": 224,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 224,
+      "result_start": 70,
+      "n_result": 154,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "Z",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-007-base",
+      "split": "dev",
+      "variant": "base",
+      "difficulty": "L3",
+      "build_s": 5.587480641999946,
+      "construction": {
+        "result_start": 70,
+        "n_result": 149,
+        "generic_r_n": 219,
+        "fresh_r_n": 219,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 219,
+      "result_start": 70,
+      "n_result": 149,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-007-a_flip",
+      "split": "dev",
+      "variant": "a_flip",
+      "difficulty": "L3",
+      "build_s": 5.08356674599986,
+      "construction": {
+        "result_start": 70,
+        "n_result": 149,
+        "generic_r_n": 219,
+        "fresh_r_n": 219,
+        "template_id": "L3",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 219,
+      "result_start": 70,
+      "n_result": 149,
+      "support_sha256": {
+        "tk_tv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe",
+        "fk_fv": "6f63b79372115fc4c3f912644c07e17b28ea4ecf63ec2f2cb7023c4417bb4bfe"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-005-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.0625,
+        "values_max_abs": 0.1015625,
+        "keys_mean_abs": 0.00010982059908807666,
+        "values_mean_abs": 0.00014948542460047065
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "V",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-008-base",
+      "split": "dev",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 5.453592421999929,
+      "construction": {
+        "result_start": 70,
+        "n_result": 303,
+        "generic_r_n": 373,
+        "fresh_r_n": 373,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 373,
+      "result_start": 70,
+      "n_result": 303,
+      "support_sha256": {
+        "tk_tv": "a51a128e44d37cf2a5df78e927eb28daa10e7721f7bad5ca0972f148ccd5da7a",
+        "fk_fv": "a51a128e44d37cf2a5df78e927eb28daa10e7721f7bad5ca0972f148ccd5da7a"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.125,
+        "values_max_abs": 0.0859375,
+        "keys_mean_abs": 0.0001109014093445795,
+        "values_mean_abs": 0.00014073949867565716
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-008-a_flip",
+      "split": "dev",
+      "variant": "a_flip",
+      "difficulty": "L1",
+      "build_s": 5.921622737999996,
+      "construction": {
+        "result_start": 70,
+        "n_result": 311,
+        "generic_r_n": 381,
+        "fresh_r_n": 381,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 381,
+      "result_start": 70,
+      "n_result": 311,
+      "support_sha256": {
+        "tk_tv": "a51a128e44d37cf2a5df78e927eb28daa10e7721f7bad5ca0972f148ccd5da7a",
+        "fk_fv": "a51a128e44d37cf2a5df78e927eb28daa10e7721f7bad5ca0972f148ccd5da7a"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.125,
+        "values_max_abs": 0.0859375,
+        "keys_mean_abs": 0.0001109014093445795,
+        "values_mean_abs": 0.00014073949867565716
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "P",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-009-base",
+      "split": "dev",
+      "variant": "base",
+      "difficulty": "L1",
+      "build_s": 5.454744334999987,
+      "construction": {
+        "result_start": 70,
+        "n_result": 248,
+        "generic_r_n": 318,
+        "fresh_r_n": 318,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 318,
+      "result_start": 70,
+      "n_result": 248,
+      "support_sha256": {
+        "tk_tv": "8fd8de4b1445e0b06e82f6a078d0952ba57a9e7ec2cb4bd79ff897211210e36d",
+        "fk_fv": "8fd8de4b1445e0b06e82f6a078d0952ba57a9e7ec2cb4bd79ff897211210e36d"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.25,
+        "values_max_abs": 0.109375,
+        "keys_mean_abs": 0.0001213205317374862,
+        "values_mean_abs": 0.0001490503482462676
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-009-a_flip",
+      "split": "dev",
+      "variant": "a_flip",
+      "difficulty": "L1",
+      "build_s": 4.592946256000005,
+      "construction": {
+        "result_start": 70,
+        "n_result": 151,
+        "generic_r_n": 221,
+        "fresh_r_n": 221,
+        "template_id": "L1",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 221,
+      "result_start": 70,
+      "n_result": 151,
+      "support_sha256": {
+        "tk_tv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58",
+        "fk_fv": "3fc688fd0daaf1253e368da920b472ce22196066256b6d8ac32785b1ea3c6d58"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-003-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "Y",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-010-base",
+      "split": "dev",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.976911185000063,
+      "construction": {
+        "result_start": 70,
+        "n_result": 151,
+        "generic_r_n": 221,
+        "fresh_r_n": 221,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 221,
+      "result_start": 70,
+      "n_result": 151,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-010-a_flip",
+      "split": "dev",
+      "variant": "a_flip",
+      "difficulty": "L2",
+      "build_s": 5.07250100400006,
+      "construction": {
+        "result_start": 70,
+        "n_result": 152,
+        "generic_r_n": 222,
+        "fresh_r_n": 222,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 222,
+      "result_start": 70,
+      "n_result": 152,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "S",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-011-base",
+      "split": "dev",
+      "variant": "base",
+      "difficulty": "L2",
+      "build_s": 4.601848872999881,
+      "construction": {
+        "result_start": 70,
+        "n_result": 157,
+        "generic_r_n": 227,
+        "fresh_r_n": 227,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 227,
+      "result_start": 70,
+      "n_result": 157,
+      "support_sha256": {
+        "tk_tv": "493edca8481d91af8e62b17e3424ff3c0409f5f3ad24811f2b5fa58b84f4360c",
+        "fk_fv": "493edca8481d91af8e62b17e3424ff3c0409f5f3ad24811f2b5fa58b84f4360c"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": true,
+        "keys_max_abs": 0.0,
+        "values_max_abs": 0.0,
+        "keys_mean_abs": 0.0,
+        "values_mean_abs": 0.0
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "ok": true
+    },
+    {
+      "a_state_key": "plan4_qadapt_dev-fam-011-a_flip",
+      "split": "dev",
+      "variant": "a_flip",
+      "difficulty": "L2",
+      "build_s": 4.921932332999859,
+      "construction": {
+        "result_start": 70,
+        "n_result": 164,
+        "generic_r_n": 234,
+        "fresh_r_n": 234,
+        "template_id": "L2",
+        "support_held": true
+      },
+      "mixes_ok": true,
+      "n_kv": 234,
+      "result_start": 70,
+      "n_result": 164,
+      "support_sha256": {
+        "tk_tv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180",
+        "fk_fv": "3ad8672b6b89f09f31f4f39171d3b3b6e178bb73e15cc2058579299157a81180"
+      },
+      "support_vs_template_first": {
+        "reference": "plan4_qadapt_train-fam-000-base",
+        "ids_equal": true,
+        "bytes_equal": false,
+        "keys_max_abs": 0.03125,
+        "values_max_abs": 0.04296875,
+        "keys_mean_abs": 6.0590594683971074e-05,
+        "values_mean_abs": 8.812982589962499e-05
+      },
+      "result_tail": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "V",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    }
+  ]
+}

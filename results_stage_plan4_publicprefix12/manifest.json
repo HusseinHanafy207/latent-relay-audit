@@ -1,0 +1,119 @@
+{
+  "recorded_at_utc": "2026-10-29T22:47:37.573458+00:00",
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+  "executable": "/usr/bin/python3",
+  "platform": "linux",
+  "cwd": "/kaggle/working/latent-relay-audit",
+  "repo_commit": "68549a7839dd6e36faae80f8ae8cc8bacee5151f",
+  "upstream_commit_expected": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "upstream_commit_actual": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "torch": "2.11.0+cu128",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "transformers": "4.57.3",
+  "precision": {
+    "inference_dtype": "float16",
+    "alignment_dtype": "float32",
+    "compression_dtype": "float32",
+    "enable_thinking": false,
+    "device_name": "Tesla T4",
+    "device_capability": "7.5",
+    "source": "env:fp16"
+  },
+  "env": {
+    "LATENT_RELAY_INFER_DTYPE": "fp16",
+    "HF_HOME": null,
+    "TRANSFORMERS_CACHE": null
+  },
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "model_name": "Qwen/Qwen3-4B",
+  "extra": {
+    "stage": "plan4-publicprefix12",
+    "do_not_overwrite": [
+      "results_stage_plan4_timing",
+      "results_stage_plan4_recon12",
+      "results_stage_plan4_query12",
+      "results_stage_plan4_kvmix12",
+      "results_stage_plan4_refattn12",
+      "results_stage_plan4_refgen12",
+      "results_stage_plan4_refval12",
+      "results_stage_plan4_refgenval12",
+      "results_stage_plan4_nbound",
+      "results_stage_plan4_confirm",
+      "results_stage_plan4_hold"
+    ],
+    "conditions": [
+      "compact_baseline",
+      "task_prefix_r",
+      "woodland_prefix_r",
+      "library_prefix_r",
+      "task_prefix_fresh_r",
+      "full_kv",
+      "text_result"
+    ],
+    "plan_max_new_12": 384,
+    "answer_max_new": 48,
+    "query_max_new": 8,
+    "frozen_placement": "Public prefixes are prefilled once per template and context, then one fixed newline is processed after them; no closing token or new framing is added and the old five-token prefix is not prepended. Transferred R is gathered from A's frozen cache: values unchanged, keys moved once from the original sender positions to consecutive packed positions after the newline. Task and neutral conditions share lengths, chat header, instruction IDs and positions, separator, result slots, masks and B's starting position.",
+    "phase": "compare",
+    "interpretation_guide": {
+      "task_beats_both_neutrals": "Retaining the omitted public task context is a promising repair. Supports a context-content explanation without identifying the attention mechanism.",
+      "task_and_neutrals_similar": "A longer, internally consistent prefix may help. Do not claim the task wording is responsible.",
+      "fresh_works_transferred_poor": "This public-context repair is insufficient; the remaining difficulty is reuse of the transferred result states under these layouts.",
+      "fresh_unreliable": "The new layout is not a healthy reference. Investigate it before attributing the outcome to transferred states.",
+      "candidate_improves_below_references": "Report a partial repair, not recovery.",
+      "recovery_standard": "Within five percentage points of full KV's 9/9 all-label cases requires 9/9 at the point estimate; even that is a promising diagnostic, not evidence of generalization."
+    },
+    "cost_note": "Public-prefix states can be prepared once on B's side and need not be sent per example, but they occupy memory and have a setup cost; they are not free. Resident MiB are packed-cache sizes, not measured traffic. This run settles reliability; a repeated, counterbalanced timing comparison comes later.",
+    "protocol": {
+      "question": "Does keeping the complete public task prefix help B use A's selected result states, compared with keeping only the instruction slice?",
+      "split": "plan4_timing12 (nine already-inspected cases; development diagnostic, not confirmation)",
+      "frozen": "Qwen3-4B revision, Tesla T4, FP16; A's recorded token IDs and selected result positions; B prompts and framing sentence; greedy decoding; 384 plan / 48 answer tokens; plan pass then choice pass. No A regeneration, added reasons, calculations or training.",
+      "conditions": {
+        "compact_baseline": "short prefix + generic instruction slice + newline + transferred R (expected to reproduce 63/108 labels, 0/9 all-label)",
+        "task_prefix_r": "complete public task prefix (140/145/162 tokens) + newline + transferred R (candidate)",
+        "woodland_prefix_r": "frozen woodland prefix + same instruction (same length) + newline + transferred R",
+        "library_prefix_r": "frozen library prefix + same instruction (same length) + newline + transferred R",
+        "task_prefix_fresh_r": "task prefix as in the candidate + newline + R token IDs processed again",
+        "full_kv": "sender's complete available cache",
+        "text_result": "same selected result lines as text"
+      },
+      "construction": "Public prefixes prefilled once per template and context, then one fixed newline; old five-token prefix not prepended; no closing token or new framing. Transferred R gathered from A's frozen cache, values unchanged, keys moved once from original sender positions to consecutive packed positions (result starts at prefix length + 1, e.g. 141 for L1). Task and neutral conditions share length, header, instruction IDs and positions, separator, result slots, masks and B start; their transferred result keys and values must be identical.",
+      "checks_before_answers": [
+        "no private information in public prefixes (Shipment request:, Shipment:, all twelve carrier headings, every sheet's private lines); decoded text and token boundary recorded",
+        "result token IDs and source positions match the frozen records",
+        "task and neutral conditions matched in length, result slots, masks and B start",
+        "transferred values equal A's selected values; keys equal the single intended position correction",
+        "continuing from the cached public prefix agrees with re-encoding within the established tolerance",
+        "prefix + newline + results processed together agrees with prefix first then extension by the result IDs",
+        "no cache mutation: independent copies per generation; stored caches unchanged"
+      ],
+      "primary": "all twelve labels correct per case (of 9)",
+      "also_report": [
+        "labels of 108",
+        "ineligible marked eligible",
+        "eligible marked ineligible",
+        "missing lines, parse failures, truncation",
+        "labels fixed and broken vs baseline",
+        "final choice (separate)"
+      ],
+      "statistics": "paired bootstrap over the nine cases, 2000 draws, seed 2026; labels of a case kept together",
+      "key_comparisons": [
+        "task prefix vs compact baseline",
+        "task prefix vs each neutral prefix",
+        "fresh vs transferred results under the task prefix",
+        "candidate vs full KV and text"
+      ],
+      "outcome_meanings": {
+        "task_beats_both_neutrals": "retaining public task context is a promising repair (context-content explanation; mechanism not identified)",
+        "task_and_neutrals_similar": "a longer, consistent prefix may help; do not credit the task wording",
+        "fresh_works_transferred_poor": "public-context repair insufficient; difficulty lies in reuse of transferred result states",
+        "fresh_unreliable": "layout is not a healthy reference; investigate before attributing to transferred states",
+        "candidate_improves_below_references": "partial repair, not recovery",
+        "recovery_standard": "within 5 points of full KV's 9/9 all-label requires 9/9 at the point estimate; still a diagnostic, not generalization"
+      },
+      "costs": "public-prefix preparation, per-example assembly, resident cache size, receiver prefill and decoding recorded separately; prepared prefixes are not free; full timing comparison postponed",
+      "dest": "results_stage_plan4_publicprefix12"
+    }
+  }
+}

@@ -1,0 +1,274 @@
+{
+  "selected_epoch": 1,
+  "partners": {
+    "plan4_qadapt_dev-fam-002-base": "plan4_qadapt_dev-fam-004-base",
+    "plan4_qadapt_dev-fam-004-base": "plan4_qadapt_dev-fam-008-base",
+    "plan4_qadapt_dev-fam-008-base": "plan4_qadapt_dev-fam-009-base",
+    "plan4_qadapt_dev-fam-009-base": "plan4_qadapt_dev-fam-002-base",
+    "plan4_qadapt_dev-fam-000-base": "plan4_qadapt_dev-fam-003-base",
+    "plan4_qadapt_dev-fam-003-base": "plan4_qadapt_dev-fam-010-base",
+    "plan4_qadapt_dev-fam-010-base": "plan4_qadapt_dev-fam-011-base",
+    "plan4_qadapt_dev-fam-011-base": "plan4_qadapt_dev-fam-000-base",
+    "plan4_qadapt_dev-fam-001-base": "plan4_qadapt_dev-fam-005-base",
+    "plan4_qadapt_dev-fam-005-base": "plan4_qadapt_dev-fam-006-base",
+    "plan4_qadapt_dev-fam-006-base": "plan4_qadapt_dev-fam-007-base",
+    "plan4_qadapt_dev-fam-007-base": "plan4_qadapt_dev-fam-001-base"
+  },
+  "a_change_pairs": {
+    "plan4_qadapt_dev-fam-000-base": {
+      "flip": "plan4_qadapt_dev-fam-000-a_flip",
+      "changed_carrier": "P"
+    },
+    "plan4_qadapt_dev-fam-001-base": {
+      "flip": "plan4_qadapt_dev-fam-001-a_flip",
+      "changed_carrier": "W"
+    },
+    "plan4_qadapt_dev-fam-002-base": {
+      "flip": "plan4_qadapt_dev-fam-002-a_flip",
+      "changed_carrier": "U"
+    },
+    "plan4_qadapt_dev-fam-003-base": {
+      "flip": "plan4_qadapt_dev-fam-003-a_flip",
+      "changed_carrier": "T"
+    },
+    "plan4_qadapt_dev-fam-004-base": {
+      "flip": "plan4_qadapt_dev-fam-004-a_flip",
+      "changed_carrier": "Z"
+    },
+    "plan4_qadapt_dev-fam-005-base": {
+      "flip": "plan4_qadapt_dev-fam-005-a_flip",
+      "changed_carrier": "Q"
+    },
+    "plan4_qadapt_dev-fam-006-base": {
+      "flip": "plan4_qadapt_dev-fam-006-a_flip",
+      "changed_carrier": "Z"
+    },
+    "plan4_qadapt_dev-fam-007-base": {
+      "flip": "plan4_qadapt_dev-fam-007-a_flip",
+      "changed_carrier": "V"
+    },
+    "plan4_qadapt_dev-fam-008-base": {
+      "flip": "plan4_qadapt_dev-fam-008-a_flip",
+      "changed_carrier": "P"
+    },
+    "plan4_qadapt_dev-fam-009-base": {
+      "flip": "plan4_qadapt_dev-fam-009-a_flip",
+      "changed_carrier": "Y"
+    },
+    "plan4_qadapt_dev-fam-010-base": {
+      "flip": "plan4_qadapt_dev-fam-010-a_flip",
+      "changed_carrier": "S"
+    },
+    "plan4_qadapt_dev-fam-011-base": {
+      "flip": "plan4_qadapt_dev-fam-011-a_flip",
+      "changed_carrier": "V"
+    }
+  },
+  "cases": {
+    "plan4_qadapt_dev-fam-000-base": {
+      "own_cursor_is_length": true,
+      "no_r_is_own_support": true,
+      "mismatched_support_is_own": true,
+      "mismatched_r_is_partner_r": true,
+      "mismatched_ids": true,
+      "masks_all_ones": true,
+      "cursors": {
+        "no_r": true,
+        "mismatched_r": true
+      },
+      "n_result_own": 134,
+      "n_result_partner": 135,
+      "ok": true,
+      "partner": "plan4_qadapt_dev-fam-003-base",
+      "carriers_differing": 4
+    },
+    "plan4_qadapt_dev-fam-001-base": {
+      "own_cursor_is_length": true,
+      "no_r_is_own_support": true,
+      "mismatched_support_is_own": true,
+      "mismatched_r_is_partner_r": true,
+      "mismatched_ids": true,
+      "masks_all_ones": true,
+      "cursors": {
+        "no_r": true,
+        "mismatched_r": true
+      },
+      "n_result_own": 117,
+      "n_result_partner": 155,
+      "ok": true,
+      "partner": "plan4_qadapt_dev-fam-005-base",
+      "carriers_differing": 8
+    },
+    "plan4_qadapt_dev-fam-002-base": {
+      "own_cursor_is_length": true,
+      "no_r_is_own_support": true,
+      "mismatched_support_is_own": true,
+      "mismatched_r_is_partner_r": true,
+      "mismatched_ids": true,
+      "masks_all_ones": true,
+      "cursors": {
+        "no_r": true,
+        "mismatched_r": true
+      },
+      "n_result_own": 155,
+      "n_result_partner": 158,
+      "ok": true,
+      "partner": "plan4_qadapt_dev-fam-004-base",
+      "carriers_differing": 4
+    },
+    "plan4_qadapt_dev-fam-003-base": {
+      "own_cursor_is_length": true,
+      "no_r_is_own_support": true,
+      "mismatched_support_is_own": true,
+      "mismatched_r_is_partner_r": true,
+      "mismatched_ids": true,
+      "masks_all_ones": true,
+      "cursors": {
+        "no_r": true,
+        "mismatched_r": true
+      },
+      "n_result_own": 135,
+      "n_result_partner": 151,
+      "ok": true,
+      "partner": "plan4_qadapt_dev-fam-010-base",
+      "carriers_differing": 8
+    },
+    "plan4_qadapt_dev-fam-004-base": {
+      "own_cursor_is_length": true,
+      "no_r_is_own_support": true,
+      "mismatched_support_is_own": true,
+      "mismatched_r_is_partner_r": true,
+      "mismatched_ids": true,
+      "masks_all_ones": true,
+      "cursors": {
+        "no_r": true,
+        "mismatched_r": true
+      },
+      "n_result_own": 158,
+      "n_result_partner": 303,
+      "ok": true,
+      "partner": "plan4_qadapt_dev-fam-008-base",
+      "carriers_differing": 4
+    },
+    "plan4_qadapt_dev-fam-005-base": {
+      "own_cursor_is_length": true,
+      "no_r_is_own_support": true,
+      "mismatched_support_is_own": true,
+      "mismatched_r_is_partner_r": true,
+      "mismatched_ids": true,
+      "masks_all_ones": true,
+      "cursors": {
+        "no_r": true,
+        "mismatched_r": true
+      },
+      "n_result_own": 155,
+      "n_result_partner": 154,
+      "ok": true,
+      "partner": "plan4_qadapt_dev-fam-006-base",
+      "carriers_differing": 4
+    },
+    "plan4_qadapt_dev-fam-006-base": {
+      "own_cursor_is_length": true,
+      "no_r_is_own_support": true,
+      "mismatched_support_is_own": true,
+      "mismatched_r_is_partner_r": true,
+      "mismatched_ids": true,
+      "masks_all_ones": true,
+      "cursors": {
+        "no_r": true,
+        "mismatched_r": true
+      },
+      "n_result_own": 154,
+      "n_result_partner": 149,
+      "ok": true,
+      "partner": "plan4_qadapt_dev-fam-007-base",
+      "carriers_differing": 4
+    },
+    "plan4_qadapt_dev-fam-007-base": {
+      "own_cursor_is_length": true,
+      "no_r_is_own_support": true,
+      "mismatched_support_is_own": true,
+      "mismatched_r_is_partner_r": true,
+      "mismatched_ids": true,
+      "masks_all_ones": true,
+      "cursors": {
+        "no_r": true,
+        "mismatched_r": true
+      },
+      "n_result_own": 149,
+      "n_result_partner": 117,
+      "ok": true,
+      "partner": "plan4_qadapt_dev-fam-001-base",
+      "carriers_differing": 4
+    },
+    "plan4_qadapt_dev-fam-008-base": {
+      "own_cursor_is_length": true,
+      "no_r_is_own_support": true,
+      "mismatched_support_is_own": true,
+      "mismatched_r_is_partner_r": true,
+      "mismatched_ids": true,
+      "masks_all_ones": true,
+      "cursors": {
+        "no_r": true,
+        "mismatched_r": true
+      },
+      "n_result_own": 303,
+      "n_result_partner": 248,
+      "ok": true,
+      "partner": "plan4_qadapt_dev-fam-009-base",
+      "carriers_differing": 2
+    },
+    "plan4_qadapt_dev-fam-009-base": {
+      "own_cursor_is_length": true,
+      "no_r_is_own_support": true,
+      "mismatched_support_is_own": true,
+      "mismatched_r_is_partner_r": true,
+      "mismatched_ids": true,
+      "masks_all_ones": true,
+      "cursors": {
+        "no_r": true,
+        "mismatched_r": true
+      },
+      "n_result_own": 248,
+      "n_result_partner": 155,
+      "ok": true,
+      "partner": "plan4_qadapt_dev-fam-002-base",
+      "carriers_differing": 6
+    },
+    "plan4_qadapt_dev-fam-010-base": {
+      "own_cursor_is_length": true,
+      "no_r_is_own_support": true,
+      "mismatched_support_is_own": true,
+      "mismatched_r_is_partner_r": true,
+      "mismatched_ids": true,
+      "masks_all_ones": true,
+      "cursors": {
+        "no_r": true,
+        "mismatched_r": true
+      },
+      "n_result_own": 151,
+      "n_result_partner": 157,
+      "ok": true,
+      "partner": "plan4_qadapt_dev-fam-011-base",
+      "carriers_differing": 6
+    },
+    "plan4_qadapt_dev-fam-011-base": {
+      "own_cursor_is_length": true,
+      "no_r_is_own_support": true,
+      "mismatched_support_is_own": true,
+      "mismatched_r_is_partner_r": true,
+      "mismatched_ids": true,
+      "masks_all_ones": true,
+      "cursors": {
+        "no_r": true,
+        "mismatched_r": true
+      },
+      "n_result_own": 157,
+      "n_result_partner": 134,
+      "ok": true,
+      "partner": "plan4_qadapt_dev-fam-000-base",
+      "carriers_differing": 8
+    }
+  },
+  "all_passed": true
+}

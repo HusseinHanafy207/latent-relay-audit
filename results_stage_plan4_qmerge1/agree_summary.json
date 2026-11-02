@@ -1,0 +1,158 @@
+{
+  "scope": "Implementation and timing comparison. Dev sheets were already used for checkpoint selection; eval sheets were already used for the candidate's evaluation and are reused here as timing inputs. Neither is a new independent confirmation.",
+  "candidate": {
+    "selected_epoch": 1,
+    "sha256": "864a8f198f415e94dec426447569c8fce96f7be7f015c39141ccac01a8da7fc1"
+  },
+  "merge": {
+    "merge_s": 0.27606401500008815,
+    "stats": {
+      "delta_rel_norm": 0.00898030120115914,
+      "rounding_max_abs": 0.00023870835138950497,
+      "rounding_rel_to_delta": 0.04235727134621541,
+      "unchanged_fraction": 0.055745698511600494,
+      "min_applied_vs_delta_cos": 0.9991041421890259
+    },
+    "n_layers": 36
+  },
+  "labels": {
+    "base": {
+      "unmerged": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 144,
+        "cases_all_twelve_correct": 12,
+        "ineligible_marked_eligible": 0,
+        "eligible_marked_ineligible": 0,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "merged": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 144,
+        "cases_all_twelve_correct": 12,
+        "ineligible_marked_eligible": 0,
+        "eligible_marked_ineligible": 0,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      }
+    },
+    "a_flip": {
+      "unmerged": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 142,
+        "cases_all_twelve_correct": 10,
+        "ineligible_marked_eligible": 1,
+        "eligible_marked_ineligible": 1,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "merged": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 142,
+        "cases_all_twelve_correct": 10,
+        "ineligible_marked_eligible": 1,
+        "eligible_marked_ineligible": 1,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      }
+    }
+  },
+  "final_choice": {
+    "base": {
+      "unmerged": {
+        "n_cases": 12,
+        "final_choice_correct": 9,
+        "follows_trap": 0,
+        "correct_with_wrong_eligibility": 0
+      },
+      "merged": {
+        "n_cases": 12,
+        "final_choice_correct": 9,
+        "follows_trap": 0,
+        "correct_with_wrong_eligibility": 0
+      }
+    },
+    "a_flip": {
+      "unmerged": {
+        "n_cases": 12,
+        "final_choice_correct": 9,
+        "follows_trap": 6,
+        "correct_with_wrong_eligibility": 2
+      },
+      "merged": {
+        "n_cases": 12,
+        "final_choice_correct": 9,
+        "follows_trap": 6,
+        "correct_with_wrong_eligibility": 2
+      }
+    }
+  },
+  "logits": {
+    "plan": {
+      "n_tokens": 3135,
+      "max_abs": 0.83544921875,
+      "mean_abs": 0.010492870778155824,
+      "kl_mean": 3.065157565771876e-06
+    },
+    "answer": {
+      "n_tokens": 144,
+      "max_abs": 0.140625,
+      "mean_abs": 0.012249522532025972,
+      "kl_mean": 3.1472894859360975e-05
+    }
+  },
+  "differences": [],
+  "unmerged_rerun_matches_saved": {
+    "plan_text": 24,
+    "answer_text": 24,
+    "n": 24
+  },
+  "complete": true,
+  "gates": {
+    "forced_argmax_agreement": {
+      "value": 1.0,
+      "min": 0.99,
+      "pass": true
+    },
+    "labels": {
+      "unmerged": 286,
+      "merged": 286,
+      "pass": true
+    },
+    "all_twelve": {
+      "unmerged": 22,
+      "merged": 22,
+      "pass": true
+    },
+    "final_choice": {
+      "unmerged": 18,
+      "merged": 18,
+      "pass": true
+    },
+    "formatting": {
+      "unmerged": 0,
+      "merged": 0,
+      "pass": true
+    },
+    "original_weights_intact": {
+      "wrappers_and_weights_restored": true,
+      "original_digest_equal": true,
+      "ok": true,
+      "pass": true
+    }
+  },
+  "label_predictions_changed": 0,
+  "passed": true
+}

@@ -1,0 +1,649 @@
+{
+  "note": "Implementation check on training sheets only. The adapter trained here is discarded (reset afterwards, never saved). Its losses are not pilot results.",
+  "kernel_note": "Training forwards (teacher and student) use memory-efficient attention because eager attention keeps every layer's attention matrix for the backward pass, which does not fit on a T4. Generation and evaluation stay on eager attention, as in every earlier run; agreement between the two kernels is reported.",
+  "sheets_used": [
+    "plan4_qadapt_train-fam-000-base",
+    "plan4_qadapt_train-fam-001-base",
+    "plan4_qadapt_train-fam-002-base",
+    "plan4_qadapt_train-fam-003-base"
+  ],
+  "adapter": {
+    "rank": 16,
+    "alpha": 32,
+    "n_modules": 36,
+    "n_layers": 36,
+    "n_params": 3833856,
+    "registered_params": 3833856,
+    "n_bytes": 15335424,
+    "attention_at_load": "eager"
+  },
+  "sheets": [
+    {
+      "example_id": "plan4_qadapt_train-fam-000-base",
+      "build_s": 5.363003169000081,
+      "n_kv": 227,
+      "n_result": 157,
+      "checks": {
+        "plan_prompt_has_no_a_private": true,
+        "answer_prompt_has_no_a_private": true,
+        "plan_not_in_plan_input": {
+          "whole_plan_in_input": false,
+          "plan_lines_in_input": [],
+          "ok": true
+        },
+        "answer_prompt_carries_teacher_plan": true,
+        "answer_prompt_equals_teacher_generation": true,
+        "plan_roundtrip_equal": true,
+        "answer_roundtrip_equal": true,
+        "n_plan_response": 132,
+        "n_answer_response": 6,
+        "ok": true
+      },
+      "teacher_alignment": {
+        "plan": 1.0,
+        "answer": 1.0
+      }
+    },
+    {
+      "example_id": "plan4_qadapt_train-fam-001-base",
+      "build_s": 4.917180021999911,
+      "n_kv": 202,
+      "n_result": 132,
+      "checks": {
+        "plan_prompt_has_no_a_private": true,
+        "answer_prompt_has_no_a_private": true,
+        "plan_not_in_plan_input": {
+          "whole_plan_in_input": false,
+          "plan_lines_in_input": [],
+          "ok": true
+        },
+        "answer_prompt_carries_teacher_plan": true,
+        "answer_prompt_equals_teacher_generation": true,
+        "plan_roundtrip_equal": true,
+        "answer_roundtrip_equal": true,
+        "n_plan_response": 133,
+        "n_answer_response": 6,
+        "ok": true
+      },
+      "teacher_alignment": {
+        "plan": 1.0,
+        "answer": 1.0
+      }
+    },
+    {
+      "example_id": "plan4_qadapt_train-fam-002-base",
+      "build_s": 4.983080222000012,
+      "n_kv": 220,
+      "n_result": 150,
+      "checks": {
+        "plan_prompt_has_no_a_private": true,
+        "answer_prompt_has_no_a_private": true,
+        "plan_not_in_plan_input": {
+          "whole_plan_in_input": false,
+          "plan_lines_in_input": [],
+          "ok": true
+        },
+        "answer_prompt_carries_teacher_plan": true,
+        "answer_prompt_equals_teacher_generation": true,
+        "plan_roundtrip_equal": true,
+        "answer_roundtrip_equal": true,
+        "n_plan_response": 133,
+        "n_answer_response": 6,
+        "ok": true
+      },
+      "teacher_alignment": {
+        "plan": 1.0,
+        "answer": 1.0
+      }
+    },
+    {
+      "example_id": "plan4_qadapt_train-fam-003-base",
+      "build_s": 4.945618187000036,
+      "n_kv": 230,
+      "n_result": 160,
+      "checks": {
+        "plan_prompt_has_no_a_private": true,
+        "answer_prompt_has_no_a_private": true,
+        "plan_not_in_plan_input": {
+          "whole_plan_in_input": false,
+          "plan_lines_in_input": [],
+          "ok": true
+        },
+        "answer_prompt_carries_teacher_plan": true,
+        "answer_prompt_equals_teacher_generation": true,
+        "plan_roundtrip_equal": true,
+        "answer_roundtrip_equal": true,
+        "n_plan_response": 130,
+        "n_answer_response": 6,
+        "ok": true
+      },
+      "teacher_alignment": {
+        "plan": 1.0,
+        "answer": 1.0
+      }
+    }
+  ],
+  "zero_init": {
+    "logits": {
+      "sdpa": {
+        "equal": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "argmax_agree": 1.0
+      },
+      "eager": {
+        "equal": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "argmax_agree": 1.0
+      }
+    },
+    "generation": {
+      "plan4_qadapt_train-fam-000-base": {
+        "plan_text_equal": true,
+        "answer_text_equal": true,
+        "labels": {
+          "adapter_off": 7,
+          "adapter_on_zero": 7
+        },
+        "texts": {
+          "adapter_off": {
+            "plan_text": "X: ineligible | $100 | dropped  \nZ: eligible | $105 | dropped  \nY: eligible | $40 | candidate  \nU: eligible | $45 | candidate  \nP: eligible | $75 | candidate  \nS: eligible | $30 | candidate  \nR: eligible | $100 | candidate  \nT: eligible | $35 | candidate  \nQ: eligible | $55 | candidate  \nV: eligible | $110 | dropped  \nN: eligible | $45 | candidate  \nW: eligible | $95 | dropped  \n\nChoice: S at $30",
+            "raw_text": "Answer: F) S"
+          },
+          "adapter_on_zero": {
+            "plan_text": "X: ineligible | $100 | dropped  \nZ: eligible | $105 | dropped  \nY: eligible | $40 | candidate  \nU: eligible | $45 | candidate  \nP: eligible | $75 | candidate  \nS: eligible | $30 | candidate  \nR: eligible | $100 | candidate  \nT: eligible | $35 | candidate  \nQ: eligible | $55 | candidate  \nV: eligible | $110 | dropped  \nN: eligible | $45 | candidate  \nW: eligible | $95 | dropped  \n\nChoice: S at $30",
+            "raw_text": "Answer: F) S"
+          }
+        },
+        "matches_saved_prep_student": {
+          "plan_text": true,
+          "raw_text": true
+        }
+      },
+      "plan4_qadapt_train-fam-001-base": {
+        "plan_text_equal": true,
+        "answer_text_equal": true,
+        "labels": {
+          "adapter_off": 8,
+          "adapter_on_zero": 8
+        },
+        "texts": {
+          "adapter_off": {
+            "plan_text": "T: eligible | $105 | candidate  \nP: eligible | $105 | candidate  \nN: eligible | $110 | dropped  \nS: ineligible | $50 | dropped  \nU: ineligible | $40 | dropped  \nQ: eligible | $105 | candidate  \nX: eligible | $60 | candidate  \nV: eligible | $45 | candidate  \nZ: eligible | $50 | dropped  \nY: eligible | $110 | dropped  \nW: eligible | $80 | candidate  \nR: eligible | $50 | dropped  \n\nChoice: V at $45",
+            "raw_text": "Answer: H) V"
+          },
+          "adapter_on_zero": {
+            "plan_text": "T: eligible | $105 | candidate  \nP: eligible | $105 | candidate  \nN: eligible | $110 | dropped  \nS: ineligible | $50 | dropped  \nU: ineligible | $40 | dropped  \nQ: eligible | $105 | candidate  \nX: eligible | $60 | candidate  \nV: eligible | $45 | candidate  \nZ: eligible | $50 | dropped  \nY: eligible | $110 | dropped  \nW: eligible | $80 | candidate  \nR: eligible | $50 | dropped  \n\nChoice: V at $45",
+            "raw_text": "Answer: H) V"
+          }
+        },
+        "matches_saved_prep_student": {
+          "plan_text": true,
+          "raw_text": true
+        }
+      }
+    }
+  },
+  "kernels": {
+    "student_plan": {
+      "equal": false,
+      "max_abs": 0.28125,
+      "mean_abs": 0.012784082442522049,
+      "argmax_agree": 0.9924242496490479
+    },
+    "teacher_plan": {
+      "equal": false,
+      "max_abs": 0.28125,
+      "mean_abs": 0.011357205919921398,
+      "argmax_agree": 1.0
+    }
+  },
+  "training": {
+    "micro_steps": [
+      {
+        "n_tokens": 138,
+        "plan": {
+          "kl_sum": 87.5060043334961,
+          "n_tokens": 132,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 0.9318181818181818
+        },
+        "answer": {
+          "kl_sum": 4.0422051483801624e-07,
+          "n_tokens": 6,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 1.0
+        },
+        "loss": 0.6341014836066421,
+        "finite": true,
+        "example_id": "plan4_qadapt_train-fam-000-base",
+        "step": 0,
+        "seconds": 2.3943607900000643
+      },
+      {
+        "n_tokens": 139,
+        "plan": {
+          "kl_sum": 44.29298400878906,
+          "n_tokens": 133,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 0.9624060150375939
+        },
+        "answer": {
+          "kl_sum": 2.0286965707327909e-07,
+          "n_tokens": 6,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 1.0
+        },
+        "loss": 0.31865456267380377,
+        "finite": true,
+        "example_id": "plan4_qadapt_train-fam-001-base",
+        "step": 0,
+        "seconds": 2.334232138999937
+      },
+      {
+        "n_tokens": 139,
+        "plan": {
+          "kl_sum": 30.644954681396484,
+          "n_tokens": 133,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 0.9699248120300752
+        },
+        "answer": {
+          "kl_sum": 4.066991721174418e-07,
+          "n_tokens": 6,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 1.0
+        },
+        "loss": 0.2204673027920551,
+        "finite": true,
+        "example_id": "plan4_qadapt_train-fam-002-base",
+        "step": 0,
+        "seconds": 2.33719023499998
+      },
+      {
+        "n_tokens": 136,
+        "plan": {
+          "kl_sum": 14.079960823059082,
+          "n_tokens": 130,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 0.9923076923076923
+        },
+        "answer": {
+          "kl_sum": 3.1084340434972546e-07,
+          "n_tokens": 6,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 1.0
+        },
+        "loss": 0.1035291259845771,
+        "finite": true,
+        "example_id": "plan4_qadapt_train-fam-003-base",
+        "step": 0,
+        "seconds": 2.2313058959999807
+      },
+      {
+        "n_tokens": 138,
+        "plan": {
+          "kl_sum": 52.329132080078125,
+          "n_tokens": 132,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 0.946969696969697
+        },
+        "answer": {
+          "kl_sum": 1.0582106142464909e-06,
+          "n_tokens": 6,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 1.0
+        },
+        "loss": 0.3791966169441213,
+        "finite": true,
+        "example_id": "plan4_qadapt_train-fam-000-base",
+        "step": 1,
+        "seconds": 2.370069467999997
+      },
+      {
+        "n_tokens": 139,
+        "plan": {
+          "kl_sum": 28.9095516204834,
+          "n_tokens": 133,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 0.9624060150375939
+        },
+        "answer": {
+          "kl_sum": 1.9187487509952916e-07,
+          "n_tokens": 6,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 1.0
+        },
+        "loss": 0.20798238713926814,
+        "finite": true,
+        "example_id": "plan4_qadapt_train-fam-001-base",
+        "step": 1,
+        "seconds": 2.370939558000032
+      },
+      {
+        "n_tokens": 139,
+        "plan": {
+          "kl_sum": 13.348041534423828,
+          "n_tokens": 133,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 0.9699248120300752
+        },
+        "answer": {
+          "kl_sum": 3.120178178050992e-07,
+          "n_tokens": 6,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 1.0
+        },
+        "loss": 0.09602907803195429,
+        "finite": true,
+        "example_id": "plan4_qadapt_train-fam-002-base",
+        "step": 1,
+        "seconds": 2.4005410260000417
+      },
+      {
+        "n_tokens": 136,
+        "plan": {
+          "kl_sum": 11.068093299865723,
+          "n_tokens": 130,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 0.9923076923076923
+        },
+        "answer": {
+          "kl_sum": 5.131832381266577e-07,
+          "n_tokens": 6,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 1.0
+        },
+        "loss": 0.08138304274300706,
+        "finite": true,
+        "example_id": "plan4_qadapt_train-fam-003-base",
+        "step": 1,
+        "seconds": 2.2803699590000406
+      },
+      {
+        "n_tokens": 138,
+        "plan": {
+          "kl_sum": 26.82797622680664,
+          "n_tokens": 132,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 0.9696969696969697
+        },
+        "answer": {
+          "kl_sum": 1.3501486364475568e-06,
+          "n_tokens": 6,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 1.0
+        },
+        "loss": 0.19440563461561794,
+        "finite": true,
+        "example_id": "plan4_qadapt_train-fam-000-base",
+        "step": 2,
+        "seconds": 2.423520483999937
+      },
+      {
+        "n_tokens": 139,
+        "plan": {
+          "kl_sum": 11.953986167907715,
+          "n_tokens": 133,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 0.9699248120300752
+        },
+        "answer": {
+          "kl_sum": 4.453964095318952e-07,
+          "n_tokens": 6,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 1.0
+        },
+        "loss": 0.08599990369283543,
+        "finite": true,
+        "example_id": "plan4_qadapt_train-fam-001-base",
+        "step": 2,
+        "seconds": 2.4386830000000828
+      },
+      {
+        "n_tokens": 139,
+        "plan": {
+          "kl_sum": 0.7453730702400208,
+          "n_tokens": 133,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 1.0
+        },
+        "answer": {
+          "kl_sum": 2.1910766179189523e-07,
+          "n_tokens": 6,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 1.0
+        },
+        "loss": 0.005362397765091242,
+        "finite": true,
+        "example_id": "plan4_qadapt_train-fam-002-base",
+        "step": 2,
+        "seconds": 2.45002690900003
+      },
+      {
+        "n_tokens": 136,
+        "plan": {
+          "kl_sum": 6.535984992980957,
+          "n_tokens": 130,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 0.9923076923076923
+        },
+        "answer": {
+          "kl_sum": 8.311695296470134e-07,
+          "n_tokens": 6,
+          "finite": true,
+          "teacher_argmax_agree": 1.0,
+          "student_argmax_agree": 1.0
+        },
+        "loss": 0.048058719295224164,
+        "finite": true,
+        "example_id": "plan4_qadapt_train-fam-003-base",
+        "step": 2,
+        "seconds": 2.3586551979999513
+      }
+    ],
+    "steps": [
+      {
+        "grad_norm": 1.1681605577468872,
+        "grad_norm_finite": true,
+        "skipped": false,
+        "scale_before": 1024.0,
+        "scale_after": 1024.0,
+        "grads": {
+          "base_params_with_grad_or_trainable": [],
+          "n_base_params_with_grad_or_trainable": 0,
+          "trainable_ids_equal_adapter": true,
+          "kinds": {
+            "lora_A": {
+              "n": 36,
+              "with_grad": 36,
+              "finite": 36,
+              "nonzero": 0
+            },
+            "lora_B": {
+              "n": 36,
+              "with_grad": 36,
+              "finite": 36,
+              "nonzero": 36
+            }
+          }
+        },
+        "step": 0,
+        "b_all_zero_after": false
+      },
+      {
+        "grad_norm": 1.2537974119186401,
+        "grad_norm_finite": true,
+        "skipped": false,
+        "scale_before": 1024.0,
+        "scale_after": 1024.0,
+        "grads": {
+          "base_params_with_grad_or_trainable": [],
+          "n_base_params_with_grad_or_trainable": 0,
+          "trainable_ids_equal_adapter": true,
+          "kinds": {
+            "lora_A": {
+              "n": 36,
+              "with_grad": 36,
+              "finite": 36,
+              "nonzero": 36
+            },
+            "lora_B": {
+              "n": 36,
+              "with_grad": 36,
+              "finite": 36,
+              "nonzero": 36
+            }
+          }
+        },
+        "step": 1,
+        "b_all_zero_after": false
+      },
+      {
+        "grad_norm": 0.7263951897621155,
+        "grad_norm_finite": true,
+        "skipped": false,
+        "scale_before": 1024.0,
+        "scale_after": 1024.0,
+        "grads": {
+          "base_params_with_grad_or_trainable": [],
+          "n_base_params_with_grad_or_trainable": 0,
+          "trainable_ids_equal_adapter": true,
+          "kinds": {
+            "lora_A": {
+              "n": 36,
+              "with_grad": 36,
+              "finite": 36,
+              "nonzero": 36
+            },
+            "lora_B": {
+              "n": 36,
+              "with_grad": 36,
+              "finite": 36,
+              "nonzero": 36
+            }
+          }
+        },
+        "step": 2,
+        "b_all_zero_after": false
+      }
+    ],
+    "first_step_grads_ok": true,
+    "later_step_grads_ok": true,
+    "loss_by_step": {
+      "0": [
+        0.6341014836066421,
+        0.31865456267380377,
+        0.2204673027920551,
+        0.1035291259845771
+      ],
+      "1": [
+        0.3791966169441213,
+        0.20798238713926814,
+        0.09602907803195429,
+        0.08138304274300706
+      ],
+      "2": [
+        0.19440563461561794,
+        0.08599990369283543,
+        0.005362397765091242,
+        0.048058719295224164
+      ]
+    },
+    "train_s": 28.786974250999947,
+    "mean_micro_step_s": 2.365824555166673,
+    "projected_training_s": 681.3574718880018,
+    "peak_gpu_gb": 11.883552551269531,
+    "attention_during_training": "sdpa"
+  },
+  "after_training": {
+    "logits_on_vs_off": {
+      "equal": false,
+      "max_abs": 22.765625,
+      "mean_abs": 0.43503886461257935,
+      "argmax_agree": 0.946969747543335
+    },
+    "caches_held": {
+      "plan4_qadapt_train-fam-000-base": {
+        "tk_tv": true,
+        "fk_fv": true,
+        "a_full": true
+      },
+      "plan4_qadapt_train-fam-001-base": {
+        "tk_tv": true,
+        "fk_fv": true,
+        "a_full": true
+      },
+      "plan4_qadapt_train-fam-002-base": {
+        "tk_tv": true,
+        "fk_fv": true,
+        "a_full": true
+      },
+      "plan4_qadapt_train-fam-003-base": {
+        "tk_tv": true,
+        "fk_fv": true,
+        "a_full": true
+      }
+    },
+    "rebuilt_state_equal": true
+  },
+  "reset": {
+    "matches_init": true,
+    "b_all_zero": true,
+    "logits_on_vs_off": {
+      "equal": true,
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "argmax_agree": 1.0
+    },
+    "optimizer_state_empty": true,
+    "grads_cleared": true
+  },
+  "attention_after": "eager",
+  "gates": {
+    "param_count_matches_registered": true,
+    "only_q_proj_wrapped": true,
+    "targets_ok": true,
+    "teacher_targets_align": true,
+    "zero_init_logits_identical": true,
+    "zero_init_generation_identical": true,
+    "kernel_agreement": true,
+    "attention_restored_to_eager": true,
+    "loss_finite": true,
+    "no_base_gradients": true,
+    "first_step_grads": true,
+    "later_step_grads": true,
+    "some_step_applied": true,
+    "adapter_changes_outputs_after_training": true,
+    "received_caches_unchanged": true,
+    "construction_unaffected_by_adapter": true,
+    "reset_restores_init": true,
+    "reset_logits_identical": true,
+    "reset_optimizer_empty": true
+  },
+  "all_passed": true
+}

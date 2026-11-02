@@ -1,0 +1,105 @@
+{
+  "n": 9,
+  "all_passed": true,
+  "rows": [
+    {
+      "a_state_key": "plan4_timing12-fam-000-base",
+      "ok": true,
+      "result_start": 70,
+      "n_result": 133,
+      "generic_r_n": 203,
+      "fresh_r_n": 203,
+      "template_id": "L2",
+      "support_held": true,
+      "matches_recon12": true
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-001-base",
+      "ok": true,
+      "result_start": 70,
+      "n_result": 252,
+      "generic_r_n": 322,
+      "fresh_r_n": 322,
+      "template_id": "L1",
+      "support_held": true,
+      "matches_recon12": true
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-002-base",
+      "ok": true,
+      "result_start": 70,
+      "n_result": 138,
+      "generic_r_n": 208,
+      "fresh_r_n": 208,
+      "template_id": "L3",
+      "support_held": true,
+      "matches_recon12": true
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-003-base",
+      "ok": true,
+      "result_start": 70,
+      "n_result": 209,
+      "generic_r_n": 279,
+      "fresh_r_n": 279,
+      "template_id": "L1",
+      "support_held": true,
+      "matches_recon12": true
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-004-base",
+      "ok": true,
+      "result_start": 70,
+      "n_result": 151,
+      "generic_r_n": 221,
+      "fresh_r_n": 221,
+      "template_id": "L3",
+      "support_held": true,
+      "matches_recon12": true
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-005-base",
+      "ok": true,
+      "result_start": 70,
+      "n_result": 160,
+      "generic_r_n": 230,
+      "fresh_r_n": 230,
+      "template_id": "L2",
+      "support_held": true,
+      "matches_recon12": true
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-006-base",
+      "ok": true,
+      "result_start": 70,
+      "n_result": 138,
+      "generic_r_n": 208,
+      "fresh_r_n": 208,
+      "template_id": "L2",
+      "support_held": true,
+      "matches_recon12": true
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-007-base",
+      "ok": true,
+      "result_start": 70,
+      "n_result": 131,
+      "generic_r_n": 201,
+      "fresh_r_n": 201,
+      "template_id": "L3",
+      "support_held": true,
+      "matches_recon12": true
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-008-base",
+      "ok": true,
+      "result_start": 70,
+      "n_result": 136,
+      "generic_r_n": 206,
+      "fresh_r_n": 206,
+      "template_id": "L1",
+      "support_held": true,
+      "matches_recon12": true
+    }
+  ]
+}

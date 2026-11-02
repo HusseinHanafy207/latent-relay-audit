@@ -1,0 +1,122 @@
+{
+  "n": 9,
+  "all_passed": true,
+  "width": 4,
+  "rows": [
+    {
+      "a_state_key": "plan4_hold-fam-000-base",
+      "ok": true,
+      "n_carriers": 4,
+      "n_result": 72,
+      "n_instruction": 64,
+      "template_id": "L1",
+      "span_extract_ok": true,
+      "span_failures": []
+    },
+    {
+      "a_state_key": "plan4_hold-fam-001-base",
+      "ok": true,
+      "n_carriers": 4,
+      "n_result": 51,
+      "n_instruction": 64,
+      "template_id": "L3",
+      "span_extract_ok": true,
+      "span_failures": []
+    },
+    {
+      "a_state_key": "plan4_hold-fam-002-base",
+      "ok": true,
+      "n_carriers": 4,
+      "n_result": 82,
+      "n_instruction": 64,
+      "template_id": "L3",
+      "span_extract_ok": true,
+      "span_failures": []
+    },
+    {
+      "a_state_key": "plan4_hold-fam-003-base",
+      "ok": true,
+      "n_carriers": 4,
+      "n_result": 50,
+      "n_instruction": 64,
+      "template_id": "L1",
+      "span_extract_ok": true,
+      "span_failures": []
+    },
+    {
+      "a_state_key": "plan4_hold-fam-004-base",
+      "ok": true,
+      "n_carriers": 4,
+      "n_result": 81,
+      "n_instruction": 64,
+      "template_id": "L1",
+      "span_extract_ok": false,
+      "span_failures": [
+        "calculation block is missing carrier headings"
+      ]
+    },
+    {
+      "a_state_key": "plan4_hold-fam-005-base",
+      "ok": true,
+      "n_carriers": 4,
+      "n_result": 86,
+      "n_instruction": 64,
+      "template_id": "L2",
+      "span_extract_ok": true,
+      "span_failures": []
+    },
+    {
+      "a_state_key": "plan4_hold-fam-006-base",
+      "ok": true,
+      "n_carriers": 4,
+      "n_result": 87,
+      "n_instruction": 64,
+      "template_id": "L3",
+      "span_extract_ok": true,
+      "span_failures": []
+    },
+    {
+      "a_state_key": "plan4_hold-fam-007-base",
+      "ok": true,
+      "n_carriers": 4,
+      "n_result": 89,
+      "n_instruction": 64,
+      "template_id": "L2",
+      "span_extract_ok": true,
+      "span_failures": []
+    },
+    {
+      "a_state_key": "plan4_hold-fam-008-base",
+      "ok": true,
+      "n_carriers": 4,
+      "n_result": 86,
+      "n_instruction": 64,
+      "template_id": "L2",
+      "span_extract_ok": true,
+      "span_failures": []
+    }
+  ],
+  "generic_prepare_once": {
+    "width": 4,
+    "n_templates": 3,
+    "by_template": {
+      "L1": {
+        "prefill_s": 0.18765997886657715,
+        "n_prefix": 140,
+        "n": 3
+      },
+      "L2": {
+        "prefill_s": 0.11335372924804688,
+        "n_prefix": 145,
+        "n": 3
+      },
+      "L3": {
+        "prefill_s": 0.10422444343566895,
+        "n_prefix": 162,
+        "n": 3
+      }
+    },
+    "sum_prefill_s": 0.40523815155029297
+  },
+  "lead": "4-carrier construction on previously evaluated holdout base families."
+}

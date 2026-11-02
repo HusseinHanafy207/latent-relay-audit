@@ -252,8 +252,17 @@ def _run_text_b(runner, ex, *, message: str, plan_max_new: int, answer_max_new: 
     return rec
 
 
-def _run_kv_b(runner, ex, bundle, *, plan_max_new: int, answer_max_new: int):
-    plan_prompt = b_reason_kv_prompt(ex)
+def _run_kv_b(
+    runner,
+    ex,
+    bundle,
+    *,
+    plan_max_new: int,
+    answer_max_new: int,
+    plan_prompt: str | None = None,
+    make_answer_prompt=None,
+):
+    plan_prompt = b_reason_kv_prompt(ex) if plan_prompt is None else plan_prompt
     if prompt_contains_a_private(plan_prompt, ex):
         raise RuntimeError("KV B leaked A's raw sheet.")
     if "Answer: <letter>) <carrier>" in plan_prompt:
@@ -261,7 +270,11 @@ def _run_kv_b(runner, ex, bundle, *, plan_max_new: int, answer_max_new: int):
     plan_text, n_plan, plan_trunc, plan_time = runner.generate_from_cache(
         bundle, plan_prompt, max_new_tokens=plan_max_new
     )
-    prompt = b_answer_kv_prompt(ex, plan_text)
+    prompt = (
+        make_answer_prompt(ex, plan_text)
+        if make_answer_prompt is not None
+        else b_answer_kv_prompt(ex, plan_text)
+    )
     if prompt_contains_a_private(prompt, ex):
         raise RuntimeError("KV answer pass leaked A's raw sheet.")
     text, n_new, truncated, latency = runner.generate_from_cache(

@@ -1,0 +1,353 @@
+{
+  "n": 9,
+  "all_passed": true,
+  "tolerance": {
+    "max_mean_kl": 0.01,
+    "min_argmax_agree": 0.98,
+    "labels_equal": true
+  },
+  "rows": [
+    {
+      "example_id": "plan4_timing12-fam-000-base",
+      "ok": true,
+      "checks": {
+        "position_ids_match_wrapper": true,
+        "all_labels_located": true,
+        "tk_tv_self_replay": {
+          "mean_kl": 4.142537000006996e-05,
+          "max_kl": 0.004940640181303024,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "fk_fv_self_replay": {
+          "mean_kl": 1.1812470802397002e-05,
+          "max_kl": 0.0015128414379432797,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_reference": {
+          "mean_kl": 1.1812470802397002e-05,
+          "max_kl": 0.0015128414379432797,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_transferred": {
+          "mean_kl": 4.142537000006996e-05,
+          "max_kl": 0.004940640181303024,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "replace_every_layer": true,
+        "off_never_replaces": true
+      }
+    },
+    {
+      "example_id": "plan4_timing12-fam-001-base",
+      "ok": true,
+      "checks": {
+        "position_ids_match_wrapper": true,
+        "all_labels_located": true,
+        "tk_tv_self_replay": {
+          "mean_kl": 1.7549205040268134e-06,
+          "max_kl": 0.0001135440543293953,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "fk_fv_self_replay": {
+          "mean_kl": 4.162568956189716e-09,
+          "max_kl": 5.346810212358832e-07,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_reference": {
+          "mean_kl": 4.162568956189716e-09,
+          "max_kl": 5.346810212358832e-07,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_transferred": {
+          "mean_kl": 1.7549205040268134e-06,
+          "max_kl": 0.0001135440543293953,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "replace_every_layer": true,
+        "off_never_replaces": true
+      }
+    },
+    {
+      "example_id": "plan4_timing12-fam-002-base",
+      "ok": true,
+      "checks": {
+        "position_ids_match_wrapper": true,
+        "all_labels_located": true,
+        "tk_tv_self_replay": {
+          "mean_kl": 6.152837158879265e-05,
+          "max_kl": 0.007619790267199278,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "fk_fv_self_replay": {
+          "mean_kl": 8.75907062436454e-05,
+          "max_kl": 0.011561237275600433,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_reference": {
+          "mean_kl": 8.75907062436454e-05,
+          "max_kl": 0.011561237275600433,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_transferred": {
+          "mean_kl": 6.152837158879265e-05,
+          "max_kl": 0.007619790267199278,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "replace_every_layer": true,
+        "off_never_replaces": true
+      }
+    },
+    {
+      "example_id": "plan4_timing12-fam-003-base",
+      "ok": true,
+      "checks": {
+        "position_ids_match_wrapper": true,
+        "all_labels_located": true,
+        "tk_tv_self_replay": {
+          "mean_kl": 7.590676250401884e-05,
+          "max_kl": 0.004402546212077141,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "fk_fv_self_replay": {
+          "mean_kl": 1.2346320090728113e-06,
+          "max_kl": 0.0001548744912724942,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_reference": {
+          "mean_kl": 1.2346320090728113e-06,
+          "max_kl": 0.0001548744912724942,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_transferred": {
+          "mean_kl": 7.590676250401884e-05,
+          "max_kl": 0.004402546212077141,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "replace_every_layer": true,
+        "off_never_replaces": true
+      }
+    },
+    {
+      "example_id": "plan4_timing12-fam-004-base",
+      "ok": true,
+      "checks": {
+        "position_ids_match_wrapper": true,
+        "all_labels_located": true,
+        "tk_tv_self_replay": {
+          "mean_kl": 1.4230992917418916e-07,
+          "max_kl": 1.3310927897691727e-05,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "fk_fv_self_replay": {
+          "mean_kl": 2.1153653051442234e-08,
+          "max_kl": 1.6180692909983918e-06,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_reference": {
+          "mean_kl": 2.1153653051442234e-08,
+          "max_kl": 1.6180692909983918e-06,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_transferred": {
+          "mean_kl": 1.4230992917418916e-07,
+          "max_kl": 1.3310927897691727e-05,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "replace_every_layer": true,
+        "off_never_replaces": true
+      }
+    },
+    {
+      "example_id": "plan4_timing12-fam-005-base",
+      "ok": true,
+      "checks": {
+        "position_ids_match_wrapper": true,
+        "all_labels_located": true,
+        "tk_tv_self_replay": {
+          "mean_kl": 9.78525122263818e-07,
+          "max_kl": 5.916948430240154e-05,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "fk_fv_self_replay": {
+          "mean_kl": 3.0834391395728744e-07,
+          "max_kl": 3.767351518035866e-05,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_reference": {
+          "mean_kl": 3.0834391395728744e-07,
+          "max_kl": 3.767351518035866e-05,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_transferred": {
+          "mean_kl": 9.78525122263818e-07,
+          "max_kl": 5.916948430240154e-05,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "replace_every_layer": true,
+        "off_never_replaces": true
+      }
+    },
+    {
+      "example_id": "plan4_timing12-fam-006-base",
+      "ok": true,
+      "checks": {
+        "position_ids_match_wrapper": true,
+        "all_labels_located": true,
+        "tk_tv_self_replay": {
+          "mean_kl": 1.5005552086222451e-05,
+          "max_kl": 0.0018448182381689548,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "fk_fv_self_replay": {
+          "mean_kl": 9.68945005297428e-06,
+          "max_kl": 0.0012562086340039968,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_reference": {
+          "mean_kl": 9.68945005297428e-06,
+          "max_kl": 0.0012562086340039968,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_transferred": {
+          "mean_kl": 1.5005552086222451e-05,
+          "max_kl": 0.0018448182381689548,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "replace_every_layer": true,
+        "off_never_replaces": true
+      }
+    },
+    {
+      "example_id": "plan4_timing12-fam-007-base",
+      "ok": true,
+      "checks": {
+        "position_ids_match_wrapper": true,
+        "all_labels_located": true,
+        "tk_tv_self_replay": {
+          "mean_kl": 0.00012965998030267656,
+          "max_kl": 0.011643009260296822,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "fk_fv_self_replay": {
+          "mean_kl": 8.174982212949544e-06,
+          "max_kl": 0.001077044871635735,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_reference": {
+          "mean_kl": 8.174982212949544e-06,
+          "max_kl": 0.001077044871635735,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_transferred": {
+          "mean_kl": 0.00012965998030267656,
+          "max_kl": 0.011643009260296822,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "replace_every_layer": true,
+        "off_never_replaces": true
+      }
+    },
+    {
+      "example_id": "plan4_timing12-fam-008-base",
+      "ok": true,
+      "checks": {
+        "position_ids_match_wrapper": true,
+        "all_labels_located": true,
+        "tk_tv_self_replay": {
+          "mean_kl": 1.3107171525916783e-06,
+          "max_kl": 0.0001009195257211104,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "fk_fv_self_replay": {
+          "mean_kl": 6.4511282289458904e-06,
+          "max_kl": 0.0005980655550956726,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_reference": {
+          "mean_kl": 6.4511282289458904e-06,
+          "max_kl": 0.0005980655550956726,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "batched_off_transferred": {
+          "mean_kl": 1.3107171525916783e-06,
+          "max_kl": 0.0001009195257211104,
+          "argmax_agree": 1.0,
+          "labels_equal": true,
+          "ok": true
+        },
+        "replace_every_layer": true,
+        "off_never_replaces": true
+      }
+    }
+  ]
+}

@@ -1,68 +1,59 @@
-# latent-relay-audit
+# Compact KV-Cache Communication Between LLM Agents
 
-When agents share completed intermediate results, what must a selected KV message retain to preserve task-relevant constraints, beyond merely keeping generation stable?
+This project investigates:
 
-Working title: **Communicating Evidence and Intermediate Results in Multi-Agent LLM Systems**
+**What context must a compact KV-cache message retain or reconstruct so that another agent can reliably use the sender’s intermediate results?**
 
 ## Setup
 
-Two frozen agents share one Qwen3-4B model on a Kaggle Tesla T4 (FP16). Agent A has operational facts; Agent B has prices and a budget. Neither sees the other’s private sheet. B must book the cheapest eligible carrier among P, Q, R, and S.
+Agent A receives private operational information and calculates carrier capacities and eligibility. Agent B receives prices and a budget, then chooses the cheapest eligible carrier.
 
-A writes the calculations, then sends a message. The compared messages are text versus KV states from that same written work. Gold labels come from a deterministic solver. Each family has a base, an A-only change, and a B-only change; those are related variants, not independent items.
+The experiments compare full KV transfer, selected result-line KV states, reconstructed states, and text containing the same results. Result positions are identified structurally; the focus is reliable reuse after selection.
 
-Pinned hardware, model revision, and splits are in `configs/pinned.json`. Do not mix GPU types.
+Experiments use Qwen3-4B on a Tesla T4 with FP16 inference. A’s written output stays fixed within each comparison. Later experiments adapt only B’s query projections, following [Attuner](https://arxiv.org/abs/2609.36722).
 
-## Main result
+Evaluation checks both **eligibility labels** and **final choices**, because a correct final answer can hide incorrect labels.
 
-A’s result lines (capacity and eligibility for each carrier) as **text** transfer those constraints. The **KV states of those same lines** do not, unless extra cache positions are kept just to make generation usable—and even then eligibility transfer stays unreliable.
+## Experiments and findings
 
-Five frozen conditions, same prompts and selection rule:
+- **Interface checks:** Prefix reuse passed, but position and framing fixes left a large reliability gap. The strongest compact condition recovered all four labels in 35/90 development cases, versus 90/90 for full KV and text.
+- **Supporting context:** General instruction states improved four-carrier recovery to 87/90. However, the supported handoff failed to recover all twelve labels in any of nine twelve-carrier diagnostic cases.
+- **Reconstruction and component tests:** Recomputing the selected result states improved twelve-carrier label accuracy from 63/108 to 106/108. Key/value swaps and attention interventions examined possible causes. Recovery under borrowed reference attention persisted after zeroing result values, so it did not establish successful reading of those values.
+- **Receiver adaptation:** A query adapter trained on 96 sheets substantially improved reuse without reconstructing result states at inference. Removing or substituting A’s results confirmed continued dependence on the message.
 
-| condition | development (`plan4_dev`) | held-out (`plan4_hold`) | payload |
-|---|---|---|---|
-| Full KV | 82/90 correct; eligibility 90/90 | 76/90; 88/90 | ~162 MiB |
-| Result lines as text | 79/90; 90/90 | 74/90; 87/90 | ~310 B |
-| Result KV + first 4 positions | 42/90; 25/90 | 39/90; 24/90 | ~11.3 MiB |
-| First 4 positions only | 23/90; 4/90 | 23/90; 6/90 | 0.56 MiB |
-| Result KV only | 0/90; generation collapsed | 0/90; collapsed | ~10.8 MiB |
+On 24 new evaluation families—48 sheets, each with twelve labels:
 
-The held-out split (`data/plan4_hold.jsonl`, seed 2070) is new families, disjoint from `plan4_dev` and `plan4_fresh`. `plan4_fresh` was already used and is not an unused confirmation set.
+- **Unadapted compact KV:** 356/576 labels; 0/48 completely correct sheets.
+- **Adapted compact KV:** 570/576 labels; 43/48 completely correct sheets.
+- **Full KV:** 572/576 labels; 45/48 completely correct sheets.
+- **Result text:** 571/576 labels; 44/48 completely correct sheets.
 
-What this means:
+Final choices were 33/48 for adapted KV, 34/48 for full KV, and 39/48 for text. Recovery within the predefined five-percentage-point margin remains statistically unestablished.
 
-- The first four cache positions are the prompt opening. They restore parseable generation (90/90 on both splits) but carry little of A’s results.
-- Adding the result states to those four positions helps final answers (development: 25 fixes, 6 hurts versus four-only; held-out: 21 fixes, 5 hurts) but B still mislabels eligibility on most examples (25/90 and 24/90 all-four correct). Many “correct” finals still contain a wrong eligibility label elsewhere.
-- Result text of the same lines recovers eligibility nearly as well as full KV. The small final-answer gap between full KV and result text does not establish a reliable channel advantage.
-- A’s own eligibility labels were correct on all unique sender sheets in both evaluations. Token-to-cache alignment passed. The remaining failure is using selected result KV without the surrounding cache.
-- Recorded processing is about 33–35 s including A’s written work. The KV variants reduce payload, not wall-clock time. Network transfer was not measured.
+## Cost
 
-Do not resume `results_stage_plan4_stable` or `results_stage_plan4_hold`. The procedure is frozen.
+After merging the adapter and connecting actual GPU-side message preparation to B, the warm same-GPU benchmark measured:
 
-## Earlier findings (background)
+- **Adapted compact KV:** 9.501 seconds; 31.41 MiB including shared support.
+- **Full KV:** 11.273 seconds; 297.33 MiB.
+- **Result text:** 9.492 seconds; approximately 506 bytes.
 
-These are diagnostic, not the current claim.
+Compact KV used about **89% less cache memory** and **15.7% less handoff time** than full KV. Its timing difference from text was inconclusive; text messages were much smaller in bytes.
 
-**Collaboration is real on this task.** Sending A’s result lines beats no message and a mismatched message (77/90 vs 17/90 and 26/90 on development). Extra 40-step latent rollouts did not help A compute those lines.
+Measurements used three repetitions per sheet and family-clustered comparisons. They exclude shared sender generation, training, and one-time setup. Network transfer was not measured.
 
-**Whole-cache compression failed here.** Dummy-token and question-conditioned headwise budgets (32/64/256) stayed far below text and full KV. The probe selected chat markers, not result lines. OBF did not recover accuracy.
+## Running the experiments
 
-**Simple inventory lookup (completed earlier).** On a one-record held-out set, full KV was 76/80 and headwise-32 was 45/80 when B depended on the relay; that penalty disappeared when B could read the inventory. On two-hop lookup, targeted text was smaller, faster, and at least as accurate as KV.
-
-## Reproduction
+Stage-specific Kaggle notebooks are in `notebooks/`, with runners in `src/stage_*.py`. Use the pinned model revision and settings in `configs/pinned.json`, and run each stage’s construction checks before evaluation.
 
 ```bash
 python -m pytest tests -q
 ```
 
-Frozen files: `data/test.jsonl`, `data/hop_test.jsonl`, `data/plan_dev.jsonl`, `data/plan4_dev.jsonl`, `data/plan4_fresh.jsonl`, `data/plan4_hold.jsonl`. Do not rewrite them.
+Keep recorded sender outputs and dataset splits unchanged. Final integrated benchmark exports are under `results_stage_plan4_qmerge/`.
 
-- Model: Qwen3-4B, revision `1cfa9a7208912126459214e8b04321603b3df60c`.
-- Upstream LatentMAS commit `36f43183e84d2fbf3b84c9bf4e3e06b7c442a523`. `transformers==4.57.3`.
-- Decoding: greedy, temperature 0.
-- Cache sizes in result JSON (`mean_relay_mb`) are mebibytes (1024²).
+## Scope
 
-Stage runners live in `src/stage_*.py`. Fetch upstream with `scripts/fetch_upstream.py`. Completed T4 logs are under `results_stage_*`.
+This is a controlled study using one model, one GPU class, and synthetic shipment tasks. Earlier diagnostics reused development examples; the adapter was frozen before its new-family evaluation, whose sheets were later reused for engineering checks.
 
-## Limitations
-
-Synthetic tasks, one model, one GPU class. n=90 is 30 families with three variants each. Name matching is unusually strong on the inventory format. Full-KV misses after correct eligibility show that some errors are B’s later choice, not lost communication. This is a pilot about this selected-KV procedure, not a verdict against latent communication in general.
+The results demonstrate a reliability repair and savings relative to full KV. They do not establish that compact KV is preferable to text.

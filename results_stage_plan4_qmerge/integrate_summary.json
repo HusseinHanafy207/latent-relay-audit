@@ -1,0 +1,236 @@
+{
+  "scope": "Dev sheets, merged receiver. Same checkpoint, support, prompts and selection; only where R is prepared and how it reaches B changes.",
+  "runs": {
+    "frozen_std": "frozen R (CPU selection and re-rotation at state build), B's standard two-call path",
+    "actual_std": "R from A's GPU selection and re-rotation, same standard path (isolates the R difference)",
+    "actual_direct": "R from the GPU placed straight into B's cache on the GPU, shared-prefix two-pass generation (the benchmark's same_gpu path)"
+  },
+  "r_comparison": {
+    "n_sheets": 24,
+    "shapes_equal_all": true,
+    "values_equal_all": true,
+    "sheets_keys_bit_equal": 0,
+    "keys_max_abs": 0.25,
+    "keys_mean_abs": 2.8663893956759716e-08,
+    "min_keys_bit_equal_fraction": 0.9997662901878357
+  },
+  "logits_frozen_vs_actual_r": {
+    "plan": {
+      "n_tokens": 3135,
+      "all_equal": false,
+      "max_abs": 0.96875,
+      "kl_mean_max": 1.6408416536427284e-05
+    },
+    "answer": {
+      "n_tokens": 144,
+      "all_equal": false,
+      "max_abs": 0.18359375,
+      "kl_mean_max": 0.0001677516265772283
+    }
+  },
+  "labels": {
+    "base": {
+      "frozen_std": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 144,
+        "cases_all_twelve_correct": 12,
+        "ineligible_marked_eligible": 0,
+        "eligible_marked_ineligible": 0,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "actual_std": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 144,
+        "cases_all_twelve_correct": 12,
+        "ineligible_marked_eligible": 0,
+        "eligible_marked_ineligible": 0,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "actual_direct": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 144,
+        "cases_all_twelve_correct": 12,
+        "ineligible_marked_eligible": 0,
+        "eligible_marked_ineligible": 0,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      }
+    },
+    "a_flip": {
+      "frozen_std": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 142,
+        "cases_all_twelve_correct": 10,
+        "ineligible_marked_eligible": 1,
+        "eligible_marked_ineligible": 1,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "actual_std": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 142,
+        "cases_all_twelve_correct": 10,
+        "ineligible_marked_eligible": 1,
+        "eligible_marked_ineligible": 1,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "actual_direct": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 142,
+        "cases_all_twelve_correct": 10,
+        "ineligible_marked_eligible": 1,
+        "eligible_marked_ineligible": 1,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      }
+    }
+  },
+  "final_choice": {
+    "base": {
+      "frozen_std": {
+        "n_cases": 12,
+        "final_choice_correct": 9,
+        "follows_trap": 0,
+        "correct_with_wrong_eligibility": 0
+      },
+      "actual_std": {
+        "n_cases": 12,
+        "final_choice_correct": 9,
+        "follows_trap": 0,
+        "correct_with_wrong_eligibility": 0
+      },
+      "actual_direct": {
+        "n_cases": 12,
+        "final_choice_correct": 9,
+        "follows_trap": 0,
+        "correct_with_wrong_eligibility": 0
+      }
+    },
+    "a_flip": {
+      "frozen_std": {
+        "n_cases": 12,
+        "final_choice_correct": 9,
+        "follows_trap": 6,
+        "correct_with_wrong_eligibility": 2
+      },
+      "actual_std": {
+        "n_cases": 12,
+        "final_choice_correct": 9,
+        "follows_trap": 6,
+        "correct_with_wrong_eligibility": 2
+      },
+      "actual_direct": {
+        "n_cases": 12,
+        "final_choice_correct": 9,
+        "follows_trap": 6,
+        "correct_with_wrong_eligibility": 2
+      }
+    }
+  },
+  "frozen_std_reproduces_agree_merged": {
+    "plan_text": 24,
+    "answer_text": 24,
+    "n": 24
+  },
+  "actual_r_vs_frozen_r": {
+    "gates": {
+      "forced_argmax_agreement": {
+        "value": 1.0,
+        "min": 0.99,
+        "pass": true
+      },
+      "labels": {
+        "ref": 286,
+        "test": 286,
+        "pass": true
+      },
+      "all_twelve": {
+        "ref": 22,
+        "test": 22,
+        "pass": true
+      },
+      "final_choice": {
+        "ref": 18,
+        "test": 18,
+        "pass": true
+      },
+      "formatting": {
+        "ref": 0,
+        "test": 0,
+        "pass": true
+      },
+      "original_weights_intact": {
+        "wrappers_and_weights_restored": true,
+        "original_digest_equal": true,
+        "ok": true,
+        "pass": true
+      },
+      "r_values_and_shapes": {
+        "pass": true
+      }
+    },
+    "label_predictions_changed": 0,
+    "passed": true
+  },
+  "direct_path_vs_frozen_r": {
+    "gates": {
+      "labels": {
+        "ref": 286,
+        "test": 286,
+        "pass": true
+      },
+      "all_twelve": {
+        "ref": 22,
+        "test": 22,
+        "pass": true
+      },
+      "final_choice": {
+        "ref": 18,
+        "test": 18,
+        "pass": true
+      },
+      "formatting": {
+        "ref": 0,
+        "test": 0,
+        "pass": true
+      },
+      "original_weights_intact": {
+        "wrappers_and_weights_restored": true,
+        "original_digest_equal": true,
+        "ok": true,
+        "pass": true
+      }
+    },
+    "label_predictions_changed": 0,
+    "passed": true
+  },
+  "differences": {
+    "actual_std": [],
+    "actual_direct": []
+  },
+  "complete": true,
+  "passed": true,
+  "cause": null,
+  "next": "The benchmark feeds B the GPU-prepared R directly."
+}

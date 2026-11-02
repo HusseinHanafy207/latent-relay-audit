@@ -1,0 +1,55 @@
+{
+  "recorded_at_utc": "2026-10-27T15:47:23.377074+00:00",
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+  "executable": "/usr/bin/python3",
+  "platform": "linux",
+  "cwd": "/kaggle/working/latent-relay-audit",
+  "repo_commit": "68549a7839dd6e36faae80f8ae8cc8bacee5151f",
+  "upstream_commit_expected": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "upstream_commit_actual": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "torch": "2.11.0+cu128",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "transformers": "4.57.3",
+  "precision": {
+    "inference_dtype": "float16",
+    "alignment_dtype": "float32",
+    "compression_dtype": "float32",
+    "enable_thinking": false,
+    "device_name": "Tesla T4",
+    "device_capability": "7.5",
+    "source": "env:fp16"
+  },
+  "env": {
+    "LATENT_RELAY_INFER_DTYPE": "fp16",
+    "HF_HOME": null,
+    "TRANSFORMERS_CACHE": null
+  },
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "model_name": "Qwen/Qwen3-4B",
+  "extra": {
+    "stage": "plan4-refattn12",
+    "do_not_overwrite": [
+      "results_stage_plan4_kvmix12",
+      "results_stage_plan4_query12",
+      "results_stage_plan4_recon12",
+      "results_stage_plan4_timing",
+      "results_stage_plan4_confirm",
+      "results_stage_plan4_hold"
+    ],
+    "branches": [
+      "tk_tv",
+      "fk_tv",
+      "fk_fv",
+      "tk_tv_refattn",
+      "tk_tv_selfattn"
+    ],
+    "reference": "fk_fv",
+    "tolerance": {
+      "max_mean_kl": 0.01,
+      "min_argmax_agree": 0.98,
+      "labels_equal": true
+    },
+    "phase": "compare"
+  }
+}

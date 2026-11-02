@@ -1,0 +1,44 @@
+{
+  "by_epoch": {
+    "1": {
+      "n_micro": 96,
+      "n_steps": 24,
+      "mean_loss": 0.060392624396114696,
+      "skipped_steps": 0,
+      "mean_grad_norm": 0.5270846557493011,
+      "train_s": 257.2331270649995
+    },
+    "2": {
+      "n_micro": 96,
+      "n_steps": 24,
+      "mean_loss": 0.009288129320338878,
+      "skipped_steps": 0,
+      "mean_grad_norm": 0.0863975010967503,
+      "train_s": 257.5064724690001
+    },
+    "3": {
+      "n_micro": 96,
+      "n_steps": 24,
+      "mean_loss": 0.006068114034653525,
+      "skipped_steps": 0,
+      "mean_grad_norm": 0.08891418304604788,
+      "train_s": 256.67537331199924
+    }
+  },
+  "n_sheets": 96,
+  "epochs": 3,
+  "sheets_per_step": 4,
+  "lr": 0.0002,
+  "trainable_params": 3833856,
+  "adapter_bytes": 15335424,
+  "state_build_s": 515.967645856,
+  "peak_gpu_gb": 12.034771919250488,
+  "received_caches_unchanged": {
+    "plan4_qadapt_train-fam-000-base": true,
+    "plan4_qadapt_train-fam-001-base": true,
+    "plan4_qadapt_train-fam-002-base": true,
+    "plan4_qadapt_train-fam-003-base": true
+  },
+  "teacher_target_generation_s": 847.2720739841461,
+  "note": "Training loss is on the training sheets only; it is not a pilot result."
+}

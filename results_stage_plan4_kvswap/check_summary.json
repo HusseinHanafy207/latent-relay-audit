@@ -1,0 +1,240 @@
+{
+  "n": 6,
+  "layout": "sep",
+  "all_passed": true,
+  "construction": [
+    {
+      "a_state_key": "plan4_dev-fam-000-base",
+      "ok": true,
+      "n": 92,
+      "n_added": 1,
+      "identity_transfer_eq": true,
+      "identity_reconstruct_eq": true,
+      "recon_k_a_v_keys_from_recon": true,
+      "recon_k_a_v_values_from_a": true,
+      "a_k_recon_v_keys_from_a": true,
+      "a_k_recon_v_values_from_recon": true,
+      "caches_equal_pair": false
+    },
+    {
+      "a_state_key": "plan4_dev-fam-000-a_flip",
+      "ok": true,
+      "n": 78,
+      "n_added": 1,
+      "identity_transfer_eq": true,
+      "identity_reconstruct_eq": true,
+      "recon_k_a_v_keys_from_recon": true,
+      "recon_k_a_v_values_from_a": true,
+      "a_k_recon_v_keys_from_a": true,
+      "a_k_recon_v_values_from_recon": true,
+      "caches_equal_pair": false
+    },
+    {
+      "a_state_key": "plan4_dev-fam-001-base",
+      "ok": true,
+      "n": 89,
+      "n_added": 1,
+      "identity_transfer_eq": true,
+      "identity_reconstruct_eq": true,
+      "recon_k_a_v_keys_from_recon": true,
+      "recon_k_a_v_values_from_a": true,
+      "a_k_recon_v_keys_from_a": true,
+      "a_k_recon_v_values_from_recon": true,
+      "caches_equal_pair": false
+    },
+    {
+      "a_state_key": "plan4_dev-fam-001-a_flip",
+      "ok": true,
+      "n": 79,
+      "n_added": 1,
+      "identity_transfer_eq": true,
+      "identity_reconstruct_eq": true,
+      "recon_k_a_v_keys_from_recon": true,
+      "recon_k_a_v_values_from_a": true,
+      "a_k_recon_v_keys_from_a": true,
+      "a_k_recon_v_values_from_recon": true,
+      "caches_equal_pair": false
+    },
+    {
+      "a_state_key": "plan4_dev-fam-006-base",
+      "ok": true,
+      "n": 84,
+      "n_added": 1,
+      "identity_transfer_eq": true,
+      "identity_reconstruct_eq": true,
+      "recon_k_a_v_keys_from_recon": true,
+      "recon_k_a_v_values_from_a": true,
+      "a_k_recon_v_keys_from_a": true,
+      "a_k_recon_v_values_from_recon": true,
+      "caches_equal_pair": false
+    },
+    {
+      "a_state_key": "plan4_dev-fam-006-a_flip",
+      "ok": true,
+      "n": 55,
+      "n_added": 1,
+      "identity_transfer_eq": true,
+      "identity_reconstruct_eq": true,
+      "recon_k_a_v_keys_from_recon": true,
+      "recon_k_a_v_values_from_a": true,
+      "a_k_recon_v_keys_from_a": true,
+      "a_k_recon_v_values_from_recon": true,
+      "caches_equal_pair": false
+    }
+  ],
+  "peek_receiver": {
+    "transfer": {
+      "n": 6,
+      "parse_ok": 6,
+      "think_collapse": 0,
+      "truncated": 0,
+      "plan_all_status_correct": 3,
+      "mean_n_status_correct": 3.3333333333333335,
+      "plan_ineligible_marked_eligible": 4,
+      "plan_eligible_marked_ineligible": 0,
+      "correct": 4,
+      "follows_trap": 1,
+      "plan_answer_agrees": {
+        "n_true": 6,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "correct_with_wrong_eligibility": 2,
+      "mean_n_kept": 79.5,
+      "mean_n_result_kept": 74.5,
+      "mean_n_sink_kept": 4.0,
+      "mean_n_extra": 0.0,
+      "mean_n_added": 1.0,
+      "mean_n_full": 1141.1666666666667,
+      "mean_overlap_support_extra_frac": 0.0,
+      "mean_selection_time_s": 0.15814316272735596,
+      "mean_rebuild_time_s": 1.0367261568705242,
+      "span_extract_ok": 0,
+      "mean_message_bytes": 11722831.0,
+      "mean_relay_mb": 11.179762840270996,
+      "mean_process_time_s": 36.23197158177694,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "cache_source": [
+        "transfer_gather_rerotate_extend"
+      ],
+      "sampling_mode": []
+    },
+    "recon_k_a_v": {
+      "n": 6,
+      "parse_ok": 6,
+      "think_collapse": 0,
+      "truncated": 0,
+      "plan_all_status_correct": 4,
+      "mean_n_status_correct": 3.3333333333333335,
+      "plan_ineligible_marked_eligible": 3,
+      "plan_eligible_marked_ineligible": 1,
+      "correct": 4,
+      "follows_trap": 1,
+      "plan_answer_agrees": {
+        "n_true": 6,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "correct_with_wrong_eligibility": 1,
+      "mean_n_kept": 79.5,
+      "mean_n_result_kept": 74.5,
+      "mean_n_sink_kept": 4.0,
+      "mean_n_extra": 0.0,
+      "mean_n_added": 1.0,
+      "mean_n_full": 1141.1666666666667,
+      "mean_overlap_support_extra_frac": 0.0,
+      "mean_selection_time_s": 0.23874608675638834,
+      "mean_rebuild_time_s": 1.0367261568705242,
+      "span_extract_ok": 0,
+      "mean_message_bytes": 11722831.0,
+      "mean_relay_mb": 11.179762840270996,
+      "mean_process_time_s": 36.195968786875405,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "cache_source": [
+        "mix_recon_k_a_v"
+      ],
+      "sampling_mode": []
+    },
+    "a_k_recon_v": {
+      "n": 6,
+      "parse_ok": 6,
+      "think_collapse": 0,
+      "truncated": 0,
+      "plan_all_status_correct": 2,
+      "mean_n_status_correct": 3.1666666666666665,
+      "plan_ineligible_marked_eligible": 4,
+      "plan_eligible_marked_ineligible": 1,
+      "correct": 3,
+      "follows_trap": 2,
+      "plan_answer_agrees": {
+        "n_true": 6,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "correct_with_wrong_eligibility": 2,
+      "mean_n_kept": 79.5,
+      "mean_n_result_kept": 74.5,
+      "mean_n_sink_kept": 4.0,
+      "mean_n_extra": 0.0,
+      "mean_n_added": 1.0,
+      "mean_n_full": 1141.1666666666667,
+      "mean_overlap_support_extra_frac": 0.0,
+      "mean_selection_time_s": 0.23874608675638834,
+      "mean_rebuild_time_s": 1.0367261568705242,
+      "span_extract_ok": 0,
+      "mean_message_bytes": 11722831.0,
+      "mean_relay_mb": 11.179762840270996,
+      "mean_process_time_s": 36.17283169428507,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "cache_source": [
+        "mix_a_k_recon_v"
+      ],
+      "sampling_mode": []
+    },
+    "reconstruct": {
+      "n": 6,
+      "parse_ok": 6,
+      "think_collapse": 0,
+      "truncated": 0,
+      "plan_all_status_correct": 5,
+      "mean_n_status_correct": 3.8333333333333335,
+      "plan_ineligible_marked_eligible": 1,
+      "plan_eligible_marked_ineligible": 0,
+      "correct": 5,
+      "follows_trap": 0,
+      "plan_answer_agrees": {
+        "n_true": 6,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "correct_with_wrong_eligibility": 1,
+      "mean_n_kept": 79.5,
+      "mean_n_result_kept": 74.5,
+      "mean_n_sink_kept": 4.0,
+      "mean_n_extra": 0.0,
+      "mean_n_added": 1.0,
+      "mean_n_full": 1141.1666666666667,
+      "mean_overlap_support_extra_frac": 0.0,
+      "mean_selection_time_s": 0.0806029240290324,
+      "mean_rebuild_time_s": 1.0367261568705242,
+      "span_extract_ok": 0,
+      "mean_message_bytes": 11722831.0,
+      "mean_relay_mb": 11.179762840270996,
+      "mean_process_time_s": 36.06351379553477,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "cache_source": [
+        "reconstruct_prefill"
+      ],
+      "sampling_mode": []
+    }
+  },
+  "lead": "Identity mixes must recover transfer and reconstruct caches. Token IDs, lengths, and cursors stay matched. Cache equality of transfer vs reconstruct is not required."
+}

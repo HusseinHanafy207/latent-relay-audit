@@ -1,0 +1,760 @@
+{
+  "scope": "Implementation and timing comparison. Dev sheets were already used for checkpoint selection; eval sheets were already used for the candidate's evaluation and are reused here as timing inputs. Neither is a new independent confirmation.",
+  "timing_note": "Single T4. Compact KV is built from the R that A's GPU preparation actually produces (checked against the frozen R on dev first). Movement depends on the declared deployment (see 'deployment'). Public support (KV) and the public text header are prefilled once and kept on B's GPU; their one-time cost is reported separately. Every condition prefills the prompt tokens shared by its plan and answer passes once.",
+  "n_rows": 864,
+  "reps": 3,
+  "checks_ok": true,
+  "checks_worst": {
+    "actual_r_keys_max_abs_vs_frozen": 0.03125,
+    "actual_r_keys_bit_equal_sheets": 0,
+    "actual_r_values_equal_all": true,
+    "rebuilt_fk_keys_max_abs": 0.0,
+    "rebuilt_fk_values_max_abs": 0.0
+  },
+  "labels": {
+    "base": {
+      "merged_kv": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 284,
+        "cases_all_twelve_correct": 21,
+        "ineligible_marked_eligible": 2,
+        "eligible_marked_ineligible": 2,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "unmerged_kv": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 284,
+        "cases_all_twelve_correct": 21,
+        "ineligible_marked_eligible": 2,
+        "eligible_marked_ineligible": 2,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "unadapted_kv": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 181,
+        "cases_all_twelve_correct": 0,
+        "ineligible_marked_eligible": 104,
+        "eligible_marked_ineligible": 3,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "fk_fv": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 284,
+        "cases_all_twelve_correct": 22,
+        "ineligible_marked_eligible": 2,
+        "eligible_marked_ineligible": 2,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "text_result": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 284,
+        "cases_all_twelve_correct": 21,
+        "ineligible_marked_eligible": 2,
+        "eligible_marked_ineligible": 2,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "full_kv": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 285,
+        "cases_all_twelve_correct": 22,
+        "ineligible_marked_eligible": 1,
+        "eligible_marked_ineligible": 2,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      }
+    },
+    "a_flip": {
+      "merged_kv": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 286,
+        "cases_all_twelve_correct": 22,
+        "ineligible_marked_eligible": 1,
+        "eligible_marked_ineligible": 0,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 1
+      },
+      "unmerged_kv": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 286,
+        "cases_all_twelve_correct": 22,
+        "ineligible_marked_eligible": 1,
+        "eligible_marked_ineligible": 0,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 1
+      },
+      "unadapted_kv": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 175,
+        "cases_all_twelve_correct": 0,
+        "ineligible_marked_eligible": 102,
+        "eligible_marked_ineligible": 11,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "fk_fv": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 285,
+        "cases_all_twelve_correct": 22,
+        "ineligible_marked_eligible": 2,
+        "eligible_marked_ineligible": 1,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "text_result": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 287,
+        "cases_all_twelve_correct": 23,
+        "ineligible_marked_eligible": 1,
+        "eligible_marked_ineligible": 0,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "full_kv": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 287,
+        "cases_all_twelve_correct": 23,
+        "ineligible_marked_eligible": 1,
+        "eligible_marked_ineligible": 0,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      }
+    }
+  },
+  "final_choice": {
+    "base": {
+      "merged_kv": {
+        "n_cases": 24,
+        "final_choice_correct": 14,
+        "follows_trap": 0,
+        "correct_with_wrong_eligibility": 1
+      },
+      "unmerged_kv": {
+        "n_cases": 24,
+        "final_choice_correct": 14,
+        "follows_trap": 0,
+        "correct_with_wrong_eligibility": 1
+      },
+      "unadapted_kv": {
+        "n_cases": 24,
+        "final_choice_correct": 1,
+        "follows_trap": 11,
+        "correct_with_wrong_eligibility": 1
+      },
+      "fk_fv": {
+        "n_cases": 24,
+        "final_choice_correct": 16,
+        "follows_trap": 0,
+        "correct_with_wrong_eligibility": 1
+      },
+      "text_result": {
+        "n_cases": 24,
+        "final_choice_correct": 17,
+        "follows_trap": 0,
+        "correct_with_wrong_eligibility": 2
+      },
+      "full_kv": {
+        "n_cases": 24,
+        "final_choice_correct": 16,
+        "follows_trap": 3,
+        "correct_with_wrong_eligibility": 1
+      }
+    },
+    "a_flip": {
+      "merged_kv": {
+        "n_cases": 24,
+        "final_choice_correct": 19,
+        "follows_trap": 11,
+        "correct_with_wrong_eligibility": 2
+      },
+      "unmerged_kv": {
+        "n_cases": 24,
+        "final_choice_correct": 19,
+        "follows_trap": 11,
+        "correct_with_wrong_eligibility": 2
+      },
+      "unadapted_kv": {
+        "n_cases": 24,
+        "final_choice_correct": 9,
+        "follows_trap": 13,
+        "correct_with_wrong_eligibility": 9
+      },
+      "fk_fv": {
+        "n_cases": 24,
+        "final_choice_correct": 20,
+        "follows_trap": 11,
+        "correct_with_wrong_eligibility": 2
+      },
+      "text_result": {
+        "n_cases": 24,
+        "final_choice_correct": 22,
+        "follows_trap": 11,
+        "correct_with_wrong_eligibility": 1
+      },
+      "full_kv": {
+        "n_cases": 24,
+        "final_choice_correct": 18,
+        "follows_trap": 14,
+        "correct_with_wrong_eligibility": 1
+      }
+    }
+  },
+  "consistency_across_reps": {
+    "merged_kv": {
+      "n_sheets": 48,
+      "identical_across_reps": 48
+    },
+    "unmerged_kv": {
+      "n_sheets": 48,
+      "identical_across_reps": 48
+    },
+    "unadapted_kv": {
+      "n_sheets": 48,
+      "identical_across_reps": 48
+    },
+    "fk_fv": {
+      "n_sheets": 48,
+      "identical_across_reps": 48
+    },
+    "text_result": {
+      "n_sheets": 48,
+      "identical_across_reps": 48
+    },
+    "full_kv": {
+      "n_sheets": 48,
+      "identical_across_reps": 48
+    }
+  },
+  "vs_saved_eval_rows": {
+    "merged_kv": {
+      "eval_ref": "adapted_correct_r",
+      "n": 48,
+      "plan_text_identical": 48,
+      "labels_bench": 570,
+      "labels_saved": 570
+    },
+    "unmerged_kv": {
+      "eval_ref": "adapted_correct_r",
+      "n": 48,
+      "plan_text_identical": 48,
+      "labels_bench": 570,
+      "labels_saved": 570
+    },
+    "unadapted_kv": {
+      "eval_ref": "unadapted_correct_r",
+      "n": 48,
+      "plan_text_identical": 47,
+      "labels_bench": 356,
+      "labels_saved": 356
+    },
+    "fk_fv": {
+      "eval_ref": "fk_fv",
+      "n": 48,
+      "plan_text_identical": 48,
+      "labels_bench": 569,
+      "labels_saved": 569
+    },
+    "text_result": {
+      "eval_ref": "text_result",
+      "n": 48,
+      "plan_text_identical": 48,
+      "labels_bench": 571,
+      "labels_saved": 571
+    },
+    "full_kv": {
+      "eval_ref": "full_kv",
+      "n": 48,
+      "plan_text_identical": 47,
+      "labels_bench": 572,
+      "labels_saved": 572
+    }
+  },
+  "timing": {
+    "merged_kv": {
+      "sender_prep_s": 0.022895354958327136,
+      "movement_s": 0.0,
+      "receiver_prep_s": 0.005922604062391201,
+      "encode_s": 0.00665041449999156,
+      "r_prefill_s": 0.0,
+      "shared_prefill_s": 0.06648643106251484,
+      "plan_prefill_s": 0.4497303416331609,
+      "answer_prefill_s": 0.31823469201723736,
+      "plan_decode_s": 8.246699929237366,
+      "answer_decode_s": 0.31708406408627826,
+      "crop_s": 0.00040945104177581015,
+      "movement_out_s": 0.0,
+      "movement_in_s": 0.0,
+      "untimed_bench_copy_s": 0.0,
+      "component_sum_s": 9.434950756569444,
+      "handoff_total_s": 9.501022782312361,
+      "n_plan_tokens": 131.10416666666666,
+      "n_new_tokens": 6.0,
+      "n_kv_received": 223.375,
+      "bytes_moved": 22616064.0,
+      "peak_gpu_gb": 8.83342249194781,
+      "decode_s_per_token": 0.06246187990875778,
+      "prefill_total_s": 0.8344514647129131,
+      "decode_total_s": 8.563783993323645,
+      "preparation_total_s": 0.028817959020718337,
+      "handoff_total_by_rep": {
+        "1": 9.504281521499971,
+        "2": 9.505256137604192,
+        "3": 9.516376531083116
+      }
+    },
+    "unmerged_kv": {
+      "sender_prep_s": 0.022884321624900394,
+      "movement_s": 0.0,
+      "receiver_prep_s": 0.005886080978986759,
+      "encode_s": 0.006586758083528821,
+      "r_prefill_s": 0.0,
+      "shared_prefill_s": 0.07049320999996667,
+      "plan_prefill_s": 0.45918765664100647,
+      "answer_prefill_s": 0.3260738104581833,
+      "plan_decode_s": 8.935810521245003,
+      "answer_decode_s": 0.34401529530684155,
+      "crop_s": 0.00041156364594977884,
+      "movement_out_s": 0.0,
+      "movement_in_s": 0.0,
+      "untimed_bench_copy_s": 0.0,
+      "component_sum_s": 10.172522729049186,
+      "handoff_total_s": 10.23865116658348,
+      "n_plan_tokens": 131.10416666666666,
+      "n_new_tokens": 6.0,
+      "n_kv_received": 223.375,
+      "bytes_moved": 22616064.0,
+      "peak_gpu_gb": 8.83342249194781,
+      "decode_s_per_token": 0.06768449159618424,
+      "prefill_total_s": 0.8557546770991564,
+      "decode_total_s": 9.279825816551844,
+      "preparation_total_s": 0.028770402603887153,
+      "handoff_total_by_rep": {
+        "1": 10.252922137854199,
+        "2": 10.238116158937544,
+        "3": 10.252907430250085
+      }
+    },
+    "unadapted_kv": {
+      "sender_prep_s": 0.02268616356250656,
+      "movement_s": 0.0,
+      "receiver_prep_s": 0.005941042874923141,
+      "encode_s": 0.00658834520839946,
+      "r_prefill_s": 0.0,
+      "shared_prefill_s": 0.06634648508331982,
+      "plan_prefill_s": 0.4493972857793172,
+      "answer_prefill_s": 0.31743746995925903,
+      "plan_decode_s": 8.236136515935263,
+      "answer_decode_s": 0.31737325092156726,
+      "crop_s": 0.00041105302084550505,
+      "movement_out_s": 0.0,
+      "movement_in_s": 0.0,
+      "untimed_bench_copy_s": 0.0,
+      "component_sum_s": 9.4248290789567,
+      "handoff_total_s": 9.490898551666627,
+      "n_plan_tokens": 131.04166666666666,
+      "n_new_tokens": 6.0,
+      "n_kv_received": 223.375,
+      "bytes_moved": 22616064.0,
+      "peak_gpu_gb": 8.83342249194781,
+      "decode_s_per_token": 0.062415395075878365,
+      "prefill_total_s": 0.833181240821896,
+      "decode_total_s": 8.55350976685683,
+      "preparation_total_s": 0.028627206437429702,
+      "handoff_total_by_rep": {
+        "1": 9.498377428749981,
+        "2": 9.4932613085626,
+        "3": 9.481452396166532
+      }
+    },
+    "fk_fv": {
+      "sender_prep_s": 0.00012514708346126704,
+      "movement_s": 0.00016840389601687397,
+      "receiver_prep_s": 0.004294885812574496,
+      "encode_s": 0.006992950562533906,
+      "r_prefill_s": 0.10222251225000416,
+      "shared_prefill_s": 0.07308500066667989,
+      "plan_prefill_s": 0.4457558790842692,
+      "answer_prefill_s": 0.31772978107134503,
+      "plan_decode_s": 8.250221192836761,
+      "answer_decode_s": 0.31804445882638294,
+      "crop_s": 0.000408493833437736,
+      "movement_out_s": 0.0,
+      "movement_in_s": 0.00016840389601687397,
+      "untimed_bench_copy_s": 0.0,
+      "component_sum_s": 9.522152737018871,
+      "handoff_total_s": 9.588125026520808,
+      "n_plan_tokens": 131.0625,
+      "n_new_tokens": 6.0,
+      "n_kv_received": 223.375,
+      "bytes_moved": 613.5,
+      "peak_gpu_gb": 8.833423962195715,
+      "decode_s_per_token": 0.06251356608600561,
+      "prefill_total_s": 0.9387931730722983,
+      "decode_total_s": 8.568265651663145,
+      "preparation_total_s": 0.0045884367920526374,
+      "handoff_total_by_rep": {
+        "1": 9.581867878791675,
+        "2": 9.593753940375061,
+        "3": 9.59835562156249
+      }
+    },
+    "text_result": {
+      "sender_prep_s": 0.0004116357709259925,
+      "movement_s": 0.0,
+      "receiver_prep_s": 0.003411975958376464,
+      "encode_s": 0.007519851083420311,
+      "r_prefill_s": 0.0,
+      "shared_prefill_s": 0.10856482495832627,
+      "plan_prefill_s": 0.42482582728068036,
+      "answer_prefill_s": 0.3099605043729146,
+      "plan_decode_s": 8.250351508458456,
+      "answer_decode_s": 0.31712372601032257,
+      "crop_s": 0.00040643887497064196,
+      "movement_out_s": 0.0,
+      "movement_in_s": 0.0,
+      "untimed_bench_copy_s": 0.0,
+      "component_sum_s": 9.425762887823689,
+      "handoff_total_s": 9.491837048833446,
+      "n_plan_tokens": 131.0625,
+      "n_new_tokens": 6.0,
+      "n_kv_received": 29.0,
+      "bytes_moved": 505.9583333333333,
+      "peak_gpu_gb": 8.807961334784826,
+      "decode_s_per_token": 0.06250779924829022,
+      "prefill_total_s": 0.8433511566119213,
+      "decode_total_s": 8.567475234468779,
+      "preparation_total_s": 0.0038236117293024563,
+      "handoff_total_by_rep": {
+        "1": 9.499410635645878,
+        "2": 9.492782612250048,
+        "3": 9.50293977445842
+      }
+    },
+    "full_kv": {
+      "sender_prep_s": 0.0,
+      "movement_s": 0.0,
+      "receiver_prep_s": 0.004616906791852671,
+      "encode_s": 0.006668099291696687,
+      "r_prefill_s": 0.0,
+      "shared_prefill_s": 0.12419145420844302,
+      "plan_prefill_s": 0.7121163954337438,
+      "answer_prefill_s": 0.5354918241500854,
+      "plan_decode_s": 9.460314134756723,
+      "answer_decode_s": 0.3538528134425481,
+      "crop_s": 0.0004083121039949826,
+      "movement_out_s": 0.0,
+      "movement_in_s": 0.0,
+      "untimed_bench_copy_s": 0.002875200750025897,
+      "component_sum_s": 11.200203913148945,
+      "handoff_total_s": 11.272938092333362,
+      "n_plan_tokens": 131.04166666666666,
+      "n_new_tokens": 6.0,
+      "n_kv_received": 2114.3333333333335,
+      "bytes_moved": 311771136.0,
+      "peak_gpu_gb": 9.63861013452212,
+      "decode_s_per_token": 0.07161447453839542,
+      "prefill_total_s": 1.3717996737922724,
+      "decode_total_s": 9.814166948199272,
+      "preparation_total_s": 0.004616906791852671,
+      "handoff_total_by_rep": {
+        "1": 11.284584484020845,
+        "2": 11.266968453666578,
+        "3": 11.268334886083295
+      }
+    }
+  },
+  "paired_handoff_time": {
+    "text_result": {
+      "n_cases": 24,
+      "total_delta": 0.22045760349396915,
+      "mean_delta_per_case": 0.009185733478915381,
+      "ci95_per_case": [
+        -0.008898655812610437,
+        0.02810142616621647
+      ],
+      "cases_increased": 13,
+      "cases_decreased": 11,
+      "cases_equal": 0,
+      "mean_delta_by_rep": {
+        "1": 0.004870885854093861,
+        "2": 0.012473525354143552,
+        "3": 0.013436756624694604
+      },
+      "repeatable_saving": false,
+      "repeatable_cost": false
+    },
+    "fk_fv": {
+      "n_cases": 24,
+      "total_delta": -2.090453861002743,
+      "mean_delta_per_case": -0.08710224420844763,
+      "ci95_per_case": [
+        -0.10673168650005967,
+        -0.06923950777105385
+      ],
+      "cases_increased": 0,
+      "cases_decreased": 24,
+      "cases_equal": 0,
+      "mean_delta_by_rep": {
+        "1": -0.07758635729170275,
+        "2": -0.08849780277086931,
+        "3": -0.08197909047937439
+      },
+      "repeatable_saving": true,
+      "repeatable_cost": false
+    },
+    "full_kv": {
+      "n_cases": 24,
+      "total_delta": -42.52596744050402,
+      "mean_delta_per_case": -1.7719153100210008,
+      "ci95_per_case": [
+        -1.964994423062573,
+        -1.5616463073959703
+      ],
+      "cases_increased": 0,
+      "cases_decreased": 24,
+      "cases_equal": 0,
+      "mean_delta_by_rep": {
+        "1": -1.7803029625208733,
+        "2": -1.7617123160623862,
+        "3": -1.7519583550001794
+      },
+      "repeatable_saving": true,
+      "repeatable_cost": false
+    },
+    "unmerged_kv": {
+      "n_cases": 24,
+      "total_delta": -17.703081222506853,
+      "mean_delta_per_case": -0.7376283842711189,
+      "ci95_per_case": [
+        -0.751783458542216,
+        -0.7245683842919561
+      ],
+      "cases_increased": 0,
+      "cases_decreased": 24,
+      "cases_equal": 0,
+      "mean_delta_by_rep": {
+        "1": -0.7486406163542275,
+        "2": -0.7328600213333516,
+        "3": -0.7365308991669698
+      },
+      "repeatable_saving": true,
+      "repeatable_cost": false
+    },
+    "unadapted_kv": {
+      "n_cases": 24,
+      "total_delta": 0.24298153549761992,
+      "mean_delta_per_case": 0.010124230645734164,
+      "ci95_per_case": [
+        -0.0038206162709191935,
+        0.023310287958347924
+      ],
+      "cases_increased": 17,
+      "cases_decreased": 7,
+      "cases_equal": 0,
+      "mean_delta_by_rep": {
+        "1": 0.005904092749991226,
+        "2": 0.011994829041592917,
+        "3": 0.03492413491658416
+      },
+      "repeatable_saving": false,
+      "repeatable_cost": false
+    }
+  },
+  "paired_components": {
+    "text_result": {
+      "prefill_total": {
+        "mean_delta_per_case": -0.008803572760399447,
+        "ci95_per_case": [
+          -0.020370283241267845,
+          0.0017979159914981817
+        ]
+      },
+      "decode_total": {
+        "mean_delta_per_case": -0.00508439044157664,
+        "ci95_per_case": [
+          -0.01925922433535258,
+          0.00859127938747406
+        ]
+      },
+      "preparation_total": {
+        "mean_delta_per_case": 0.025077158020953522,
+        "ci95_per_case": [
+          0.024586476499962373,
+          0.02564453945829352
+        ]
+      }
+    },
+    "fk_fv": {
+      "prefill_total": {
+        "mean_delta_per_case": -0.10424958273932816,
+        "ci95_per_case": [
+          -0.1162362709701578,
+          -0.09524011747079915
+        ]
+      },
+      "decode_total": {
+        "mean_delta_per_case": -0.004807978868484497,
+        "ci95_per_case": [
+          -0.021515831351280212,
+          0.009963313738505045
+        ]
+      },
+      "preparation_total": {
+        "mean_delta_per_case": 0.02430210806239567,
+        "ci95_per_case": [
+          0.023801115270534485,
+          0.024890427312489766
+        ]
+      }
+    },
+    "full_kv": {
+      "prefill_total": {
+        "mean_delta_per_case": -0.5370943593258062,
+        "ci95_per_case": [
+          -0.5813702173501648,
+          -0.4913451156066249
+        ]
+      },
+      "decode_total": {
+        "mean_delta_per_case": -1.2514046629269917,
+        "ci95_per_case": [
+          -1.408751239379247,
+          -1.085412934422493
+        ]
+      },
+      "preparation_total": {
+        "mean_delta_per_case": 0.02428395556239593,
+        "ci95_per_case": [
+          0.02371452185392779,
+          0.024971611937293876
+        ]
+      }
+    }
+  },
+  "reliability_check": {
+    "merged_minus_unmerged_losses": {
+      "labels": 0,
+      "all_twelve": 0,
+      "final_choice": 0
+    },
+    "max_loss": {
+      "labels": 2,
+      "all_twelve": 2,
+      "final_choice": 2
+    },
+    "pass": true
+  },
+  "merge": {
+    "merge_s": 0.10891207600025155,
+    "stats": {
+      "delta_rel_norm": 0.00898030120115914,
+      "rounding_max_abs": 0.00023870835138950497,
+      "rounding_rel_to_delta": 0.04235727134621541,
+      "unchanged_fraction": 0.055745698511600494,
+      "min_applied_vs_delta_cos": 0.9991041421890259
+    },
+    "merged_weight_bytes": 754974720
+  },
+  "one_time": {
+    "teacher_target_generation_s": 847.2720739841461,
+    "training_state_build_s": 515.967645856,
+    "training_s": 771.4149728459988,
+    "merge_s": 0.10891207600025155,
+    "note": "Adapter costs only. Public support and text header prefills are listed separately and are paid once per template either way."
+  },
+  "original_weights": {
+    "wrappers_and_weights_restored": true,
+    "original_digest_equal": true,
+    "ok": true
+  },
+  "decision": {
+    "reliability_preserved": true,
+    "vs_text_result": {
+      "repeatable_saving": false,
+      "repeatable_cost": false,
+      "mean_saving_s_per_handoff": -0.009185733478915381,
+      "break_even_handoffs": null
+    },
+    "vs_fk_fv": {
+      "repeatable_saving": true,
+      "repeatable_cost": false,
+      "mean_saving_s_per_handoff": 0.08710224420844763,
+      "break_even_handoffs": 24508.709553491677
+    },
+    "vs_full_kv": {
+      "repeatable_saving": true,
+      "repeatable_cost": false,
+      "mean_saving_s_per_handoff": 1.7719153100210008,
+      "break_even_handoffs": 1204.7774477081775
+    },
+    "useful_practical_result": false,
+    "statement": "The merged receiver keeps reliability; no repeatable difference from text in complete handoff time."
+  },
+  "public_prefixes": {
+    "text_header_tokens": 29,
+    "text_header_prefill_s": 0.06809322900016923,
+    "kv_support_template_prefill_s": {
+      "L1": 0.33222174644470215,
+      "L2": 0.10739660263061523,
+      "L3": 0.10457253456115723
+    }
+  },
+  "deployment": {
+    "name": "same_gpu",
+    "description": "Direct reuse on one GPU: A and B share the device. A's result states are selected and re-rotated on the GPU and placed straight into B's cache; nothing leaves the device. For full KV, B takes over A's cache; the copy the benchmark needs to repeat a handoff is timed separately and excluded."
+  },
+  "integration": {
+    "passed": true,
+    "r_comparison": {
+      "n_sheets": 24,
+      "shapes_equal_all": true,
+      "values_equal_all": true,
+      "sheets_keys_bit_equal": 0,
+      "keys_max_abs": 0.25,
+      "keys_mean_abs": 2.8663893956759716e-08,
+      "min_keys_bit_equal_fraction": 0.9997662901878357
+    },
+    "cause": null
+  },
+  "complete": true
+}

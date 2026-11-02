@@ -259,6 +259,70 @@ def b_reason_kv_prompt(ex: Plan4Example) -> str:
     )
 
 
+FRAMING_INSTRUCTION = (
+    "Use the preceding carrier results together with the shipment information below."
+)
+
+
+def b_reason_kv_instruct_prompt(ex: Plan4Example) -> str:
+    """Baseline KV plan plus one predeclared framing sentence. Task content unchanged."""
+    return "\n\n".join(
+        [
+            "You are Agent B. You have financial information. "
+            "You do not see the operational sheet.",
+            "A previous agent already processed operational information. "
+            "Use the relayed memory if it helps.",
+            FRAMING_INSTRUCTION,
+            "Treat operational eligibility in the relayed memory as a mandatory constraint: "
+            "do not book a carrier marked ineligible.",
+            ex.b_text,
+            _question_block(ex),
+            "Write exactly four short lines, one per carrier, then one Choice line. Use:",
+            "P: <eligible or ineligible from the relayed memory> | $<price> | <candidate or dropped>",
+            "Q: <eligible or ineligible from the relayed memory> | $<price> | <candidate or dropped>",
+            "R: <eligible or ineligible from the relayed memory> | $<price> | <candidate or dropped>",
+            "S: <eligible or ineligible from the relayed memory> | $<price> | <candidate or dropped>",
+            "Choice: <carrier> at $<price>",
+            "A candidate is marked eligible in the relayed memory and costs at most the budget. "
+            "Otherwise write dropped. "
+            "The Choice carrier must be the lowest-price candidate. "
+            "If two candidate prices tie, choose the earlier carrier in P, Q, R, S. "
+            "Do not book a dropped carrier. Do not write an Answer line yet.",
+        ]
+    )
+
+
+def insert_after_framing(prompt: str, paragraph: str) -> str:
+    """Put one extra paragraph after the frozen framing sentence. Task lines stay the same."""
+    extra = (paragraph or "").strip()
+    if not extra:
+        raise RuntimeError("Instruction paragraph is empty.")
+    if FRAMING_INSTRUCTION not in prompt:
+        raise RuntimeError("Frozen framing sentence is missing from the receiver prompt.")
+    return prompt.replace(FRAMING_INSTRUCTION, FRAMING_INSTRUCTION + "\n\n" + extra, 1)
+
+
+def b_answer_kv_instruct_prompt(ex: Plan4Example, plan_text: str) -> str:
+    return "\n\n".join(
+        [
+            "You are Agent B. You have financial information. "
+            "You do not see the operational sheet.",
+            "A previous agent already processed operational information. "
+            "Use the relayed memory if it helps.",
+            FRAMING_INSTRUCTION,
+            "Treat operational eligibility in the relayed memory as a mandatory constraint: "
+            "do not book a carrier marked ineligible.",
+            "Your earlier notes:",
+            plan_text.strip(),
+            ex.b_text,
+            _question_block(ex),
+            "The Answer line must be the Choice carrier from those notes. "
+            "If the notes named a dropped carrier, correct to the lowest-price candidate.",
+            SHORT_ANSWER_RULE,
+        ]
+    )
+
+
 def b_answer_kv_prompt(ex: Plan4Example, plan_text: str) -> str:
     return "\n\n".join(
         [

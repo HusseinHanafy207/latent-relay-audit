@@ -1,0 +1,117 @@
+{
+  "scope": "Diagnostic only, on reused eval sheets. The adapter was trained for the KV receiver; a negative result here does not show what a separately text-trained receiver could achieve.",
+  "labels": {
+    "base": {
+      "text_adapted": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 285,
+        "cases_all_twelve_correct": 22,
+        "ineligible_marked_eligible": 1,
+        "eligible_marked_ineligible": 2,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "text_result_saved": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 284,
+        "cases_all_twelve_correct": 21,
+        "ineligible_marked_eligible": 2,
+        "eligible_marked_ineligible": 2,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "adapted_kv_saved": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 284,
+        "cases_all_twelve_correct": 21,
+        "ineligible_marked_eligible": 2,
+        "eligible_marked_ineligible": 2,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      }
+    },
+    "a_flip": {
+      "text_adapted": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 287,
+        "cases_all_twelve_correct": 23,
+        "ineligible_marked_eligible": 1,
+        "eligible_marked_ineligible": 0,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "text_result_saved": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 287,
+        "cases_all_twelve_correct": 23,
+        "ineligible_marked_eligible": 1,
+        "eligible_marked_ineligible": 0,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "adapted_kv_saved": {
+        "n_cases": 24,
+        "n_labels": 288,
+        "labels_correct": 286,
+        "cases_all_twelve_correct": 22,
+        "ineligible_marked_eligible": 1,
+        "eligible_marked_ineligible": 0,
+        "parse_ok": 24,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 1
+      }
+    }
+  },
+  "final_choice": {
+    "base": {
+      "text_adapted": {
+        "n_cases": 24,
+        "final_choice_correct": 15,
+        "follows_trap": 0,
+        "correct_with_wrong_eligibility": 1
+      },
+      "text_result_saved": {
+        "n_cases": 24,
+        "final_choice_correct": 17,
+        "follows_trap": 0,
+        "correct_with_wrong_eligibility": 2
+      }
+    },
+    "a_flip": {
+      "text_adapted": {
+        "n_cases": 24,
+        "final_choice_correct": 20,
+        "follows_trap": 10,
+        "correct_with_wrong_eligibility": 0
+      },
+      "text_result_saved": {
+        "n_cases": 24,
+        "final_choice_correct": 22,
+        "follows_trap": 11,
+        "correct_with_wrong_eligibility": 1
+      }
+    }
+  },
+  "original_weights": {
+    "wrappers_and_weights_restored": true,
+    "original_digest_equal": true,
+    "ok": true
+  },
+  "complete": true
+}

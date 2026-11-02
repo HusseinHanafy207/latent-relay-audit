@@ -1,0 +1,416 @@
+{
+  "selected_epoch": 1,
+  "labels": {
+    "base": {
+      "adapted_correct_r": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 144,
+        "cases_all_twelve_correct": 12,
+        "ineligible_marked_eligible": 0,
+        "eligible_marked_ineligible": 0,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "unadapted_correct_r": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 94,
+        "cases_all_twelve_correct": 0,
+        "ineligible_marked_eligible": 41,
+        "eligible_marked_ineligible": 9,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "adapted_no_r": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 83,
+        "cases_all_twelve_correct": 0,
+        "ineligible_marked_eligible": 52,
+        "eligible_marked_ineligible": 8,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 1
+      },
+      "unadapted_no_r": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 57,
+        "cases_all_twelve_correct": 0,
+        "ineligible_marked_eligible": 70,
+        "eligible_marked_ineligible": 17,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "adapted_mismatched_r": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 75,
+        "cases_all_twelve_correct": 0,
+        "ineligible_marked_eligible": 37,
+        "eligible_marked_ineligible": 32,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "unadapted_mismatched_r": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 66,
+        "cases_all_twelve_correct": 0,
+        "ineligible_marked_eligible": 58,
+        "eligible_marked_ineligible": 20,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "fk_fv": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 143,
+        "cases_all_twelve_correct": 11,
+        "ineligible_marked_eligible": 1,
+        "eligible_marked_ineligible": 0,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "text_result": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 141,
+        "cases_all_twelve_correct": 9,
+        "ineligible_marked_eligible": 3,
+        "eligible_marked_ineligible": 0,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      }
+    },
+    "a_flip": {
+      "adapted_correct_r": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 142,
+        "cases_all_twelve_correct": 10,
+        "ineligible_marked_eligible": 1,
+        "eligible_marked_ineligible": 1,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "unadapted_correct_r": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 93,
+        "cases_all_twelve_correct": 0,
+        "ineligible_marked_eligible": 39,
+        "eligible_marked_ineligible": 11,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 1
+      },
+      "adapted_no_r": {
+        "n_cases": 0
+      },
+      "unadapted_no_r": {
+        "n_cases": 0
+      },
+      "adapted_mismatched_r": {
+        "n_cases": 0
+      },
+      "unadapted_mismatched_r": {
+        "n_cases": 0
+      },
+      "fk_fv": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 139,
+        "cases_all_twelve_correct": 8,
+        "ineligible_marked_eligible": 4,
+        "eligible_marked_ineligible": 1,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      },
+      "text_result": {
+        "n_cases": 12,
+        "n_labels": 144,
+        "labels_correct": 139,
+        "cases_all_twelve_correct": 8,
+        "ineligible_marked_eligible": 4,
+        "eligible_marked_ineligible": 1,
+        "parse_ok": 12,
+        "plan_truncated": 0,
+        "answer_truncated": 0,
+        "plan_lines_missing": 0
+      }
+    }
+  },
+  "final_choice": {
+    "base": {
+      "adapted_correct_r": {
+        "n_cases": 12,
+        "final_choice_correct": 9,
+        "follows_trap": 0,
+        "correct_with_wrong_eligibility": 0
+      },
+      "unadapted_correct_r": {
+        "n_cases": 12,
+        "final_choice_correct": 1,
+        "follows_trap": 8,
+        "correct_with_wrong_eligibility": 1
+      },
+      "adapted_no_r": {
+        "n_cases": 12,
+        "final_choice_correct": 1,
+        "follows_trap": 10,
+        "correct_with_wrong_eligibility": 1
+      },
+      "unadapted_no_r": {
+        "n_cases": 12,
+        "final_choice_correct": 0,
+        "follows_trap": 10,
+        "correct_with_wrong_eligibility": 0
+      },
+      "adapted_mismatched_r": {
+        "n_cases": 12,
+        "final_choice_correct": 2,
+        "follows_trap": 5,
+        "correct_with_wrong_eligibility": 2
+      },
+      "unadapted_mismatched_r": {
+        "n_cases": 12,
+        "final_choice_correct": 0,
+        "follows_trap": 9,
+        "correct_with_wrong_eligibility": 0
+      },
+      "fk_fv": {
+        "n_cases": 12,
+        "final_choice_correct": 7,
+        "follows_trap": 0,
+        "correct_with_wrong_eligibility": 1
+      },
+      "text_result": {
+        "n_cases": 12,
+        "final_choice_correct": 4,
+        "follows_trap": 1,
+        "correct_with_wrong_eligibility": 1
+      }
+    },
+    "a_flip": {
+      "adapted_correct_r": {
+        "n_cases": 12,
+        "final_choice_correct": 9,
+        "follows_trap": 6,
+        "correct_with_wrong_eligibility": 2
+      },
+      "unadapted_correct_r": {
+        "n_cases": 12,
+        "final_choice_correct": 6,
+        "follows_trap": 9,
+        "correct_with_wrong_eligibility": 6
+      },
+      "adapted_no_r": {
+        "n_cases": 0,
+        "final_choice_correct": 0,
+        "follows_trap": 0,
+        "correct_with_wrong_eligibility": 0
+      },
+      "unadapted_no_r": {
+        "n_cases": 0,
+        "final_choice_correct": 0,
+        "follows_trap": 0,
+        "correct_with_wrong_eligibility": 0
+      },
+      "adapted_mismatched_r": {
+        "n_cases": 0,
+        "final_choice_correct": 0,
+        "follows_trap": 0,
+        "correct_with_wrong_eligibility": 0
+      },
+      "unadapted_mismatched_r": {
+        "n_cases": 0,
+        "final_choice_correct": 0,
+        "follows_trap": 0,
+        "correct_with_wrong_eligibility": 0
+      },
+      "fk_fv": {
+        "n_cases": 12,
+        "final_choice_correct": 9,
+        "follows_trap": 6,
+        "correct_with_wrong_eligibility": 2
+      },
+      "text_result": {
+        "n_cases": 12,
+        "final_choice_correct": 9,
+        "follows_trap": 6,
+        "correct_with_wrong_eligibility": 2
+      }
+    }
+  },
+  "costs": {
+    "adapted_correct_r": {
+      "plan_prefill_s": 0.5446937580903372,
+      "plan_decode_s": 8.346824745337168,
+      "answer_prefill_s": 0.3922864993413289,
+      "answer_decode_s": 0.32170053323109943,
+      "b_prefill_s": 0.936980257431666,
+      "b_decode_s": 8.668525278568268
+    },
+    "unadapted_correct_r": {
+      "plan_prefill_s": 0.5317368308703104,
+      "plan_decode_s": 7.6941110988457995,
+      "answer_prefill_s": 0.38316545883814496,
+      "answer_decode_s": 0.30019740263621014,
+      "b_prefill_s": 0.9149022897084554,
+      "b_decode_s": 7.99430850148201
+    },
+    "adapted_no_r": {
+      "plan_prefill_s": 0.524574339389801,
+      "plan_decode_s": 8.33085564772288,
+      "answer_prefill_s": 0.37107497453689575,
+      "answer_decode_s": 0.32409308354059857,
+      "b_prefill_s": 0.8956493139266968,
+      "b_decode_s": 8.65494873126348
+    },
+    "unadapted_no_r": {
+      "plan_prefill_s": 0.5111430684725443,
+      "plan_decode_s": 7.708062966664632,
+      "answer_prefill_s": 0.3614820639292399,
+      "answer_decode_s": 0.3007173339525859,
+      "b_prefill_s": 0.8726251324017843,
+      "b_decode_s": 8.008780300617218
+    },
+    "adapted_mismatched_r": {
+      "plan_prefill_s": 0.5479565064112345,
+      "plan_decode_s": 8.350519001483917,
+      "answer_prefill_s": 0.39327385028203327,
+      "answer_decode_s": 0.3209999004999797,
+      "b_prefill_s": 0.9412303566932678,
+      "b_decode_s": 8.671518901983896
+    },
+    "unadapted_mismatched_r": {
+      "plan_prefill_s": 0.5339590708414713,
+      "plan_decode_s": 7.754613697528839,
+      "answer_prefill_s": 0.3846263289451599,
+      "answer_decode_s": 0.2985868255297343,
+      "b_prefill_s": 0.9185853997866312,
+      "b_decode_s": 8.053200523058573
+    },
+    "fk_fv": {
+      "plan_prefill_s": 0.5312749246756235,
+      "plan_decode_s": 7.746469080448151,
+      "answer_prefill_s": 0.3810039261976878,
+      "answer_decode_s": 0.2989628811677297,
+      "b_prefill_s": 0.9122788508733114,
+      "b_decode_s": 8.045431961615881
+    },
+    "text_result": {
+      "plan_prefill_s": 0.6204860011736552,
+      "plan_decode_s": 7.738643894592921,
+      "answer_prefill_s": 0.499139944712321,
+      "answer_decode_s": 0.30169183015823364,
+      "b_prefill_s": 1.119625945885976,
+      "b_decode_s": 8.040335724751154
+    }
+  },
+  "note": "Development gates (registered before training). Improvement alone could come from learned task shortcuts, so the adapter must also depend on the message: worse without results, labels moving toward the partner's under mismatched results, and A-change pairs handled at least as well as unadapted KV.",
+  "scope": "Development families (already used for checkpoint selection). Not confirmation.",
+  "gates": {
+    "beats_unadapted_kv": {
+      "adapted": 144,
+      "unadapted": 94,
+      "gain": 50,
+      "ci95_per_family": [
+        3.25,
+        5.166666666666667
+      ],
+      "pass": true
+    },
+    "worse_without_results": {
+      "correct_r": 144,
+      "no_r": 83,
+      "pass": true
+    },
+    "follows_mismatched_results": {
+      "n_carriers": 62,
+      "follows_partner": 57,
+      "follows_own": 5,
+      "missing": 0,
+      "pass": true
+    },
+    "a_change_pairs": {
+      "adapted": {
+        "n_pairs": 12,
+        "both_correct": 12,
+        "base_correct": 12,
+        "flip_correct": 12
+      },
+      "unadapted": {
+        "n_pairs": 12,
+        "both_correct": 3,
+        "base_correct": 5,
+        "flip_correct": 10
+      },
+      "pass": true
+    },
+    "malformed_output": {
+      "adapted": 0,
+      "unadapted": 0,
+      "pass": true
+    }
+  },
+  "advance": true,
+  "context": {
+    "unadapted_mismatched_following": {
+      "n_carriers": 62,
+      "follows_partner": 37,
+      "follows_own": 25,
+      "missing": 0
+    },
+    "gain_detail": {
+      "n_cases": 12,
+      "total_delta": 50,
+      "mean_delta_per_case": 4.166666666666667,
+      "ci95_per_case": [
+        3.25,
+        5.166666666666667
+      ],
+      "cases_increased": 12,
+      "cases_decreased": 0,
+      "cases_equal": 0,
+      "per_case": {
+        "plan4_qadapt_dev-fam-000": 4,
+        "plan4_qadapt_dev-fam-001": 4,
+        "plan4_qadapt_dev-fam-002": 2,
+        "plan4_qadapt_dev-fam-003": 3,
+        "plan4_qadapt_dev-fam-004": 4,
+        "plan4_qadapt_dev-fam-005": 4,
+        "plan4_qadapt_dev-fam-006": 4,
+        "plan4_qadapt_dev-fam-007": 2,
+        "plan4_qadapt_dev-fam-008": 8,
+        "plan4_qadapt_dev-fam-009": 4,
+        "plan4_qadapt_dev-fam-010": 4,
+        "plan4_qadapt_dev-fam-011": 7
+      }
+    }
+  },
+  "construction_passed": true,
+  "n_rows": 144
+}

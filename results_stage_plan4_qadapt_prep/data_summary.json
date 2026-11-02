@@ -1,0 +1,142 @@
+{
+  "disjoint_from_each_other_and_timing12": true,
+  "splits": {
+    "train": {
+      "file": "data/plan4_qadapt_train.jsonl",
+      "sha256": "0730226c7f801da9e1875b44580d965f40c4f59cccf3383a466d407b57804d73",
+      "seed": 2090,
+      "n_examples": 96,
+      "n_base": 96,
+      "n_a_flip": 0,
+      "by_level": {
+        "L1": 32,
+        "L2": 32,
+        "L3": 32
+      },
+      "a_change": {
+        "make_eligible": 0,
+        "make_ineligible": 0
+      },
+      "a_flip_changed_carrier": {},
+      "mismatch_partner": {},
+      "a_sheets_written_now": true
+    },
+    "dev": {
+      "file": "data/plan4_qadapt_dev.jsonl",
+      "sha256": "1c45eec7bdf7fc9a41755d7532110ea3e8746e2751f44a9e7df6122d136b3c3a",
+      "seed": 2091,
+      "n_examples": 24,
+      "n_base": 12,
+      "n_a_flip": 12,
+      "by_level": {
+        "L1": 4,
+        "L2": 4,
+        "L3": 4
+      },
+      "a_change": {
+        "make_eligible": 6,
+        "make_ineligible": 6
+      },
+      "a_flip_changed_carrier": {
+        "plan4_qadapt_dev-fam-000-a_flip": "P",
+        "plan4_qadapt_dev-fam-001-a_flip": "W",
+        "plan4_qadapt_dev-fam-002-a_flip": "U",
+        "plan4_qadapt_dev-fam-003-a_flip": "T",
+        "plan4_qadapt_dev-fam-004-a_flip": "Z",
+        "plan4_qadapt_dev-fam-005-a_flip": "Q",
+        "plan4_qadapt_dev-fam-006-a_flip": "Z",
+        "plan4_qadapt_dev-fam-007-a_flip": "V",
+        "plan4_qadapt_dev-fam-008-a_flip": "P",
+        "plan4_qadapt_dev-fam-009-a_flip": "Y",
+        "plan4_qadapt_dev-fam-010-a_flip": "S",
+        "plan4_qadapt_dev-fam-011-a_flip": "V"
+      },
+      "mismatch_partner": {
+        "plan4_qadapt_dev-fam-002-base": "plan4_qadapt_dev-fam-004-base",
+        "plan4_qadapt_dev-fam-004-base": "plan4_qadapt_dev-fam-008-base",
+        "plan4_qadapt_dev-fam-008-base": "plan4_qadapt_dev-fam-009-base",
+        "plan4_qadapt_dev-fam-009-base": "plan4_qadapt_dev-fam-002-base",
+        "plan4_qadapt_dev-fam-000-base": "plan4_qadapt_dev-fam-003-base",
+        "plan4_qadapt_dev-fam-003-base": "plan4_qadapt_dev-fam-010-base",
+        "plan4_qadapt_dev-fam-010-base": "plan4_qadapt_dev-fam-011-base",
+        "plan4_qadapt_dev-fam-011-base": "plan4_qadapt_dev-fam-000-base",
+        "plan4_qadapt_dev-fam-001-base": "plan4_qadapt_dev-fam-005-base",
+        "plan4_qadapt_dev-fam-005-base": "plan4_qadapt_dev-fam-006-base",
+        "plan4_qadapt_dev-fam-006-base": "plan4_qadapt_dev-fam-007-base",
+        "plan4_qadapt_dev-fam-007-base": "plan4_qadapt_dev-fam-001-base"
+      },
+      "a_sheets_written_now": true
+    },
+    "eval": {
+      "file": "data/plan4_qadapt_eval.jsonl",
+      "sha256": "d8b19e34c0a00ccf4e16490879b3ffd90cffa947b5f1cea5e96d558eaa191272",
+      "seed": 2092,
+      "n_examples": 48,
+      "n_base": 24,
+      "n_a_flip": 24,
+      "by_level": {
+        "L1": 8,
+        "L2": 8,
+        "L3": 8
+      },
+      "a_change": {
+        "make_eligible": 12,
+        "make_ineligible": 12
+      },
+      "a_flip_changed_carrier": {
+        "plan4_qadapt_eval-fam-000-a_flip": "Y",
+        "plan4_qadapt_eval-fam-001-a_flip": "P",
+        "plan4_qadapt_eval-fam-002-a_flip": "Z",
+        "plan4_qadapt_eval-fam-003-a_flip": "T",
+        "plan4_qadapt_eval-fam-004-a_flip": "S",
+        "plan4_qadapt_eval-fam-005-a_flip": "Y",
+        "plan4_qadapt_eval-fam-006-a_flip": "Y",
+        "plan4_qadapt_eval-fam-007-a_flip": "R",
+        "plan4_qadapt_eval-fam-008-a_flip": "N",
+        "plan4_qadapt_eval-fam-009-a_flip": "U",
+        "plan4_qadapt_eval-fam-010-a_flip": "Y",
+        "plan4_qadapt_eval-fam-011-a_flip": "T",
+        "plan4_qadapt_eval-fam-012-a_flip": "X",
+        "plan4_qadapt_eval-fam-013-a_flip": "R",
+        "plan4_qadapt_eval-fam-014-a_flip": "Q",
+        "plan4_qadapt_eval-fam-015-a_flip": "N",
+        "plan4_qadapt_eval-fam-016-a_flip": "U",
+        "plan4_qadapt_eval-fam-017-a_flip": "N",
+        "plan4_qadapt_eval-fam-018-a_flip": "Q",
+        "plan4_qadapt_eval-fam-019-a_flip": "U",
+        "plan4_qadapt_eval-fam-020-a_flip": "Q",
+        "plan4_qadapt_eval-fam-021-a_flip": "N",
+        "plan4_qadapt_eval-fam-022-a_flip": "T",
+        "plan4_qadapt_eval-fam-023-a_flip": "V"
+      },
+      "mismatch_partner": {
+        "plan4_qadapt_eval-fam-000-base": "plan4_qadapt_eval-fam-001-base",
+        "plan4_qadapt_eval-fam-001-base": "plan4_qadapt_eval-fam-002-base",
+        "plan4_qadapt_eval-fam-002-base": "plan4_qadapt_eval-fam-003-base",
+        "plan4_qadapt_eval-fam-003-base": "plan4_qadapt_eval-fam-007-base",
+        "plan4_qadapt_eval-fam-007-base": "plan4_qadapt_eval-fam-012-base",
+        "plan4_qadapt_eval-fam-012-base": "plan4_qadapt_eval-fam-014-base",
+        "plan4_qadapt_eval-fam-014-base": "plan4_qadapt_eval-fam-018-base",
+        "plan4_qadapt_eval-fam-018-base": "plan4_qadapt_eval-fam-000-base",
+        "plan4_qadapt_eval-fam-004-base": "plan4_qadapt_eval-fam-006-base",
+        "plan4_qadapt_eval-fam-006-base": "plan4_qadapt_eval-fam-008-base",
+        "plan4_qadapt_eval-fam-008-base": "plan4_qadapt_eval-fam-010-base",
+        "plan4_qadapt_eval-fam-010-base": "plan4_qadapt_eval-fam-015-base",
+        "plan4_qadapt_eval-fam-015-base": "plan4_qadapt_eval-fam-017-base",
+        "plan4_qadapt_eval-fam-017-base": "plan4_qadapt_eval-fam-019-base",
+        "plan4_qadapt_eval-fam-019-base": "plan4_qadapt_eval-fam-020-base",
+        "plan4_qadapt_eval-fam-020-base": "plan4_qadapt_eval-fam-004-base",
+        "plan4_qadapt_eval-fam-005-base": "plan4_qadapt_eval-fam-009-base",
+        "plan4_qadapt_eval-fam-009-base": "plan4_qadapt_eval-fam-011-base",
+        "plan4_qadapt_eval-fam-011-base": "plan4_qadapt_eval-fam-013-base",
+        "plan4_qadapt_eval-fam-013-base": "plan4_qadapt_eval-fam-016-base",
+        "plan4_qadapt_eval-fam-016-base": "plan4_qadapt_eval-fam-021-base",
+        "plan4_qadapt_eval-fam-021-base": "plan4_qadapt_eval-fam-022-base",
+        "plan4_qadapt_eval-fam-022-base": "plan4_qadapt_eval-fam-023-base",
+        "plan4_qadapt_eval-fam-023-base": "plan4_qadapt_eval-fam-005-base"
+      },
+      "a_sheets_written_now": false
+    }
+  },
+  "registered_hash_mismatches": []
+}

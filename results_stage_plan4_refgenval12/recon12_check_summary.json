@@ -1,0 +1,115 @@
+{
+  "n": 9,
+  "all_passed": true,
+  "rows": [
+    {
+      "a_state_key": "plan4_timing12-fam-000-base",
+      "ok": true,
+      "n_result": 133,
+      "result_start": 70,
+      "generic_r_n": 203,
+      "fresh_r_n": 203,
+      "reconstruct_n": 203,
+      "fresh_r_result_equal_transferred": false,
+      "reconstruct_support_equal": false,
+      "template_id": "L2"
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-001-base",
+      "ok": true,
+      "n_result": 252,
+      "result_start": 70,
+      "generic_r_n": 322,
+      "fresh_r_n": 322,
+      "reconstruct_n": 322,
+      "fresh_r_result_equal_transferred": false,
+      "reconstruct_support_equal": false,
+      "template_id": "L1"
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-002-base",
+      "ok": true,
+      "n_result": 138,
+      "result_start": 70,
+      "generic_r_n": 208,
+      "fresh_r_n": 208,
+      "reconstruct_n": 208,
+      "fresh_r_result_equal_transferred": false,
+      "reconstruct_support_equal": false,
+      "template_id": "L3"
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-003-base",
+      "ok": true,
+      "n_result": 209,
+      "result_start": 70,
+      "generic_r_n": 279,
+      "fresh_r_n": 279,
+      "reconstruct_n": 279,
+      "fresh_r_result_equal_transferred": false,
+      "reconstruct_support_equal": false,
+      "template_id": "L1"
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-004-base",
+      "ok": true,
+      "n_result": 151,
+      "result_start": 70,
+      "generic_r_n": 221,
+      "fresh_r_n": 221,
+      "reconstruct_n": 221,
+      "fresh_r_result_equal_transferred": false,
+      "reconstruct_support_equal": false,
+      "template_id": "L3"
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-005-base",
+      "ok": true,
+      "n_result": 160,
+      "result_start": 70,
+      "generic_r_n": 230,
+      "fresh_r_n": 230,
+      "reconstruct_n": 230,
+      "fresh_r_result_equal_transferred": false,
+      "reconstruct_support_equal": false,
+      "template_id": "L2"
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-006-base",
+      "ok": true,
+      "n_result": 138,
+      "result_start": 70,
+      "generic_r_n": 208,
+      "fresh_r_n": 208,
+      "reconstruct_n": 208,
+      "fresh_r_result_equal_transferred": false,
+      "reconstruct_support_equal": false,
+      "template_id": "L2"
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-007-base",
+      "ok": true,
+      "n_result": 131,
+      "result_start": 70,
+      "generic_r_n": 201,
+      "fresh_r_n": 201,
+      "reconstruct_n": 201,
+      "fresh_r_result_equal_transferred": false,
+      "reconstruct_support_equal": false,
+      "template_id": "L3"
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-008-base",
+      "ok": true,
+      "n_result": 136,
+      "result_start": 70,
+      "generic_r_n": 206,
+      "fresh_r_n": 206,
+      "reconstruct_n": 206,
+      "fresh_r_result_equal_transferred": false,
+      "reconstruct_support_equal": false,
+      "template_id": "L1"
+    }
+  ],
+  "frozen_placement": "generic_r keeps independently prepared generic support and appends A's transferred result states. generic_fresh_r keeps that same support cache, result token IDs, packed result positions, B prompt, and decoding, and only replaces the result states by forwarding those tokens after the support. reconstruct prefills the entire compact token sequence."
+}

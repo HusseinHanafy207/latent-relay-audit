@@ -1,0 +1,185 @@
+{
+  "recorded_at_utc": "2026-10-28T21:07:00.054655+00:00",
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+  "executable": "/usr/bin/python3",
+  "platform": "linux",
+  "cwd": "/kaggle/working/latent-relay-audit",
+  "repo_commit": "68549a7839dd6e36faae80f8ae8cc8bacee5151f",
+  "upstream_commit_expected": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "upstream_commit_actual": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "torch": "2.11.0+cu128",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "transformers": "4.57.3",
+  "precision": {
+    "inference_dtype": "float16",
+    "alignment_dtype": "float32",
+    "compression_dtype": "float32",
+    "enable_thinking": false,
+    "device_name": "Tesla T4",
+    "device_capability": "7.5",
+    "source": "env:fp16"
+  },
+  "env": {
+    "LATENT_RELAY_INFER_DTYPE": "fp16",
+    "HF_HOME": null,
+    "TRANSFORMERS_CACHE": null
+  },
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "model_name": "Qwen/Qwen3-4B",
+  "extra": {
+    "stage": "plan4-qadapt-prep",
+    "do_not_overwrite": [
+      "results_stage_plan4_timing",
+      "results_stage_plan4_recon12",
+      "results_stage_plan4_query12",
+      "results_stage_plan4_kvmix12",
+      "results_stage_plan4_refattn12",
+      "results_stage_plan4_refgen12",
+      "results_stage_plan4_refval12",
+      "results_stage_plan4_refgenval12",
+      "results_stage_plan4_confirm",
+      "results_stage_plan4_hold"
+    ],
+    "conditions": [
+      "tk_tv",
+      "fk_tv",
+      "tk_fv",
+      "fk_fv"
+    ],
+    "plan_max_new_12": 384,
+    "answer_max_new": 48,
+    "query_max_new": 8,
+    "frozen_placement": "Base cache is generic support + transferred R. Only result-region keys and/or values are replaced by the fresh-R tensors computed after that same support. Support, prefix and separator tensors, token IDs, packed positions, masks, cursor, prompts and greedy decoding are identical. Keys are copied as stored; no RoPE is applied again.",
+    "phase": "teacher",
+    "do_not_load": [
+      "data/plan4_dev.jsonl",
+      "data/plan_dev.jsonl",
+      "data/plan4_fresh.jsonl",
+      "data/plan4_hold.jsonl",
+      "data/test.jsonl"
+    ],
+    "a_written_max_new_12": 2048,
+    "a_sheets_for": [
+      "train",
+      "dev"
+    ],
+    "student": "tk_tv",
+    "teacher": "fk_fv",
+    "protocol": {
+      "question": "Can a small receiver-side query adjustment improve B's use of the transferred cache when no reference model supplies attention or answers?",
+      "basis": "Adapts Attuner (arXiv 2609.36722, Section 4) to the transferred twelve-carrier cache. Motivated by the fresh-key result (63 -> 94 labels in free generation with transferred values kept). The oracle's 106/108 is reference-guided recovery, not evidence that B reads the transferred values, and is not a basis for expecting a similar repair.",
+      "registered_before_training": true,
+      "amendments_before_training": [
+        "Prep check: support token IDs must match within a template; support tensors are reported against the template's first sheet instead of required to be byte-identical (opening positions are re-prefilled per sheet in different-length FP16 forwards). Mismatched R therefore uses each sheet's own support plus the partner's R rather than the partner's whole cache. No training or evaluation had been run."
+      ],
+      "data": {
+        "train": {
+          "file": "data/plan4_qadapt_train.jsonl",
+          "sha256": "0730226c7f801da9e1875b44580d965f40c4f59cccf3383a466d407b57804d73",
+          "seed": 2090,
+          "families": 96,
+          "per_level": 32,
+          "variants": [
+            "base"
+          ]
+        },
+        "dev": {
+          "file": "data/plan4_qadapt_dev.jsonl",
+          "sha256": "1c45eec7bdf7fc9a41755d7532110ea3e8746e2751f44a9e7df6122d136b3c3a",
+          "seed": 2091,
+          "families": 12,
+          "per_level": 4,
+          "variants": [
+            "base",
+            "a_flip"
+          ]
+        },
+        "eval": {
+          "file": "data/plan4_qadapt_eval.jsonl",
+          "sha256": "d8b19e34c0a00ccf4e16490879b3ffd90cffa947b5f1cea5e96d558eaa191272",
+          "seed": 2092,
+          "families": 24,
+          "per_level": 8,
+          "variants": [
+            "base",
+            "a_flip"
+          ]
+        },
+        "a_flip": "One carrier's operational facts change in A's document only (make the trap eligible, or make the gold ineligible), balanced per level; B's document is identical within a pair.",
+        "eval_a_sheets": "not generated until the candidate is frozen",
+        "diagnostic_only": "data/plan4_timing12.jsonl (the nine reused cases): never trained on, never used for selection, never presented as confirmation"
+      },
+      "frozen_construction": "Generic support (frozen timing12 templates), result selection, packed positions, masks and prompts as in kvmix12. A's cached states and the base-model weights are never modified. Plan 384 / answer 48 tokens, greedy, thinking disabled.",
+      "student": "tk_tv: generic support + transferred R",
+      "teacher": "fk_fv: generic support + R recomputed after that support (reconstructed result states); used only to make training targets",
+      "adapter": {
+        "type": "LoRA on q_proj only",
+        "layers": "all 36",
+        "rank": 16,
+        "alpha": 32,
+        "dropout": 0.0,
+        "init": "A Kaiming-uniform, B zero (adapted model starts identical to the base model)",
+        "applies_to": "B's own prompt and generated tokens; the received cache is never recomputed",
+        "trainable_params": 3833856,
+        "dtype": "fp32 adapter parameters on the fp16 base, dynamic loss scaling (T4 has no bf16)"
+      },
+      "training": {
+        "examples": "train base sheets only (96)",
+        "targets": "teacher plan and answer text generated once (prep stage), unfiltered; answer prompt contains the teacher's plan",
+        "loss": "token-mean KL(stopgrad p_teacher || p_student) over teacher response tokens (EOS included when not truncated), full vocabulary, fp32 log-softmax; teacher logits come from fk_fv on the same prompt and response",
+        "optimizer": "AdamW, lr 2e-4, betas (0.9, 0.999), weight decay 0, constant schedule, no warmup, gradient clip 1.0",
+        "batch": "one sheet (plan + answer sequences) per micro-step, 4 sheets per optimizer step (24 steps per epoch)",
+        "epochs": 3,
+        "order_seed": "2026 + epoch",
+        "checkpoints": "end of epochs 1, 2, 3; no other checkpoints are evaluated"
+      },
+      "selection": {
+        "data": "dev base sheets (12 sheets, 144 labels), free generation, adapted tk_tv, no reference at evaluation",
+        "rule": "highest eligibility labels correct; ties go to the earlier epoch",
+        "single_use": "selection uses dev base only; nothing on eval is computed before the candidate is frozen"
+      },
+      "evaluation_conditions": {
+        "correct_r": "own tk_tv cache",
+        "mismatched_r": "this sheet's own generic support followed by the partner's transferred R tensors at the same packed positions (result_start is 70 on every sheet), with this sheet's B prompt; partner is the next base family at the same level in file order (cyclic), listed in data_summary.json",
+        "no_r": "generic support only (cache positions before result_start), same B prompt",
+        "a_flip_pairs": "base and a_flip sheets share B's document; only A's message differs",
+        "baselines": [
+          "unadapted tk_tv",
+          "fk_fv (reconstructed result states)",
+          "result text (text_result)"
+        ],
+        "primary": "eligibility labels (12 per sheet), with both error directions, missing lines, parse failures and truncation",
+        "secondary": "final choice, reported separately"
+      },
+      "advance_rule_dev": [
+        "adapted labels >= unadapted tk_tv labels + 12 (of 144) on dev base, and the 95% cluster-bootstrap interval over the 12 families excludes zero",
+        "adapted correct-R labels exceed adapted no-R labels by at least 12",
+        "on carriers whose status differs between a sheet and its mismatch partner, adapted labels under mismatched R follow the partner's status more often than the sheet's own",
+        "A-change pairs with the changed carrier labelled correctly in both members: adapted >= unadapted",
+        "parse failures plus plan truncations: adapted no more than unadapted + 1"
+      ],
+      "confirmation": "Only if every advance condition holds: freeze the selected checkpoint, write eval A sheets, run all conditions once on eval (24 base + 24 a_flip). Report all results whatever they show.",
+      "costs_to_report": [
+        "trainable parameters and adapter bytes",
+        "teacher target generation time (one-time preparation)",
+        "training wall time and peak memory",
+        "receiver prefill and decode time with and without the adapter",
+        "note: the sender must run without the adapter, so a merged receiver needs its own q_proj weights or adapter switching"
+      ],
+      "dest": "results_stage_plan4_qadapt_prep (preparation); later stages get their own folders",
+      "do_not_overwrite": [
+        "results_stage_plan4_timing",
+        "results_stage_plan4_recon12",
+        "results_stage_plan4_query12",
+        "results_stage_plan4_kvmix12",
+        "results_stage_plan4_refattn12",
+        "results_stage_plan4_refgen12",
+        "results_stage_plan4_refval12",
+        "results_stage_plan4_refgenval12",
+        "results_stage_plan4_confirm",
+        "results_stage_plan4_hold"
+      ]
+    }
+  }
+}

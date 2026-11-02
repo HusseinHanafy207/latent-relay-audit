@@ -1093,6 +1093,259 @@
     "question": "On new families, does retaining A's explicit result states plus the first four cache positions preserve task-relevant eligibility, or only generation stability?",
     "note": "One held-out evaluation of the frozen procedure. After this, stop expanding the pilot and write it up. plan4_fresh is not used."
   },
+  "study_plan4_iface": {
+    "dev_split": "plan4_dev",
+    "dev_file": "data/plan4_dev.jsonl",
+    "n_families": 30,
+    "n_examples": 90,
+    "n_unique_a_sheets": 60,
+    "dest": "results_stage_plan4_iface",
+    "a_path": "ordinary written calculations once per unique sheet; not latent-40",
+    "prefix": {
+      "families": ["plan4_dev-fam-006", "plan4_dev-fam-001", "plan4_dev-fam-000"],
+      "prefix_len": 100,
+      "continuation_len": 8,
+      "metric": "teacher-forced continuation logits",
+      "continue_at": "prefix_len, not the original full-cache cursor"
+    },
+    "compact": [
+      "orig_base_result",
+      "orig_base_sink",
+      "orig_instr_result",
+      "orig_instr_sink",
+      "cons_base_result",
+      "cons_base_sink",
+      "cons_instr_result",
+      "cons_instr_sink"
+    ],
+    "references": ["kv", "text_result"],
+    "diagnostic": ["orig_base_four"],
+    "framing_change": "Use the preceding carrier results together with the shipment information below.",
+    "sink_initial": 4,
+    "shared_across_heads": true,
+    "compressor": "none",
+    "obf": false,
+    "b_prompt": "frozen line-by-line; KV uses relayed-memory wording plus one optional framing sentence",
+    "written_max_new": 768,
+    "plan_max_new": 128,
+    "max_new_tokens": 48,
+    "label_margin_points": 5,
+    "do_not_load": [
+      "data/plan4_hold.jsonl",
+      "data/plan4_fresh.jsonl",
+      "data/plan_dev.jsonl",
+      "data/test.jsonl",
+      "data/hop_test.jsonl"
+    ],
+    "do_not_resume": [
+      "results_stage_plan4_stable",
+      "results_stage_plan4_hold"
+    ],
+    "question": "On development families, do positional assignment, one framing sentence, or the first four cache positions restore eligibility transfer from selected result KV?",
+    "note": "Run --phase prefix first. If it fails, fix reuse before interpreting selected-cache results. plan4_hold is unused."
+  },
+  "study_plan4_publicprefix12": {
+    "question": "Does keeping the complete public task prefix help B use A's selected result states, compared with keeping only the instruction slice?",
+    "split": "plan4_timing12 (nine already-inspected cases; development diagnostic, not confirmation)",
+    "frozen": "Qwen3-4B revision, Tesla T4, FP16; A's recorded token IDs and selected result positions; B prompts and framing sentence; greedy decoding; 384 plan / 48 answer tokens; plan pass then choice pass. No A regeneration, added reasons, calculations or training.",
+    "conditions": {
+      "compact_baseline": "short prefix + generic instruction slice + newline + transferred R (expected to reproduce 63/108 labels, 0/9 all-label)",
+      "task_prefix_r": "complete public task prefix (140/145/162 tokens) + newline + transferred R (candidate)",
+      "woodland_prefix_r": "frozen woodland prefix + same instruction (same length) + newline + transferred R",
+      "library_prefix_r": "frozen library prefix + same instruction (same length) + newline + transferred R",
+      "task_prefix_fresh_r": "task prefix as in the candidate + newline + R token IDs processed again",
+      "full_kv": "sender's complete available cache",
+      "text_result": "same selected result lines as text"
+    },
+    "construction": "Public prefixes prefilled once per template and context, then one fixed newline; old five-token prefix not prepended; no closing token or new framing. Transferred R gathered from A's frozen cache, values unchanged, keys moved once from original sender positions to consecutive packed positions (result starts at prefix length + 1, e.g. 141 for L1). Task and neutral conditions share length, header, instruction IDs and positions, separator, result slots, masks and B start; their transferred result keys and values must be identical.",
+    "checks_before_answers": [
+      "no private information in public prefixes (Shipment request:, Shipment:, all twelve carrier headings, every sheet's private lines); decoded text and token boundary recorded",
+      "result token IDs and source positions match the frozen records",
+      "task and neutral conditions matched in length, result slots, masks and B start",
+      "transferred values equal A's selected values; keys equal the single intended position correction",
+      "continuing from the cached public prefix agrees with re-encoding within the established tolerance",
+      "prefix + newline + results processed together agrees with prefix first then extension by the result IDs",
+      "no cache mutation: independent copies per generation; stored caches unchanged"
+    ],
+    "primary": "all twelve labels correct per case (of 9)",
+    "also_report": ["labels of 108", "ineligible marked eligible", "eligible marked ineligible", "missing lines, parse failures, truncation", "labels fixed and broken vs baseline", "final choice (separate)"],
+    "statistics": "paired bootstrap over the nine cases, 2000 draws, seed 2026; labels of a case kept together",
+    "key_comparisons": ["task prefix vs compact baseline", "task prefix vs each neutral prefix", "fresh vs transferred results under the task prefix", "candidate vs full KV and text"],
+    "outcome_meanings": {
+      "task_beats_both_neutrals": "retaining public task context is a promising repair (context-content explanation; mechanism not identified)",
+      "task_and_neutrals_similar": "a longer, consistent prefix may help; do not credit the task wording",
+      "fresh_works_transferred_poor": "public-context repair insufficient; difficulty lies in reuse of transferred result states",
+      "fresh_unreliable": "layout is not a healthy reference; investigate before attributing to transferred states",
+      "candidate_improves_below_references": "partial repair, not recovery",
+      "recovery_standard": "within 5 points of full KV's 9/9 all-label requires 9/9 at the point estimate; still a diagnostic, not generalization"
+    },
+    "costs": "public-prefix preparation, per-example assembly, resident cache size, receiver prefill and decoding recorded separately; prepared prefixes are not free; full timing comparison postponed",
+    "dest": "results_stage_plan4_publicprefix12"
+  },
+  "study_plan4_qadapt": {
+    "question": "Can a small receiver-side query adjustment improve B's use of the transferred cache when no reference model supplies attention or answers?",
+    "basis": "Adapts Attuner (arXiv 2609.36722, Section 4) to the transferred twelve-carrier cache. Motivated by the fresh-key result (63 -> 94 labels in free generation with transferred values kept). The oracle's 106/108 is reference-guided recovery, not evidence that B reads the transferred values, and is not a basis for expecting a similar repair.",
+    "registered_before_training": true,
+    "amendments_before_training": [
+      "Prep check: support token IDs must match within a template; support tensors are reported against the template's first sheet instead of required to be byte-identical (opening positions are re-prefilled per sheet in different-length FP16 forwards). Mismatched R therefore uses each sheet's own support plus the partner's R rather than the partner's whole cache. No training or evaluation had been run.",
+      "Training forwards (teacher logits and student) use memory-efficient (sdpa) attention, because eager attention keeps every layer's attention matrix for the backward pass and does not fit on a T4. Generation, selection and evaluation stay on eager attention, as in all earlier runs; kernel agreement is reported by the implementation check. No training had been run.",
+      "Targets are the saved teacher plan and answer texts re-tokenized, followed by EOS when the teacher was not truncated; alignment with the teacher's own forced predictions is checked. A sheet's loss is the KL summed over its plan and answer response tokens divided by their total count (plan and answer backpropagate separately); each sheet's loss is divided by 4 within an optimizer step. Dynamic loss scaling starts at 1024 with default growth and backoff; a step skipped for overflow is counted, not repeated.",
+      "Before training, a separate implementation check on the first 4 training base sheets (3 optimizer steps) verifies zero-initialised reproduction, gradients on adapter parameters only, finite loss, unchanged received caches, and the absence of the teacher plan from the plan-pass input. Its adapter and optimizer are reset and nothing from it is saved or used for selection."
+    ],
+    "data": {
+      "train": {"file": "data/plan4_qadapt_train.jsonl", "sha256": "0730226c7f801da9e1875b44580d965f40c4f59cccf3383a466d407b57804d73", "seed": 2090, "families": 96, "per_level": 32, "variants": ["base"]},
+      "dev": {"file": "data/plan4_qadapt_dev.jsonl", "sha256": "1c45eec7bdf7fc9a41755d7532110ea3e8746e2751f44a9e7df6122d136b3c3a", "seed": 2091, "families": 12, "per_level": 4, "variants": ["base", "a_flip"]},
+      "eval": {"file": "data/plan4_qadapt_eval.jsonl", "sha256": "d8b19e34c0a00ccf4e16490879b3ffd90cffa947b5f1cea5e96d558eaa191272", "seed": 2092, "families": 24, "per_level": 8, "variants": ["base", "a_flip"]},
+      "a_flip": "One carrier's operational facts change in A's document only (make the trap eligible, or make the gold ineligible), balanced per level; B's document is identical within a pair.",
+      "eval_a_sheets": "not generated until the candidate is frozen",
+      "diagnostic_only": "data/plan4_timing12.jsonl (the nine reused cases): never trained on, never used for selection, never presented as confirmation"
+    },
+    "frozen_construction": "Generic support (frozen timing12 templates), result selection, packed positions, masks and prompts as in kvmix12. A's cached states and the base-model weights are never modified. Plan 384 / answer 48 tokens, greedy, thinking disabled.",
+    "student": "tk_tv: generic support + transferred R",
+    "teacher": "fk_fv: generic support + R recomputed after that support (reconstructed result states); used only to make training targets",
+    "adapter": {
+      "type": "LoRA on q_proj only",
+      "layers": "all 36",
+      "rank": 16,
+      "alpha": 32,
+      "dropout": 0.0,
+      "init": "A Kaiming-uniform, B zero (adapted model starts identical to the base model)",
+      "applies_to": "B's own prompt and generated tokens; the received cache is never recomputed",
+      "trainable_params": 3833856,
+      "dtype": "fp32 adapter parameters on the fp16 base, dynamic loss scaling (T4 has no bf16)"
+    },
+    "training": {
+      "examples": "train base sheets only (96)",
+      "targets": "teacher plan and answer text generated once (prep stage), unfiltered; answer prompt contains the teacher's plan",
+      "loss": "token-mean KL(stopgrad p_teacher || p_student) over teacher response tokens (EOS included when not truncated), full vocabulary, fp32 log-softmax; teacher logits come from fk_fv on the same prompt and response",
+      "optimizer": "AdamW, lr 2e-4, betas (0.9, 0.999), weight decay 0, constant schedule, no warmup, gradient clip 1.0",
+      "batch": "one sheet (plan + answer sequences) per micro-step, 4 sheets per optimizer step (24 steps per epoch)",
+      "epochs": 3,
+      "order_seed": "2026 + epoch",
+      "checkpoints": "end of epochs 1, 2, 3; no other checkpoints are evaluated"
+    },
+    "selection": {
+      "data": "dev base sheets (12 sheets, 144 labels), free generation, adapted tk_tv, no reference at evaluation",
+      "rule": "highest eligibility labels correct; ties go to the earlier epoch",
+      "single_use": "selection uses dev base only; nothing on eval is computed before the candidate is frozen"
+    },
+    "evaluation_conditions": {
+      "correct_r": "own tk_tv cache",
+      "mismatched_r": "this sheet's own generic support followed by the partner's transferred R tensors at the same packed positions (result_start is 70 on every sheet), with this sheet's B prompt; partner is the next base family at the same level in file order (cyclic), listed in data_summary.json",
+      "no_r": "generic support only (cache positions before result_start), same B prompt",
+      "a_flip_pairs": "base and a_flip sheets share B's document; only A's message differs",
+      "baselines": ["unadapted tk_tv", "fk_fv (reconstructed result states)", "result text (text_result)", "full KV (eval only; see amendments_before_eval)"],
+      "primary": "eligibility labels (12 per sheet), with both error directions, missing lines, parse failures and truncation",
+      "secondary": "final choice, reported separately"
+    },
+    "advance_rule_dev": [
+      "adapted labels >= unadapted tk_tv labels + 12 (of 144) on dev base, and the 95% cluster-bootstrap interval over the 12 families excludes zero",
+      "adapted correct-R labels exceed adapted no-R labels by at least 12",
+      "on carriers whose status differs between a sheet and its mismatch partner, adapted labels under mismatched R follow the partner's status more often than the sheet's own",
+      "A-change pairs with the changed carrier labelled correctly in both members: adapted >= unadapted",
+      "parse failures plus plan truncations: adapted no more than unadapted + 1"
+    ],
+    "confirmation": "Only if every advance condition holds: freeze the selected checkpoint, write eval A sheets, run all conditions once on eval (24 base + 24 a_flip). Report all results whatever they show.",
+    "dev_outcome": "All five dev gates passed (adapted 144 vs unadapted 94 of 144; no-R 83; mismatched follows partner 57 vs own 5 of 62; A-change pairs 12 vs 3; malformed 0 vs 0). All three epochs scored 144, so the registered tie rule selected epoch 1.",
+    "eval_outcome": "Frozen epoch 1 (sha256 864a8f19...), 336 rows run once. Base labels of 288: adapted 284, unadapted 181, adapted no-R 141, unadapted no-R 115, adapted partner R 137, fk_fv 284, text 284, full KV 285. Mismatched follows partner 132 vs own 16 of 148; A-change pairs 24/24 vs 8/24. Adapted minus fk_fv / full KV / text: 0 / -1 / 0 labels (intervals span zero). Decode +7.8% per token, prefill +3.9%. No cost advantage over text.",
+    "amendments_before_eval": [
+      "Full KV (A's complete cache rebuilt from its saved token IDs, as in timing12; unadapted) is added as a reference on eval base and a_flip, so the adapted receiver can be compared against reconstruction, full KV and text. Added after the dev gates and before any eval A sheet was written.",
+      "The selected checkpoint (epoch 1) is hashed into frozen_candidate.json before eval A sheets are written; every eval row records the hash, and the run refuses a changed checkpoint.",
+      "The registered dev gates are recomputed on eval and reported; nothing is selected from them. Paired comparisons use the family-level cluster bootstrap (2000 draws, seed 2026): adapted vs unadapted, fk_fv, full KV, text, and adapted no-R.",
+      "Overhead is reported as decode seconds per generated token and prefill seconds, adapted vs unadapted on the same caches, plus resident cache positions per condition. No cost advantage is claimed from reliability."
+    ],
+    "costs_to_report": [
+      "trainable parameters and adapter bytes",
+      "teacher target generation time (one-time preparation)",
+      "training wall time and peak memory",
+      "receiver prefill and decode time with and without the adapter",
+      "note: the sender must run without the adapter, so a merged receiver needs its own q_proj weights or adapter switching"
+    ],
+    "dest": "results_stage_plan4_qadapt_prep (preparation); later stages get their own folders",
+    "do_not_overwrite": ["results_stage_plan4_timing", "results_stage_plan4_recon12", "results_stage_plan4_query12", "results_stage_plan4_kvmix12", "results_stage_plan4_refattn12", "results_stage_plan4_refgen12", "results_stage_plan4_refval12", "results_stage_plan4_refgenval12", "results_stage_plan4_confirm", "results_stage_plan4_hold"]
+  },
+  "study_plan4_qmerge": {
+    "question": "Once the frozen query adapter is merged into B's q_proj weights, is the adapted compact-KV handoff still as reliable, and is it repeatably cheaper than text when the whole handoff is timed fairly?",
+    "registered_before_running": true,
+    "scope": "Implementation and timing comparison only. No training. Dev sheets were already used for checkpoint selection and eval sheets for the candidate's evaluation; both are reused here and neither counts as a new independent confirmation.",
+    "frozen": {
+      "candidate": "results_stage_plan4_qadapt/frozen_candidate.json (epoch 1, sha256 864a8f19...); the run refuses a changed checkpoint",
+      "unchanged": ["selected states (tk_tv, fk_fv, full KV) built by the qadapt prep code", "public support", "B prompts", "decoding allowances 384 plan / 48 answer, greedy, thinking off, eager attention, fp16"]
+    },
+    "merge": {
+      "rule": "W_merged = fp16(W.float() + scale * B.float() @ A.float()), scale = alpha / rank = 2, rounded once",
+      "receiver_only": "merged tensors are stored beside the original weights and swapped in only for B's own forwards; A, support construction and every baseline use the original weights, verified by a byte digest and wrapper identity before and after each phase",
+      "rounding_reported": ["rounding error relative to the fp32 update", "cosine between the applied and fp32 update", "fraction of weights unchanged"]
+    },
+    "agreement_dev": {
+      "sheets": "plan4_qadapt_dev (12 base + 12 a_flip)",
+      "compare": "unmerged (evaluated candidate) vs merged: forced logits on the unmerged outputs (plan and answer), generated eligibility labels, final choices and formatting; the unmerged rerun is also compared with the saved dev rows",
+      "gates": {
+        "forced_argmax_agreement_min": 0.99,
+        "max_labels_lost_of_288": 1,
+        "max_all_twelve_cases_lost": 1,
+        "max_final_choices_lost": 1,
+        "formatting": "no more parse failures, truncations or missing plan lines than unmerged",
+        "original_weights": "digest and wrapper identity unchanged"
+      },
+      "reporting": "every sheet whose merged output differs is listed with the carriers that changed, whether or not the gates pass",
+      "required_before_bench": true
+    },
+    "bench": {
+      "sheets": "plan4_qadapt_eval, all 48 (reused inputs, labelled as a timing comparison)",
+      "conditions": {
+        "merged_kv": "compact support + R, merged receiver (the candidate after merging)",
+        "unmerged_kv": "same cache, unmerged adapter (the evaluated candidate)",
+        "unadapted_kv": "same cache, original weights",
+        "fk_fv": "reconstruction: public support + R token IDs prefilled by B, original weights",
+        "text_result": "R decoded to text and read as a message, original weights",
+        "full_kv": "A's complete cache, original weights"
+      },
+      "repetitions": 3,
+      "order": "condition order shuffled per sheet and repetition (seeded 2026)",
+      "warm_up": "one discarded handoff per condition on the first sheet of each process",
+      "synchronization": "torch.cuda.synchronize before every timer read",
+      "components": ["sender preparation (GPU gather + RoPE re-rotation of R; text: decode R tokens; reconstruction: token IDs)", "movement (host-to-GPU copy of what B receives; bytes reported; network not modelled)", "receiver preparation (cache assembly or clone)", "R prefill (reconstruction only)", "prompt encoding", "shared prompt prefill", "plan prefill and decode", "answer prefill and decode", "cache crop", "complete handoff wall time"],
+      "fairness": [
+        "public support is prefilled once per template and kept on B's GPU; its one-time cost is reported separately",
+        "text gets the equivalent reuse: its public prompt header, cut strictly before the message, is prefilled once across sheets",
+        "every condition prefills the prompt tokens shared by its plan and answer prompts once per sheet and crops back between passes",
+        "generation uses the frozen R; the timed sender output is discarded after an untimed per-sheet check against it"
+      ],
+      "statistics": "per sheet median over repetitions, family-level cluster bootstrap (2000 draws, seed 2026) on merged minus each comparison, plus the mean difference within each repetition",
+      "reliability_check": "merged vs unmerged in the bench (repetition 1): at most 2 of 576 labels, 2 all-twelve cases and 2 final choices lost"
+    },
+    "decision_rule": {
+      "useful_practical_result": "reliability check passes AND merged minus text complete handoff time has a 95% CI upper bound below zero AND every repetition's mean difference is below zero",
+      "otherwise": "report the limit, with the preparation, prefill and decode differences that explain it",
+      "break_even": "one-time adapter cost (teacher targets, training state build, training, merge) divided by the per-handoff saving, only if the saving is repeatable",
+      "not_claimed": "superiority of the communication format: the KV receiver was adapted and the text receiver was not"
+    },
+    "textadapt_diagnostic": "the frozen adapter (unmerged) applied to the text receiver on the eval sheets; a negative result would not show what a separately text-trained receiver could achieve",
+    "amendments_before_bench": {
+      "integration_check": {
+        "why": "the first bench version timed GPU-side selection and re-rotation but then fed B the frozen R (built on the CPU when the states were selected) copied host-to-GPU; the R that the timed path produces had not been passed through B",
+        "sheets": "plan4_qadapt_dev (the agree sheets), merged receiver; checkpoint, support, prompts and selection unchanged",
+        "runs": {
+          "frozen_std": "frozen R, B's standard two-call path",
+          "actual_std": "R from A's GPU selection and re-rotation, same standard path (isolates the R difference)",
+          "actual_direct": "GPU R placed straight into B's cache on the GPU with shared-prefix generation (the same_gpu bench path)"
+        },
+        "recorded": ["key max/mean absolute difference and bit-equal fraction per layer", "values must be identical (gather only)", "forced logits frozen vs actual R on the frozen_std outputs (max abs, KL, argmax agreement)", "labels, all-twelve cases, final choices, formatting, every changed sheet listed"],
+        "tolerance": "the agree gates: forced argmax agreement >= 0.99 (actual_std only), at most 1 of 288 labels, 1 all-twelve case and 1 final choice lost, formatting not worse; actual_std and actual_direct are each compared with frozen_std",
+        "if_passed": "the bench feeds B the GPU-prepared R directly",
+        "if_failed": "the bench refuses to run; the difference and its cause (R vs direct path) are documented before any deployment timing is interpreted"
+      },
+      "deployment": {
+        "same_gpu": "direct reuse on one GPU: R is selected and re-rotated on the GPU and placed straight into B's cache; no copies. Full KV: B takes over A's cache; the per-repetition copy the benchmark needs is timed separately and excluded",
+        "device_transfer": "transfer between devices approximated on one T4: device-to-host copy after A's preparation and host-to-device copy before B's (pageable, synchronous); network between hosts not measured; bytes reported",
+        "primary": "same_gpu; device_transfer is optional and reported separately",
+        "earlier_bench_files": "bench_evaluations.jsonl / bench_summary.json from the first version (GPU preparation plus host-to-GPU copy of the frozen R) match neither deployment and are not used for deployment conclusions"
+      }
+    },
+    "dest": "results_stage_plan4_qmerge",
+    "do_not_overwrite": ["results_stage_plan4_qadapt", "results_stage_plan4_qadapt_prep", "results_stage_plan4_timing", "results_stage_plan4_recon12", "results_stage_plan4_publicprefix12"]
+  },
   "dependencies_critical": {
     "transformers": "4.57.3",
     "reason": "upstream KV relay uses DynamicCache key_cache/value_cache; transformers 4.58+ breaks it"

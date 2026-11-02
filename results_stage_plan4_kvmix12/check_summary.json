@@ -1,0 +1,628 @@
+{
+  "n": 9,
+  "all_passed": true,
+  "rows": [
+    {
+      "a_state_key": "plan4_timing12-fam-000-base",
+      "ok": true,
+      "construction": {
+        "result_start": 70,
+        "n_result": 133,
+        "generic_r_n": 203,
+        "fresh_r_n": 203,
+        "template_id": "L2",
+        "support_held": true,
+        "matches_recon12": true
+      },
+      "n_kv": 203,
+      "pos_cursor": 203,
+      "result_start": 70,
+      "n_result": 133,
+      "fresh_vs_transfer_result": {
+        "keys_equal": false,
+        "values_equal": false,
+        "keys_max_abs": 29.759765625,
+        "values_max_abs": 69.84375,
+        "keys_mean_abs": 0.7471626545561271,
+        "values_mean_abs": 0.6199027073692301
+      },
+      "conditions": {
+        "tk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        },
+        "fk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "tk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "fk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        }
+      }
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-001-base",
+      "ok": true,
+      "construction": {
+        "result_start": 70,
+        "n_result": 252,
+        "generic_r_n": 322,
+        "fresh_r_n": 322,
+        "template_id": "L1",
+        "support_held": true,
+        "matches_recon12": true
+      },
+      "n_kv": 322,
+      "pos_cursor": 322,
+      "result_start": 70,
+      "n_result": 252,
+      "fresh_vs_transfer_result": {
+        "keys_equal": false,
+        "values_equal": false,
+        "keys_max_abs": 50.2890625,
+        "values_max_abs": 78.296875,
+        "keys_mean_abs": 0.6804411364331221,
+        "values_mean_abs": 0.5699709046435575
+      },
+      "conditions": {
+        "tk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        },
+        "fk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "tk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "fk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        }
+      }
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-002-base",
+      "ok": true,
+      "construction": {
+        "result_start": 70,
+        "n_result": 138,
+        "generic_r_n": 208,
+        "fresh_r_n": 208,
+        "template_id": "L3",
+        "support_held": true,
+        "matches_recon12": true
+      },
+      "n_kv": 208,
+      "pos_cursor": 208,
+      "result_start": 70,
+      "n_result": 138,
+      "fresh_vs_transfer_result": {
+        "keys_equal": false,
+        "values_equal": false,
+        "keys_max_abs": 27.1875,
+        "values_max_abs": 70.96484375,
+        "keys_mean_abs": 0.7454703644729711,
+        "values_mean_abs": 0.6208099162205372
+      },
+      "conditions": {
+        "tk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        },
+        "fk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "tk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "fk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        }
+      }
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-003-base",
+      "ok": true,
+      "construction": {
+        "result_start": 70,
+        "n_result": 209,
+        "generic_r_n": 279,
+        "fresh_r_n": 279,
+        "template_id": "L1",
+        "support_held": true,
+        "matches_recon12": true
+      },
+      "n_kv": 279,
+      "pos_cursor": 279,
+      "result_start": 70,
+      "n_result": 209,
+      "fresh_vs_transfer_result": {
+        "keys_equal": false,
+        "values_equal": false,
+        "keys_max_abs": 28.9140625,
+        "values_max_abs": 68.25,
+        "keys_mean_abs": 0.6428881556979226,
+        "values_mean_abs": 0.5504892155144413
+      },
+      "conditions": {
+        "tk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        },
+        "fk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "tk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "fk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        }
+      }
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-004-base",
+      "ok": true,
+      "construction": {
+        "result_start": 70,
+        "n_result": 151,
+        "generic_r_n": 221,
+        "fresh_r_n": 221,
+        "template_id": "L3",
+        "support_held": true,
+        "matches_recon12": true
+      },
+      "n_kv": 221,
+      "pos_cursor": 221,
+      "result_start": 70,
+      "n_result": 151,
+      "fresh_vs_transfer_result": {
+        "keys_equal": false,
+        "values_equal": false,
+        "keys_max_abs": 22.32421875,
+        "values_max_abs": 70.25,
+        "keys_mean_abs": 0.6946818038332923,
+        "values_mean_abs": 0.5801540107061479
+      },
+      "conditions": {
+        "tk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        },
+        "fk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "tk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "fk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        }
+      }
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-005-base",
+      "ok": true,
+      "construction": {
+        "result_start": 70,
+        "n_result": 160,
+        "generic_r_n": 230,
+        "fresh_r_n": 230,
+        "template_id": "L2",
+        "support_held": true,
+        "matches_recon12": true
+      },
+      "n_kv": 230,
+      "pos_cursor": 230,
+      "result_start": 70,
+      "n_result": 160,
+      "fresh_vs_transfer_result": {
+        "keys_equal": false,
+        "values_equal": false,
+        "keys_max_abs": 29.515625,
+        "values_max_abs": 67.3125,
+        "keys_mean_abs": 0.7179542500655063,
+        "values_mean_abs": 0.5944116259399203
+      },
+      "conditions": {
+        "tk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        },
+        "fk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "tk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "fk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        }
+      }
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-006-base",
+      "ok": true,
+      "construction": {
+        "result_start": 70,
+        "n_result": 138,
+        "generic_r_n": 208,
+        "fresh_r_n": 208,
+        "template_id": "L2",
+        "support_held": true,
+        "matches_recon12": true
+      },
+      "n_kv": 208,
+      "pos_cursor": 208,
+      "result_start": 70,
+      "n_result": 138,
+      "fresh_vs_transfer_result": {
+        "keys_equal": false,
+        "values_equal": false,
+        "keys_max_abs": 27.9375,
+        "values_max_abs": 68.84375,
+        "keys_mean_abs": 0.7495667607775734,
+        "values_mean_abs": 0.6201188669701246
+      },
+      "conditions": {
+        "tk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        },
+        "fk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "tk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "fk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        }
+      }
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-007-base",
+      "ok": true,
+      "construction": {
+        "result_start": 70,
+        "n_result": 131,
+        "generic_r_n": 201,
+        "fresh_r_n": 201,
+        "template_id": "L3",
+        "support_held": true,
+        "matches_recon12": true
+      },
+      "n_kv": 201,
+      "pos_cursor": 201,
+      "result_start": 70,
+      "n_result": 131,
+      "fresh_vs_transfer_result": {
+        "keys_equal": false,
+        "values_equal": false,
+        "keys_max_abs": 27.15625,
+        "values_max_abs": 63.5,
+        "keys_mean_abs": 0.7585839707284726,
+        "values_mean_abs": 0.6293739322602632
+      },
+      "conditions": {
+        "tk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        },
+        "fk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "tk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "fk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        }
+      }
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-008-base",
+      "ok": true,
+      "construction": {
+        "result_start": 70,
+        "n_result": 136,
+        "generic_r_n": 206,
+        "fresh_r_n": 206,
+        "template_id": "L1",
+        "support_held": true,
+        "matches_recon12": true
+      },
+      "n_kv": 206,
+      "pos_cursor": 206,
+      "result_start": 70,
+      "n_result": 136,
+      "fresh_vs_transfer_result": {
+        "keys_equal": false,
+        "values_equal": false,
+        "keys_max_abs": 29.0888671875,
+        "values_max_abs": 63.21875,
+        "keys_mean_abs": 0.7273987428214039,
+        "values_mean_abs": 0.6092490201486574
+      },
+      "conditions": {
+        "tk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        },
+        "fk_tv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "tk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "ok": true
+        },
+        "fk_fv": {
+          "ids_equal": true,
+          "n_kv_equal": true,
+          "cursor_equal": true,
+          "mask_equal": true,
+          "support_equal": true,
+          "result_keys_from_source": true,
+          "result_values_from_source": true,
+          "equals_reference": true,
+          "ok": true
+        }
+      }
+    }
+  ],
+  "frozen_placement": "Base cache is generic support + transferred R. Only result-region keys and/or values are replaced by the fresh-R tensors computed after that same support. Support, prefix and separator tensors, token IDs, packed positions, masks, cursor, prompts and greedy decoding are identical. Keys are copied as stored; no RoPE is applied again."
+}

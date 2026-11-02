@@ -1,0 +1,57 @@
+{
+  "recorded_at_utc": "2026-10-27T11:35:16.989814+00:00",
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+  "executable": "/usr/bin/python3",
+  "platform": "linux",
+  "cwd": "/kaggle/working/latent-relay-audit",
+  "repo_commit": "68549a7839dd6e36faae80f8ae8cc8bacee5151f",
+  "upstream_commit_expected": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "upstream_commit_actual": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "torch": "2.11.0+cu128",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "transformers": "4.57.3",
+  "precision": {
+    "inference_dtype": "float16",
+    "alignment_dtype": "float32",
+    "compression_dtype": "float32",
+    "enable_thinking": false,
+    "device_name": "Tesla T4",
+    "device_capability": "7.5",
+    "source": "env:fp16"
+  },
+  "env": {
+    "LATENT_RELAY_INFER_DTYPE": "fp16",
+    "HF_HOME": null,
+    "TRANSFORMERS_CACHE": null
+  },
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "model_name": "Qwen/Qwen3-4B",
+  "extra": {
+    "stage": "plan4-recon12",
+    "do_not_resume": [
+      "results_stage_plan4_timing",
+      "results_stage_plan4_confirm",
+      "results_stage_plan4_hold",
+      "results_stage_plan4_rdep",
+      "results_stage_plan4_generic",
+      "results_stage_plan4_ifresh",
+      "results_stage_plan4_recon"
+    ],
+    "do_not_overwrite": [
+      "results_stage_plan4_timing",
+      "results_stage_plan4_hold",
+      "results_stage_plan4_confirm"
+    ],
+    "layout": "sep",
+    "conditions": [
+      "full_kv",
+      "text_result",
+      "generic_r",
+      "generic_fresh_r",
+      "reconstruct"
+    ],
+    "frozen_placement": "generic_r keeps independently prepared generic support and appends A's transferred result states. generic_fresh_r keeps that same support cache, result token IDs, packed result positions, B prompt, and decoding, and only replaces the result states by forwarding those tokens after the support. reconstruct prefills the entire compact token sequence.",
+    "phase": "compare"
+  }
+}

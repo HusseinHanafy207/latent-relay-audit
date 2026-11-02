@@ -1,0 +1,61 @@
+{
+  "rule": "highest dev-base labels correct (of 144); ties go to the earlier epoch",
+  "labels_by_epoch": {
+    "1": 144,
+    "2": 144,
+    "3": 144
+  },
+  "selected_epoch": 1,
+  "unadapted_labels": 94,
+  "by_epoch": {
+    "1": {
+      "n_cases": 12,
+      "n_labels": 144,
+      "labels_correct": 144,
+      "cases_all_twelve_correct": 12,
+      "ineligible_marked_eligible": 0,
+      "eligible_marked_ineligible": 0,
+      "parse_ok": 12,
+      "plan_truncated": 0,
+      "answer_truncated": 0,
+      "plan_lines_missing": 0
+    },
+    "2": {
+      "n_cases": 12,
+      "n_labels": 144,
+      "labels_correct": 144,
+      "cases_all_twelve_correct": 12,
+      "ineligible_marked_eligible": 0,
+      "eligible_marked_ineligible": 0,
+      "parse_ok": 12,
+      "plan_truncated": 0,
+      "answer_truncated": 0,
+      "plan_lines_missing": 0
+    },
+    "3": {
+      "n_cases": 12,
+      "n_labels": 144,
+      "labels_correct": 144,
+      "cases_all_twelve_correct": 12,
+      "ineligible_marked_eligible": 0,
+      "eligible_marked_ineligible": 0,
+      "parse_ok": 12,
+      "plan_truncated": 0,
+      "answer_truncated": 0,
+      "plan_lines_missing": 0
+    }
+  },
+  "unadapted": {
+    "n_cases": 12,
+    "n_labels": 144,
+    "labels_correct": 94,
+    "cases_all_twelve_correct": 0,
+    "ineligible_marked_eligible": 41,
+    "eligible_marked_ineligible": 9,
+    "parse_ok": 12,
+    "plan_truncated": 0,
+    "answer_truncated": 0,
+    "plan_lines_missing": 0
+  },
+  "note": "Selection uses dev base sheets only. Nothing on eval or timing12 is computed."
+}

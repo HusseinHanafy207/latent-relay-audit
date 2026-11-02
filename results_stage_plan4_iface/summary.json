@@ -1,0 +1,2470 @@
+{
+  "n_rows": 990,
+  "n_examples": 90,
+  "n_families": 30,
+  "n_unique_a_sheets": 60,
+  "unit_note": "plan4_dev only: 30 families with three versions each. plan4_hold is unused. Same written A on every branch. 2 position conventions x 2 framing conditions x with/without the first four positions, plus full KV, result text, and four-only.",
+  "sender_unique_sheets": {
+    "n": 60,
+    "all_four_correct": 0.9833333333333333,
+    "all_status_correct": 1.0,
+    "produced_working": 1.0,
+    "truncated": 0.0,
+    "mean_n_new_tokens": 466.8666666666667,
+    "mean_sender_generation_time_s": 30.516572324434915
+  },
+  "receiver": {
+    "kv": {
+      "n": 90,
+      "parse_ok": 90,
+      "think_collapse": 0,
+      "truncated": 0,
+      "plan_all_status_correct": 90,
+      "mean_n_status_correct": 4.0,
+      "plan_ineligible_marked_eligible": 0,
+      "plan_eligible_marked_ineligible": 0,
+      "correct": 82,
+      "follows_trap": 3,
+      "plan_answer_agrees": {
+        "n_true": 84,
+        "n_false": 6,
+        "n_not_checked": 0
+      },
+      "correct_with_wrong_eligibility": 0,
+      "mean_n_kept": 1152.6222222222223,
+      "mean_n_result_kept": 0.0,
+      "mean_n_sink_kept": 0.0,
+      "mean_message_bytes": 169961062.4,
+      "mean_relay_mb": 162.0875,
+      "mean_process_time_s": 34.655447612868414,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "loop_eq_retokenize": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "loop_len_eq_n_kv": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "eos_counted_not_cached": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "result_spans_from_loop_ids": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      }
+    },
+    "text_result": {
+      "n": 90,
+      "parse_ok": 90,
+      "think_collapse": 0,
+      "truncated": 0,
+      "plan_all_status_correct": 90,
+      "mean_n_status_correct": 4.0,
+      "plan_ineligible_marked_eligible": 0,
+      "plan_eligible_marked_ineligible": 0,
+      "correct": 79,
+      "follows_trap": 0,
+      "plan_answer_agrees": {
+        "n_true": 87,
+        "n_false": 2,
+        "n_not_checked": 1
+      },
+      "correct_with_wrong_eligibility": 0,
+      "mean_n_kept": 76.45555555555555,
+      "mean_n_result_kept": 76.45555555555555,
+      "mean_n_sink_kept": 0.0,
+      "mean_message_bytes": 312.4888888888889,
+      "mean_relay_mb": 0.0002980126274956597,
+      "mean_process_time_s": 34.35128762986925,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "loop_eq_retokenize": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "loop_len_eq_n_kv": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "eos_counted_not_cached": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "result_spans_from_loop_ids": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      }
+    },
+    "orig_base_result": {
+      "n": 90,
+      "parse_ok": 0,
+      "think_collapse": 87,
+      "truncated": 77,
+      "plan_all_status_correct": 0,
+      "mean_n_status_correct": 0.0,
+      "plan_ineligible_marked_eligible": 0,
+      "plan_eligible_marked_ineligible": 0,
+      "correct": 0,
+      "follows_trap": 0,
+      "plan_answer_agrees": {
+        "n_true": 0,
+        "n_false": 4,
+        "n_not_checked": 86
+      },
+      "correct_with_wrong_eligibility": 0,
+      "mean_n_kept": 76.45555555555555,
+      "mean_n_result_kept": 76.45555555555555,
+      "mean_n_sink_kept": 0.0,
+      "mean_message_bytes": 11273830.4,
+      "mean_relay_mb": 10.7515625,
+      "mean_process_time_s": 37.53936046759288,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "loop_eq_retokenize": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "loop_len_eq_n_kv": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "eos_counted_not_cached": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "result_spans_from_loop_ids": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      }
+    },
+    "orig_base_sink": {
+      "n": 90,
+      "parse_ok": 90,
+      "think_collapse": 0,
+      "truncated": 0,
+      "plan_all_status_correct": 25,
+      "mean_n_status_correct": 2.966666666666667,
+      "plan_ineligible_marked_eligible": 76,
+      "plan_eligible_marked_ineligible": 17,
+      "correct": 42,
+      "follows_trap": 38,
+      "plan_answer_agrees": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "correct_with_wrong_eligibility": 22,
+      "mean_n_kept": 80.45555555555555,
+      "mean_n_result_kept": 76.45555555555555,
+      "mean_n_sink_kept": 4.0,
+      "mean_message_bytes": 11863654.4,
+      "mean_relay_mb": 11.3140625,
+      "mean_process_time_s": 34.32110271188948,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "loop_eq_retokenize": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "loop_len_eq_n_kv": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "eos_counted_not_cached": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "result_spans_from_loop_ids": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      }
+    },
+    "orig_instr_result": {
+      "n": 90,
+      "parse_ok": 0,
+      "think_collapse": 81,
+      "truncated": 34,
+      "plan_all_status_correct": 0,
+      "mean_n_status_correct": 0.0,
+      "plan_ineligible_marked_eligible": 0,
+      "plan_eligible_marked_ineligible": 0,
+      "correct": 0,
+      "follows_trap": 0,
+      "plan_answer_agrees": {
+        "n_true": 0,
+        "n_false": 0,
+        "n_not_checked": 90
+      },
+      "correct_with_wrong_eligibility": 0,
+      "mean_n_kept": 76.45555555555555,
+      "mean_n_result_kept": 76.45555555555555,
+      "mean_n_sink_kept": 0.0,
+      "mean_message_bytes": 11273909.4,
+      "mean_relay_mb": 10.751637840270996,
+      "mean_process_time_s": 32.76077134344313,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "loop_eq_retokenize": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "loop_len_eq_n_kv": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "eos_counted_not_cached": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "result_spans_from_loop_ids": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      }
+    },
+    "orig_instr_sink": {
+      "n": 90,
+      "parse_ok": 90,
+      "think_collapse": 0,
+      "truncated": 0,
+      "plan_all_status_correct": 33,
+      "mean_n_status_correct": 3.1555555555555554,
+      "plan_ineligible_marked_eligible": 64,
+      "plan_eligible_marked_ineligible": 12,
+      "correct": 51,
+      "follows_trap": 28,
+      "plan_answer_agrees": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "correct_with_wrong_eligibility": 25,
+      "mean_n_kept": 80.45555555555555,
+      "mean_n_result_kept": 76.45555555555555,
+      "mean_n_sink_kept": 4.0,
+      "mean_message_bytes": 11863733.4,
+      "mean_relay_mb": 11.314137840270996,
+      "mean_process_time_s": 34.32829717795054,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "loop_eq_retokenize": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "loop_len_eq_n_kv": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "eos_counted_not_cached": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "result_spans_from_loop_ids": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      }
+    },
+    "cons_base_result": {
+      "n": 90,
+      "parse_ok": 0,
+      "think_collapse": 88,
+      "truncated": 73,
+      "plan_all_status_correct": 0,
+      "mean_n_status_correct": 0.0,
+      "plan_ineligible_marked_eligible": 0,
+      "plan_eligible_marked_ineligible": 0,
+      "correct": 0,
+      "follows_trap": 0,
+      "plan_answer_agrees": {
+        "n_true": 0,
+        "n_false": 0,
+        "n_not_checked": 90
+      },
+      "correct_with_wrong_eligibility": 0,
+      "mean_n_kept": 76.45555555555555,
+      "mean_n_result_kept": 76.45555555555555,
+      "mean_n_sink_kept": 0.0,
+      "mean_message_bytes": 11273830.4,
+      "mean_relay_mb": 10.7515625,
+      "mean_process_time_s": 36.38088551627265,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "loop_eq_retokenize": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "loop_len_eq_n_kv": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "eos_counted_not_cached": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "result_spans_from_loop_ids": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      }
+    },
+    "cons_base_sink": {
+      "n": 90,
+      "parse_ok": 90,
+      "think_collapse": 0,
+      "truncated": 0,
+      "plan_all_status_correct": 26,
+      "mean_n_status_correct": 3.0444444444444443,
+      "plan_ineligible_marked_eligible": 72,
+      "plan_eligible_marked_ineligible": 14,
+      "correct": 47,
+      "follows_trap": 34,
+      "plan_answer_agrees": {
+        "n_true": 89,
+        "n_false": 1,
+        "n_not_checked": 0
+      },
+      "correct_with_wrong_eligibility": 26,
+      "mean_n_kept": 80.45555555555555,
+      "mean_n_result_kept": 76.45555555555555,
+      "mean_n_sink_kept": 4.0,
+      "mean_message_bytes": 11863654.4,
+      "mean_relay_mb": 11.3140625,
+      "mean_process_time_s": 34.359000529183284,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "loop_eq_retokenize": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "loop_len_eq_n_kv": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "eos_counted_not_cached": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "result_spans_from_loop_ids": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      }
+    },
+    "cons_instr_result": {
+      "n": 90,
+      "parse_ok": 0,
+      "think_collapse": 82,
+      "truncated": 31,
+      "plan_all_status_correct": 0,
+      "mean_n_status_correct": 0.0,
+      "plan_ineligible_marked_eligible": 0,
+      "plan_eligible_marked_ineligible": 0,
+      "correct": 0,
+      "follows_trap": 0,
+      "plan_answer_agrees": {
+        "n_true": 0,
+        "n_false": 0,
+        "n_not_checked": 90
+      },
+      "correct_with_wrong_eligibility": 0,
+      "mean_n_kept": 76.45555555555555,
+      "mean_n_result_kept": 76.45555555555555,
+      "mean_n_sink_kept": 0.0,
+      "mean_message_bytes": 11273909.4,
+      "mean_relay_mb": 10.751637840270996,
+      "mean_process_time_s": 32.45450410577986,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "loop_eq_retokenize": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "loop_len_eq_n_kv": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "eos_counted_not_cached": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "result_spans_from_loop_ids": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      }
+    },
+    "cons_instr_sink": {
+      "n": 90,
+      "parse_ok": 90,
+      "think_collapse": 0,
+      "truncated": 0,
+      "plan_all_status_correct": 35,
+      "mean_n_status_correct": 3.2222222222222223,
+      "plan_ineligible_marked_eligible": 60,
+      "plan_eligible_marked_ineligible": 10,
+      "correct": 53,
+      "follows_trap": 26,
+      "plan_answer_agrees": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "correct_with_wrong_eligibility": 25,
+      "mean_n_kept": 80.45555555555555,
+      "mean_n_result_kept": 76.45555555555555,
+      "mean_n_sink_kept": 4.0,
+      "mean_message_bytes": 11863733.4,
+      "mean_relay_mb": 11.314137840270996,
+      "mean_process_time_s": 34.367590398258635,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "loop_eq_retokenize": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "loop_len_eq_n_kv": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "eos_counted_not_cached": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "result_spans_from_loop_ids": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      }
+    },
+    "orig_base_four": {
+      "n": 90,
+      "parse_ok": 90,
+      "think_collapse": 0,
+      "truncated": 0,
+      "plan_all_status_correct": 4,
+      "mean_n_status_correct": 2.3777777777777778,
+      "plan_ineligible_marked_eligible": 119,
+      "plan_eligible_marked_ineligible": 27,
+      "correct": 23,
+      "follows_trap": 57,
+      "plan_answer_agrees": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "correct_with_wrong_eligibility": 20,
+      "mean_n_kept": 4.0,
+      "mean_n_result_kept": 0.0,
+      "mean_n_sink_kept": 4.0,
+      "mean_message_bytes": 589824.0,
+      "mean_relay_mb": 0.5625,
+      "mean_process_time_s": 34.46597990459866,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "loop_eq_retokenize": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "loop_len_eq_n_kv": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "eos_counted_not_cached": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "result_spans_from_loop_ids": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      }
+    }
+  },
+  "by_difficulty": {
+    "L1": {
+      "receiver": {
+        "kv": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 30,
+          "mean_n_status_correct": 4.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 29,
+          "follows_trap": 0,
+          "plan_answer_agrees": {
+            "n_true": 29,
+            "n_false": 1,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 1056.3333333333333,
+          "mean_n_result_kept": 0.0,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 155762688.0,
+          "mean_relay_mb": 148.546875,
+          "mean_process_time_s": 32.12602559725443,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "text_result": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 30,
+          "mean_n_status_correct": 4.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 26,
+          "follows_trap": 0,
+          "plan_answer_agrees": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 77.43333333333334,
+          "mean_n_result_kept": 77.43333333333334,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 316.56666666666666,
+          "mean_relay_mb": 0.00030190149943033854,
+          "mean_process_time_s": 31.886040846506756,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "orig_base_result": {
+          "n": 30,
+          "parse_ok": 0,
+          "think_collapse": 27,
+          "truncated": 30,
+          "plan_all_status_correct": 0,
+          "mean_n_status_correct": 0.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 0,
+          "follows_trap": 0,
+          "plan_answer_agrees": {
+            "n_true": 0,
+            "n_false": 4,
+            "n_not_checked": 26
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 77.43333333333334,
+          "mean_n_result_kept": 77.43333333333334,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 11418009.6,
+          "mean_relay_mb": 10.8890625,
+          "mean_process_time_s": 35.891557423273724,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "orig_base_sink": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 13,
+          "mean_n_status_correct": 3.2666666666666666,
+          "plan_ineligible_marked_eligible": 18,
+          "plan_eligible_marked_ineligible": 4,
+          "correct": 14,
+          "follows_trap": 12,
+          "plan_answer_agrees": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 4,
+          "mean_n_kept": 81.43333333333334,
+          "mean_n_result_kept": 77.43333333333334,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 12007833.6,
+          "mean_relay_mb": 11.4515625,
+          "mean_process_time_s": 31.865980076789857,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "orig_instr_result": {
+          "n": 30,
+          "parse_ok": 0,
+          "think_collapse": 23,
+          "truncated": 15,
+          "plan_all_status_correct": 0,
+          "mean_n_status_correct": 0.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 0,
+          "follows_trap": 0,
+          "plan_answer_agrees": {
+            "n_true": 0,
+            "n_false": 0,
+            "n_not_checked": 30
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 77.43333333333334,
+          "mean_n_result_kept": 77.43333333333334,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 11418088.6,
+          "mean_relay_mb": 10.889137840270996,
+          "mean_process_time_s": 31.04737858772278,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "orig_instr_sink": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 18,
+          "mean_n_status_correct": 3.433333333333333,
+          "plan_ineligible_marked_eligible": 13,
+          "plan_eligible_marked_ineligible": 4,
+          "correct": 19,
+          "follows_trap": 7,
+          "plan_answer_agrees": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 4,
+          "mean_n_kept": 81.43333333333334,
+          "mean_n_result_kept": 77.43333333333334,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 12007912.6,
+          "mean_relay_mb": 11.451637840270996,
+          "mean_process_time_s": 31.877098655700685,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "cons_base_result": {
+          "n": 30,
+          "parse_ok": 0,
+          "think_collapse": 28,
+          "truncated": 26,
+          "plan_all_status_correct": 0,
+          "mean_n_status_correct": 0.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 0,
+          "follows_trap": 0,
+          "plan_answer_agrees": {
+            "n_true": 0,
+            "n_false": 0,
+            "n_not_checked": 30
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 77.43333333333334,
+          "mean_n_result_kept": 77.43333333333334,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 11418009.6,
+          "mean_relay_mb": 10.8890625,
+          "mean_process_time_s": 34.61621567408244,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "cons_base_sink": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 13,
+          "mean_n_status_correct": 3.2666666666666666,
+          "plan_ineligible_marked_eligible": 18,
+          "plan_eligible_marked_ineligible": 4,
+          "correct": 15,
+          "follows_trap": 12,
+          "plan_answer_agrees": {
+            "n_true": 29,
+            "n_false": 1,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 4,
+          "mean_n_kept": 81.43333333333334,
+          "mean_n_result_kept": 77.43333333333334,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 12007833.6,
+          "mean_relay_mb": 11.4515625,
+          "mean_process_time_s": 31.900995540618897,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "cons_instr_result": {
+          "n": 30,
+          "parse_ok": 0,
+          "think_collapse": 24,
+          "truncated": 13,
+          "plan_all_status_correct": 0,
+          "mean_n_status_correct": 0.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 0,
+          "follows_trap": 0,
+          "plan_answer_agrees": {
+            "n_true": 0,
+            "n_false": 0,
+            "n_not_checked": 30
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 77.43333333333334,
+          "mean_n_result_kept": 77.43333333333334,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 11418088.6,
+          "mean_relay_mb": 10.889137840270996,
+          "mean_process_time_s": 30.345775961875916,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "cons_instr_sink": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 19,
+          "mean_n_status_correct": 3.5,
+          "plan_ineligible_marked_eligible": 12,
+          "plan_eligible_marked_ineligible": 3,
+          "correct": 18,
+          "follows_trap": 7,
+          "plan_answer_agrees": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 3,
+          "mean_n_kept": 81.43333333333334,
+          "mean_n_result_kept": 77.43333333333334,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 12007912.6,
+          "mean_relay_mb": 11.451637840270996,
+          "mean_process_time_s": 31.913067523638407,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "orig_base_four": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 2,
+          "mean_n_status_correct": 2.533333333333333,
+          "plan_ineligible_marked_eligible": 38,
+          "plan_eligible_marked_ineligible": 6,
+          "correct": 7,
+          "follows_trap": 20,
+          "plan_answer_agrees": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 5,
+          "mean_n_kept": 4.0,
+          "mean_n_result_kept": 0.0,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 589824.0,
+          "mean_relay_mb": 0.5625,
+          "mean_process_time_s": 32.04940504233043,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        }
+      }
+    },
+    "L2": {
+      "receiver": {
+        "kv": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 30,
+          "mean_n_status_correct": 4.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 26,
+          "follows_trap": 1,
+          "plan_answer_agrees": {
+            "n_true": 28,
+            "n_false": 2,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 1229.4666666666667,
+          "mean_n_result_kept": 0.0,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 181292236.8,
+          "mean_relay_mb": 172.89375,
+          "mean_process_time_s": 40.34041281541189,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "text_result": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 30,
+          "mean_n_status_correct": 4.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 26,
+          "follows_trap": 0,
+          "plan_answer_agrees": {
+            "n_true": 29,
+            "n_false": 1,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 73.6,
+          "mean_n_result_kept": 73.6,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 297.8666666666667,
+          "mean_relay_mb": 0.0002840677897135417,
+          "mean_process_time_s": 39.98850913047791,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "orig_base_result": {
+          "n": 30,
+          "parse_ok": 0,
+          "think_collapse": 30,
+          "truncated": 26,
+          "plan_all_status_correct": 0,
+          "mean_n_status_correct": 0.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 0,
+          "follows_trap": 0,
+          "plan_answer_agrees": {
+            "n_true": 0,
+            "n_false": 0,
+            "n_not_checked": 30
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 73.6,
+          "mean_n_result_kept": 73.6,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 10852761.6,
+          "mean_relay_mb": 10.35,
+          "mean_process_time_s": 44.65564746061961,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "orig_base_sink": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 8,
+          "mean_n_status_correct": 3.033333333333333,
+          "plan_ineligible_marked_eligible": 24,
+          "plan_eligible_marked_ineligible": 5,
+          "correct": 17,
+          "follows_trap": 7,
+          "plan_answer_agrees": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 11,
+          "mean_n_kept": 77.6,
+          "mean_n_result_kept": 73.6,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 11442585.6,
+          "mean_relay_mb": 10.9125,
+          "mean_process_time_s": 39.927600065867104,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "orig_instr_result": {
+          "n": 30,
+          "parse_ok": 0,
+          "think_collapse": 29,
+          "truncated": 9,
+          "plan_all_status_correct": 0,
+          "mean_n_status_correct": 0.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 0,
+          "follows_trap": 0,
+          "plan_answer_agrees": {
+            "n_true": 0,
+            "n_false": 0,
+            "n_not_checked": 30
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 73.6,
+          "mean_n_result_kept": 73.6,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 10852840.6,
+          "mean_relay_mb": 10.350075340270996,
+          "mean_process_time_s": 38.03114961783091,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "orig_instr_sink": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 11,
+          "mean_n_status_correct": 3.2666666666666666,
+          "plan_ineligible_marked_eligible": 20,
+          "plan_eligible_marked_ineligible": 2,
+          "correct": 18,
+          "follows_trap": 5,
+          "plan_answer_agrees": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 11,
+          "mean_n_kept": 77.6,
+          "mean_n_result_kept": 73.6,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 11442664.6,
+          "mean_relay_mb": 10.912575340270996,
+          "mean_process_time_s": 39.95607074101766,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "cons_base_result": {
+          "n": 30,
+          "parse_ok": 0,
+          "think_collapse": 30,
+          "truncated": 24,
+          "plan_all_status_correct": 0,
+          "mean_n_status_correct": 0.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 0,
+          "follows_trap": 0,
+          "plan_answer_agrees": {
+            "n_true": 0,
+            "n_false": 0,
+            "n_not_checked": 30
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 73.6,
+          "mean_n_result_kept": 73.6,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 10852761.6,
+          "mean_relay_mb": 10.35,
+          "mean_process_time_s": 43.07806194623311,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "cons_base_sink": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 9,
+          "mean_n_status_correct": 3.1,
+          "plan_ineligible_marked_eligible": 23,
+          "plan_eligible_marked_ineligible": 4,
+          "correct": 18,
+          "follows_trap": 6,
+          "plan_answer_agrees": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 12,
+          "mean_n_kept": 77.6,
+          "mean_n_result_kept": 73.6,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 11442585.6,
+          "mean_relay_mb": 10.9125,
+          "mean_process_time_s": 39.974035700162254,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "cons_instr_result": {
+          "n": 30,
+          "parse_ok": 0,
+          "think_collapse": 29,
+          "truncated": 10,
+          "plan_all_status_correct": 0,
+          "mean_n_status_correct": 0.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 0,
+          "follows_trap": 0,
+          "plan_answer_agrees": {
+            "n_true": 0,
+            "n_false": 0,
+            "n_not_checked": 30
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 73.6,
+          "mean_n_result_kept": 73.6,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 10852840.6,
+          "mean_relay_mb": 10.350075340270996,
+          "mean_process_time_s": 38.08034383455912,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "cons_instr_sink": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 12,
+          "mean_n_status_correct": 3.3,
+          "plan_ineligible_marked_eligible": 19,
+          "plan_eligible_marked_ineligible": 2,
+          "correct": 19,
+          "follows_trap": 5,
+          "plan_answer_agrees": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 10,
+          "mean_n_kept": 77.6,
+          "mean_n_result_kept": 73.6,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 11442664.6,
+          "mean_relay_mb": 10.912575340270996,
+          "mean_process_time_s": 39.98776965936025,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "orig_base_four": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 1,
+          "mean_n_status_correct": 2.3666666666666667,
+          "plan_ineligible_marked_eligible": 38,
+          "plan_eligible_marked_ineligible": 11,
+          "correct": 7,
+          "follows_trap": 20,
+          "plan_answer_agrees": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 7,
+          "mean_n_kept": 4.0,
+          "mean_n_result_kept": 0.0,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 589824.0,
+          "mean_relay_mb": 0.5625,
+          "mean_process_time_s": 40.129913989702864,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        }
+      }
+    },
+    "L3": {
+      "receiver": {
+        "kv": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 30,
+          "mean_n_status_correct": 4.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 27,
+          "follows_trap": 2,
+          "plan_answer_agrees": {
+            "n_true": 27,
+            "n_false": 3,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 1172.0666666666666,
+          "mean_n_result_kept": 0.0,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 172828262.4,
+          "mean_relay_mb": 164.821875,
+          "mean_process_time_s": 31.499904425938926,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "text_result": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 30,
+          "mean_n_status_correct": 4.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 27,
+          "follows_trap": 0,
+          "plan_answer_agrees": {
+            "n_true": 28,
+            "n_false": 1,
+            "n_not_checked": 1
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 78.33333333333333,
+          "mean_n_result_kept": 78.33333333333333,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 323.03333333333336,
+          "mean_relay_mb": 0.000308068593343099,
+          "mean_process_time_s": 31.179312912623086,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "orig_base_result": {
+          "n": 30,
+          "parse_ok": 0,
+          "think_collapse": 30,
+          "truncated": 21,
+          "plan_all_status_correct": 0,
+          "mean_n_status_correct": 0.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 0,
+          "follows_trap": 0,
+          "plan_answer_agrees": {
+            "n_true": 0,
+            "n_false": 0,
+            "n_not_checked": 30
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 78.33333333333333,
+          "mean_n_result_kept": 78.33333333333333,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 11550720.0,
+          "mean_relay_mb": 11.015625,
+          "mean_process_time_s": 32.07087651888529,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "orig_base_sink": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 4,
+          "mean_n_status_correct": 2.6,
+          "plan_ineligible_marked_eligible": 34,
+          "plan_eligible_marked_ineligible": 8,
+          "correct": 11,
+          "follows_trap": 19,
+          "plan_answer_agrees": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 7,
+          "mean_n_kept": 82.33333333333333,
+          "mean_n_result_kept": 78.33333333333333,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 12140544.0,
+          "mean_relay_mb": 11.578125,
+          "mean_process_time_s": 31.169727993011474,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "orig_instr_result": {
+          "n": 30,
+          "parse_ok": 0,
+          "think_collapse": 29,
+          "truncated": 10,
+          "plan_all_status_correct": 0,
+          "mean_n_status_correct": 0.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 0,
+          "follows_trap": 0,
+          "plan_answer_agrees": {
+            "n_true": 0,
+            "n_false": 0,
+            "n_not_checked": 30
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 78.33333333333333,
+          "mean_n_result_kept": 78.33333333333333,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 11550799.0,
+          "mean_relay_mb": 11.015700340270996,
+          "mean_process_time_s": 29.203785824775697,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "orig_instr_sink": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 4,
+          "mean_n_status_correct": 2.7666666666666666,
+          "plan_ineligible_marked_eligible": 31,
+          "plan_eligible_marked_ineligible": 6,
+          "correct": 14,
+          "follows_trap": 16,
+          "plan_answer_agrees": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 10,
+          "mean_n_kept": 82.33333333333333,
+          "mean_n_result_kept": 78.33333333333333,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 12140623.0,
+          "mean_relay_mb": 11.578200340270996,
+          "mean_process_time_s": 31.15172213713328,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "cons_base_result": {
+          "n": 30,
+          "parse_ok": 0,
+          "think_collapse": 30,
+          "truncated": 23,
+          "plan_all_status_correct": 0,
+          "mean_n_status_correct": 0.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 0,
+          "follows_trap": 0,
+          "plan_answer_agrees": {
+            "n_true": 0,
+            "n_false": 0,
+            "n_not_checked": 30
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 78.33333333333333,
+          "mean_n_result_kept": 78.33333333333333,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 11550720.0,
+          "mean_relay_mb": 11.015625,
+          "mean_process_time_s": 31.4483789285024,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "cons_base_sink": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 4,
+          "mean_n_status_correct": 2.7666666666666666,
+          "plan_ineligible_marked_eligible": 31,
+          "plan_eligible_marked_ineligible": 6,
+          "correct": 14,
+          "follows_trap": 16,
+          "plan_answer_agrees": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 10,
+          "mean_n_kept": 82.33333333333333,
+          "mean_n_result_kept": 78.33333333333333,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 12140544.0,
+          "mean_relay_mb": 11.578125,
+          "mean_process_time_s": 31.201970346768697,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "cons_instr_result": {
+          "n": 30,
+          "parse_ok": 0,
+          "think_collapse": 29,
+          "truncated": 8,
+          "plan_all_status_correct": 0,
+          "mean_n_status_correct": 0.0,
+          "plan_ineligible_marked_eligible": 0,
+          "plan_eligible_marked_ineligible": 0,
+          "correct": 0,
+          "follows_trap": 0,
+          "plan_answer_agrees": {
+            "n_true": 0,
+            "n_false": 0,
+            "n_not_checked": 30
+          },
+          "correct_with_wrong_eligibility": 0,
+          "mean_n_kept": 78.33333333333333,
+          "mean_n_result_kept": 78.33333333333333,
+          "mean_n_sink_kept": 0.0,
+          "mean_message_bytes": 11550799.0,
+          "mean_relay_mb": 11.015700340270996,
+          "mean_process_time_s": 28.93739252090454,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "cons_instr_sink": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 4,
+          "mean_n_status_correct": 2.8666666666666667,
+          "plan_ineligible_marked_eligible": 29,
+          "plan_eligible_marked_ineligible": 5,
+          "correct": 16,
+          "follows_trap": 14,
+          "plan_answer_agrees": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 12,
+          "mean_n_kept": 82.33333333333333,
+          "mean_n_result_kept": 78.33333333333333,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 12140623.0,
+          "mean_relay_mb": 11.578200340270996,
+          "mean_process_time_s": 31.201934011777244,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        },
+        "orig_base_four": {
+          "n": 30,
+          "parse_ok": 30,
+          "think_collapse": 0,
+          "truncated": 0,
+          "plan_all_status_correct": 1,
+          "mean_n_status_correct": 2.2333333333333334,
+          "plan_ineligible_marked_eligible": 43,
+          "plan_eligible_marked_ineligible": 10,
+          "correct": 9,
+          "follows_trap": 17,
+          "plan_answer_agrees": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "correct_with_wrong_eligibility": 8,
+          "mean_n_kept": 4.0,
+          "mean_n_result_kept": 0.0,
+          "mean_n_sink_kept": 4.0,
+          "mean_message_bytes": 589824.0,
+          "mean_relay_mb": 0.5625,
+          "mean_process_time_s": 31.218620681762694,
+          "ids_source": [
+            "decode_loop"
+          ],
+          "loop_eq_retokenize": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "loop_len_eq_n_kv": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "eos_counted_not_cached": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          },
+          "result_spans_from_loop_ids": {
+            "n_true": 30,
+            "n_false": 0,
+            "n_not_checked": 0
+          }
+        }
+      }
+    }
+  },
+  "paired_receiver": {
+    "orig_sink_vs_result": {
+      "n": 90,
+      "acc_a": 0.0,
+      "acc_b": 0.4666666666666667,
+      "delta_b_minus_a": 0.4666666666666667,
+      "b_fixes": 42,
+      "b_hurts": 0,
+      "both_ok": 0,
+      "both_bad": 48
+    },
+    "cons_sink_vs_result": {
+      "n": 90,
+      "acc_a": 0.0,
+      "acc_b": 0.5222222222222223,
+      "delta_b_minus_a": 0.5222222222222223,
+      "b_fixes": 47,
+      "b_hurts": 0,
+      "both_ok": 0,
+      "both_bad": 43
+    },
+    "instr_vs_base_orig_sink": {
+      "n": 90,
+      "acc_a": 0.4666666666666667,
+      "acc_b": 0.5666666666666667,
+      "delta_b_minus_a": 0.09999999999999998,
+      "b_fixes": 11,
+      "b_hurts": 2,
+      "both_ok": 40,
+      "both_bad": 37
+    },
+    "cons_vs_orig_sink": {
+      "n": 90,
+      "acc_a": 0.4666666666666667,
+      "acc_b": 0.5222222222222223,
+      "delta_b_minus_a": 0.05555555555555558,
+      "b_fixes": 5,
+      "b_hurts": 0,
+      "both_ok": 42,
+      "both_bad": 43
+    },
+    "text_vs_orig_sink": {
+      "n": 90,
+      "acc_a": 0.4666666666666667,
+      "acc_b": 0.8777777777777778,
+      "delta_b_minus_a": 0.4111111111111111,
+      "b_fixes": 40,
+      "b_hurts": 3,
+      "both_ok": 39,
+      "both_bad": 8
+    },
+    "kv_vs_text": {
+      "n": 90,
+      "acc_a": 0.9111111111111111,
+      "acc_b": 0.8777777777777778,
+      "delta_b_minus_a": -0.033333333333333326,
+      "b_fixes": 6,
+      "b_hurts": 9,
+      "both_ok": 73,
+      "both_bad": 2
+    }
+  },
+  "family_clustered_delta": {
+    "orig_sink_vs_result": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "correct",
+      "delta_b_minus_a": 0.4666666666666667,
+      "ci95": [
+        0.37777777777777777,
+        0.5666666666666667
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "cons_sink_vs_result": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "correct",
+      "delta_b_minus_a": 0.5222222222222223,
+      "ci95": [
+        0.4111111111111111,
+        0.6333333333333333
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "instr_vs_base_orig_sink": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "correct",
+      "delta_b_minus_a": 0.09999999999999998,
+      "ci95": [
+        0.0222222222222222,
+        0.1777777777777778
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "cons_vs_orig_sink": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "correct",
+      "delta_b_minus_a": 0.05555555555555558,
+      "ci95": [
+        0.011111111111111072,
+        0.1111111111111111
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "text_vs_orig_sink": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "correct",
+      "delta_b_minus_a": 0.4111111111111111,
+      "ci95": [
+        0.29999999999999993,
+        0.5222222222222223
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "kv_vs_text": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "correct",
+      "delta_b_minus_a": -0.033333333333333326,
+      "ci95": [
+        -0.12222222222222223,
+        0.05555555555555558
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "orig_sink_vs_result_eligibility": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.2777777777777778,
+      "ci95": [
+        0.17777777777777778,
+        0.37777777777777777
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "cons_vs_orig_sink_eligibility": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.011111111111111072,
+      "ci95": [
+        0.0,
+        0.033333333333333354
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "instr_vs_base_orig_sink_eligibility": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.08888888888888885,
+      "ci95": [
+        0.0222222222222222,
+        0.16666666666666669
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "text_vs_orig_sink_eligibility": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.7222222222222222,
+      "ci95": [
+        0.6222222222222222,
+        0.8222222222222222
+      ],
+      "unit": "family (all variants kept together)"
+    }
+  },
+  "flip_tracking": {
+    "kv": {
+      "n_families": 30,
+      "a_flip_prediction_changed": 0.9,
+      "a_flip_prediction_unchanged": 0.1,
+      "a_flip_matches_new_gold": 0.8666666666666667,
+      "a_flip_both_base_and_changed_correct": 0.8666666666666667,
+      "b_flip_prediction_changed": 0.9,
+      "b_flip_matches_new_gold": 0.9,
+      "b_flip_both_base_and_changed_correct": 0.8666666666666667
+    },
+    "text_result": {
+      "n_families": 30,
+      "a_flip_prediction_changed": 0.8333333333333334,
+      "a_flip_prediction_unchanged": 0.16666666666666666,
+      "a_flip_matches_new_gold": 0.9666666666666667,
+      "a_flip_both_base_and_changed_correct": 0.7666666666666667,
+      "b_flip_prediction_changed": 0.6666666666666666,
+      "b_flip_matches_new_gold": 0.8666666666666667,
+      "b_flip_both_base_and_changed_correct": 0.6666666666666666
+    },
+    "orig_base_result": {
+      "n_families": 30,
+      "a_flip_prediction_changed": 0.0,
+      "a_flip_prediction_unchanged": 1.0,
+      "a_flip_matches_new_gold": 0.0,
+      "a_flip_both_base_and_changed_correct": 0.0,
+      "b_flip_prediction_changed": 0.0,
+      "b_flip_matches_new_gold": 0.0,
+      "b_flip_both_base_and_changed_correct": 0.0
+    },
+    "orig_base_sink": {
+      "n_families": 30,
+      "a_flip_prediction_changed": 0.26666666666666666,
+      "a_flip_prediction_unchanged": 0.7333333333333333,
+      "a_flip_matches_new_gold": 0.5,
+      "a_flip_both_base_and_changed_correct": 0.1,
+      "b_flip_prediction_changed": 0.43333333333333335,
+      "b_flip_matches_new_gold": 0.5,
+      "b_flip_both_base_and_changed_correct": 0.3333333333333333
+    },
+    "orig_instr_result": {
+      "n_families": 30,
+      "a_flip_prediction_changed": 0.06666666666666667,
+      "a_flip_prediction_unchanged": 0.9333333333333333,
+      "a_flip_matches_new_gold": 0.0,
+      "a_flip_both_base_and_changed_correct": 0.0,
+      "b_flip_prediction_changed": 0.0,
+      "b_flip_matches_new_gold": 0.0,
+      "b_flip_both_base_and_changed_correct": 0.0
+    },
+    "orig_instr_sink": {
+      "n_families": 30,
+      "a_flip_prediction_changed": 0.5,
+      "a_flip_prediction_unchanged": 0.5,
+      "a_flip_matches_new_gold": 0.5666666666666667,
+      "a_flip_both_base_and_changed_correct": 0.3,
+      "b_flip_prediction_changed": 0.5333333333333333,
+      "b_flip_matches_new_gold": 0.5666666666666667,
+      "b_flip_both_base_and_changed_correct": 0.4
+    },
+    "cons_base_result": {
+      "n_families": 30,
+      "a_flip_prediction_changed": 0.0,
+      "a_flip_prediction_unchanged": 1.0,
+      "a_flip_matches_new_gold": 0.0,
+      "a_flip_both_base_and_changed_correct": 0.0,
+      "b_flip_prediction_changed": 0.0,
+      "b_flip_matches_new_gold": 0.0,
+      "b_flip_both_base_and_changed_correct": 0.0
+    },
+    "cons_base_sink": {
+      "n_families": 30,
+      "a_flip_prediction_changed": 0.36666666666666664,
+      "a_flip_prediction_unchanged": 0.6333333333333333,
+      "a_flip_matches_new_gold": 0.5666666666666667,
+      "a_flip_both_base_and_changed_correct": 0.2,
+      "b_flip_prediction_changed": 0.4666666666666667,
+      "b_flip_matches_new_gold": 0.5666666666666667,
+      "b_flip_both_base_and_changed_correct": 0.4
+    },
+    "cons_instr_result": {
+      "n_families": 30,
+      "a_flip_prediction_changed": 0.1,
+      "a_flip_prediction_unchanged": 0.9,
+      "a_flip_matches_new_gold": 0.0,
+      "a_flip_both_base_and_changed_correct": 0.0,
+      "b_flip_prediction_changed": 0.0,
+      "b_flip_matches_new_gold": 0.0,
+      "b_flip_both_base_and_changed_correct": 0.0
+    },
+    "cons_instr_sink": {
+      "n_families": 30,
+      "a_flip_prediction_changed": 0.5333333333333333,
+      "a_flip_prediction_unchanged": 0.4666666666666667,
+      "a_flip_matches_new_gold": 0.6,
+      "a_flip_both_base_and_changed_correct": 0.36666666666666664,
+      "b_flip_prediction_changed": 0.5666666666666667,
+      "b_flip_matches_new_gold": 0.5666666666666667,
+      "b_flip_both_base_and_changed_correct": 0.4
+    },
+    "orig_base_four": {
+      "n_families": 30,
+      "a_flip_prediction_changed": 0.0,
+      "a_flip_prediction_unchanged": 1.0,
+      "a_flip_matches_new_gold": 0.4,
+      "a_flip_both_base_and_changed_correct": 0.0,
+      "b_flip_prediction_changed": 0.3333333333333333,
+      "b_flip_matches_new_gold": 0.13333333333333333,
+      "b_flip_both_base_and_changed_correct": 0.06666666666666667
+    }
+  },
+  "decision": {
+    "margin_points": 5.0,
+    "candidates": [
+      {
+        "condition": "orig_base_result",
+        "qualifies": false,
+        "mean_message_bytes": 11273830.4,
+        "mean_process_time_s": 37.53936046759288,
+        "plan_all_status_correct": 0,
+        "parse_ok": 0,
+        "truncated": 77
+      },
+      {
+        "condition": "orig_base_sink",
+        "qualifies": false,
+        "mean_message_bytes": 11863654.4,
+        "mean_process_time_s": 34.32110271188948,
+        "plan_all_status_correct": 25,
+        "parse_ok": 90,
+        "truncated": 0
+      },
+      {
+        "condition": "orig_instr_result",
+        "qualifies": false,
+        "mean_message_bytes": 11273909.4,
+        "mean_process_time_s": 32.76077134344313,
+        "plan_all_status_correct": 0,
+        "parse_ok": 0,
+        "truncated": 34
+      },
+      {
+        "condition": "orig_instr_sink",
+        "qualifies": false,
+        "mean_message_bytes": 11863733.4,
+        "mean_process_time_s": 34.32829717795054,
+        "plan_all_status_correct": 33,
+        "parse_ok": 90,
+        "truncated": 0
+      },
+      {
+        "condition": "cons_base_result",
+        "qualifies": false,
+        "mean_message_bytes": 11273830.4,
+        "mean_process_time_s": 36.38088551627265,
+        "plan_all_status_correct": 0,
+        "parse_ok": 0,
+        "truncated": 73
+      },
+      {
+        "condition": "cons_base_sink",
+        "qualifies": false,
+        "mean_message_bytes": 11863654.4,
+        "mean_process_time_s": 34.359000529183284,
+        "plan_all_status_correct": 26,
+        "parse_ok": 90,
+        "truncated": 0
+      },
+      {
+        "condition": "cons_instr_result",
+        "qualifies": false,
+        "mean_message_bytes": 11273909.4,
+        "mean_process_time_s": 32.45450410577986,
+        "plan_all_status_correct": 0,
+        "parse_ok": 0,
+        "truncated": 31
+      },
+      {
+        "condition": "cons_instr_sink",
+        "qualifies": false,
+        "mean_message_bytes": 11863733.4,
+        "mean_process_time_s": 34.367590398258635,
+        "plan_all_status_correct": 35,
+        "parse_ok": 90,
+        "truncated": 0
+      }
+    ],
+    "selected": null,
+    "note": "A qualifying candidate needs parseable untruncated outputs in every case and all-label accuracy within five points of full KV and result text. Smallest message wins; handoff time breaks ties. This selects a confirmation candidate; it does not itself establish recovery."
+  },
+  "framing_change": "Use the preceding carrier results together with the shipment information below.",
+  "lead": "Parseability, truncation, all-four eligibility, final-choice accuracy, and correct-choice-with-wrong-labels are reported separately. Malformed outputs stay in the denominator.",
+  "timing_note": "mean_process_time_s includes written A, gather/re-rotation, and B. Network is not measured.",
+  "after_this_run": "If a compact candidate qualifies, freeze it for confirmation and cost. If none qualifies, proceed to supporting context. Do not load plan4_hold.",
+  "peak_gpu_gb_max_over_run": 7.882627487182617
+}

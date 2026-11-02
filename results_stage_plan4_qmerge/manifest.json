@@ -1,0 +1,181 @@
+{
+  "recorded_at_utc": "2026-10-31T14:27:30.402982+00:00",
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+  "executable": "/usr/bin/python3",
+  "platform": "linux",
+  "cwd": "/kaggle/working/latent-relay-audit",
+  "repo_commit": "68549a7839dd6e36faae80f8ae8cc8bacee5151f",
+  "upstream_commit_expected": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "upstream_commit_actual": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "torch": "2.11.0+cu128",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "transformers": "4.57.3",
+  "precision": {
+    "inference_dtype": "float16",
+    "alignment_dtype": "float32",
+    "compression_dtype": "float32",
+    "enable_thinking": false,
+    "device_name": "Tesla T4",
+    "device_capability": "7.5",
+    "source": "env:fp16"
+  },
+  "env": {
+    "LATENT_RELAY_INFER_DTYPE": "fp16",
+    "HF_HOME": null,
+    "TRANSFORMERS_CACHE": null
+  },
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "model_name": "Qwen/Qwen3-4B",
+  "extra": {
+    "stage": "plan4-qmerge",
+    "do_not_overwrite": [
+      "results_stage_plan4_qadapt",
+      "results_stage_plan4_qadapt_prep",
+      "results_stage_plan4_publicprefix12",
+      "results_stage_plan4_timing",
+      "results_stage_plan4_recon12",
+      "results_stage_plan4_query12",
+      "results_stage_plan4_kvmix12",
+      "results_stage_plan4_refattn12",
+      "results_stage_plan4_refgen12",
+      "results_stage_plan4_refval12",
+      "results_stage_plan4_refgenval12",
+      "results_stage_plan4_nbound",
+      "results_stage_plan4_confirm",
+      "results_stage_plan4_hold"
+    ],
+    "conditions": [
+      "merged_kv",
+      "unmerged_kv",
+      "unadapted_kv",
+      "fk_fv",
+      "text_result",
+      "full_kv"
+    ],
+    "plan_max_new_12": 384,
+    "answer_max_new": 48,
+    "query_max_new": 8,
+    "frozen_placement": "Base cache is generic support + transferred R. Only result-region keys and/or values are replaced by the fresh-R tensors computed after that same support. Support, prefix and separator tensors, token IDs, packed positions, masks, cursor, prompts and greedy decoding are identical. Keys are copied as stored; no RoPE is applied again.",
+    "phase": "textadapt",
+    "candidate": {
+      "selected_epoch": 1,
+      "sha256": "864a8f198f415e94dec426447569c8fce96f7be7f015c39141ccac01a8da7fc1"
+    },
+    "scope": "Implementation and timing comparison. Dev sheets were already used for checkpoint selection; eval sheets were already used for the candidate's evaluation and are reused here as timing inputs. Neither is a new independent confirmation.",
+    "timing_note": "Single T4. Compact KV is built from the R that A's GPU preparation actually produces (checked against the frozen R on dev first). Movement depends on the declared deployment (see 'deployment'). Public support (KV) and the public text header are prefilled once and kept on B's GPU; their one-time cost is reported separately. Every condition prefills the prompt tokens shared by its plan and answer passes once.",
+    "protocol": {
+      "question": "Once the frozen query adapter is merged into B's q_proj weights, is the adapted compact-KV handoff still as reliable, and is it repeatably cheaper than text when the whole handoff is timed fairly?",
+      "registered_before_running": true,
+      "scope": "Implementation and timing comparison only. No training. Dev sheets were already used for checkpoint selection and eval sheets for the candidate's evaluation; both are reused here and neither counts as a new independent confirmation.",
+      "frozen": {
+        "candidate": "results_stage_plan4_qadapt/frozen_candidate.json (epoch 1, sha256 864a8f19...); the run refuses a changed checkpoint",
+        "unchanged": [
+          "selected states (tk_tv, fk_fv, full KV) built by the qadapt prep code",
+          "public support",
+          "B prompts",
+          "decoding allowances 384 plan / 48 answer, greedy, thinking off, eager attention, fp16"
+        ]
+      },
+      "merge": {
+        "rule": "W_merged = fp16(W.float() + scale * B.float() @ A.float()), scale = alpha / rank = 2, rounded once",
+        "receiver_only": "merged tensors are stored beside the original weights and swapped in only for B's own forwards; A, support construction and every baseline use the original weights, verified by a byte digest and wrapper identity before and after each phase",
+        "rounding_reported": [
+          "rounding error relative to the fp32 update",
+          "cosine between the applied and fp32 update",
+          "fraction of weights unchanged"
+        ]
+      },
+      "agreement_dev": {
+        "sheets": "plan4_qadapt_dev (12 base + 12 a_flip)",
+        "compare": "unmerged (evaluated candidate) vs merged: forced logits on the unmerged outputs (plan and answer), generated eligibility labels, final choices and formatting; the unmerged rerun is also compared with the saved dev rows",
+        "gates": {
+          "forced_argmax_agreement_min": 0.99,
+          "max_labels_lost_of_288": 1,
+          "max_all_twelve_cases_lost": 1,
+          "max_final_choices_lost": 1,
+          "formatting": "no more parse failures, truncations or missing plan lines than unmerged",
+          "original_weights": "digest and wrapper identity unchanged"
+        },
+        "reporting": "every sheet whose merged output differs is listed with the carriers that changed, whether or not the gates pass",
+        "required_before_bench": true
+      },
+      "bench": {
+        "sheets": "plan4_qadapt_eval, all 48 (reused inputs, labelled as a timing comparison)",
+        "conditions": {
+          "merged_kv": "compact support + R, merged receiver (the candidate after merging)",
+          "unmerged_kv": "same cache, unmerged adapter (the evaluated candidate)",
+          "unadapted_kv": "same cache, original weights",
+          "fk_fv": "reconstruction: public support + R token IDs prefilled by B, original weights",
+          "text_result": "R decoded to text and read as a message, original weights",
+          "full_kv": "A's complete cache, original weights"
+        },
+        "repetitions": 3,
+        "order": "condition order shuffled per sheet and repetition (seeded 2026)",
+        "warm_up": "one discarded handoff per condition on the first sheet of each process",
+        "synchronization": "torch.cuda.synchronize before every timer read",
+        "components": [
+          "sender preparation (GPU gather + RoPE re-rotation of R; text: decode R tokens; reconstruction: token IDs)",
+          "movement (host-to-GPU copy of what B receives; bytes reported; network not modelled)",
+          "receiver preparation (cache assembly or clone)",
+          "R prefill (reconstruction only)",
+          "prompt encoding",
+          "shared prompt prefill",
+          "plan prefill and decode",
+          "answer prefill and decode",
+          "cache crop",
+          "complete handoff wall time"
+        ],
+        "fairness": [
+          "public support is prefilled once per template and kept on B's GPU; its one-time cost is reported separately",
+          "text gets the equivalent reuse: its public prompt header, cut strictly before the message, is prefilled once across sheets",
+          "every condition prefills the prompt tokens shared by its plan and answer prompts once per sheet and crops back between passes",
+          "generation uses the frozen R; the timed sender output is discarded after an untimed per-sheet check against it"
+        ],
+        "statistics": "per sheet median over repetitions, family-level cluster bootstrap (2000 draws, seed 2026) on merged minus each comparison, plus the mean difference within each repetition",
+        "reliability_check": "merged vs unmerged in the bench (repetition 1): at most 2 of 576 labels, 2 all-twelve cases and 2 final choices lost"
+      },
+      "decision_rule": {
+        "useful_practical_result": "reliability check passes AND merged minus text complete handoff time has a 95% CI upper bound below zero AND every repetition's mean difference is below zero",
+        "otherwise": "report the limit, with the preparation, prefill and decode differences that explain it",
+        "break_even": "one-time adapter cost (teacher targets, training state build, training, merge) divided by the per-handoff saving, only if the saving is repeatable",
+        "not_claimed": "superiority of the communication format: the KV receiver was adapted and the text receiver was not"
+      },
+      "textadapt_diagnostic": "the frozen adapter (unmerged) applied to the text receiver on the eval sheets; a negative result would not show what a separately text-trained receiver could achieve",
+      "amendments_before_bench": {
+        "integration_check": {
+          "why": "the first bench version timed GPU-side selection and re-rotation but then fed B the frozen R (built on the CPU when the states were selected) copied host-to-GPU; the R that the timed path produces had not been passed through B",
+          "sheets": "plan4_qadapt_dev (the agree sheets), merged receiver; checkpoint, support, prompts and selection unchanged",
+          "runs": {
+            "frozen_std": "frozen R, B's standard two-call path",
+            "actual_std": "R from A's GPU selection and re-rotation, same standard path (isolates the R difference)",
+            "actual_direct": "GPU R placed straight into B's cache on the GPU with shared-prefix generation (the same_gpu bench path)"
+          },
+          "recorded": [
+            "key max/mean absolute difference and bit-equal fraction per layer",
+            "values must be identical (gather only)",
+            "forced logits frozen vs actual R on the frozen_std outputs (max abs, KL, argmax agreement)",
+            "labels, all-twelve cases, final choices, formatting, every changed sheet listed"
+          ],
+          "tolerance": "the agree gates: forced argmax agreement >= 0.99 (actual_std only), at most 1 of 288 labels, 1 all-twelve case and 1 final choice lost, formatting not worse; actual_std and actual_direct are each compared with frozen_std",
+          "if_passed": "the bench feeds B the GPU-prepared R directly",
+          "if_failed": "the bench refuses to run; the difference and its cause (R vs direct path) are documented before any deployment timing is interpreted"
+        },
+        "deployment": {
+          "same_gpu": "direct reuse on one GPU: R is selected and re-rotated on the GPU and placed straight into B's cache; no copies. Full KV: B takes over A's cache; the per-repetition copy the benchmark needs is timed separately and excluded",
+          "device_transfer": "transfer between devices approximated on one T4: device-to-host copy after A's preparation and host-to-device copy before B's (pageable, synchronous); network between hosts not measured; bytes reported",
+          "primary": "same_gpu; device_transfer is optional and reported separately",
+          "earlier_bench_files": "bench_evaluations.jsonl / bench_summary.json from the first version (GPU preparation plus host-to-GPU copy of the frozen R) match neither deployment and are not used for deployment conclusions"
+        }
+      },
+      "dest": "results_stage_plan4_qmerge",
+      "do_not_overwrite": [
+        "results_stage_plan4_qadapt",
+        "results_stage_plan4_qadapt_prep",
+        "results_stage_plan4_timing",
+        "results_stage_plan4_recon12",
+        "results_stage_plan4_publicprefix12"
+      ]
+    }
+  }
+}

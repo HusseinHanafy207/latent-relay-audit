@@ -1,0 +1,1111 @@
+{
+  "n_unique_a_sheets": 60,
+  "verdicts": {
+    "consistent": 57,
+    "incorrect": 3
+  },
+  "n_consistent_sheets": 57,
+  "n_incorrect_sheets": 3,
+  "n_ambiguous_sheets": 0,
+  "issue_codes": {
+    "false_capacity_comparison": 4,
+    "false_eligibility_reason": 2,
+    "false_result_reason": 2,
+    "wrong_copied_fact": 1,
+    "wrong_capacity_arithmetic": 1,
+    "wrong_q": 1
+  },
+  "n_eval_rows_full": 720,
+  "n_eval_rows_consistent_subset": 688,
+  "n_examples_consistent_subset": 86,
+  "n_families_consistent_subset": 29,
+  "used_b_outcome": false,
+  "preserved_original_outputs": true,
+  "regenerated_a": false,
+  "note": "The ordinary scorer checks RESULT capacities and eligibility labels. This audit also checks copied facts, arithmetic, capacity comparisons, eligibility reasoning, and RESULT explanations against the source sheet. Original A transcripts and the 720-row comparison were not rewritten.",
+  "full_set_receiver": {
+    "kv": {
+      "n": 90,
+      "parse_ok": 90,
+      "truncated": 0,
+      "plan_all_status_correct": 90,
+      "correct": 82,
+      "correct_with_wrong_eligibility": 0,
+      "plan_ineligible_marked_eligible": 0,
+      "plan_eligible_marked_ineligible": 0
+    },
+    "text_result": {
+      "n": 90,
+      "parse_ok": 90,
+      "truncated": 0,
+      "plan_all_status_correct": 90,
+      "correct": 79,
+      "correct_with_wrong_eligibility": 0,
+      "plan_ineligible_marked_eligible": 0,
+      "plan_eligible_marked_ineligible": 0
+    },
+    "compact": {
+      "n": 90,
+      "parse_ok": 90,
+      "truncated": 0,
+      "plan_all_status_correct": 34,
+      "correct": 54,
+      "correct_with_wrong_eligibility": 26,
+      "plan_ineligible_marked_eligible": 61,
+      "plan_eligible_marked_ineligible": 11
+    },
+    "compact_support": {
+      "n": 90,
+      "parse_ok": 90,
+      "truncated": 0,
+      "plan_all_status_correct": 90,
+      "correct": 80,
+      "correct_with_wrong_eligibility": 0,
+      "plan_ineligible_marked_eligible": 0,
+      "plan_eligible_marked_ineligible": 0
+    },
+    "compact_rand_2101": {
+      "n": 90,
+      "parse_ok": 90,
+      "truncated": 0,
+      "plan_all_status_correct": 85,
+      "correct": 79,
+      "correct_with_wrong_eligibility": 2,
+      "plan_ineligible_marked_eligible": 5,
+      "plan_eligible_marked_ineligible": 0
+    },
+    "compact_rand_2102": {
+      "n": 90,
+      "parse_ok": 90,
+      "truncated": 0,
+      "plan_all_status_correct": 87,
+      "correct": 78,
+      "correct_with_wrong_eligibility": 0,
+      "plan_ineligible_marked_eligible": 3,
+      "plan_eligible_marked_ineligible": 0
+    },
+    "compact_rand_2103": {
+      "n": 90,
+      "parse_ok": 90,
+      "truncated": 0,
+      "plan_all_status_correct": 88,
+      "correct": 84,
+      "correct_with_wrong_eligibility": 1,
+      "plan_ineligible_marked_eligible": 2,
+      "plan_eligible_marked_ineligible": 1
+    },
+    "text_support": {
+      "n": 90,
+      "parse_ok": 90,
+      "truncated": 0,
+      "plan_all_status_correct": 89,
+      "correct": 83,
+      "correct_with_wrong_eligibility": 1,
+      "plan_ineligible_marked_eligible": 0,
+      "plan_eligible_marked_ineligible": 1
+    }
+  },
+  "consistent_subset_receiver": {
+    "kv": {
+      "n": 86,
+      "parse_ok": 86,
+      "truncated": 0,
+      "plan_all_status_correct": 86,
+      "correct": 78,
+      "correct_with_wrong_eligibility": 0,
+      "plan_ineligible_marked_eligible": 0,
+      "plan_eligible_marked_ineligible": 0
+    },
+    "text_result": {
+      "n": 86,
+      "parse_ok": 86,
+      "truncated": 0,
+      "plan_all_status_correct": 86,
+      "correct": 76,
+      "correct_with_wrong_eligibility": 0,
+      "plan_ineligible_marked_eligible": 0,
+      "plan_eligible_marked_ineligible": 0
+    },
+    "compact": {
+      "n": 86,
+      "parse_ok": 86,
+      "truncated": 0,
+      "plan_all_status_correct": 31,
+      "correct": 51,
+      "correct_with_wrong_eligibility": 25,
+      "plan_ineligible_marked_eligible": 60,
+      "plan_eligible_marked_ineligible": 11
+    },
+    "compact_support": {
+      "n": 86,
+      "parse_ok": 86,
+      "truncated": 0,
+      "plan_all_status_correct": 86,
+      "correct": 77,
+      "correct_with_wrong_eligibility": 0,
+      "plan_ineligible_marked_eligible": 0,
+      "plan_eligible_marked_ineligible": 0
+    },
+    "compact_rand_2101": {
+      "n": 86,
+      "parse_ok": 86,
+      "truncated": 0,
+      "plan_all_status_correct": 81,
+      "correct": 75,
+      "correct_with_wrong_eligibility": 2,
+      "plan_ineligible_marked_eligible": 5,
+      "plan_eligible_marked_ineligible": 0
+    },
+    "compact_rand_2102": {
+      "n": 86,
+      "parse_ok": 86,
+      "truncated": 0,
+      "plan_all_status_correct": 83,
+      "correct": 75,
+      "correct_with_wrong_eligibility": 0,
+      "plan_ineligible_marked_eligible": 3,
+      "plan_eligible_marked_ineligible": 0
+    },
+    "compact_rand_2103": {
+      "n": 86,
+      "parse_ok": 86,
+      "truncated": 0,
+      "plan_all_status_correct": 84,
+      "correct": 80,
+      "correct_with_wrong_eligibility": 1,
+      "plan_ineligible_marked_eligible": 2,
+      "plan_eligible_marked_ineligible": 1
+    },
+    "text_support": {
+      "n": 86,
+      "parse_ok": 86,
+      "truncated": 0,
+      "plan_all_status_correct": 85,
+      "correct": 79,
+      "correct_with_wrong_eligibility": 1,
+      "plan_ineligible_marked_eligible": 0,
+      "plan_eligible_marked_ineligible": 1
+    }
+  },
+  "consistent_subset_family_eligibility": {
+    "support_vs_compact": {
+      "n_families": 29,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.6395348837209303,
+      "ci95": [
+        0.5,
+        0.7674418604651163
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "support_vs_rand_2101": {
+      "n_families": 29,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.05813953488372092,
+      "ci95": [
+        0.011494252873563204,
+        0.11627906976744184
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "support_vs_rand_2102": {
+      "n_families": 29,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.03488372093023251,
+      "ci95": [
+        0.0,
+        0.09302325581395354
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "support_vs_rand_2103": {
+      "n_families": 29,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.023255813953488413,
+      "ci95": [
+        0.0,
+        0.05813953488372092
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "support_vs_kv": {
+      "n_families": 29,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "support_vs_text_result": {
+      "n_families": 29,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "support_vs_text_support": {
+      "n_families": 29,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.011627906976744207,
+      "ci95": [
+        0.0,
+        0.03529411764705881
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "text_support_vs_text_result": {
+      "n_families": 29,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": -0.011627906976744207,
+      "ci95": [
+        -0.03529411764705881,
+        0.0
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "kv_vs_text_result": {
+      "n_families": 29,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "compact_vs_kv": {
+      "n_families": 29,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": -0.6395348837209303,
+      "ci95": [
+        -0.7674418604651163,
+        -0.5
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "support_vs_rand_mean": {
+      "n_families": 29,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "cond_a": "compact_support",
+      "cond_bs": [
+        "compact_rand_2101",
+        "compact_rand_2102",
+        "compact_rand_2103"
+      ],
+      "delta_mean_b_minus_a": -0.03875968992248058,
+      "ci95": [
+        -0.07751937984496149,
+        -0.011494252873563093
+      ],
+      "unit": "family (variants and random seeds kept together)"
+    }
+  },
+  "full_set_family_eligibility": {
+    "support_vs_compact": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.6222222222222222,
+      "ci95": [
+        0.48888888888888893,
+        0.7444444444444445
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "support_vs_rand_2101": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.05555555555555558,
+      "ci95": [
+        0.011111111111111072,
+        0.11111111111111116
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "support_vs_rand_2102": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.033333333333333326,
+      "ci95": [
+        0.0,
+        0.0888888888888889
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "support_vs_rand_2103": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.022222222222222254,
+      "ci95": [
+        0.0,
+        0.05555555555555558
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "support_vs_kv": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "support_vs_text_result": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "support_vs_text_support": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.011111111111111072,
+      "ci95": [
+        0.0,
+        0.033333333333333326
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "text_support_vs_text_result": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": -0.011111111111111072,
+      "ci95": [
+        -0.033333333333333326,
+        0.0
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "kv_vs_text_result": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "compact_vs_kv": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": -0.6222222222222222,
+      "ci95": [
+        -0.7444444444444445,
+        -0.48888888888888893
+      ],
+      "unit": "family (all variants kept together)"
+    },
+    "support_vs_rand_mean": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "cond_a": "compact_support",
+      "cond_bs": [
+        "compact_rand_2101",
+        "compact_rand_2102",
+        "compact_rand_2103"
+      ],
+      "delta_mean_b_minus_a": -0.03703703703703698,
+      "ci95": [
+        -0.07407407407407418,
+        -0.01111111111111096
+      ],
+      "unit": "family (variants and random seeds kept together)"
+    }
+  },
+  "consistent_subset_summary": {
+    "n_rows": 688,
+    "n_examples": 86,
+    "n_families": 29,
+    "receiver": {
+      "kv": {
+        "n": 86,
+        "parse_ok": 86,
+        "think_collapse": 0,
+        "truncated": 0,
+        "plan_all_status_correct": 86,
+        "mean_n_status_correct": 4.0,
+        "plan_ineligible_marked_eligible": 0,
+        "plan_eligible_marked_ineligible": 0,
+        "correct": 78,
+        "follows_trap": 3,
+        "plan_answer_agrees": {
+          "n_true": 80,
+          "n_false": 6,
+          "n_not_checked": 0
+        },
+        "correct_with_wrong_eligibility": 0,
+        "mean_n_kept": 1149.4186046511627,
+        "mean_n_result_kept": 0.0,
+        "mean_n_sink_kept": 0.0,
+        "mean_n_extra": 0.0,
+        "mean_n_added": 0.0,
+        "mean_n_full": 1149.4186046511627,
+        "mean_overlap_support_extra_frac": 0.0,
+        "mean_selection_time_s": 0.0,
+        "mean_rebuild_time_s": 0.8895304702049078,
+        "span_extract_ok": 86,
+        "mean_message_bytes": 169488669.76744187,
+        "mean_relay_mb": 161.63699127906978,
+        "mean_process_time_s": 34.9190215426822,
+        "ids_source": [
+          "decode_loop"
+        ],
+        "cache_source": [
+          "prefill_recorded_ids"
+        ],
+        "sampling_mode": []
+      },
+      "text_result": {
+        "n": 86,
+        "parse_ok": 86,
+        "think_collapse": 0,
+        "truncated": 0,
+        "plan_all_status_correct": 86,
+        "mean_n_status_correct": 4.0,
+        "plan_ineligible_marked_eligible": 0,
+        "plan_eligible_marked_ineligible": 0,
+        "correct": 76,
+        "follows_trap": 0,
+        "plan_answer_agrees": {
+          "n_true": 83,
+          "n_false": 2,
+          "n_not_checked": 1
+        },
+        "correct_with_wrong_eligibility": 0,
+        "mean_n_kept": 0.0,
+        "mean_n_result_kept": 76.12790697674419,
+        "mean_n_sink_kept": 0.0,
+        "mean_n_extra": 0.0,
+        "mean_n_added": 0.0,
+        "mean_n_full": 1149.4186046511627,
+        "mean_overlap_support_extra_frac": 0.0,
+        "mean_selection_time_s": 0.0,
+        "mean_rebuild_time_s": 0.8895304702049078,
+        "span_extract_ok": 86,
+        "mean_message_bytes": 310.2093023255814,
+        "mean_relay_mb": 0.0002958386443382086,
+        "mean_process_time_s": 34.75332667384037,
+        "ids_source": [
+          "decode_loop"
+        ],
+        "cache_source": [
+          "prefill_recorded_ids"
+        ],
+        "sampling_mode": []
+      },
+      "compact": {
+        "n": 86,
+        "parse_ok": 86,
+        "think_collapse": 0,
+        "truncated": 0,
+        "plan_all_status_correct": 31,
+        "mean_n_status_correct": 3.1744186046511627,
+        "plan_ineligible_marked_eligible": 60,
+        "plan_eligible_marked_ineligible": 11,
+        "correct": 51,
+        "follows_trap": 26,
+        "plan_answer_agrees": {
+          "n_true": 86,
+          "n_false": 0,
+          "n_not_checked": 0
+        },
+        "correct_with_wrong_eligibility": 25,
+        "mean_n_kept": 80.12790697674419,
+        "mean_n_result_kept": 76.12790697674419,
+        "mean_n_sink_kept": 4.0,
+        "mean_n_extra": 0.0,
+        "mean_n_added": 0.0,
+        "mean_n_full": 1149.4186046511627,
+        "mean_overlap_support_extra_frac": 0.0,
+        "mean_selection_time_s": 0.05600118637084961,
+        "mean_rebuild_time_s": 0.8895304702049078,
+        "span_extract_ok": 86,
+        "mean_message_bytes": 11815419.65116279,
+        "mean_relay_mb": 11.268062258875647,
+        "mean_process_time_s": 34.77276399523713,
+        "ids_source": [
+          "decode_loop"
+        ],
+        "cache_source": [
+          "prefill_recorded_ids"
+        ],
+        "sampling_mode": []
+      },
+      "compact_support": {
+        "n": 86,
+        "parse_ok": 86,
+        "think_collapse": 0,
+        "truncated": 0,
+        "plan_all_status_correct": 86,
+        "mean_n_status_correct": 4.0,
+        "plan_ineligible_marked_eligible": 0,
+        "plan_eligible_marked_ineligible": 0,
+        "correct": 77,
+        "follows_trap": 1,
+        "plan_answer_agrees": {
+          "n_true": 83,
+          "n_false": 3,
+          "n_not_checked": 0
+        },
+        "correct_with_wrong_eligibility": 0,
+        "mean_n_kept": 526.4186046511628,
+        "mean_n_result_kept": 76.12790697674419,
+        "mean_n_sink_kept": 4.0,
+        "mean_n_extra": 446.2906976744186,
+        "mean_n_added": 446.2906976744186,
+        "mean_n_full": 1149.4186046511627,
+        "mean_overlap_support_extra_frac": 0.0,
+        "mean_selection_time_s": 0.2556560483089713,
+        "mean_rebuild_time_s": 0.8895304702049078,
+        "span_extract_ok": 86,
+        "mean_message_bytes": 77623660.76744185,
+        "mean_relay_mb": 74.02769161934076,
+        "mean_process_time_s": 35.03090846815775,
+        "ids_source": [
+          "decode_loop"
+        ],
+        "cache_source": [
+          "prefill_recorded_ids"
+        ],
+        "sampling_mode": []
+      },
+      "compact_rand_2101": {
+        "n": 86,
+        "parse_ok": 86,
+        "think_collapse": 0,
+        "truncated": 0,
+        "plan_all_status_correct": 81,
+        "mean_n_status_correct": 3.941860465116279,
+        "plan_ineligible_marked_eligible": 5,
+        "plan_eligible_marked_ineligible": 0,
+        "correct": 75,
+        "follows_trap": 4,
+        "plan_answer_agrees": {
+          "n_true": 83,
+          "n_false": 3,
+          "n_not_checked": 0
+        },
+        "correct_with_wrong_eligibility": 2,
+        "mean_n_kept": 526.4186046511628,
+        "mean_n_result_kept": 76.12790697674419,
+        "mean_n_sink_kept": 4.0,
+        "mean_n_extra": 446.2906976744186,
+        "mean_n_added": 446.2906976744186,
+        "mean_n_full": 1149.4186046511627,
+        "mean_overlap_support_extra_frac": 0.381055332997887,
+        "mean_selection_time_s": 0.2562289321145346,
+        "mean_rebuild_time_s": 0.8895304702049078,
+        "span_extract_ok": 86,
+        "mean_message_bytes": 77623660.76744185,
+        "mean_relay_mb": 74.02769161934076,
+        "mean_process_time_s": 35.03429419218108,
+        "ids_source": [
+          "decode_loop"
+        ],
+        "cache_source": [
+          "prefill_recorded_ids"
+        ],
+        "sampling_mode": [
+          "block_matched"
+        ]
+      },
+      "compact_rand_2102": {
+        "n": 86,
+        "parse_ok": 86,
+        "think_collapse": 0,
+        "truncated": 0,
+        "plan_all_status_correct": 83,
+        "mean_n_status_correct": 3.9651162790697674,
+        "plan_ineligible_marked_eligible": 3,
+        "plan_eligible_marked_ineligible": 0,
+        "correct": 75,
+        "follows_trap": 6,
+        "plan_answer_agrees": {
+          "n_true": 83,
+          "n_false": 3,
+          "n_not_checked": 0
+        },
+        "correct_with_wrong_eligibility": 0,
+        "mean_n_kept": 526.4186046511628,
+        "mean_n_result_kept": 76.12790697674419,
+        "mean_n_sink_kept": 4.0,
+        "mean_n_extra": 446.2906976744186,
+        "mean_n_added": 446.2906976744186,
+        "mean_n_full": 1149.4186046511627,
+        "mean_overlap_support_extra_frac": 0.32975167941590217,
+        "mean_selection_time_s": 0.2564618227093719,
+        "mean_rebuild_time_s": 0.8895304702049078,
+        "span_extract_ok": 86,
+        "mean_message_bytes": 77623660.76744185,
+        "mean_relay_mb": 74.02769161934076,
+        "mean_process_time_s": 35.03607960911684,
+        "ids_source": [
+          "decode_loop"
+        ],
+        "cache_source": [
+          "prefill_recorded_ids"
+        ],
+        "sampling_mode": [
+          "block_matched"
+        ]
+      },
+      "compact_rand_2103": {
+        "n": 86,
+        "parse_ok": 86,
+        "think_collapse": 0,
+        "truncated": 0,
+        "plan_all_status_correct": 84,
+        "mean_n_status_correct": 3.9651162790697674,
+        "plan_ineligible_marked_eligible": 2,
+        "plan_eligible_marked_ineligible": 1,
+        "correct": 80,
+        "follows_trap": 1,
+        "plan_answer_agrees": {
+          "n_true": 82,
+          "n_false": 4,
+          "n_not_checked": 0
+        },
+        "correct_with_wrong_eligibility": 1,
+        "mean_n_kept": 526.4186046511628,
+        "mean_n_result_kept": 76.12790697674419,
+        "mean_n_sink_kept": 4.0,
+        "mean_n_extra": 446.2906976744186,
+        "mean_n_added": 446.2906976744186,
+        "mean_n_full": 1149.4186046511627,
+        "mean_overlap_support_extra_frac": 0.4304471065114783,
+        "mean_selection_time_s": 0.2564482189888178,
+        "mean_rebuild_time_s": 0.8895304702049078,
+        "span_extract_ok": 86,
+        "mean_message_bytes": 77623660.76744185,
+        "mean_relay_mb": 74.02769161934076,
+        "mean_process_time_s": 35.04313409328461,
+        "ids_source": [
+          "decode_loop"
+        ],
+        "cache_source": [
+          "prefill_recorded_ids"
+        ],
+        "sampling_mode": [
+          "block_matched"
+        ]
+      },
+      "text_support": {
+        "n": 86,
+        "parse_ok": 86,
+        "think_collapse": 0,
+        "truncated": 0,
+        "plan_all_status_correct": 85,
+        "mean_n_status_correct": 3.988372093023256,
+        "plan_ineligible_marked_eligible": 0,
+        "plan_eligible_marked_ineligible": 1,
+        "correct": 79,
+        "follows_trap": 3,
+        "plan_answer_agrees": {
+          "n_true": 80,
+          "n_false": 6,
+          "n_not_checked": 0
+        },
+        "correct_with_wrong_eligibility": 1,
+        "mean_n_kept": 0.0,
+        "mean_n_result_kept": 76.12790697674419,
+        "mean_n_sink_kept": 0.0,
+        "mean_n_extra": 446.2906976744186,
+        "mean_n_added": 446.2906976744186,
+        "mean_n_full": 1149.4186046511627,
+        "mean_overlap_support_extra_frac": 0.0,
+        "mean_selection_time_s": 0.0,
+        "mean_rebuild_time_s": 0.8895304702049078,
+        "span_extract_ok": 86,
+        "mean_message_bytes": 2102.686046511628,
+        "mean_relay_mb": 0.002005277678023937,
+        "mean_process_time_s": 35.42477309149365,
+        "ids_source": [
+          "decode_loop"
+        ],
+        "cache_source": [
+          "prefill_recorded_ids"
+        ],
+        "sampling_mode": []
+      },
+      "compact_rand_mean": {
+        "n": 86,
+        "parse_ok": 86.0,
+        "truncated": 0.0,
+        "plan_all_status_correct": 82.66666666666667,
+        "correct": 76.66666666666667,
+        "correct_with_wrong_eligibility": 1.0,
+        "plan_ineligible_marked_eligible": 3.3333333333333335,
+        "plan_eligible_marked_ineligible": 0.3333333333333333,
+        "mean_n_kept": 526.4186046511628,
+        "mean_n_extra": 446.2906976744186,
+        "mean_overlap_support_extra_frac": 0.38041803964175575,
+        "mean_message_bytes": 77623660.76744185,
+        "mean_relay_mb": 74.02769161934076,
+        "mean_process_time_s": 35.037835964860854,
+        "note": "Per-example mean of the three random seeds. Seeds are not independent extra cases."
+      }
+    },
+    "family_clustered_eligibility": {
+      "support_vs_compact": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "plan_all_status_correct",
+        "delta_b_minus_a": 0.6395348837209303,
+        "ci95": [
+          0.5,
+          0.7674418604651163
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "support_vs_rand_2101": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "plan_all_status_correct",
+        "delta_b_minus_a": 0.05813953488372092,
+        "ci95": [
+          0.011494252873563204,
+          0.11627906976744184
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "support_vs_rand_2102": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "plan_all_status_correct",
+        "delta_b_minus_a": 0.03488372093023251,
+        "ci95": [
+          0.0,
+          0.09302325581395354
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "support_vs_rand_2103": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "plan_all_status_correct",
+        "delta_b_minus_a": 0.023255813953488413,
+        "ci95": [
+          0.0,
+          0.05813953488372092
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "support_vs_kv": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "plan_all_status_correct",
+        "delta_b_minus_a": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "support_vs_text_result": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "plan_all_status_correct",
+        "delta_b_minus_a": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "support_vs_text_support": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "plan_all_status_correct",
+        "delta_b_minus_a": 0.011627906976744207,
+        "ci95": [
+          0.0,
+          0.03529411764705881
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "text_support_vs_text_result": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "plan_all_status_correct",
+        "delta_b_minus_a": -0.011627906976744207,
+        "ci95": [
+          -0.03529411764705881,
+          0.0
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "kv_vs_text_result": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "plan_all_status_correct",
+        "delta_b_minus_a": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "compact_vs_kv": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "plan_all_status_correct",
+        "delta_b_minus_a": -0.6395348837209303,
+        "ci95": [
+          -0.7674418604651163,
+          -0.5
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "support_vs_rand_mean": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "plan_all_status_correct",
+        "cond_a": "compact_support",
+        "cond_bs": [
+          "compact_rand_2101",
+          "compact_rand_2102",
+          "compact_rand_2103"
+        ],
+        "delta_mean_b_minus_a": -0.03875968992248058,
+        "ci95": [
+          -0.07751937984496149,
+          -0.011494252873563093
+        ],
+        "unit": "family (variants and random seeds kept together)"
+      }
+    },
+    "family_clustered_delta": {
+      "support_vs_compact": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "correct",
+        "delta_b_minus_a": 0.3023255813953488,
+        "ci95": [
+          0.17441860465116288,
+          0.4285714285714286
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "support_vs_rand_2101": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "correct",
+        "delta_b_minus_a": 0.023255813953488413,
+        "ci95": [
+          -0.05747126436781613,
+          0.10465116279069764
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "support_vs_rand_2102": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "correct",
+        "delta_b_minus_a": 0.023255813953488413,
+        "ci95": [
+          -0.046511627906976716,
+          0.09302325581395354
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "support_vs_rand_2103": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "correct",
+        "delta_b_minus_a": -0.03488372093023251,
+        "ci95": [
+          -0.10344827586206895,
+          0.034482758620689724
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "support_vs_kv": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "correct",
+        "delta_b_minus_a": -0.011627906976744096,
+        "ci95": [
+          -0.09411764705882353,
+          0.08139534883720922
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "support_vs_text_result": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "correct",
+        "delta_b_minus_a": 0.011627906976744207,
+        "ci95": [
+          -0.03529411764705881,
+          0.05882352941176461
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "support_vs_text_support": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "correct",
+        "delta_b_minus_a": -0.023255813953488302,
+        "ci95": [
+          -0.09195402298850575,
+          0.04597701149425282
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "text_support_vs_text_result": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "correct",
+        "delta_b_minus_a": 0.03488372093023251,
+        "ci95": [
+          -0.023255813953488413,
+          0.09411764705882353
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "kv_vs_text_result": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "correct",
+        "delta_b_minus_a": 0.023255813953488302,
+        "ci95": [
+          -0.07058823529411773,
+          0.11494252873563215
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "compact_vs_kv": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "correct",
+        "delta_b_minus_a": -0.3139534883720929,
+        "ci95": [
+          -0.43023255813953487,
+          -0.19767441860465118
+        ],
+        "unit": "family (all variants kept together)"
+      },
+      "support_vs_rand_mean": {
+        "n_families": 29,
+        "n_boot": 2000,
+        "key": "correct",
+        "cond_a": "compact_support",
+        "cond_bs": [
+          "compact_rand_2101",
+          "compact_rand_2102",
+          "compact_rand_2103"
+        ],
+        "delta_mean_b_minus_a": -0.003875968992248069,
+        "ci95": [
+          -0.06666666666666654,
+          0.061302681992337016
+        ],
+        "unit": "family (variants and random seeds kept together)"
+      }
+    },
+    "decision": {
+      "margin_points": 5.0,
+      "candidate": "compact_support",
+      "qualifies": true,
+      "plan_all_status_correct": 86,
+      "parse_ok": 86,
+      "truncated": 0,
+      "selected": "compact_support",
+      "note": "A qualifying candidate needs parseable untruncated outputs in every case and all-label accuracy within five points of full KV and result text. If those references score 90/90, that requires at least 86/90. This selects a confirmation candidate; it does not itself establish recovery."
+    }
+  },
+  "incorrect_sheets": [
+    {
+      "a_state_key": "plan4_dev-fam-001-base",
+      "difficulty": "L2",
+      "ordinary_scorer_all_four": true,
+      "ordinary_scorer_all_status": true,
+      "codes": [
+        "false_capacity_comparison",
+        "false_eligibility_reason",
+        "false_result_reason"
+      ],
+      "details": [
+        "P states 14 less than 12, which is false",
+        "P working claims cap_fail, which is false of the source",
+        "P result claims cap_fail, which is false of the source"
+      ]
+    },
+    {
+      "a_state_key": "plan4_dev-fam-001-a_flip",
+      "difficulty": "L2",
+      "ordinary_scorer_all_four": true,
+      "ordinary_scorer_all_status": true,
+      "codes": [
+        "false_capacity_comparison",
+        "false_eligibility_reason",
+        "false_result_reason"
+      ],
+      "details": [
+        "P states 14 less than 12, which is false",
+        "P working claims cap_fail, which is false of the source",
+        "P result claims cap_fail, which is false of the source"
+      ]
+    },
+    {
+      "a_state_key": "plan4_dev-fam-012-a_flip",
+      "difficulty": "L1",
+      "ordinary_scorer_all_four": false,
+      "ordinary_scorer_all_status": true,
+      "codes": [
+        "false_capacity_comparison",
+        "wrong_capacity_arithmetic",
+        "wrong_copied_fact",
+        "wrong_q"
+      ],
+      "details": [
+        "R heading vehicle capacity 11 != source 8",
+        "R copied capacity 11 != 8",
+        "R comparison uses q=11, boxes=8; source is q=8, boxes=8",
+        "R comparison uses q=11, boxes=8; source is q=8, boxes=8",
+        "R result q=11 != gold 8"
+      ]
+    }
+  ],
+  "ambiguous_sheets": [],
+  "do_not_resume": [
+    "results_stage_plan4_support/evaluations.jsonl",
+    "results_stage_plan4_support/summary.json",
+    "results_stage_plan4_support/a_artifacts.jsonl",
+    "results_stage_plan4_iface",
+    "results_stage_plan4_hold"
+  ]
+}

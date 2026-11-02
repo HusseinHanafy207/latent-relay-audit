@@ -1,0 +1,19 @@
+{
+  "selected_epoch": 1,
+  "checkpoint": "adapter_epoch1.pt",
+  "sha256": "864a8f198f415e94dec426447569c8fce96f7be7f015c39141ccac01a8da7fc1",
+  "dev_labels_by_epoch": {
+    "1": 144,
+    "2": 144,
+    "3": 144
+  },
+  "dev_gates": {
+    "beats_unadapted_kv": true,
+    "worse_without_results": true,
+    "follows_mismatched_results": true,
+    "a_change_pairs": true,
+    "malformed_output": true
+  },
+  "frozen_at": "2026-10-30T14:42:25",
+  "note": "Frozen before any eval A sheet is written. Every eval row must use this checkpoint."
+}

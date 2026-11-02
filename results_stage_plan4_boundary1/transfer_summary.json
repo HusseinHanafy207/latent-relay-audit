@@ -1,0 +1,171 @@
+{
+  "layout": "sep",
+  "n_rows": 180,
+  "n_examples": 90,
+  "n_evals_expected": 180,
+  "receiver": {
+    "transfer": {
+      "n": 90,
+      "parse_ok": 90,
+      "think_collapse": 0,
+      "truncated": 0,
+      "plan_all_status_correct": 33,
+      "mean_n_status_correct": 3.1555555555555554,
+      "plan_ineligible_marked_eligible": 64,
+      "plan_eligible_marked_ineligible": 12,
+      "correct": 51,
+      "follows_trap": 28,
+      "plan_answer_agrees": {
+        "n_true": 90,
+        "n_false": 0,
+        "n_not_checked": 0
+      },
+      "correct_with_wrong_eligibility": 25,
+      "mean_n_kept": 81.45555555555555,
+      "mean_n_result_kept": 76.45555555555555,
+      "mean_n_sink_kept": 4.0,
+      "mean_n_extra": 0.0,
+      "mean_n_added": 1.0,
+      "mean_n_full": 1152.6222222222223,
+      "mean_overlap_support_extra_frac": 0.0,
+      "mean_selection_time_s": 0.14598562982347277,
+      "mean_rebuild_time_s": 0.9031762679417928,
+      "span_extract_ok": 0,
+      "mean_message_bytes": 12011189.4,
+      "mean_relay_mb": 11.454762840270996,
+      "mean_process_time_s": 35.290033955044215,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "cache_source": [
+        "transfer_gather_rerotate_extend"
+      ],
+      "sampling_mode": []
+    },
+    "reconstruct": {
+      "n": 90,
+      "parse_ok": 90,
+      "think_collapse": 0,
+      "truncated": 0,
+      "plan_all_status_correct": 89,
+      "mean_n_status_correct": 3.988888888888889,
+      "plan_ineligible_marked_eligible": 1,
+      "plan_eligible_marked_ineligible": 0,
+      "correct": 74,
+      "follows_trap": 3,
+      "plan_answer_agrees": {
+        "n_true": 86,
+        "n_false": 3,
+        "n_not_checked": 1
+      },
+      "correct_with_wrong_eligibility": 1,
+      "mean_n_kept": 81.45555555555555,
+      "mean_n_result_kept": 76.45555555555555,
+      "mean_n_sink_kept": 4.0,
+      "mean_n_extra": 0.0,
+      "mean_n_added": 1.0,
+      "mean_n_full": 1152.6222222222223,
+      "mean_overlap_support_extra_frac": 0.0,
+      "mean_selection_time_s": 0.0751643286810981,
+      "mean_rebuild_time_s": 0.9031762679417928,
+      "span_extract_ok": 0,
+      "mean_message_bytes": 12011189.4,
+      "mean_relay_mb": 11.454762840270996,
+      "mean_process_time_s": 35.224092208014596,
+      "ids_source": [
+        "decode_loop"
+      ],
+      "cache_source": [
+        "reconstruct_prefill"
+      ],
+      "sampling_mode": []
+    }
+  },
+  "carrier_label_errors": {
+    "transfer": {
+      "P": {
+        "n_mismatch": 9,
+        "eligible_marked_ineligible": 8,
+        "ineligible_marked_eligible": 1
+      },
+      "Q": {
+        "n_mismatch": 13,
+        "eligible_marked_ineligible": 0,
+        "ineligible_marked_eligible": 13
+      },
+      "R": {
+        "n_mismatch": 19,
+        "eligible_marked_ineligible": 4,
+        "ineligible_marked_eligible": 15
+      },
+      "S": {
+        "n_mismatch": 35,
+        "eligible_marked_ineligible": 0,
+        "ineligible_marked_eligible": 35
+      }
+    },
+    "reconstruct": {
+      "P": {
+        "n_mismatch": 1,
+        "eligible_marked_ineligible": 0,
+        "ineligible_marked_eligible": 1
+      },
+      "Q": {
+        "n_mismatch": 0,
+        "eligible_marked_ineligible": 0,
+        "ineligible_marked_eligible": 0
+      },
+      "R": {
+        "n_mismatch": 0,
+        "eligible_marked_ineligible": 0,
+        "ineligible_marked_eligible": 0
+      },
+      "S": {
+        "n_mismatch": 0,
+        "eligible_marked_ineligible": 0,
+        "ineligible_marked_eligible": 0
+      }
+    }
+  },
+  "paired_receiver": {
+    "reconstruct_vs_transfer": {
+      "n": 90,
+      "acc_a": 0.5666666666666667,
+      "acc_b": 0.8222222222222222,
+      "delta_b_minus_a": 0.25555555555555554,
+      "b_fixes": 27,
+      "b_hurts": 4,
+      "both_ok": 47,
+      "both_bad": 12
+    }
+  },
+  "family_clustered_eligibility": {
+    "reconstruct_vs_transfer": {
+      "n_families": 30,
+      "n_boot": 2000,
+      "key": "plan_all_status_correct",
+      "delta_b_minus_a": 0.6222222222222222,
+      "ci95": [
+        0.48888888888888893,
+        0.7444444444444445
+      ],
+      "unit": "family (all variants kept together)"
+    }
+  },
+  "frozen_text_result": {
+    "n": 90,
+    "plan_all_status_correct": 90,
+    "correct": 79,
+    "parse_ok": 90,
+    "truncated": 0,
+    "source": "results_stage_plan4_recon/summary.json"
+  },
+  "qualifies_vs_text": {
+    "transfer": false,
+    "reconstruct": true
+  },
+  "payload_note": "KV byte counts are constructed-cache size at B. If reconstruction happens at B, the sender could transmit token IDs instead. Do not treat those bytes as the required transmitted payload. Timings still combine shared sender work and replay.",
+  "interpretation_guide": "Both reconstruction and transfer recover: presentation explains much of the failure; report that plainly. Reconstruction recovers but transfer remains poor: that is a stronger matched reference for investigating contextual-state reuse and attention. Reconstruction remains substantially below ordinary text: its message presentation still needs investigation. It is not yet a sufficiently reliable reference for training an adapter.",
+  "lead": "Matched transfer vs reconstruct under layout=sep. Same token IDs, receiver prompts, positions, masks, and decoding.",
+  "after_this_run": "These are development results. Do not load plan4_hold."
+}

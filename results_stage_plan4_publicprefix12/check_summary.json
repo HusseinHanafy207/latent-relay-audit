@@ -1,0 +1,183 @@
+{
+  "n": 9,
+  "all_passed": true,
+  "templates_ok": {
+    "L1": true,
+    "L2": true,
+    "L3": true
+  },
+  "cases": [
+    {
+      "a_state_key": "plan4_timing12-fam-000-base",
+      "ok": true,
+      "failed": [],
+      "n_kv": {
+        "compact_baseline": 203,
+        "full_kv": 2130,
+        "task_prefix_r": 279,
+        "woodland_prefix_r": 279,
+        "library_prefix_r": 279,
+        "task_prefix_fresh_r": 279
+      },
+      "keys_max_abs_vs_baseline": 25.1171875,
+      "fresh_vs_transferred": {
+        "equal": false,
+        "keys_max_abs": 29.400390625,
+        "values_max_abs": 67.84375
+      }
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-001-base",
+      "ok": true,
+      "failed": [],
+      "n_kv": {
+        "compact_baseline": 322,
+        "full_kv": 1459,
+        "task_prefix_r": 393,
+        "woodland_prefix_r": 393,
+        "library_prefix_r": 393,
+        "task_prefix_fresh_r": 393
+      },
+      "keys_max_abs_vs_baseline": 26.140625,
+      "fresh_vs_transferred": {
+        "equal": false,
+        "keys_max_abs": 38.515625,
+        "values_max_abs": 84.109375
+      }
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-002-base",
+      "ok": true,
+      "failed": [],
+      "n_kv": {
+        "compact_baseline": 208,
+        "full_kv": 2517,
+        "task_prefix_r": 301,
+        "woodland_prefix_r": 301,
+        "library_prefix_r": 301,
+        "task_prefix_fresh_r": 301
+      },
+      "keys_max_abs_vs_baseline": 27.484375,
+      "fresh_vs_transferred": {
+        "equal": false,
+        "keys_max_abs": 26.0625,
+        "values_max_abs": 72.96484375
+      }
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-003-base",
+      "ok": true,
+      "failed": [],
+      "n_kv": {
+        "compact_baseline": 279,
+        "full_kv": 1801,
+        "task_prefix_r": 350,
+        "woodland_prefix_r": 350,
+        "library_prefix_r": 350,
+        "task_prefix_fresh_r": 350
+      },
+      "keys_max_abs_vs_baseline": 24.1328125,
+      "fresh_vs_transferred": {
+        "equal": false,
+        "keys_max_abs": 32.1953125,
+        "values_max_abs": 76.375
+      }
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-004-base",
+      "ok": true,
+      "failed": [],
+      "n_kv": {
+        "compact_baseline": 221,
+        "full_kv": 2573,
+        "task_prefix_r": 314,
+        "woodland_prefix_r": 314,
+        "library_prefix_r": 314,
+        "task_prefix_fresh_r": 314
+      },
+      "keys_max_abs_vs_baseline": 27.9140625,
+      "fresh_vs_transferred": {
+        "equal": false,
+        "keys_max_abs": 28.3515625,
+        "values_max_abs": 74.375
+      }
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-005-base",
+      "ok": true,
+      "failed": [],
+      "n_kv": {
+        "compact_baseline": 230,
+        "full_kv": 2200,
+        "task_prefix_r": 306,
+        "woodland_prefix_r": 306,
+        "library_prefix_r": 306,
+        "task_prefix_fresh_r": 306
+      },
+      "keys_max_abs_vs_baseline": 25.0078125,
+      "fresh_vs_transferred": {
+        "equal": false,
+        "keys_max_abs": 28.5234375,
+        "values_max_abs": 69.25
+      }
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-006-base",
+      "ok": true,
+      "failed": [],
+      "n_kv": {
+        "compact_baseline": 208,
+        "full_kv": 2144,
+        "task_prefix_r": 284,
+        "woodland_prefix_r": 284,
+        "library_prefix_r": 284,
+        "task_prefix_fresh_r": 284
+      },
+      "keys_max_abs_vs_baseline": 25.7734375,
+      "fresh_vs_transferred": {
+        "equal": false,
+        "keys_max_abs": 27.90625,
+        "values_max_abs": 66.78125
+      }
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-007-base",
+      "ok": true,
+      "failed": [],
+      "n_kv": {
+        "compact_baseline": 201,
+        "full_kv": 2476,
+        "task_prefix_r": 294,
+        "woodland_prefix_r": 294,
+        "library_prefix_r": 294,
+        "task_prefix_fresh_r": 294
+      },
+      "keys_max_abs_vs_baseline": 26.015625,
+      "fresh_vs_transferred": {
+        "equal": false,
+        "keys_max_abs": 30.796875,
+        "values_max_abs": 68.625
+      }
+    },
+    {
+      "a_state_key": "plan4_timing12-fam-008-base",
+      "ok": true,
+      "failed": [],
+      "n_kv": {
+        "compact_baseline": 206,
+        "full_kv": 1953,
+        "task_prefix_r": 277,
+        "woodland_prefix_r": 277,
+        "library_prefix_r": 277,
+        "task_prefix_fresh_r": 277
+      },
+      "keys_max_abs_vs_baseline": 23.921875,
+      "fresh_vs_transferred": {
+        "equal": false,
+        "keys_max_abs": 26.46875,
+        "values_max_abs": 75.03125
+      }
+    }
+  ],
+  "frozen_placement": "Public prefixes are prefilled once per template and context, then one fixed newline is processed after them; no closing token or new framing is added and the old five-token prefix is not prepended. Transferred R is gathered from A's frozen cache: values unchanged, keys moved once from the original sender positions to consecutive packed positions after the newline. Task and neutral conditions share lengths, chat header, instruction IDs and positions, separator, result slots, masks and B's starting position."
+}

@@ -1,0 +1,61 @@
+{
+  "role_note": "Preparation only. fk_fv rows are training targets for the adapter (reference used during training only); tk_tv rows show the gap on training sheets before any training. Neither is a pilot result, and dev/eval sheets are not run here.",
+  "tk_tv": {
+    "labels": {
+      "n_cases": 96,
+      "n_labels": 1152,
+      "labels_correct": 726,
+      "cases_all_twelve_correct": 2,
+      "ineligible_marked_eligible": 385,
+      "eligible_marked_ineligible": 41,
+      "parse_ok": 96,
+      "plan_truncated": 0,
+      "answer_truncated": 0,
+      "plan_lines_missing": 0
+    },
+    "final_choice": {
+      "n_cases": 96,
+      "final_choice_correct": 3,
+      "follows_trap": 55,
+      "correct_with_wrong_eligibility": 2
+    },
+    "plan_time_s": 784.4796962738037,
+    "answer_time_s": 59.98904347419739
+  },
+  "fk_fv": {
+    "labels": {
+      "n_cases": 96,
+      "n_labels": 1152,
+      "labels_correct": 1139,
+      "cases_all_twelve_correct": 84,
+      "ineligible_marked_eligible": 9,
+      "eligible_marked_ineligible": 4,
+      "parse_ok": 96,
+      "plan_truncated": 0,
+      "answer_truncated": 0,
+      "plan_lines_missing": 0
+    },
+    "final_choice": {
+      "n_cases": 96,
+      "final_choice_correct": 58,
+      "follows_trap": 3,
+      "correct_with_wrong_eligibility": 6
+    },
+    "plan_time_s": 787.346328496933,
+    "answer_time_s": 59.925745487213135
+  },
+  "paired": {
+    "n_cases": 96,
+    "teacher_minus_student_labels": 413,
+    "cases_teacher_better": 94,
+    "cases_student_better": 0
+  },
+  "teacher_targets": {
+    "n": 96,
+    "plan_truncated": 0,
+    "answer_truncated": 0,
+    "plan_tokens": 12591,
+    "answer_tokens": 576,
+    "filtered": false
+  }
+}

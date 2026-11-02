@@ -1,0 +1,88 @@
+{
+  "recorded_at_utc": "2026-10-26T20:47:20.121316+00:00",
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+  "executable": "/usr/bin/python3",
+  "platform": "linux",
+  "cwd": "/kaggle/working/latent-relay-audit",
+  "repo_commit": "68549a7839dd6e36faae80f8ae8cc8bacee5151f",
+  "upstream_commit_expected": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "upstream_commit_actual": "36f43183e84d2fbf3b84c9bf4e3e06b7c442a523",
+  "torch": "2.11.0+cu128",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "transformers": "4.57.3",
+  "precision": {
+    "inference_dtype": "float16",
+    "alignment_dtype": "float32",
+    "compression_dtype": "float32",
+    "enable_thinking": false,
+    "device_name": "Tesla T4",
+    "device_capability": "7.5",
+    "source": "env:fp16"
+  },
+  "env": {
+    "LATENT_RELAY_INFER_DTYPE": "fp16",
+    "HF_HOME": null,
+    "TRANSFORMERS_CACHE": null
+  },
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "model_name": "Qwen/Qwen3-4B",
+  "extra": {
+    "stage": "plan4-timing",
+    "do_not_resume": [
+      "results_stage_plan4_confirm",
+      "results_stage_plan4_hold",
+      "results_stage_plan4_rdep",
+      "results_stage_plan4_nbound",
+      "results_stage_plan4_generic",
+      "results_stage_plan4_recon",
+      "results_stage_plan4_iface"
+    ],
+    "do_not_load": [
+      "data/plan4_dev.jsonl",
+      "data/plan4_fresh.jsonl"
+    ],
+    "do_not_overwrite": [
+      "results_stage_plan4_hold",
+      "results_stage_plan4_confirm",
+      "data/plan4_hold.jsonl"
+    ],
+    "layout": "sep",
+    "conditions": [
+      "generic_r",
+      "result_kv",
+      "full_kv",
+      "text_result"
+    ],
+    "confirm_accuracy": {
+      "n": 90,
+      "source": "results_stage_plan4_confirm on previously evaluated plan4_hold families",
+      "labels": {
+        "result_kv": 19,
+        "generic_r": 83,
+        "full_kv": 88,
+        "text_result": 87
+      },
+      "choices": {
+        "result_kv": 43,
+        "generic_r": 77,
+        "full_kv": 79,
+        "text_result": 74
+      },
+      "generic_r_minus_full_kv_pp": -5.56,
+      "generic_r_minus_text_pp": -4.44,
+      "paired_ci_vs_full_kv": [
+        -13.3,
+        2.2
+      ],
+      "paired_ci_vs_text": [
+        -11.1,
+        1.1
+      ],
+      "note": "Generic support substantially improved selected-state reuse (19/90 to 83/90). Complete recovery to the reference methods is unestablished: the candidate is 5.56 points below full KV and 4.44 below text, and both paired intervals include gaps larger than five points."
+    },
+    "phase": "compare",
+    "n_timing4": 9,
+    "n_timing12": 9
+  }
+}

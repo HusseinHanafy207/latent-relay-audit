@@ -1,0 +1,1242 @@
+{
+  "n": 48,
+  "all_passed": true,
+  "templates_match_frozen": true,
+  "a_written": {
+    "status_correct": 574,
+    "n_status": 576,
+    "truncated": 0
+  },
+  "a_flip_changed_carrier_written_correctly": {
+    "n": 24,
+    "correct": 24
+  },
+  "partners": {
+    "plan4_qadapt_eval-fam-000-base": "plan4_qadapt_eval-fam-001-base",
+    "plan4_qadapt_eval-fam-001-base": "plan4_qadapt_eval-fam-002-base",
+    "plan4_qadapt_eval-fam-002-base": "plan4_qadapt_eval-fam-003-base",
+    "plan4_qadapt_eval-fam-003-base": "plan4_qadapt_eval-fam-007-base",
+    "plan4_qadapt_eval-fam-007-base": "plan4_qadapt_eval-fam-012-base",
+    "plan4_qadapt_eval-fam-012-base": "plan4_qadapt_eval-fam-014-base",
+    "plan4_qadapt_eval-fam-014-base": "plan4_qadapt_eval-fam-018-base",
+    "plan4_qadapt_eval-fam-018-base": "plan4_qadapt_eval-fam-000-base",
+    "plan4_qadapt_eval-fam-004-base": "plan4_qadapt_eval-fam-006-base",
+    "plan4_qadapt_eval-fam-006-base": "plan4_qadapt_eval-fam-008-base",
+    "plan4_qadapt_eval-fam-008-base": "plan4_qadapt_eval-fam-010-base",
+    "plan4_qadapt_eval-fam-010-base": "plan4_qadapt_eval-fam-015-base",
+    "plan4_qadapt_eval-fam-015-base": "plan4_qadapt_eval-fam-017-base",
+    "plan4_qadapt_eval-fam-017-base": "plan4_qadapt_eval-fam-019-base",
+    "plan4_qadapt_eval-fam-019-base": "plan4_qadapt_eval-fam-020-base",
+    "plan4_qadapt_eval-fam-020-base": "plan4_qadapt_eval-fam-004-base",
+    "plan4_qadapt_eval-fam-005-base": "plan4_qadapt_eval-fam-009-base",
+    "plan4_qadapt_eval-fam-009-base": "plan4_qadapt_eval-fam-011-base",
+    "plan4_qadapt_eval-fam-011-base": "plan4_qadapt_eval-fam-013-base",
+    "plan4_qadapt_eval-fam-013-base": "plan4_qadapt_eval-fam-016-base",
+    "plan4_qadapt_eval-fam-016-base": "plan4_qadapt_eval-fam-021-base",
+    "plan4_qadapt_eval-fam-021-base": "plan4_qadapt_eval-fam-022-base",
+    "plan4_qadapt_eval-fam-022-base": "plan4_qadapt_eval-fam-023-base",
+    "plan4_qadapt_eval-fam-023-base": "plan4_qadapt_eval-fam-005-base"
+  },
+  "rows": {
+    "plan4_qadapt_eval-fam-000-base": {
+      "variant": "base",
+      "template_id": "L1",
+      "build_s": 4.508970107000096,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 187,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 10,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 187,
+        "n_result_partner": 155,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-001-base",
+      "carriers_differing": 8,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-000-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L1",
+      "build_s": 4.583873642000071,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 191,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "Y",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-001-base": {
+      "variant": "base",
+      "template_id": "L1",
+      "build_s": 4.558815605999371,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 155,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 155,
+        "n_result_partner": 279,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-002-base",
+      "carriers_differing": 8,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-001-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L1",
+      "build_s": 4.4667605160002495,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 154,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "P",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-002-base": {
+      "variant": "base",
+      "template_id": "L1",
+      "build_s": 6.190457305000564,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 279,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 279,
+        "n_result_partner": 167,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-003-base",
+      "carriers_differing": 6,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-002-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L1",
+      "build_s": 6.373777609000172,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 296,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "Z",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-003-base": {
+      "variant": "base",
+      "template_id": "L1",
+      "build_s": 5.140492552000069,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 167,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 167,
+        "n_result_partner": 135,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-007-base",
+      "carriers_differing": 6,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-003-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L1",
+      "build_s": 4.8368671360003646,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 170,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "T",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-004-base": {
+      "variant": "base",
+      "template_id": "L2",
+      "build_s": 5.118853281000156,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 152,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 152,
+        "n_result_partner": 154,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-006-base",
+      "carriers_differing": 6,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-004-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L2",
+      "build_s": 5.4955979489996025,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 153,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "S",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-005-base": {
+      "variant": "base",
+      "template_id": "L3",
+      "build_s": 5.718157731999781,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 134,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 134,
+        "n_result_partner": 134,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-009-base",
+      "carriers_differing": 6,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-005-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L3",
+      "build_s": 5.718584788000044,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 123,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "Y",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-006-base": {
+      "variant": "base",
+      "template_id": "L2",
+      "build_s": 5.275915187999999,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 154,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 154,
+        "n_result_partner": 134,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-008-base",
+      "carriers_differing": 4,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-006-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L2",
+      "build_s": 5.54707477500051,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 154,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "Y",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-007-base": {
+      "variant": "base",
+      "template_id": "L1",
+      "build_s": 4.7843133520000265,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 135,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 135,
+        "n_result_partner": 135,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-012-base",
+      "carriers_differing": 8,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-007-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L1",
+      "build_s": 4.798000466999838,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 133,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "R",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-008-base": {
+      "variant": "base",
+      "template_id": "L2",
+      "build_s": 5.2509876059993985,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 134,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 134,
+        "n_result_partner": 133,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-010-base",
+      "carriers_differing": 6,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-008-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L2",
+      "build_s": 4.90191676700033,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 130,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "N",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-009-base": {
+      "variant": "base",
+      "template_id": "L3",
+      "build_s": 5.310602023999309,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 134,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 134,
+        "n_result_partner": 151,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-011-base",
+      "carriers_differing": 4,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-009-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L3",
+      "build_s": 5.446563786999832,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 137,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "U",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-010-base": {
+      "variant": "base",
+      "template_id": "L2",
+      "build_s": 4.9466446789992915,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 133,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 133,
+        "n_result_partner": 134,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-015-base",
+      "carriers_differing": 4,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-010-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L2",
+      "build_s": 5.387882699000329,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 136,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "Y",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-011-base": {
+      "variant": "base",
+      "template_id": "L3",
+      "build_s": 6.030114328000309,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 151,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 151,
+        "n_result_partner": 154,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-013-base",
+      "carriers_differing": 8,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-011-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L3",
+      "build_s": 6.046245958000327,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 151,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "T",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-012-base": {
+      "variant": "base",
+      "template_id": "L1",
+      "build_s": 4.583925779999845,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 135,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 135,
+        "n_result_partner": 259,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-014-base",
+      "carriers_differing": 4,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-012-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L1",
+      "build_s": 4.718904647999807,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 139,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "X",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-013-base": {
+      "variant": "base",
+      "template_id": "L3",
+      "build_s": 5.47073916699992,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 154,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 154,
+        "n_result_partner": 138,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-016-base",
+      "carriers_differing": 4,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-013-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L3",
+      "build_s": 5.361894186999962,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 154,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "R",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-014-base": {
+      "variant": "base",
+      "template_id": "L1",
+      "build_s": 5.920283211999958,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 259,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 259,
+        "n_result_partner": 131,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-018-base",
+      "carriers_differing": 6,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-014-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L1",
+      "build_s": 5.993264538000403,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 258,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "Q",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-015-base": {
+      "variant": "base",
+      "template_id": "L2",
+      "build_s": 5.390572891999909,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 134,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 134,
+        "n_result_partner": 135,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-017-base",
+      "carriers_differing": 10,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-015-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L2",
+      "build_s": 5.35703221499989,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 132,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "N",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-016-base": {
+      "variant": "base",
+      "template_id": "L3",
+      "build_s": 5.436708192999504,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 138,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 138,
+        "n_result_partner": 134,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-021-base",
+      "carriers_differing": 8,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-016-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L3",
+      "build_s": 5.981585358000302,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 136,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "U",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-017-base": {
+      "variant": "base",
+      "template_id": "L2",
+      "build_s": 5.328074894000565,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 135,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 135,
+        "n_result_partner": 132,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-019-base",
+      "carriers_differing": 6,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-017-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L2",
+      "build_s": 5.577944734000084,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 153,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "N",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-018-base": {
+      "variant": "base",
+      "template_id": "L1",
+      "build_s": 4.562743297999987,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 131,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 131,
+        "n_result_partner": 187,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-000-base",
+      "carriers_differing": 6,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-018-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L1",
+      "build_s": 4.494288545000018,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 134,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "Q",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-019-base": {
+      "variant": "base",
+      "template_id": "L2",
+      "build_s": 4.911073977999877,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 132,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 132,
+        "n_result_partner": 116,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-020-base",
+      "carriers_differing": 8,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-019-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L2",
+      "build_s": 5.389247785999942,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 149,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "U",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-020-base": {
+      "variant": "base",
+      "template_id": "L2",
+      "build_s": 5.102723584999694,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 116,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 116,
+        "n_result_partner": 152,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-004-base",
+      "carriers_differing": 6,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-020-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L2",
+      "build_s": 5.051317426999958,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 141,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "Q",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-021-base": {
+      "variant": "base",
+      "template_id": "L3",
+      "build_s": 5.867806578999989,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 134,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 134,
+        "n_result_partner": 132,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-022-base",
+      "carriers_differing": 6,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-021-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L3",
+      "build_s": 6.177972401000261,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 149,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "N",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-022-base": {
+      "variant": "base",
+      "template_id": "L3",
+      "build_s": 5.236594979000074,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 132,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 132,
+        "n_result_partner": 128,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-023-base",
+      "carriers_differing": 4,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-022-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L3",
+      "build_s": 5.126693124000667,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 114,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "T",
+        "gold": "eligible",
+        "a_wrote": "eligible",
+        "a_correct": true
+      },
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-023-base": {
+      "variant": "base",
+      "template_id": "L3",
+      "build_s": 5.283009341999787,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 128,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": null,
+      "dependence_caches": {
+        "own_cursor_is_length": true,
+        "no_r_is_own_support": true,
+        "mismatched_support_is_own": true,
+        "mismatched_r_is_partner_r": true,
+        "mismatched_ids": true,
+        "masks_all_ones": true,
+        "cursors": {
+          "no_r": true,
+          "mismatched_r": true
+        },
+        "n_result_own": 128,
+        "n_result_partner": 134,
+        "ok": true
+      },
+      "partner": "plan4_qadapt_eval-fam-005-base",
+      "carriers_differing": 6,
+      "ok": true
+    },
+    "plan4_qadapt_eval-fam-023-a_flip": {
+      "variant": "a_flip",
+      "template_id": "L3",
+      "build_s": 5.50636544200006,
+      "support_held": true,
+      "mixes_ok": true,
+      "result_start": 70,
+      "n_result": 132,
+      "support_ids_equal_template": true,
+      "a_written_status_correct": 12,
+      "a_written_truncated": false,
+      "a_flip_sender": {
+        "changed_carrier": "V",
+        "gold": "ineligible",
+        "a_wrote": "ineligible",
+        "a_correct": true
+      },
+      "ok": true
+    }
+  }
+}

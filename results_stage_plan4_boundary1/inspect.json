@@ -1,0 +1,525 @@
+{
+  "n": 6,
+  "families": [
+    "plan4_dev-fam-006",
+    "plan4_dev-fam-001",
+    "plan4_dev-fam-000"
+  ],
+  "all_passed": true,
+  "sep_ids": [
+    198
+  ],
+  "close_ids": [
+    151645,
+    198
+  ],
+  "sep_text": "\n",
+  "close_text": "<|im_end|>\n",
+  "construction": [
+    {
+      "a_state_key": "plan4_dev-fam-000-base",
+      "n_current": 91,
+      "n_result": 87,
+      "result_ids_shared": true,
+      "layouts": {
+        "current": {
+          "ok": true,
+          "n": 91,
+          "n_added": 0,
+          "recon_s": 0.10147500038146973,
+          "transfer_s": 0.07840561866760254,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": true,
+          "junction": {
+            "has_youp": true,
+            "has_you_newline_p": false,
+            "has_im_end": false,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": false
+          },
+          "prefix_head": "<|im_start|>user\nYouP: q=10 | Eligible | effective capacity is at least shipment size, refrigeration is present, and dri",
+          "prefix_tail": "ity is at least shipment size, refrigeration is present, and driver is available"
+        },
+        "sep": {
+          "ok": true,
+          "n": 92,
+          "n_added": 1,
+          "recon_s": 0.07219672203063965,
+          "transfer_s": 0.24376988410949707,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": false,
+            "has_you_newline_p": true,
+            "has_im_end": false,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": false
+          },
+          "prefix_head": "<|im_start|>user\nYou\nP: q=10 | Eligible | effective capacity is at least shipment size, refrigeration is present, and dr",
+          "prefix_tail": "ity is at least shipment size, refrigeration is present, and driver is available"
+        },
+        "close": {
+          "ok": true,
+          "n": 93,
+          "n_added": 2,
+          "recon_s": 0.07087135314941406,
+          "transfer_s": 0.18352246284484863,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": true,
+            "has_you_newline_p": false,
+            "has_im_end": true,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": true
+          },
+          "prefix_head": "<|im_start|>user\nYouP: q=10 | Eligible | effective capacity is at least shipment size, refrigeration is present, and dri",
+          "prefix_tail": "east shipment size, refrigeration is present, and driver is available<|im_end|>\n"
+        },
+        "both": {
+          "ok": true,
+          "n": 94,
+          "n_added": 3,
+          "recon_s": 0.0713045597076416,
+          "transfer_s": 0.22023391723632812,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": false,
+            "has_you_newline_p": true,
+            "has_im_end": true,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": true
+          },
+          "prefix_head": "<|im_start|>user\nYou\nP: q=10 | Eligible | effective capacity is at least shipment size, refrigeration is present, and dr",
+          "prefix_tail": "east shipment size, refrigeration is present, and driver is available<|im_end|>\n"
+        }
+      }
+    },
+    {
+      "a_state_key": "plan4_dev-fam-000-a_flip",
+      "n_current": 77,
+      "n_result": 73,
+      "result_ids_shared": true,
+      "layouts": {
+        "current": {
+          "ok": true,
+          "n": 77,
+          "n_added": 0,
+          "recon_s": 0.07217884063720703,
+          "transfer_s": 0.06953263282775879,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": true,
+          "junction": {
+            "has_youp": true,
+            "has_you_newline_p": false,
+            "has_im_end": false,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": false
+          },
+          "prefix_head": "<|im_start|>user\nYouP: q=0 | ineligible | effective capacity is not at least shipment size\nQ: q=14 | ineligible | driver",
+          "prefix_tail": "ity is at least shipment size, refrigeration is present, and driver is available"
+        },
+        "sep": {
+          "ok": true,
+          "n": 78,
+          "n_added": 1,
+          "recon_s": 0.07042670249938965,
+          "transfer_s": 0.1274571418762207,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": false,
+            "has_you_newline_p": true,
+            "has_im_end": false,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": false
+          },
+          "prefix_head": "<|im_start|>user\nYou\nP: q=0 | ineligible | effective capacity is not at least shipment size\nQ: q=14 | ineligible | drive",
+          "prefix_tail": "ity is at least shipment size, refrigeration is present, and driver is available"
+        },
+        "close": {
+          "ok": true,
+          "n": 79,
+          "n_added": 2,
+          "recon_s": 0.07384228706359863,
+          "transfer_s": 0.14802265167236328,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": true,
+            "has_you_newline_p": false,
+            "has_im_end": true,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": true
+          },
+          "prefix_head": "<|im_start|>user\nYouP: q=0 | ineligible | effective capacity is not at least shipment size\nQ: q=14 | ineligible | driver",
+          "prefix_tail": "east shipment size, refrigeration is present, and driver is available<|im_end|>\n"
+        },
+        "both": {
+          "ok": true,
+          "n": 80,
+          "n_added": 3,
+          "recon_s": 0.06920957565307617,
+          "transfer_s": 0.5615251064300537,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": false,
+            "has_you_newline_p": true,
+            "has_im_end": true,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": true
+          },
+          "prefix_head": "<|im_start|>user\nYou\nP: q=0 | ineligible | effective capacity is not at least shipment size\nQ: q=14 | ineligible | drive",
+          "prefix_tail": "east shipment size, refrigeration is present, and driver is available<|im_end|>\n"
+        }
+      }
+    },
+    {
+      "a_state_key": "plan4_dev-fam-001-base",
+      "n_current": 88,
+      "n_result": 84,
+      "result_ids_shared": true,
+      "layouts": {
+        "current": {
+          "ok": true,
+          "n": 88,
+          "n_added": 0,
+          "recon_s": 0.07764816284179688,
+          "transfer_s": 0.08468794822692871,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": true,
+          "junction": {
+            "has_youp": true,
+            "has_you_newline_p": false,
+            "has_im_end": false,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": false
+          },
+          "prefix_head": "<|im_start|>user\nYouP: q=14 | ineligible | effective capacity is less than shipment size\nQ: q=20 | eligible | effective ",
+          "prefix_tail": "apacity is at least shipment size, refrigeration is present, driver is available"
+        },
+        "sep": {
+          "ok": true,
+          "n": 89,
+          "n_added": 1,
+          "recon_s": 0.0724945068359375,
+          "transfer_s": 0.13845276832580566,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": false,
+            "has_you_newline_p": true,
+            "has_im_end": false,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": false
+          },
+          "prefix_head": "<|im_start|>user\nYou\nP: q=14 | ineligible | effective capacity is less than shipment size\nQ: q=20 | eligible | effective",
+          "prefix_tail": "apacity is at least shipment size, refrigeration is present, driver is available"
+        },
+        "close": {
+          "ok": true,
+          "n": 90,
+          "n_added": 2,
+          "recon_s": 0.0719749927520752,
+          "transfer_s": 0.20465350151062012,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": true,
+            "has_you_newline_p": false,
+            "has_im_end": true,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": true
+          },
+          "prefix_head": "<|im_start|>user\nYouP: q=14 | ineligible | effective capacity is less than shipment size\nQ: q=20 | eligible | effective ",
+          "prefix_tail": "at least shipment size, refrigeration is present, driver is available<|im_end|>\n"
+        },
+        "both": {
+          "ok": true,
+          "n": 91,
+          "n_added": 3,
+          "recon_s": 0.0745539665222168,
+          "transfer_s": 0.2118685245513916,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": false,
+            "has_you_newline_p": true,
+            "has_im_end": true,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": true
+          },
+          "prefix_head": "<|im_start|>user\nYou\nP: q=14 | ineligible | effective capacity is less than shipment size\nQ: q=20 | eligible | effective",
+          "prefix_tail": "at least shipment size, refrigeration is present, driver is available<|im_end|>\n"
+        }
+      }
+    },
+    {
+      "a_state_key": "plan4_dev-fam-001-a_flip",
+      "n_current": 78,
+      "n_result": 74,
+      "result_ids_shared": true,
+      "layouts": {
+        "current": {
+          "ok": true,
+          "n": 78,
+          "n_added": 0,
+          "recon_s": 0.06946969032287598,
+          "transfer_s": 0.06330990791320801,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": true,
+          "junction": {
+            "has_youp": true,
+            "has_you_newline_p": false,
+            "has_im_end": false,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": false
+          },
+          "prefix_head": "<|im_start|>user\nYouP: q=14 | ineligible | effective capacity is less than shipment size\nQ: q=20 | eligible | effective ",
+          "prefix_tail": "hipment size\nS: q=2 | ineligible | effective capacity is less than shipment size"
+        },
+        "sep": {
+          "ok": true,
+          "n": 79,
+          "n_added": 1,
+          "recon_s": 0.07198238372802734,
+          "transfer_s": 0.126861572265625,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": false,
+            "has_you_newline_p": true,
+            "has_im_end": false,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": false
+          },
+          "prefix_head": "<|im_start|>user\nYou\nP: q=14 | ineligible | effective capacity is less than shipment size\nQ: q=20 | eligible | effective",
+          "prefix_tail": "hipment size\nS: q=2 | ineligible | effective capacity is less than shipment size"
+        },
+        "close": {
+          "ok": true,
+          "n": 80,
+          "n_added": 2,
+          "recon_s": 0.06809306144714355,
+          "transfer_s": 0.14572596549987793,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": true,
+            "has_you_newline_p": false,
+            "has_im_end": true,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": true
+          },
+          "prefix_head": "<|im_start|>user\nYouP: q=14 | ineligible | effective capacity is less than shipment size\nQ: q=20 | eligible | effective ",
+          "prefix_tail": "e\nS: q=2 | ineligible | effective capacity is less than shipment size<|im_end|>\n"
+        },
+        "both": {
+          "ok": true,
+          "n": 81,
+          "n_added": 3,
+          "recon_s": 0.0706329345703125,
+          "transfer_s": 0.20685863494873047,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": false,
+            "has_you_newline_p": true,
+            "has_im_end": true,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": true
+          },
+          "prefix_head": "<|im_start|>user\nYou\nP: q=14 | ineligible | effective capacity is less than shipment size\nQ: q=20 | eligible | effective",
+          "prefix_tail": "e\nS: q=2 | ineligible | effective capacity is less than shipment size<|im_end|>\n"
+        }
+      }
+    },
+    {
+      "a_state_key": "plan4_dev-fam-006-base",
+      "n_current": 83,
+      "n_result": 79,
+      "result_ids_shared": true,
+      "layouts": {
+        "current": {
+          "ok": true,
+          "n": 83,
+          "n_added": 0,
+          "recon_s": 0.07333803176879883,
+          "transfer_s": 0.06929302215576172,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": true,
+          "junction": {
+            "has_youp": true,
+            "has_you_newline_p": false,
+            "has_im_end": false,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": false
+          },
+          "prefix_head": "<|im_start|>user\nYouP: q=17 | ineligible | driver unavailable  \nQ: q=12 | eligible | effective capacity is at least 12, ",
+          "prefix_tail": "n is present, driver is available  \nS: q=15 | ineligible | no refrigeration unit"
+        },
+        "sep": {
+          "ok": true,
+          "n": 84,
+          "n_added": 1,
+          "recon_s": 0.07378911972045898,
+          "transfer_s": 0.1277022361755371,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": false,
+            "has_you_newline_p": true,
+            "has_im_end": false,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": false
+          },
+          "prefix_head": "<|im_start|>user\nYou\nP: q=17 | ineligible | driver unavailable  \nQ: q=12 | eligible | effective capacity is at least 12,",
+          "prefix_tail": "n is present, driver is available  \nS: q=15 | ineligible | no refrigeration unit"
+        },
+        "close": {
+          "ok": true,
+          "n": 85,
+          "n_added": 2,
+          "recon_s": 0.07226443290710449,
+          "transfer_s": 0.15603971481323242,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": true,
+            "has_you_newline_p": false,
+            "has_im_end": true,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": true
+          },
+          "prefix_head": "<|im_start|>user\nYouP: q=17 | ineligible | driver unavailable  \nQ: q=12 | eligible | effective capacity is at least 12, ",
+          "prefix_tail": "t, driver is available  \nS: q=15 | ineligible | no refrigeration unit<|im_end|>\n"
+        },
+        "both": {
+          "ok": true,
+          "n": 86,
+          "n_added": 3,
+          "recon_s": 0.07184052467346191,
+          "transfer_s": 0.21137022972106934,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": false,
+            "has_you_newline_p": true,
+            "has_im_end": true,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": true
+          },
+          "prefix_head": "<|im_start|>user\nYou\nP: q=17 | ineligible | driver unavailable  \nQ: q=12 | eligible | effective capacity is at least 12,",
+          "prefix_tail": "t, driver is available  \nS: q=15 | ineligible | no refrigeration unit<|im_end|>\n"
+        }
+      }
+    },
+    {
+      "a_state_key": "plan4_dev-fam-006-a_flip",
+      "n_current": 54,
+      "n_result": 50,
+      "result_ids_shared": true,
+      "layouts": {
+        "current": {
+          "ok": true,
+          "n": 54,
+          "n_added": 0,
+          "recon_s": 0.07097530364990234,
+          "transfer_s": 0.05139803886413574,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": true,
+          "junction": {
+            "has_youp": true,
+            "has_you_newline_p": false,
+            "has_im_end": false,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": false
+          },
+          "prefix_head": "<|im_start|>user\nYouP: q=17 | ineligible | driver unavailable  \nQ: q=12 | eligible | all requirements met  \nR: q=12 | el",
+          "prefix_tail": "12 | eligible | all requirements met  \nS: q=15 | eligible | all requirements met"
+        },
+        "sep": {
+          "ok": true,
+          "n": 55,
+          "n_added": 1,
+          "recon_s": 0.06965422630310059,
+          "transfer_s": 0.12209653854370117,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": false,
+            "has_you_newline_p": true,
+            "has_im_end": false,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": false
+          },
+          "prefix_head": "<|im_start|>user\nYou\nP: q=17 | ineligible | driver unavailable  \nQ: q=12 | eligible | all requirements met  \nR: q=12 | e",
+          "prefix_tail": "12 | eligible | all requirements met  \nS: q=15 | eligible | all requirements met"
+        },
+        "close": {
+          "ok": true,
+          "n": 56,
+          "n_added": 2,
+          "recon_s": 0.0665440559387207,
+          "transfer_s": 0.13455963134765625,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": true,
+            "has_you_newline_p": false,
+            "has_im_end": true,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": true
+          },
+          "prefix_head": "<|im_start|>user\nYouP: q=17 | ineligible | driver unavailable  \nQ: q=12 | eligible | all requirements met  \nR: q=12 | el",
+          "prefix_tail": "le | all requirements met  \nS: q=15 | eligible | all requirements met<|im_end|>\n"
+        },
+        "both": {
+          "ok": true,
+          "n": 57,
+          "n_added": 3,
+          "recon_s": 0.06805801391601562,
+          "transfer_s": 0.2012951374053955,
+          "ids_match": true,
+          "caches_equal_pair": false,
+          "current_transfer_eq_baseline": null,
+          "junction": {
+            "has_youp": false,
+            "has_you_newline_p": true,
+            "has_im_end": true,
+            "starts_im_start_user": true,
+            "im_end_before_b_turn": true
+          },
+          "prefix_head": "<|im_start|>user\nYou\nP: q=17 | ineligible | driver unavailable  \nQ: q=12 | eligible | all requirements met  \nR: q=12 | e",
+          "prefix_tail": "le | all requirements met  \nS: q=15 | eligible | all requirements met<|im_end|>\n"
+        }
+      }
+    }
+  ],
+  "lead": "Inspect complete rendered sequences, including special tokens. Current should show YouP. Separator should break that. Turn close should place <|im_end|> before B's user turn. Result IDs stay frozen."
+}
